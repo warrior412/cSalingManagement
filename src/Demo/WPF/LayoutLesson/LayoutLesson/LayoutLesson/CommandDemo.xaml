@@ -1,0 +1,15 @@
+﻿<Window x:Class="LayoutLesson.CommandDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CommandDemo" Height="300" Width="300">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Cut" CanExecute="CutCommand_CanExcute" Executed="CutCommand_Executed"/>
+        <CommandBinding Command="ApplicationCommands.Paste" CanExecute="PasteCommand_CanExecute" Executed="PasteCommand_Executed"/>
+    </Window.CommandBindings>
+    <Grid>
+        <Button Content="_Cut" HorizontalAlignment="Left" Margin="35,36,0,0" VerticalAlignment="Top" Width="75"  Command="ApplicationCommands.Cut"/>
+        <Button Content="_Paste" HorizontalAlignment="Left" Margin="185,36,0,0" VerticalAlignment="Top" Width="75" Command="ApplicationCommands.Paste"/>
+        <TextBox HorizontalAlignment="Left" Height="130" Margin="50,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" AcceptsReturn="True" x:Name="txtBox"/>
+
+    </Grid>
+</Window>

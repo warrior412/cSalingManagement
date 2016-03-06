@@ -1,0 +1,11 @@
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\bin\Debug\MyPopUpControl.dll
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\bin\Debug\MyPopUpControl.pdb
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\obj\Debug\MyPopUpControl_MarkupCompile.cache
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\obj\Debug\MyPopUpControl_MarkupCompile.lref
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\obj\Debug\Themes\Generic.baml
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\obj\Debug\MyPopUpControl.g.resources
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\obj\Debug\MyPopUpControl.Properties.Resources.resources
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\obj\Debug\MyPopUpControl.csproj.GenerateResource.Cache
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\obj\Debug\MyPopUpControl.dll
+C:\Users\Hieu\Desktop\Hieu's stuff\WPF\Lessons\UserControl\DemoUserControl\MyPopUpControl\obj\Debug\MyPopUpControl.pdb

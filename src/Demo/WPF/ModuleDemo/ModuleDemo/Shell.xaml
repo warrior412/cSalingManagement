@@ -1,0 +1,21 @@
+﻿<Window x:Class="ModuleDemo.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://www.codeplex.com/CompositeWPF"
+        Title="Shell" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderThickness="0,0,1,0" BorderBrush="Gray" Grid.Column="0">
+            <ContentControl prism:RegionManager.RegionName="MenuRegion"/>
+        </Border>
+        <Border BorderThickness="0,0,1,0" BorderBrush="Gray" Grid.Column="1">
+            <ContentControl prism:RegionManager.RegionName="ModuleRegion"/>
+        </Border>
+        <Grid>
+            
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,7 @@
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFCommon\bin\Debug\WCFCommon.dll
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFCommon\bin\Debug\WCFCommon.pdb
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFCommon\bin\Debug\WCFServiceContract.dll
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFCommon\bin\Debug\WCFServiceContract.pdb
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFCommon\obj\Debug\WCFCommon.csprojResolveAssemblyReference.cache
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFCommon\obj\Debug\WCFCommon.dll
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFCommon\obj\Debug\WCFCommon.pdb

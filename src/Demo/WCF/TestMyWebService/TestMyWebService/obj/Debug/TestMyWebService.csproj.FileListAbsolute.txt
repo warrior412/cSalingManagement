@@ -1,0 +1,1 @@
+c:\users\hieu\documents\visual studio 2013\Projects\TestMyWebService\TestMyWebService\bin\Debug\TestMyWebService.exe.config

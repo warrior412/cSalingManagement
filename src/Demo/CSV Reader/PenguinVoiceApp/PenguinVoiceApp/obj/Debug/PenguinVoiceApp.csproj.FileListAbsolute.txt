@@ -1,0 +1,9 @@
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\PenguinVoiceApp\PenguinVoiceApp\bin\Debug\PenguinVoiceApp.exe.config
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\PenguinVoiceApp\PenguinVoiceApp\bin\Debug\PenguinVoiceApp.exe
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\PenguinVoiceApp\PenguinVoiceApp\bin\Debug\PenguinVoiceApp.pdb
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\PenguinVoiceApp\PenguinVoiceApp\obj\Debug\PenguinVoiceApp.Interface.PatientList.resources
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\PenguinVoiceApp\PenguinVoiceApp\obj\Debug\PenguinVoiceApp.Properties.Resources.resources
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\PenguinVoiceApp\PenguinVoiceApp\obj\Debug\PenguinVoiceApp.Register.resources
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\PenguinVoiceApp\PenguinVoiceApp\obj\Debug\PenguinVoiceApp.csproj.GenerateResource.Cache
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\PenguinVoiceApp\PenguinVoiceApp\obj\Debug\PenguinVoiceApp.exe
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\PenguinVoiceApp\PenguinVoiceApp\obj\Debug\PenguinVoiceApp.pdb

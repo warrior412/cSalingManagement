@@ -1,0 +1,9 @@
+﻿<Window x:Class="simpleprismapplication.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prsm="http://www.codeplex.com/prism"
+        Title="Simple Prism Application" Height="350" Width="525">
+    <ItemsControl Name="MainRegion" prsm:RegionManager.RegionName="MainRegion" >
+        <Label Content="Simple Prism Application" HorizontalAlignment="Center" VerticalAlignment="Center"  Background="AliceBlue"/>
+    </ItemsControl>
+</Window>

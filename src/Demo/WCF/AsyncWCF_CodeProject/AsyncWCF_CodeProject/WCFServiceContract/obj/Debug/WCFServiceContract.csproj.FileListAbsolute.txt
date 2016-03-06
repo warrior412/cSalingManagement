@@ -1,0 +1,4 @@
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFServiceContract\bin\Debug\WCFServiceContract.dll
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFServiceContract\bin\Debug\WCFServiceContract.pdb
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFServiceContract\obj\Debug\WCFServiceContract.dll
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\WCFServiceContract\obj\Debug\WCFServiceContract.pdb

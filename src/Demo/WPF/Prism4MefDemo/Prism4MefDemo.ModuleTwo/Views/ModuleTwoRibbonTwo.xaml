@@ -1,0 +1,31 @@
+﻿<ribbon:RibbonTab x:Class="Prism4MefDemo.ModuleTwo.Views.ModuleTwoRibbonTwo"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary" 
+			 mc:Ignorable="d"  Header="Module Two"
+			 d:DesignHeight="300" d:DesignWidth="300">
+
+	<ribbon:RibbonTab.Resources>
+		<ResourceDictionary Source="/Prism4MefDemo.Infrastructure;component/Resources/RibbonControls.xaml"/>
+	</ribbon:RibbonTab.Resources>
+
+
+	<ribbon:RibbonGroup x:Name="ModuleGroup2" Header="{Binding Section}" ItemsSource="{Binding Path=ViewObjects}">
+		<ribbon:RibbonGroup.ItemTemplate>
+			<DataTemplate>
+				<ribbon:RibbonButton x:Name="MenuItem" Width="100"
+												 Style="{StaticResource ResourceKey=RibbonButtonStyle}"
+												 SmallImageSource="Images\SmallIcon.png"
+												 Label="{Binding Title}"
+												 Command="{Binding ElementName=ModuleGroup2, Path=DataContext.ShowView}"     
+												 CommandParameter="{Binding}"
+												 ToolTip="{Binding Title}">
+
+				</ribbon:RibbonButton>
+
+			</DataTemplate>
+		</ribbon:RibbonGroup.ItemTemplate>
+	</ribbon:RibbonGroup>
+</ribbon:RibbonTab>

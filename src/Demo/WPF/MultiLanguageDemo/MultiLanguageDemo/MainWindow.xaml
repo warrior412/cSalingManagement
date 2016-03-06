@@ -1,0 +1,12 @@
+﻿<Window x:Class="MultiLanguageDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBlock Margin="145,47,0,0" TextWrapping="Wrap" Text="{DynamicResource welcome}" Height="54" Width="245" FontWeight="Bold" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="English&#xD;&#xA;" HorizontalAlignment="Left" Margin="61,187,0,0" VerticalAlignment="Top" Width="100" Height="27" Click="Button_Click"/>
+        <Button Content="日本語" HorizontalAlignment="Left" Margin="184,187,0,0" VerticalAlignment="Top" Width="110" Height="27" Click="Button_Click_1"/>
+        <Button Content="Tieng Viet" HorizontalAlignment="Left" Margin="315,187,0,0" VerticalAlignment="Top" Width="101" Height="27" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>

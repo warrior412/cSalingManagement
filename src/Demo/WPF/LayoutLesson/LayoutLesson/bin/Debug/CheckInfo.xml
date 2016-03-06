@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Record>
+  <RecordID>RCD0001</RecordID>
+  <Customername>Hieu Huynh</Customername>
+  <Gender>true</Gender>
+  <Type>0</Type>
+  <Memo>Nothing to show</Memo>
+  <Comment>Comment is here</Comment>
+  <CheckInfos>
+    <CheckInfo>
+      <CheckName>Eyes</CheckName>
+      <IsCheck>false</IsCheck>
+      <NewResult>0</NewResult>
+      <OldResult>0</OldResult>
+      <Average>0</Average>
+    </CheckInfo>
+    <CheckInfo>
+      <CheckName>Heart</CheckName>
+      <IsCheck>true</IsCheck>
+      <NewResult>70</NewResult>
+      <OldResult>91</OldResult>
+      <Average>129</Average>
+    </CheckInfo>
+    <CheckInfo>
+      <CheckName>Blood</CheckName>
+      <IsCheck>true</IsCheck>
+      <NewResult>149</NewResult>
+      <OldResult>191</OldResult>
+      <Average>144</Average>
+    </CheckInfo>
+    <CheckInfo>
+      <CheckName>Measures</CheckName>
+      <IsCheck>true</IsCheck>
+      <NewResult>150</NewResult>
+      <OldResult>108</OldResult>
+      <Average>119</Average>
+    </CheckInfo>
+    <CheckInfo>
+      <CheckName>Lung</CheckName>
+      <IsCheck>false</IsCheck>
+      <NewResult>0</NewResult>
+      <OldResult>0</OldResult>
+      <Average>0</Average>
+    </CheckInfo>
+    <CheckInfo>
+      <CheckName>Hearing</CheckName>
+      <IsCheck>true</IsCheck>
+      <NewResult>189</NewResult>
+      <OldResult>143</OldResult>
+      <Average>46</Average>
+    </CheckInfo>
+    <CheckInfo>
+      <CheckName>X-Ray</CheckName>
+      <IsCheck>true</IsCheck>
+      <NewResult>59</NewResult>
+      <OldResult>46</OldResult>
+      <Average>97</Average>
+    </CheckInfo>
+    <CheckInfo>
+      <CheckName>CT</CheckName>
+      <IsCheck>false</IsCheck>
+      <NewResult>0</NewResult>
+      <OldResult>0</OldResult>
+      <Average>0</Average>
+    </CheckInfo>
+  </CheckInfos>
+</Record>

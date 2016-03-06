@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Prism.RibbonRegionAdapter</id>
+    <version>0.20.0.1</version>
+    <title>Prism Ribbon Region-Adapter</title>
+    <authors>Tilfried uTILLIty Weissenberger</authors>
+    <owners>Tilfried uTILLIty Weissenberger</owners>
+    <licenseUrl>https://prismribbonregionadapter.codeplex.com/license</licenseUrl>
+    <projectUrl>https://prismribbonregionadapter.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The PRISM RegionAdapter for the WPF Ribbon Control</description>
+    <releaseNotes>See https://prismribbonregionadapter.codeplex.com/releases</releaseNotes>
+    <copyright>Copyright 2015 by Tilfried uTILLIty Weissenberger - tilli@weissenberger.at</copyright>
+    <tags>Prism Ribbon RegionAdapter</tags>
+    <dependencies>
+      <dependency id="Prism" version="5.0.0" />
+    </dependencies>
+  </metadata>
+</package>

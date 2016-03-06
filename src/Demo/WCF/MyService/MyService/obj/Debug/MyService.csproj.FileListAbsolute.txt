@@ -1,0 +1,12 @@
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\MyService\MyService\bin\MyService.dll.config
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\MyService\MyService\bin\MyService.dll
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\MyService\MyService\bin\MyService.pdb
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\MyService\MyService\obj\Debug\MyService.dll
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\MyService\MyService\obj\Debug\MyService.pdb
+C:\Users\Hieu\Documents\Visual Studio 2013\Projects\MyService\MyService\obj\Debug\MyService.csprojResolveAssemblyReference.cache
+C:\Users\Hieu\Documents\cSalingManagement\src\Demo\WCF\MyService\MyService\bin\MyService.dll.config
+C:\Users\Hieu\Documents\cSalingManagement\src\Demo\WCF\MyService\MyService\bin\MyService.dll
+C:\Users\Hieu\Documents\cSalingManagement\src\Demo\WCF\MyService\MyService\bin\MyService.pdb
+C:\Users\Hieu\Documents\cSalingManagement\src\Demo\WCF\MyService\MyService\obj\Debug\MyService.csprojResolveAssemblyReference.cache
+C:\Users\Hieu\Documents\cSalingManagement\src\Demo\WCF\MyService\MyService\obj\Debug\MyService.dll
+C:\Users\Hieu\Documents\cSalingManagement\src\Demo\WCF\MyService\MyService\obj\Debug\MyService.pdb

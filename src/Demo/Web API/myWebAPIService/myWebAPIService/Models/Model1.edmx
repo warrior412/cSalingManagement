@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="cSalingManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="M_UserAccount">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="temp">
+          <Key>
+            <PropertyRef Name="aa" />
+          </Key>
+          <Property Name="aa" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="bb" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Function Name="sp_MUserAccount_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_MUserAccount_Get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MUserAccount_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_MUserAccount_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_MUserAccount_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="cSalingManagementModelStoreContainer">
+          <EntitySet Name="M_UserAccount" EntityType="Self.M_UserAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="temp" EntityType="Self.temp" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cSalingManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="M_UserAccount">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="M_UserAccount" EntityType="Self.M_UserAccount" />
+          <FunctionImport Name="sp_MUserAccount_Delete" />
+          <FunctionImport Name="sp_MUserAccount_Get" ReturnType="Collection(cSalingManagementModel.sp_MUserAccount_Get_Result)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_MUserAccount_GetAll" ReturnType="Collection(cSalingManagementModel.sp_MUserAccount_GetAll_Result)" />
+          <FunctionImport Name="sp_MUserAccount_Insert">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_MUserAccount_Update">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="temps" EntityType="cSalingManagementModel.temp" />
+        </EntityContainer>
+        <ComplexType Name="sp_MUserAccount_Get_Result">
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_MUserAccount_GetAll_Result">
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="temp">
+          <Key>
+            <PropertyRef Name="aa" />
+          </Key>
+          <Property Name="aa" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="bb" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cSalingManagementModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="M_UserAccount">
+            <EntityTypeMapping TypeName="cSalingManagementModel.M_UserAccount">
+              <MappingFragment StoreEntitySet="M_UserAccount">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="cSalingManagementModel.M_UserAccount">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="cSalingManagementModel.Store.sp_MUserAccount_Insert">
+                  <ScalarProperty Name="Status" ParameterName="Status" />
+                  <ScalarProperty Name="Password" ParameterName="Password" />
+                  <ScalarProperty Name="Username" ParameterName="Username" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="cSalingManagementModel.Store.sp_MUserAccount_Update">
+                  <ScalarProperty Name="Status" ParameterName="Status" Version="Current" />
+                  <ScalarProperty Name="Password" ParameterName="Password" Version="Current" />
+                  <ScalarProperty Name="Username" ParameterName="Username" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="cSalingManagementModel.Store.sp_MUserAccount_Delete" />
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_MUserAccount_Delete" FunctionName="cSalingManagementModel.Store.sp_MUserAccount_Delete" />
+          <FunctionImportMapping FunctionImportName="sp_MUserAccount_Get" FunctionName="cSalingManagementModel.Store.sp_MUserAccount_Get">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagementModel.sp_MUserAccount_Get_Result">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_MUserAccount_GetAll" FunctionName="cSalingManagementModel.Store.sp_MUserAccount_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagementModel.sp_MUserAccount_GetAll_Result">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_MUserAccount_Insert" FunctionName="cSalingManagementModel.Store.sp_MUserAccount_Insert" />
+          <FunctionImportMapping FunctionImportName="sp_MUserAccount_Update" FunctionName="cSalingManagementModel.Store.sp_MUserAccount_Update" />
+          <EntitySetMapping Name="temps">
+            <EntityTypeMapping TypeName="cSalingManagementModel.temp">
+              <MappingFragment StoreEntitySet="temp">
+                <ScalarProperty Name="bb" ColumnName="bb" />
+                <ScalarProperty Name="aa" ColumnName="aa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

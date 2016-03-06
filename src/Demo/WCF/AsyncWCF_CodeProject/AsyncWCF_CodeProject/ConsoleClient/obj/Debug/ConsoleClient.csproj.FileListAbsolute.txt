@@ -1,0 +1,10 @@
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\ConsoleClient\bin\Debug\ConsoleClient.exe
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\ConsoleClient\bin\Debug\ConsoleClient.pdb
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\ConsoleClient\bin\Debug\WCFCommon.dll
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\ConsoleClient\bin\Debug\WCFServiceContract.dll
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\ConsoleClient\bin\Debug\WCFCommon.pdb
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\ConsoleClient\bin\Debug\WCFServiceContract.pdb
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\ConsoleClient\obj\Debug\ConsoleClient.exe
+C:\Users\Hieu\Downloads\AsyncWCF_CodeProject\AsyncWCF_CodeProject\ConsoleClient\obj\Debug\ConsoleClient.pdb
