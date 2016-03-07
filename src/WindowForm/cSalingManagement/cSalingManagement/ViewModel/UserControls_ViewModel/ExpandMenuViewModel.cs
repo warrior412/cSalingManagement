@@ -1,4 +1,5 @@
-﻿using cSalingManagement.Common;
+﻿
+using cSalingManagement.Common;
 using cSalingManagement.Model;
 using Prism.Mvvm;
 using System;
