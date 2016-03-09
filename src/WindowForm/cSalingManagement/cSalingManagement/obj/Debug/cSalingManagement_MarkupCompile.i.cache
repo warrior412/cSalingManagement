@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\JunF\Downloads\cSalingManagement-develop\cSalingManagement-develop\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\
+D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\
 cSalingManagement
 none
 false
 DEBUG;TRACE
-C:\Users\JunF\Downloads\cSalingManagement-develop\cSalingManagement-develop\src\WindowForm\cSalingManagement\cSalingManagement\App.xaml
-8262492811
+D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\App.xaml
+2-1869016735
 
-20560656401
-271469655979
-Style\OriginalControl.xaml;Style\Theme.xaml;View\ContentView\ProductDetailView.xaml;View\ContentView\ProductListView.xaml;View\LoginView.xaml;View\MainView.xaml;View\UserControls\ExpandMenu.xaml;View\UserControls\TitleBar.xaml;
+11540439565
+31-1446806458
+View\LoginView.xaml;View\MainView.xaml;
 
 False
 

@@ -1,18 +1,16 @@
 ﻿<Window x:Class="cSalingManagement.View.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:uc="clr-namespace:cSalingManagement.View.UserControls"
         Title="MainView" Height="500" Width="800" WindowStyle="None"  ResizeMode="CanResizeWithGrip"
-        xmlns:View="clr-namespace:cSalingManagement.View.ContentView"
-        xmlns:ViewModel="clr-namespace:cSalingManagement.ViewModel.ContentViewModel">
-    <Window.Resources>
+        xmlns:prism="http://www.codeplex.com/CompositeWPF">
+    <!--<Window.Resources>
         <DataTemplate DataType="{x:Type ViewModel:ProductDetailViewModel}">
             <View:ProductDetailView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type ViewModel:ProductListViewModel}">
             <View:ProductListView/>
         </DataTemplate>
-    </Window.Resources>
+    </Window.Resources>-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20*" MaxWidth="300" MinWidth="200"/>
@@ -22,9 +20,13 @@
             <RowDefinition Height="50" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <uc:ExpandMenu Grid.RowSpan="2"></uc:ExpandMenu>
-        <uc:TitleBar Grid.Column="1" ></uc:TitleBar>
-        <DockPanel Grid.Column="1" Grid.Row="1" Background="{StaticResource MainLightColor}" LastChildFill="True" >
+        <Grid Grid.RowSpan="2">
+            <ContentControl prism:RegionManager.RegionName="MenuRegion" />
+        </Grid>
+        <Grid Grid.Column="1">
+            <ContentControl prism:RegionManager.RegionName="TitleRegion"/>
+        </Grid>
+        <DockPanel Grid.Column="1" Grid.Row="1" Background="WhiteSmoke" LastChildFill="True" >
             
         </DockPanel>
     </Grid>
