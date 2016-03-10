@@ -1,7 +1,7 @@
 ﻿using cSalingManagement.View;
-using Microsoft.Practices.Prism.Modularity;
-using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.Unity;
+using Prism.Modularity;
+using Prism.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +31,8 @@ namespace cSalingManagement
             
             moduleCatalog.AddModule(typeof(TitleModule.TitleModule));
             moduleCatalog.AddModule(typeof(MenuModule.MenuModule));
-            
-            //moduleCatalog.AddModule(typeof(Module1.Module1), InitializationMode.OnDemand);
-            //moduleCatalog.AddModule(typeof(Module2.Module2), InitializationMode.OnDemand);
+            moduleCatalog.AddModule(typeof(OrderModule.OrderModule), InitializationMode.OnDemand);
+            moduleCatalog.AddModule(typeof(ProductModule.ProductModule), InitializationMode.OnDemand);
         }
 
         protected override void ConfigureContainer()

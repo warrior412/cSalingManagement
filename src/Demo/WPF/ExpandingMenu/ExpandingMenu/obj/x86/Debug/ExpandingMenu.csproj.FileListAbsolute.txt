@@ -1,0 +1,14 @@
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\bin\Debug\ExpandingMenu.exe
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\bin\Debug\ExpandingMenu.pdb
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\ExpandingMenu.csprojResolveAssemblyReference.cache
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\MainWindow.g.cs
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\App.g.cs
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\ExpandingMenu_MarkupCompile.cache
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\ExpandingMenu_MarkupCompile.lref
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\MainWindow.baml
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\ExpandingMenu.g.resources
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\ExpandingMenu.Properties.Resources.resources
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\ExpandingMenu.csproj.GenerateResource.Cache
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\ExpandingMenu.exe
+D:\PROJECT\src\Demo\WPF\ExpandingMenu\ExpandingMenu\obj\x86\Debug\ExpandingMenu.pdb

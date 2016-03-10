@@ -1,0 +1,3 @@
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo.Infrastructure\obj\Debug\Prism4MefDemo.Infrastructure.csprojResolveAssemblyReference.cache
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo.Infrastructure\obj\Debug\Resources\MenuControls.baml
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo.Infrastructure\obj\Debug\Prism4MefDemo.Infrastructure_MarkupCompile.cache

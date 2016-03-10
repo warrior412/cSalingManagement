@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitleModule", "TitleModule\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cSalingManagement.Resources", "cSalingManagement.Resources\cSalingManagement.Resources.csproj", "{22BF4ADB-7E24-4F81-B63C-9D8CAE6947A4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cSalingManagement.ContentModules", "cSalingManagement.ContentModules", "{7E34CD1E-900B-4841-A58E-8CF261614816}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductModule", "ProductModule\ProductModule.csproj", "{E69B46D3-B826-42E1-9654-ED36E27C0925}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderModule", "OrderModule\OrderModule.csproj", "{5531A46B-316B-4060-86B5-EE302B7CA1D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +51,14 @@ Global
 		{22BF4ADB-7E24-4F81-B63C-9D8CAE6947A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22BF4ADB-7E24-4F81-B63C-9D8CAE6947A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22BF4ADB-7E24-4F81-B63C-9D8CAE6947A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E69B46D3-B826-42E1-9654-ED36E27C0925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E69B46D3-B826-42E1-9654-ED36E27C0925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E69B46D3-B826-42E1-9654-ED36E27C0925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E69B46D3-B826-42E1-9654-ED36E27C0925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5531A46B-316B-4060-86B5-EE302B7CA1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5531A46B-316B-4060-86B5-EE302B7CA1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5531A46B-316B-4060-86B5-EE302B7CA1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5531A46B-316B-4060-86B5-EE302B7CA1D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +66,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{784C4BD1-C2C4-40DE-8469-740D751CC130} = {FD4410F2-D3E3-4487-BB54-4EB3AAB3B68F}
 		{6F882985-7913-4275-B7E2-FE44BD6C2D81} = {FD4410F2-D3E3-4487-BB54-4EB3AAB3B68F}
+		{7E34CD1E-900B-4841-A58E-8CF261614816} = {FD4410F2-D3E3-4487-BB54-4EB3AAB3B68F}
+		{E69B46D3-B826-42E1-9654-ED36E27C0925} = {7E34CD1E-900B-4841-A58E-8CF261614816}
+		{5531A46B-316B-4060-86B5-EE302B7CA1D0} = {7E34CD1E-900B-4841-A58E-8CF261614816}
 	EndGlobalSection
 EndGlobal

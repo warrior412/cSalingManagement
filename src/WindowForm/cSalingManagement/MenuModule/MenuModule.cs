@@ -1,7 +1,8 @@
-﻿using MenuModule.View;
-using Microsoft.Practices.Prism.Modularity;
-using Microsoft.Practices.Prism.Regions;
+﻿using cSalingManagement.Common;
+using MenuModule.View;
 using Microsoft.Practices.Unity;
+using Prism.Modularity;
+using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace MenuModule
 
         public void Initialize()
         {
-            this.regionManager.RegisterViewWithRegion("MenuRegion",
+            this.regionManager.RegisterViewWithRegion(SalingManagementConstant.STRING_REGION_MENU,
                                                        () => this.container.Resolve<MenuView>());
 
         }

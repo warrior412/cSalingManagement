@@ -16,6 +16,12 @@ namespace cSalingManagement.Model
     public class SubMenuItem 
     {
         public string Name { get; set; }
-        public string Action { get; set; }
+        public Action Action { get; set; }
+    }
+    public class Action
+    {
+        public string RegionName { get; set; }
+        public string ModuleName { get; set; }
+        public string ViewName { get; set; }
     }
 }

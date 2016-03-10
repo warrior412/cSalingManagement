@@ -1,0 +1,9 @@
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo\bin\Debug\Prism4MefDemo.exe.config
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo\obj\x86\Debug\Prism4MefDemo.csprojResolveAssemblyReference.cache
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo\obj\x86\Debug\Views\HomeNavigator.baml
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo\obj\x86\Debug\Views\HomeView.baml
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo\obj\x86\Debug\App.baml
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo\obj\x86\Debug\Views\HomeNavigator.g.cs
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo\obj\x86\Debug\Views\HomeView.g.cs
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo\obj\x86\Debug\App.g.cs
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo\obj\x86\Debug\Prism4MefDemo_MarkupCompile.cache

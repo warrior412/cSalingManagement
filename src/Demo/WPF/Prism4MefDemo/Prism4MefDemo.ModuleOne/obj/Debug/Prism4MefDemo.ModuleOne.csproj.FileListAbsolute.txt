@@ -1,0 +1,7 @@
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo.ModuleOne\obj\Debug\Views\ModuleOneNavigator.baml
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo.ModuleOne\obj\Debug\Views\View1.baml
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo.ModuleOne\obj\Debug\Views\View2.baml
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo.ModuleOne\obj\Debug\Views\ModuleOneNavigator.g.cs
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo.ModuleOne\obj\Debug\Views\View1.g.cs
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo.ModuleOne\obj\Debug\Views\View2.g.cs
+D:\PROJECT\src\Demo\WPF\Prism4MefDemo\Prism4MefDemo.ModuleOne\obj\Debug\Prism4MefDemo.ModuleOne_MarkupCompile.cache

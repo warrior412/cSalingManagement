@@ -1,0 +1,12 @@
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\bin\Debug\PrismEventAggregator.exe.config
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\PrismEventAggregator.csprojResolveAssemblyReference.cache
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\Views\Person1.baml
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\Views\Person2.baml
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\Views\PersonDetails1.baml
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\Views\PersonDetails2.baml
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\Views\Person1.g.cs
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\Views\Person2.g.cs
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\Views\PersonDetails1.g.cs
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\Views\PersonDetails2.g.cs
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\App.g.cs
+D:\PROJECT\src\Demo\WPF\PrismEventAggregator\PrismEventAggregator\obj\Debug\PrismEventAggregator_MarkupCompile.cache
