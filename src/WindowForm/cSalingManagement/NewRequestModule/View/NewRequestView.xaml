@@ -3,28 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Height="480" Width="692.542">
-    <UserControl.Resources>
-        <ControlTemplate x:Key="TabItemControlTemplate1" TargetType="{x:Type TabItem}">
-            <Grid SnapsToDevicePixels="True">
-                <Border CornerRadius="12" x:Name="Bd" BorderBrush="Red" BorderThickness="1" Padding="{TemplateBinding Padding}">
-                    <ContentPresenter x:Name="Content" ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" ContentStringFormat="{TemplateBinding HeaderStringFormat}" ContentSource="Header" HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"/>
-                </Border>
-            </Grid>
-
-        </ControlTemplate>
-    </UserControl.Resources>
-    <Grid>
+             mc:Ignorable="d" MinHeight="480" MinWidth="692.542" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <DockPanel LastChildFill="True">
         <TabControl ItemsSource="{Binding TabItems}">
-            <TabControl.Resources>
-                <Style TargetType="TabItem">
-                    <Setter Property="Template" Value="{DynamicResource TabItemControlTemplate1}"/>
-                </Style>
-            </TabControl.Resources>
             <TabControl.ItemTemplate>
                 <!-- this is the header template-->
                 <DataTemplate>
-                    <TextBlock Text="{Binding Value}" />
+                    <TextBlock Text="{Binding TabName}" />
                 </DataTemplate>
             </TabControl.ItemTemplate>
             <TabControl.ContentTemplate>
@@ -35,5 +20,5 @@
             </TabControl.ContentTemplate>
         </TabControl>
 
-    </Grid>
+    </DockPanel>
 </UserControl>

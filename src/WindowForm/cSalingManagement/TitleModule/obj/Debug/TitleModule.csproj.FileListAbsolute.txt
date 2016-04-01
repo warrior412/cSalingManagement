@@ -70,4 +70,3 @@ D:\PROJECT\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.Pr
 D:\PROJECT\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.csproj.GenerateResource.Cache
 D:\PROJECT\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.pdb
-D:\PROJECT\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.csprojResolveAssemblyReference.cache

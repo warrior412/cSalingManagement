@@ -36,13 +36,38 @@ namespace TitleModule.ViewModel
             {
                 return new DelegateCommand(CloseCommandExecute);
             }
-        } 
+        }
+        public ICommand ExpandCommand
+        {
+            get
+            {
+                return new DelegateCommand(ExpandCommandExecute);
+            }
+        }
+        public ICommand MinimizedCommand
+        {
+            get
+            {
+                return new DelegateCommand(MinimizedCommandExecute);
+            }
+        }
         #endregion
 
         #region Delegate Method
         public void CloseCommandExecute()
         {
             Application.Current.Shutdown();
+        }
+        public void ExpandCommandExecute()
+        {
+            if(Application.Current.MainWindow.WindowState== WindowState.Normal)
+                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            else
+                Application.Current.MainWindow.WindowState = WindowState.Normal;
+        }
+        public void MinimizedCommandExecute()
+        {
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
         } 
         #endregion
     }

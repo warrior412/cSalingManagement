@@ -15,7 +15,9 @@ namespace NewRequestModule.ViewModel
         public ObservableCollection<TabControlItemsResource> TabItems
         {
             get { return new ObservableCollection<TabControlItemsResource> { 
-                new TabControlItemsResource{}
+                new TabControlItemsResource{TabName= "Tab 1",ItemResource= null},
+                new TabControlItemsResource{TabName= "Tab 2",ItemResource= null},
+                new TabControlItemsResource{TabName= "Tab 3",ItemResource= null}
             }; }
             set { _tabItems = value; }
         }
@@ -23,7 +25,7 @@ namespace NewRequestModule.ViewModel
     public class TabControlItemsResource
     {
         public string TabName { get; set; }
-        public ObservableCollection<ItemResource> ItemResource { }
+        public ObservableCollection<ItemResource> ItemResource { get; set; }
     }
     public class ItemResource
     {

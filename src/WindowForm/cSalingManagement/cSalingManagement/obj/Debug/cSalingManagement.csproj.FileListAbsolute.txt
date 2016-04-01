@@ -68,6 +68,7 @@ D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Microsof
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Microsoft.Practices.Unity.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\NewRequestModule.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\OrderModule.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.Unity.Wpf.dll
@@ -78,6 +79,7 @@ D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\TitleMod
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingManagement.Infrastructure.pdb
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingManagement.Resources.pdb
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\MenuModule.pdb
+D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\NewRequestModule.pdb
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\OrderModule.pdb
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\ProductModule.pdb
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\TitleModule.pdb
@@ -112,5 +114,3 @@ D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingM
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.csproj.GenerateResource.Cache
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.exe
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.pdb
-D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\NewRequestModule.dll
-D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\NewRequestModule.pdb

@@ -22,5 +22,8 @@
     <system:String x:Key="lf_Password">Password</system:String>
     <system:String x:Key="lf_LoginButton">Login</system:String>
     <system:String x:Key="lf_ClearButton">Clear</system:String>
-    
+
+    <!--ProductList-->
+    <system:String x:Key="001_Search">Tìm kiếm</system:String>
+    <system:String x:Key="001_Add">Tạo mới</system:String>
 </ResourceDictionary>

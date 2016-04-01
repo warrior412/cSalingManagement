@@ -8,8 +8,13 @@
     <Grid Background="{StaticResource TitleBackgroundColor}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="105"/>
         </Grid.ColumnDefinitions>
-        <Button Style="{StaticResource btn-danger}" Height="40" Width="40"  Content="X" Grid.Column="2" Command="{Binding CloseCommand}" />
+        <DockPanel Grid.Column="2">
+            <Button Style="{StaticResource btn-primary}" Height="30" Width="30" Padding="0"  Content="_" Command="{Binding MinimizedCommand}" Margin="0,0,5,0" />
+            <Button Style="{StaticResource btn-success}" Height="30" Width="30" Padding="0"  Content="↑" Command="{Binding ExpandCommand}" />
+            <Button Style="{StaticResource btn-danger}" Height="30" Width="30" Padding="0"  Content="X"  Command="{Binding CloseCommand}" />
+        </DockPanel>
+        
     </Grid>
 </UserControl>

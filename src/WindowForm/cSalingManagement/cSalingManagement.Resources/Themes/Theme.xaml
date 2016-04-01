@@ -90,15 +90,17 @@
     <!--========================Datagrid=====================================-->
     <Style TargetType="DataGridColumnHeader" x:Key="styleDataGridColumnHeaderDefault">
         <Setter Property="Background" Value="{StaticResource MainColor}"/>
-        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontFamily" Value="Meiryo"/>
-        <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="Gray"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="0.5,0,0,0"/>
     </Style>
     <Style TargetType="DataGridCell" >
-        <Setter Property="MinHeight" Value="50"/>
-        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="MinHeight" Value="30"/>
+        <Setter Property="FontSize" Value="14"/>
     </Style>
 
     <Style TargetType="TextBlock" x:Key="styleDataGridText" BasedOn="{StaticResource styleTextBlockDefault}">

@@ -56,7 +56,7 @@ namespace cSalingManagement.Infrastructure.Common
                 SubMenuItems = new List<SubMenuItem>{
                     new SubMenuItem{
                         Name = SalingManagementCommonFunction.GetInstance().GetResourceLanguageStringByKey("ProductList"),
-                        Action = new Model.Action{
+                        Action = new cSalingManagement.Model.Action{
                             ModuleName= SalingManagementConstant.STRING_MODULE_PRODUCT,
                             RegionName= SalingManagementConstant.STRING_REGION_CONTENT,
                             ViewName = SalingManagementConstant.STRING_VIEW_PRODUCT_LIST
@@ -64,7 +64,7 @@ namespace cSalingManagement.Infrastructure.Common
                     },
                     new SubMenuItem{
                         Name = SalingManagementCommonFunction.GetInstance().GetResourceLanguageStringByKey("ProductDetail"),
-                        Action = new Model.Action{
+                        Action = new cSalingManagement.Model.Action{
                             ModuleName= SalingManagementConstant.STRING_MODULE_PRODUCT,
                             RegionName= SalingManagementConstant.STRING_REGION_CONTENT,
                             ViewName = SalingManagementConstant.STRING_VIEW_PRODUCT_DETAIL
@@ -78,7 +78,7 @@ namespace cSalingManagement.Infrastructure.Common
                 SubMenuItems = new List<SubMenuItem>{
                      new SubMenuItem{
                         Name = SalingManagementCommonFunction.GetInstance().GetResourceLanguageStringByKey("OrderAddNew"),
-                        Action = new Model.Action{
+                        Action = new cSalingManagement.Model.Action{
                             ModuleName= SalingManagementConstant.STRING_MODULE_ORDER,
                             RegionName= SalingManagementConstant.STRING_REGION_CONTENT,
                             ViewName = SalingManagementConstant.STRING_VIEW_ORDER_ADD
@@ -87,7 +87,7 @@ namespace cSalingManagement.Infrastructure.Common
                     ,
                      new SubMenuItem{
                         Name = SalingManagementCommonFunction.GetInstance().GetResourceLanguageStringByKey("OrderList"),
-                        Action = new Model.Action{
+                        Action = new cSalingManagement.Model.Action{
                             ModuleName= SalingManagementConstant.STRING_MODULE_ORDER,
                             RegionName= SalingManagementConstant.STRING_REGION_CONTENT,
                             ViewName = SalingManagementConstant.STRING_VIEW_ORDER_LIST

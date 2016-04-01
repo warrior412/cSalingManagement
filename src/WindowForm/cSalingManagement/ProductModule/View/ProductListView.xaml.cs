@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProductModule.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,10 @@ namespace ProductModule.View
     /// </summary>
     public partial class ProductListView : UserControl
     {
-        public ProductListView()
+        public ProductListView(ProductListViewModel vm)
         {
             InitializeComponent();
+            this.DataContext = vm;
         }
     }
 }
