@@ -1,10 +1,15 @@
-﻿using System;
+﻿using cSalingManagement.Resources;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using cSalingManagement.Infrastructure;
+using cSalingManagement.Common;
+using cSalingManagement.Infrastructure.Common;
+using cSalingManagement.Properties;
 
 namespace cSalingManagement
 {
@@ -15,9 +20,16 @@ namespace cSalingManagement
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            initialApplication();
             base.OnStartup(e);
-            Bootstrapper bootStrapper = new Bootstrapper();
-            bootStrapper.Run();
+            //Bootstrapper bootStrapper = new Bootstrapper();
+            //bootStrapper.Run();
+        }
+
+        private void initialApplication()
+        {
+            SalingManagementCommonFunction.GetInstance().CurrentLanguage = Settings.Default.Display_Language;
+            SalingManagementCommonFunction.GetInstance().BindingLanguageResourceFile();
         }
     }
 }

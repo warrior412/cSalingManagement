@@ -53,3 +53,4 @@ D:\PROJECT\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\zh-Han
 D:\PROJECT\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.pdb
+D:\PROJECT\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.csprojResolveAssemblyReference.cache

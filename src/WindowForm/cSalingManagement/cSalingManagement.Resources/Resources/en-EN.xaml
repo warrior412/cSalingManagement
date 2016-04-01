@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <!--Message-->
+    <system:String x:Key="KeyNotFound">#Language Error</system:String>
+    
+    <!--Menu-->
+    <system:String x:Key="ProductManagement">Product Management</system:String>
+    <system:String x:Key="ProductList">List products</system:String>
+    <system:String x:Key="ProductDetail">Product details</system:String>
+
+    <system:String x:Key="OrderManagement">Order Management</system:String>
+    <system:String x:Key="OrderList">List orders</system:String>
+    <system:String x:Key="OrderAddNew">Create a new order</system:String>
+    <system:String x:Key="OrderDetail">Order details</system:String>
+    <system:String x:Key="Notification">New requests</system:String>
+    
+    <!--Login Form-->
+    <system:String x:Key="lf_Title">Login Form</system:String>
+    <system:String x:Key="lf_Username">User name</system:String>
+    <system:String x:Key="lf_Password">Password</system:String>
+    <system:String x:Key="lf_LoginButton">Login</system:String>
+    <system:String x:Key="lf_ClearButton">Clear</system:String>
+    
+</ResourceDictionary>

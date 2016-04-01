@@ -39,3 +39,4 @@ D:\PROJECT\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.Pr
 D:\PROJECT\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.csproj.GenerateResource.Cache
 D:\PROJECT\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.pdb
+D:\PROJECT\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.csprojResolveAssemblyReference.cache

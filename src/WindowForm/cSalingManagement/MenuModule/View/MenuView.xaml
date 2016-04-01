@@ -18,23 +18,40 @@
     <Grid x:Name="grdCategories" Background="{StaticResource MainDarkColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" MaxHeight="100"/>
+            <RowDefinition Height="2*" MaxHeight="50"/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="99*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="0">
-            <TextBlock  Text="Saling" Style="{StaticResource H1}" Padding="10,0,20,0"/>
-            <TextBlock Text="Management" Style="{StaticResource H1}" Padding="10,0,0,0"/>
-        </StackPanel>
-
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="60*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="{StaticResource User_Ico}" Width="60" Grid.Column="0" RenderOptions.BitmapScalingMode="HighQuality"/>
+            <TextBlock Text="Admin" Grid.Column="1" Style="{StaticResource H4}"/>
+        </Grid>
+        <Button Grid.Row="1" Style="{StaticResource btn-primary}" Margin="5,0,5,10" Command="{Binding NewRequestCommand}">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style BasedOn="{StaticResource H4}" TargetType="{x:Type TextBlock}" />
+                    </StackPanel.Resources>
+                    <TextBlock Text="{StaticResource Notification}"/>
+                    <TextBlock Text=" (" />
+                    <TextBlock Text="{Binding RequestNumber}" />
+                    <TextBlock Text=")" />
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="2">
             <ItemsControl ItemsSource="{Binding MenuItems}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <ToggleButton x:Name="tbCategory" Cursor="Hand" Style="{StaticResource MenuItem}" Content="{Binding Name}">
+                            <ToggleButton x:Name="tbCategory" IsChecked="True" Cursor="Hand" Style="{StaticResource MenuItem}" Content="{Binding Name}">
                             </ToggleButton>
 
                             <ItemsControl ItemsSource="{Binding SubMenuItems}"

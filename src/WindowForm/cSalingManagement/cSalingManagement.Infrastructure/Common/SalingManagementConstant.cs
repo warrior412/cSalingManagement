@@ -1,4 +1,5 @@
-﻿using cSalingManagement.Model;
+﻿using cSalingManagement.Infrastructure.Common;
+using cSalingManagement.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,56 +31,10 @@ namespace cSalingManagement.Common
         public static string STRING_VIEW_PRODUCT_DETAIL = "ProductDetailView";
         public static string STRING_VIEW_PRODUCT_LIST = "ProductListView";
 
+        public static string STRING_VIEW_NEW_REQUEST = "NewRequestView";
 
-        #region Menu Items
-        public static List<MenuItem> MenuItems = new List<MenuItem>
-        {
-            new MenuItem{
-                Name = "Product Management",
-                Action = "1",
-                SubMenuItems = new List<SubMenuItem>{
-                    new SubMenuItem{
-                        Name = "Product List",
-                        Action = new Model.Action{
-                            ModuleName= STRING_MODULE_PRODUCT,
-                            RegionName= STRING_REGION_CONTENT,
-                            ViewName = STRING_VIEW_PRODUCT_LIST
-                        }
-                    },
-                    new SubMenuItem{
-                        Name = "Add Product",
-                        Action = new Model.Action{
-                            ModuleName= STRING_MODULE_PRODUCT,
-                            RegionName= STRING_REGION_CONTENT,
-                            ViewName = STRING_VIEW_PRODUCT_DETAIL
-                        }
-                    }
-                }
-            },
-            new MenuItem{
-                Name = "Order Management",
-                Action = "2",
-                SubMenuItems = new List<SubMenuItem>{
-                    new SubMenuItem{
-                        Name = "Order Detail",
-                        Action = new Model.Action{
-                            ModuleName= STRING_MODULE_ORDER,
-                            RegionName= STRING_REGION_CONTENT,
-                            ViewName = STRING_VIEW_ORDER_DETAIL
-                        }
-                    },
-                     new SubMenuItem{
-                        Name = "Create Order",
-                        Action = new Model.Action{
-                            ModuleName= STRING_MODULE_ORDER,
-                            RegionName= STRING_REGION_CONTENT,
-                            ViewName = STRING_VIEW_ORDER_ADD
-                        }
-                    }
-                }
-            }
-        }; 
-        #endregion
+
+        
 
 
         

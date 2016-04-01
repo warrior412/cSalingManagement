@@ -22,5 +22,14 @@ namespace cSalingManagement.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("vi-VN")]
+        public string Display_Language {
+            get {
+                return ((string)(this["Display_Language"]));
+            }
+        }
     }
 }

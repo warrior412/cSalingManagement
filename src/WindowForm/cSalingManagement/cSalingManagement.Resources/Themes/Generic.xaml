@@ -3,5 +3,6 @@
         <ResourceDictionary.MergedDictionaries>
             <ResourceDictionary Source="Theme.xaml"></ResourceDictionary>
             <ResourceDictionary Source="OriginalControl.xaml"></ResourceDictionary>
-        </ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="Images.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -1,4 +1,5 @@
 ﻿
+using cSalingManagement.Common;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Regions;
@@ -25,8 +26,6 @@ namespace ProductModule
 
         public void Initialize()
         {
-            var view = this.container.Resolve<ProductListView>();
-            this.regionManager.Regions["ContentRegion"].Add(view, "ProductListView");
         }
     }
 }

@@ -24,8 +24,7 @@ namespace OrderModule
 
         public void Initialize()
         {
-            var view = this.container.Resolve<OrderDetailView>();
-            this.regionManager.Regions["ContentRegion"].Add(view, "OrderDetailView");
+            
             
         }
     }

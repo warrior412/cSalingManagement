@@ -40,11 +40,15 @@ D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Pract
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Practices.Unity.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\OrderModule.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Unity.Wpf.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Wpf.dll
+D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\ProductModule.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\System.Windows.Interactivity.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingManagement.Infrastructure.pdb
+D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\OrderModule.pdb
+D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\ProductModule.pdb
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Practices.Unity.xml
@@ -74,3 +78,5 @@ D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.Prop
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.csproj.GenerateResource.Cache
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.pdb
+D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\NewRequestModule.dll
+D:\PROJECT\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\NewRequestModule.pdb

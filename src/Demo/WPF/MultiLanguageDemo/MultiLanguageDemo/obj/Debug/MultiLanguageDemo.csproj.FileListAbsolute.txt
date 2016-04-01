@@ -1,0 +1,16 @@
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\bin\Debug\MultiLanguageDemo.exe.config
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\bin\Debug\MultiLanguageDemo.exe
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\bin\Debug\MultiLanguageDemo.pdb
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\MultiLanguageDemo.csprojResolveAssemblyReference.cache
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\MainWindow.baml
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\Resources\en-EN.baml
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\Resources\ja-JP.baml
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\Resources\vi-VN.baml
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\MainWindow.g.cs
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\App.g.cs
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\MultiLanguageDemo_MarkupCompile.cache
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\MultiLanguageDemo.g.resources
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\MultiLanguageDemo.Properties.Resources.resources
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\MultiLanguageDemo.csproj.GenerateResource.Cache
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\MultiLanguageDemo.exe
+D:\PROJECT\src\Demo\WPF\MultiLanguageDemo\MultiLanguageDemo\obj\Debug\MultiLanguageDemo.pdb

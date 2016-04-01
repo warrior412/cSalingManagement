@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--Message-->
+    <system:String x:Key="KeyNotFound">#Lỗi ngôn ngữ</system:String>
+
+
+    <!--Menu-->
+    <system:String x:Key="ProductManagement">Quản lý sản phẩm</system:String>
+    <system:String x:Key="ProductList">Danh sách sản phẩm</system:String>
+    <system:String x:Key="ProductDetail">Chi tiết sản phẩm</system:String>
+    
+    <system:String x:Key="OrderManagement">Quản lý hóa đơn</system:String>
+    <system:String x:Key="OrderList">Danh sách hóa đơn</system:String>
+    <system:String x:Key="OrderAddNew">Thêm hóa đơn</system:String>
+    <system:String x:Key="OrderDetail">Chi tiết hóa đơn</system:String>
+    <system:String x:Key="Notification">Yêu cầu mới</system:String>
+
+
+    <!--Login Form-->
+    <system:String x:Key="lf_Title">Màn hình đăng nhập</system:String>
+    <system:String x:Key="lf_Username">Tên người dùng</system:String>
+    <system:String x:Key="lf_Password">Mật khẩu</system:String>
+    <system:String x:Key="lf_LoginButton">Đăng nhập</system:String>
+    <system:String x:Key="lf_ClearButton">Nhập lại</system:String>
+</ResourceDictionary>

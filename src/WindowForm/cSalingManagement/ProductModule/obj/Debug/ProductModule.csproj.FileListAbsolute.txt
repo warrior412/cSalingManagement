@@ -1,12 +1,7 @@
-D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductListView.baml
-D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductListView.g.cs
-D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule_MarkupCompile.cache
-D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.g.resources
-D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.Properties.Resources.resources
-D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csproj.GenerateResource.Cache
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ProductModule.dll.config
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ProductModule.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ProductModule.pdb
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\cSalingManagement.Infrastructure.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Microsoft.Practices.Unity.dll
@@ -15,6 +10,7 @@ D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Unity.Wpf.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Wpf.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\System.Windows.Interactivity.dll
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\cSalingManagement.Infrastructure.pdb
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Microsoft.Practices.Unity.xml
@@ -33,5 +29,14 @@ D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ja\System.Wi
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ko\System.Windows.Interactivity.resources.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csprojResolveAssemblyReference.cache
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductDetailView.baml
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductListView.baml
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductDetailView.g.cs
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductListView.g.cs
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule_MarkupCompile.cache
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.g.resources
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.Properties.Resources.resources
+D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csproj.GenerateResource.Cache
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.pdb

@@ -61,3 +61,4 @@ D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\bin
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\obj\Debug\cSalingManagement.Infrastructure.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\obj\Debug\cSalingManagement.Infrastructure.pdb
+D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\obj\Debug\cSalingManagement.Infrastructure.csprojResolveAssemblyReference.cache

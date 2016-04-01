@@ -92,6 +92,9 @@
     </Compile>
     <Compile Include="ViewModel\ProductDetailViewModel.cs" />
     <Compile Include="ViewModel\ProductListViewModel.cs" />
+    <Compile Include="View\ProductDetailView.xaml.cs">
+      <DependentUpon>ProductDetailView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductListView.xaml.cs">
       <DependentUpon>ProductListView.xaml</DependentUpon>
     </Compile>
@@ -107,8 +110,17 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\cSalingManagement.Infrastructure\cSalingManagement.Infrastructure.csproj">
+      <Project>{9dad695c-7987-48b4-aa07-0990329646e0}</Project>
+      <Name>cSalingManagement.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\ProductDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ProductListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

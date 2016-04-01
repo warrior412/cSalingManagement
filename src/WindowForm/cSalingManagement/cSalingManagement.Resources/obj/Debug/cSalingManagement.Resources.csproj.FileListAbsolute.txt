@@ -12,6 +12,8 @@ D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\bin\Debu
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\bin\Debug\ko\System.Windows.Interactivity.resources.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\Resources\en-EN.baml
+D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\Resources\vi-VN.baml
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\Themes\Generic.baml
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\Themes\OriginalControl.baml
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\Themes\Theme.baml
@@ -21,3 +23,5 @@ D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debu
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\cSalingManagement.Resources.csproj.GenerateResource.Cache
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\cSalingManagement.Resources.dll
 D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\cSalingManagement.Resources.pdb
+D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\cSalingManagement.Resources.csprojResolveAssemblyReference.cache
+D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\Themes\Images.baml

@@ -74,9 +74,21 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Resources\en-EN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\vi-VN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\OriginalControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -93,6 +105,12 @@
   <ItemGroup>
     <Resource Include="Images\checked_status.png" />
     <Resource Include="Images\unchecked_status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\system_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\user_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

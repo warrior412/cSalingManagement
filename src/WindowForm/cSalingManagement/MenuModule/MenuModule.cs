@@ -1,8 +1,10 @@
 ﻿using cSalingManagement.Common;
 using MenuModule.View;
 using Microsoft.Practices.Unity;
+using OrderModule.View;
 using Prism.Modularity;
 using Prism.Regions;
+using ProductModule.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,14 +23,29 @@ namespace MenuModule
         {
             this.container = container;
             this.regionManager = regionManager;
+            this.RegisterAllViewToContainer();
             
         }
 
         public void Initialize()
         {
+            string temp = typeof(ProductDetailView).FullName;
             this.regionManager.RegisterViewWithRegion(SalingManagementConstant.STRING_REGION_MENU,
                                                        () => this.container.Resolve<MenuView>());
 
+        }
+
+        private void RegisterAllViewToContainer()
+        {
+            //NewRequest Module
+            this.container.RegisterType(typeof(Object), typeof(NewRequestModule.View.NewRequestView), SalingManagementConstant.STRING_VIEW_NEW_REQUEST);
+            //Product Module
+            this.container.RegisterType(typeof(Object), typeof(ProductDetailView), SalingManagementConstant.STRING_VIEW_PRODUCT_DETAIL);
+            this.container.RegisterType(typeof(Object), typeof(ProductListView), SalingManagementConstant.STRING_VIEW_PRODUCT_LIST);
+
+            //Order Module
+            this.container.RegisterType(typeof(Object), typeof(OrderAddNewView), SalingManagementConstant.STRING_VIEW_ORDER_ADD);
+            this.container.RegisterType(typeof(Object), typeof(OrderListView), SalingManagementConstant.STRING_VIEW_ORDER_LIST);
         }
     }
 }

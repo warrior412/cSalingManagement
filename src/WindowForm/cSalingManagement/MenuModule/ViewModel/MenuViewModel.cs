@@ -1,4 +1,5 @@
 ﻿using cSalingManagement.Common;
+using cSalingManagement.Infrastructure.Common;
 using cSalingManagement.Model;
 using Microsoft.Practices.Unity;
 using Prism.Commands;
@@ -19,7 +20,13 @@ namespace MenuModule.ViewModel
         public List<MenuItem> MenuItems { get; set; }
 
         #region Private Fields
+        private int _requestNumber;
 
+        public int RequestNumber
+        {
+            get { return _requestNumber; }
+            set { _requestNumber = value; }
+        }
         #endregion
 
 
@@ -28,7 +35,7 @@ namespace MenuModule.ViewModel
             this.RegionManager = regionManager;
             this.ModuleManager = moduleManager;
             this.UnityContainer = container;
-            this.MenuItems = SalingManagementConstant.MenuItems;
+            this.MenuItems = SalingManagementCommonFunction.GetInstance().GetListMenuItem();
         }
 
 
@@ -48,6 +55,14 @@ namespace MenuModule.ViewModel
                 return new DelegateCommand<object>(openContentModule);
             }
         }
+
+        public ICommand NewRequestCommand
+        {
+            get
+            {
+                return new DelegateCommand(openNewRequestModule);
+            }
+        }
         #endregion
 
 
@@ -58,14 +73,23 @@ namespace MenuModule.ViewModel
             if (param == null)
                 return;
 
+            
+
             cSalingManagement.Model.Action action = param as cSalingManagement.Model.Action;
-            // LoadModule method is responsible to load and initialize the module
-            // It loads only if module is not initialize already.
-            ModuleManager.LoadModule(action.ModuleName);
-            var requestInfoRegion = RegionManager.Regions[action.RegionName];
-            var newView = requestInfoRegion.GetView(action.ViewName);
-            // As RequestInfoRegion uses ContentControlRegionAdapter so at a time only one view will be activated.
-            requestInfoRegion.Activate(newView);
+            this.RegionManager.Regions[SalingManagementConstant.STRING_REGION_CONTENT].RequestNavigate(action.ViewName);
+
+
+            //// LoadModule method is responsible to load and initialize the module
+            //// It loads only if module is not initialize already.
+            //ModuleManager.LoadModule(action.ModuleName);
+            //var requestInfoRegion = RegionManager.Regions[action.RegionName];
+            //var newView = requestInfoRegion.GetView(action.ViewName);
+            //// As RequestInfoRegion uses ContentControlRegionAdapter so at a time only one view will be activated.
+            //requestInfoRegion.Activate(newView);
+        }
+        private void openNewRequestModule()
+        {
+            this.RegionManager.Regions[SalingManagementConstant.STRING_REGION_CONTENT].RequestNavigate(SalingManagementConstant.STRING_VIEW_NEW_REQUEST);
         }
         #endregion
     }

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainView" Height="500" Width="800" WindowStyle="None"  ResizeMode="CanResizeWithGrip"
         xmlns:prism="http://www.codeplex.com/prism"
-        xmlns:constant="clr-namespace:cSalingManagement.Common;assembly=cSalingManagement.Infrastructure">
+        xmlns:constant="clr-namespace:cSalingManagement.Common;assembly=cSalingManagement.Infrastructure" WindowStartupLocation="CenterScreen">
     <!--<Window.Resources>
         <DataTemplate DataType="{x:Type ViewModel:ProductDetailViewModel}">
             <View:ProductDetailView/>

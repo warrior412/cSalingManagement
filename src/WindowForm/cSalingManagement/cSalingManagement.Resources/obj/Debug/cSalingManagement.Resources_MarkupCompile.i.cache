@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-3-86481543
+6-186624855
 
 7-749305412
 13212281260
-Themes\Generic.xaml;Themes\OriginalControl.xaml;Themes\Theme.xaml;
+Resources\en-EN.xaml;Resources\vi-VN.xaml;Themes\Generic.xaml;Themes\Images.xaml;Themes\OriginalControl.xaml;Themes\Theme.xaml;
 
 False
 

@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--================Image===================== -->
+    <BitmapImage x:Key="System_Logo" UriSource="../Images/system_icon.png" />
+    <BitmapImage x:Key="User_Ico" UriSource="../Images/user_icon.png" />
+</ResourceDictionary>

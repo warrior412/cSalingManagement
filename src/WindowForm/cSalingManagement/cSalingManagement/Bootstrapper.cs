@@ -1,6 +1,7 @@
 ﻿using cSalingManagement.View;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
+using Prism.Regions;
 using Prism.Unity;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace cSalingManagement
             
             moduleCatalog.AddModule(typeof(TitleModule.TitleModule));
             moduleCatalog.AddModule(typeof(MenuModule.MenuModule));
+            moduleCatalog.AddModule(typeof(NewRequestModule.NewRequestModule));
             moduleCatalog.AddModule(typeof(OrderModule.OrderModule), InitializationMode.OnDemand);
             moduleCatalog.AddModule(typeof(ProductModule.ProductModule), InitializationMode.OnDemand);
         }
@@ -42,7 +44,9 @@ namespace cSalingManagement
 
             //Container.RegisterType<RequestViewModel>();
             //Container.RegisterType<RequestDetail>();
+
             base.ConfigureContainer();
+            this.Container.RegisterType(typeof(IRegionNavigationService), typeof(RegionNavigationService));
         }
     }
 }

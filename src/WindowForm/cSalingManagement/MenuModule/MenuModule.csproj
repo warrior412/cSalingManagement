@@ -121,6 +121,18 @@
       <Project>{9dad695c-7987-48b4-aa07-0990329646e0}</Project>
       <Name>cSalingManagement.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NewRequestModule\NewRequestModule.csproj">
+      <Project>{f6b2f38f-3aac-47f2-af88-a2d3cc6ff3f5}</Project>
+      <Name>NewRequestModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrderModule\OrderModule.csproj">
+      <Project>{5531a46b-316b-4060-86b5-ee302b7ca1d0}</Project>
+      <Name>OrderModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProductModule\ProductModule.csproj">
+      <Project>{e69b46d3-b826-42e1-9654-ed36e27c0925}</Project>
+      <Name>ProductModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

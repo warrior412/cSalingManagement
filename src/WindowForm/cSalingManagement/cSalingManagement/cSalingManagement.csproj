@@ -94,6 +94,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -142,7 +143,6 @@
   <ItemGroup>
     <Folder Include="Provider\" />
     <Folder Include="Resources\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cSalingManagement.Infrastructure\cSalingManagement.Infrastructure.csproj">
@@ -156,6 +156,10 @@
     <ProjectReference Include="..\MenuModule\MenuModule.csproj">
       <Project>{784c4bd1-c2c4-40de-8469-740d751cc130}</Project>
       <Name>MenuModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewRequestModule\NewRequestModule.csproj">
+      <Project>{f6b2f38f-3aac-47f2-af88-a2d3cc6ff3f5}</Project>
+      <Name>NewRequestModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\OrderModule\OrderModule.csproj">
       <Project>{5531a46b-316b-4060-86b5-ee302b7ca1d0}</Project>
