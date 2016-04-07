@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="cSalingManagementModel1StoreContainer" CdmEntityContainer="cSalingManagementEntities">
+    <EntitySetMapping Name="M_UserAccount">
+      <EntityTypeMapping TypeName="cSalingManagementModel1.M_UserAccount">
+        <MappingFragment StoreEntitySet="M_UserAccount">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temps">
+      <EntityTypeMapping TypeName="cSalingManagementModel1.temp">
+        <MappingFragment StoreEntitySet="temp">
+          <ScalarProperty Name="aa" ColumnName="aa" />
+          <ScalarProperty Name="bb" ColumnName="bb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_MUserAccount_Delete" FunctionName="cSalingManagementModel1.Store.sp_MUserAccount_Delete" />
+    <FunctionImportMapping FunctionImportName="sp_MUserAccount_Get" FunctionName="cSalingManagementModel1.Store.sp_MUserAccount_Get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="cSalingManagementModel1.sp_MUserAccount_Get_Result">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MUserAccount_GetAll" FunctionName="cSalingManagementModel1.Store.sp_MUserAccount_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="cSalingManagementModel1.sp_MUserAccount_GetAll_Result">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MUserAccount_Insert" FunctionName="cSalingManagementModel1.Store.sp_MUserAccount_Insert" />
+    <FunctionImportMapping FunctionImportName="sp_MUserAccount_Update" FunctionName="cSalingManagementModel1.Store.sp_MUserAccount_Update" />
+  </EntityContainerMapping>
+</Mapping>

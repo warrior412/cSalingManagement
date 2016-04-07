@@ -1,0 +1,1777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="cSalingManagement_LocalModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="cSalingManagement_LocalModelStoreContainer">
+          <EntitySet Name="M_Account" EntityType="cSalingManagement_LocalModel.Store.M_Account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="M_Category" EntityType="cSalingManagement_LocalModel.Store.M_Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="M_Customer" EntityType="cSalingManagement_LocalModel.Store.M_Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="M_Employee" EntityType="cSalingManagement_LocalModel.Store.M_Employee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="M_Product" EntityType="cSalingManagement_LocalModel.Store.M_Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="M_Supplier" EntityType="cSalingManagement_LocalModel.Store.M_Supplier" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Unit" EntityType="cSalingManagement_LocalModel.Store.T_Unit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="temp" EntityType="cSalingManagement_LocalModel.Store.temp" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="M_Account">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Role" Type="int" />
+        </EntityType>
+        <EntityType Name="M_Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="CategoryName_VI" Type="varchar" MaxLength="50" />
+          <Property Name="CategoryName_EN" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="M_Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="FirstName" Type="varchar" MaxLength="10" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="10" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="Address" Type="varchar" MaxLength="200" />
+          <Property Name="PhoneNo_1" Type="varchar" MaxLength="20" />
+          <Property Name="PhoneNo_2" Type="varchar" MaxLength="20" />
+          <Property Name="CustomerType" Type="varchar" MaxLength="10" />
+          <Property Name="Detail" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="CreatedUser" Type="varchar" MaxLength="10" />
+          <Property Name="UpdateDate" Type="date" />
+          <Property Name="UpdateUser" Type="varchar" MaxLength="10" />
+          <Property Name="UserID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="M_Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="FirstName" Type="varchar" MaxLength="10" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="20" />
+          <Property Name="LastName" Type="varchar" MaxLength="10" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="Address" Type="varchar" MaxLength="200" />
+          <Property Name="PhoneNo_1" Type="varchar" MaxLength="10" />
+          <Property Name="PhoneNo_2" Type="varchar" MaxLength="10" />
+          <Property Name="Picture" Type="image" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="CreatedUser" Type="varchar" MaxLength="10" />
+          <Property Name="Job" Type="varchar" MaxLength="10" />
+          <Property Name="UserID" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="M_Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ProductName_VI" Type="varchar" MaxLength="100" />
+          <Property Name="ProductName_EN" Type="varchar" MaxLength="100" />
+          <Property Name="ProductImage" Type="image" />
+          <Property Name="OriginalPrice" Type="varchar" MaxLength="10" />
+          <Property Name="SellingPrice" Type="varchar" MaxLength="10" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="DetailInfo" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Rate" Type="int" />
+          <Property Name="Category" Type="varchar" MaxLength="10" />
+          <Property Name="Supplier" Type="varchar" MaxLength="10" />
+          <Property Name="Unit" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="M_Supplier">
+          <Key>
+            <PropertyRef Name="SupplierID" />
+          </Key>
+          <Property Name="SupplierID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="SupplierName" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="200" />
+          <Property Name="PhoneNo_1" Type="varchar" MaxLength="10" />
+          <Property Name="PhoneNo_2" Type="varchar" MaxLength="10" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Rate" Type="int" />
+        </EntityType>
+        <EntityType Name="T_Unit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="UnitName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="temp">
+          <Key>
+            <PropertyRef Name="aa" />
+          </Key>
+          <Property Name="aa" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="bb" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Function Name="sp_MUserAccount_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_MUserAccount_Get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MUserAccount_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_MUserAccount_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_MUserAccount_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMAccountsDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMCategoriesDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMCustomersDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMEmployeesDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMProductsDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SupplierID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteMSuppliersDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteTemp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="aa" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteTempsDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteTUnit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UnitID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteTUnitsDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertMAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="Role" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertMCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryID" Type="varchar" Mode="In" />
+          <Parameter Name="CategoryName_VI" Type="varchar" Mode="In" />
+          <Parameter Name="CategoryName_EN" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertMCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="MiddleName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Gender" Type="bit" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_1" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_2" Type="varchar" Mode="In" />
+          <Parameter Name="CustomerType" Type="varchar" Mode="In" />
+          <Parameter Name="Detail" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="date" Mode="In" />
+          <Parameter Name="CreatedUser" Type="varchar" Mode="In" />
+          <Parameter Name="UpdateDate" Type="date" Mode="In" />
+          <Parameter Name="UpdateUser" Type="varchar" Mode="In" />
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertMEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeID" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="MiddleName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Gender" Type="bit" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_1" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_2" Type="varchar" Mode="In" />
+          <Parameter Name="Picture" Type="image" Mode="In" />
+          <Parameter Name="Status" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedDate" Type="date" Mode="In" />
+          <Parameter Name="CreatedUser" Type="varchar" Mode="In" />
+          <Parameter Name="Job" Type="varchar" Mode="In" />
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertMProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="varchar" Mode="In" />
+          <Parameter Name="ProductName_VI" Type="varchar" Mode="In" />
+          <Parameter Name="ProductName_EN" Type="varchar" Mode="In" />
+          <Parameter Name="ProductImage" Type="image" Mode="In" />
+          <Parameter Name="OriginalPrice" Type="varchar" Mode="In" />
+          <Parameter Name="SellingPrice" Type="varchar" Mode="In" />
+          <Parameter Name="Quantity" Type="int" Mode="In" />
+          <Parameter Name="DetailInfo" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="Rate" Type="int" Mode="In" />
+          <Parameter Name="Category" Type="varchar" Mode="In" />
+          <Parameter Name="Supplier" Type="varchar" Mode="In" />
+          <Parameter Name="Unit" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertMSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SupplierID" Type="varchar" Mode="In" />
+          <Parameter Name="SupplierName" Type="varchar" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_1" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_2" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="Rate" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertTemp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="aa" Type="nchar" Mode="In" />
+          <Parameter Name="bb" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertTUnit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UnitID" Type="varchar" Mode="In" />
+          <Parameter Name="UnitName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateMAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="Role" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateMCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryID" Type="varchar" Mode="In" />
+          <Parameter Name="CategoryName_VI" Type="varchar" Mode="In" />
+          <Parameter Name="CategoryName_EN" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateMCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="MiddleName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Gender" Type="bit" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_1" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_2" Type="varchar" Mode="In" />
+          <Parameter Name="CustomerType" Type="varchar" Mode="In" />
+          <Parameter Name="Detail" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="date" Mode="In" />
+          <Parameter Name="CreatedUser" Type="varchar" Mode="In" />
+          <Parameter Name="UpdateDate" Type="date" Mode="In" />
+          <Parameter Name="UpdateUser" Type="varchar" Mode="In" />
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateMEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeID" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="MiddleName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Gender" Type="bit" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_1" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_2" Type="varchar" Mode="In" />
+          <Parameter Name="Picture" Type="image" Mode="In" />
+          <Parameter Name="Status" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedDate" Type="date" Mode="In" />
+          <Parameter Name="CreatedUser" Type="varchar" Mode="In" />
+          <Parameter Name="Job" Type="varchar" Mode="In" />
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateMProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="varchar" Mode="In" />
+          <Parameter Name="ProductName_VI" Type="varchar" Mode="In" />
+          <Parameter Name="ProductName_EN" Type="varchar" Mode="In" />
+          <Parameter Name="ProductImage" Type="image" Mode="In" />
+          <Parameter Name="OriginalPrice" Type="varchar" Mode="In" />
+          <Parameter Name="SellingPrice" Type="varchar" Mode="In" />
+          <Parameter Name="Quantity" Type="int" Mode="In" />
+          <Parameter Name="DetailInfo" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="Rate" Type="int" Mode="In" />
+          <Parameter Name="Category" Type="varchar" Mode="In" />
+          <Parameter Name="Supplier" Type="varchar" Mode="In" />
+          <Parameter Name="Unit" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateMSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SupplierID" Type="varchar" Mode="In" />
+          <Parameter Name="SupplierName" Type="varchar" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_1" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_2" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="Rate" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateTemp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="aa" Type="nchar" Mode="In" />
+          <Parameter Name="bb" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_InsertUpdateTUnit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UnitID" Type="varchar" Mode="In" />
+          <Parameter Name="UnitName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMAccountsAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMAccountsDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrderByExpression" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMAccountsPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMCategoriesAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMCategoriesDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrderByExpression" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMCategoriesPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMCustomersAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMCustomersDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrderByExpression" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMCustomersPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMEmployeesAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMEmployeesDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrderByExpression" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMEmployeesPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMProductsAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMProductsDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrderByExpression" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMProductsPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SupplierID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMSuppliersAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectMSuppliersDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrderByExpression" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectMSuppliersPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectTemp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="aa" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectTempsAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectTempsDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrderByExpression" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectTempsPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectTUnit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UnitID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectTUnitsAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_SelectTUnitsDynamic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WhereCondition" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrderByExpression" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_SelectTUnitsPaged" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_UpdateMAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="Role" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateMCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryID" Type="varchar" Mode="In" />
+          <Parameter Name="CategoryName_VI" Type="varchar" Mode="In" />
+          <Parameter Name="CategoryName_EN" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateMCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="MiddleName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Gender" Type="bit" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_1" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_2" Type="varchar" Mode="In" />
+          <Parameter Name="CustomerType" Type="varchar" Mode="In" />
+          <Parameter Name="Detail" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="CreatedDate" Type="date" Mode="In" />
+          <Parameter Name="CreatedUser" Type="varchar" Mode="In" />
+          <Parameter Name="UpdateDate" Type="date" Mode="In" />
+          <Parameter Name="UpdateUser" Type="varchar" Mode="In" />
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateMEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeID" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="MiddleName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Gender" Type="bit" Mode="In" />
+          <Parameter Name="DateOfBirth" Type="date" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_1" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_2" Type="varchar" Mode="In" />
+          <Parameter Name="Picture" Type="image" Mode="In" />
+          <Parameter Name="Status" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedDate" Type="date" Mode="In" />
+          <Parameter Name="CreatedUser" Type="varchar" Mode="In" />
+          <Parameter Name="Job" Type="varchar" Mode="In" />
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateMProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="varchar" Mode="In" />
+          <Parameter Name="ProductName_VI" Type="varchar" Mode="In" />
+          <Parameter Name="ProductName_EN" Type="varchar" Mode="In" />
+          <Parameter Name="ProductImage" Type="image" Mode="In" />
+          <Parameter Name="OriginalPrice" Type="varchar" Mode="In" />
+          <Parameter Name="SellingPrice" Type="varchar" Mode="In" />
+          <Parameter Name="Quantity" Type="int" Mode="In" />
+          <Parameter Name="DetailInfo" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="Rate" Type="int" Mode="In" />
+          <Parameter Name="Category" Type="varchar" Mode="In" />
+          <Parameter Name="Supplier" Type="varchar" Mode="In" />
+          <Parameter Name="Unit" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateMSupplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SupplierID" Type="varchar" Mode="In" />
+          <Parameter Name="SupplierName" Type="varchar" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_1" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo_2" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="Rate" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateTemp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="aa" Type="nchar" Mode="In" />
+          <Parameter Name="bb" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateTUnit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UnitID" Type="varchar" Mode="In" />
+          <Parameter Name="UnitName" Type="varchar" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cSalingManagement_LocalModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="cSalingManagement_LocalEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="M_Account" EntityType="cSalingManagement_LocalModel.M_Account" />
+          <EntitySet Name="M_Category" EntityType="cSalingManagement_LocalModel.M_Category" />
+          <EntitySet Name="M_Customer" EntityType="cSalingManagement_LocalModel.M_Customer" />
+          <EntitySet Name="M_Employee" EntityType="cSalingManagement_LocalModel.M_Employee" />
+          <EntitySet Name="M_Product" EntityType="cSalingManagement_LocalModel.M_Product" />
+          <EntitySet Name="M_Supplier" EntityType="cSalingManagement_LocalModel.M_Supplier" />
+          <EntitySet Name="T_Unit" EntityType="cSalingManagement_LocalModel.T_Unit" />
+          <EntitySet Name="temps" EntityType="cSalingManagement_LocalModel.temp" />
+          <FunctionImport Name="sp_MUserAccount_Delete" />
+          <FunctionImport Name="sp_MUserAccount_Get">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_MUserAccount_GetAll" ReturnType="Collection(cSalingManagement_LocalModel.sp_MUserAccount_GetAll_Result)" />
+          <FunctionImport Name="sp_MUserAccount_Insert">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_MUserAccount_Update">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMAccount">
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMAccountsDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMCategoriesDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMCategory">
+            <Parameter Name="CategoryID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMCustomer">
+            <Parameter Name="CustomerID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMCustomersDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMEmployee">
+            <Parameter Name="EmployeeID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMEmployeesDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMProduct">
+            <Parameter Name="ProductID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMProductsDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMSupplier">
+            <Parameter Name="SupplierID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteMSuppliersDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteTemp">
+            <Parameter Name="aa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteTempsDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteTUnit">
+            <Parameter Name="UnitID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteTUnitsDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertMAccount">
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="Role" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertMCategory">
+            <Parameter Name="CategoryID" Mode="In" Type="String" />
+            <Parameter Name="CategoryName_VI" Mode="In" Type="String" />
+            <Parameter Name="CategoryName_EN" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertMCustomer">
+            <Parameter Name="CustomerID" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="MiddleName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="Boolean" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_1" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_2" Mode="In" Type="String" />
+            <Parameter Name="CustomerType" Mode="In" Type="String" />
+            <Parameter Name="Detail" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedUser" Mode="In" Type="String" />
+            <Parameter Name="UpdateDate" Mode="In" Type="DateTime" />
+            <Parameter Name="UpdateUser" Mode="In" Type="String" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertMEmployee">
+            <Parameter Name="EmployeeID" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="MiddleName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="Boolean" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_1" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_2" Mode="In" Type="String" />
+            <Parameter Name="Picture" Mode="In" Type="Binary" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedUser" Mode="In" Type="String" />
+            <Parameter Name="Job" Mode="In" Type="String" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertMProduct">
+            <Parameter Name="ProductID" Mode="In" Type="String" />
+            <Parameter Name="ProductName_VI" Mode="In" Type="String" />
+            <Parameter Name="ProductName_EN" Mode="In" Type="String" />
+            <Parameter Name="ProductImage" Mode="In" Type="Binary" />
+            <Parameter Name="OriginalPrice" Mode="In" Type="String" />
+            <Parameter Name="SellingPrice" Mode="In" Type="String" />
+            <Parameter Name="Quantity" Mode="In" Type="Int32" />
+            <Parameter Name="DetailInfo" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="Rate" Mode="In" Type="Int32" />
+            <Parameter Name="Category" Mode="In" Type="String" />
+            <Parameter Name="Supplier" Mode="In" Type="String" />
+            <Parameter Name="Unit" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertMSupplier">
+            <Parameter Name="SupplierID" Mode="In" Type="String" />
+            <Parameter Name="SupplierName" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_1" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_2" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="Rate" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertTemp">
+            <Parameter Name="aa" Mode="In" Type="String" />
+            <Parameter Name="bb" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertTUnit">
+            <Parameter Name="UnitID" Mode="In" Type="String" />
+            <Parameter Name="UnitName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateMAccount">
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="Role" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateMCategory">
+            <Parameter Name="CategoryID" Mode="In" Type="String" />
+            <Parameter Name="CategoryName_VI" Mode="In" Type="String" />
+            <Parameter Name="CategoryName_EN" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateMCustomer">
+            <Parameter Name="CustomerID" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="MiddleName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="Boolean" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_1" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_2" Mode="In" Type="String" />
+            <Parameter Name="CustomerType" Mode="In" Type="String" />
+            <Parameter Name="Detail" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedUser" Mode="In" Type="String" />
+            <Parameter Name="UpdateDate" Mode="In" Type="DateTime" />
+            <Parameter Name="UpdateUser" Mode="In" Type="String" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateMEmployee">
+            <Parameter Name="EmployeeID" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="MiddleName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="Boolean" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_1" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_2" Mode="In" Type="String" />
+            <Parameter Name="Picture" Mode="In" Type="Binary" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedUser" Mode="In" Type="String" />
+            <Parameter Name="Job" Mode="In" Type="String" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateMProduct">
+            <Parameter Name="ProductID" Mode="In" Type="String" />
+            <Parameter Name="ProductName_VI" Mode="In" Type="String" />
+            <Parameter Name="ProductName_EN" Mode="In" Type="String" />
+            <Parameter Name="ProductImage" Mode="In" Type="Binary" />
+            <Parameter Name="OriginalPrice" Mode="In" Type="String" />
+            <Parameter Name="SellingPrice" Mode="In" Type="String" />
+            <Parameter Name="Quantity" Mode="In" Type="Int32" />
+            <Parameter Name="DetailInfo" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="Rate" Mode="In" Type="Int32" />
+            <Parameter Name="Category" Mode="In" Type="String" />
+            <Parameter Name="Supplier" Mode="In" Type="String" />
+            <Parameter Name="Unit" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateMSupplier">
+            <Parameter Name="SupplierID" Mode="In" Type="String" />
+            <Parameter Name="SupplierName" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_1" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_2" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="Rate" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateTemp">
+            <Parameter Name="aa" Mode="In" Type="String" />
+            <Parameter Name="bb" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertUpdateTUnit">
+            <Parameter Name="UnitID" Mode="In" Type="String" />
+            <Parameter Name="UnitName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMAccount" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMAccount_Result)">
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMAccountsAll" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMAccountsAll_Result)" />
+          <FunctionImport Name="usp_SelectMAccountsDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+            <Parameter Name="OrderByExpression" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMAccountsPaged" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMAccountsPaged_Result)" />
+          <FunctionImport Name="usp_SelectMCategoriesAll" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMCategoriesAll_Result)" />
+          <FunctionImport Name="usp_SelectMCategoriesDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+            <Parameter Name="OrderByExpression" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMCategoriesPaged" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMCategoriesPaged_Result)" />
+          <FunctionImport Name="usp_SelectMCategory" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMCategory_Result)">
+            <Parameter Name="CategoryID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMCustomer" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMCustomer_Result)">
+            <Parameter Name="CustomerID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMCustomersAll" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMCustomersAll_Result)" />
+          <FunctionImport Name="usp_SelectMCustomersDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+            <Parameter Name="OrderByExpression" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMCustomersPaged" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMCustomersPaged_Result)" />
+          <FunctionImport Name="usp_SelectMEmployee" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMEmployee_Result)">
+            <Parameter Name="EmployeeID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMEmployeesAll" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMEmployeesAll_Result)" />
+          <FunctionImport Name="usp_SelectMEmployeesDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+            <Parameter Name="OrderByExpression" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMEmployeesPaged" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMEmployeesPaged_Result)" />
+          <FunctionImport Name="usp_SelectMProduct" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMProduct_Result)">
+            <Parameter Name="ProductID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMProductsAll" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMProductsAll_Result)" />
+          <FunctionImport Name="usp_SelectMProductsDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+            <Parameter Name="OrderByExpression" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMProductsPaged" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMProductsPaged_Result)" />
+          <FunctionImport Name="usp_SelectMSupplier" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMSupplier_Result)">
+            <Parameter Name="SupplierID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMSuppliersAll" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMSuppliersAll_Result)" />
+          <FunctionImport Name="usp_SelectMSuppliersDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+            <Parameter Name="OrderByExpression" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectMSuppliersPaged" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectMSuppliersPaged_Result)" />
+          <FunctionImport Name="usp_SelectTemp" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectTemp_Result)">
+            <Parameter Name="aa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectTempsAll" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectTempsAll_Result)" />
+          <FunctionImport Name="usp_SelectTempsDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+            <Parameter Name="OrderByExpression" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectTempsPaged" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectTempsPaged_Result)" />
+          <FunctionImport Name="usp_SelectTUnit" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectTUnit_Result)">
+            <Parameter Name="UnitID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectTUnitsAll" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectTUnitsAll_Result)" />
+          <FunctionImport Name="usp_SelectTUnitsDynamic">
+            <Parameter Name="WhereCondition" Mode="In" Type="String" />
+            <Parameter Name="OrderByExpression" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_SelectTUnitsPaged" ReturnType="Collection(cSalingManagement_LocalModel.usp_SelectTUnitsPaged_Result)" />
+          <FunctionImport Name="usp_UpdateMAccount">
+            <Parameter Name="UserID" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="Role" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_UpdateMCategory">
+            <Parameter Name="CategoryID" Mode="In" Type="String" />
+            <Parameter Name="CategoryName_VI" Mode="In" Type="String" />
+            <Parameter Name="CategoryName_EN" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_UpdateMCustomer">
+            <Parameter Name="CustomerID" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="MiddleName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="Boolean" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_1" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_2" Mode="In" Type="String" />
+            <Parameter Name="CustomerType" Mode="In" Type="String" />
+            <Parameter Name="Detail" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedUser" Mode="In" Type="String" />
+            <Parameter Name="UpdateDate" Mode="In" Type="DateTime" />
+            <Parameter Name="UpdateUser" Mode="In" Type="String" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_UpdateMEmployee">
+            <Parameter Name="EmployeeID" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="MiddleName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="Boolean" />
+            <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_1" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_2" Mode="In" Type="String" />
+            <Parameter Name="Picture" Mode="In" Type="Binary" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="CreatedUser" Mode="In" Type="String" />
+            <Parameter Name="Job" Mode="In" Type="String" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_UpdateMProduct">
+            <Parameter Name="ProductID" Mode="In" Type="String" />
+            <Parameter Name="ProductName_VI" Mode="In" Type="String" />
+            <Parameter Name="ProductName_EN" Mode="In" Type="String" />
+            <Parameter Name="ProductImage" Mode="In" Type="Binary" />
+            <Parameter Name="OriginalPrice" Mode="In" Type="String" />
+            <Parameter Name="SellingPrice" Mode="In" Type="String" />
+            <Parameter Name="Quantity" Mode="In" Type="Int32" />
+            <Parameter Name="DetailInfo" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="Rate" Mode="In" Type="Int32" />
+            <Parameter Name="Category" Mode="In" Type="String" />
+            <Parameter Name="Supplier" Mode="In" Type="String" />
+            <Parameter Name="Unit" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_UpdateMSupplier">
+            <Parameter Name="SupplierID" Mode="In" Type="String" />
+            <Parameter Name="SupplierName" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_1" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo_2" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="Int32" />
+            <Parameter Name="Rate" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_UpdateTemp">
+            <Parameter Name="aa" Mode="In" Type="String" />
+            <Parameter Name="bb" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_UpdateTUnit">
+            <Parameter Name="UnitID" Mode="In" Type="String" />
+            <Parameter Name="UnitName" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="M_Account">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Role" Type="Int32" />
+        </EntityType>
+        <EntityType Name="M_Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryName_VI" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryName_EN" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="M_Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Gender" Type="Boolean" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNo_1" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNo_2" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CustomerType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Detail" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedUser" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdateUser" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="UserID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="M_Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Gender" Type="Boolean" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNo_1" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNo_2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedUser" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Job" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="UserID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="M_Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ProductName_VI" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ProductName_EN" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ProductImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="OriginalPrice" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SellingPrice" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="DetailInfo" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Rate" Type="Int32" />
+          <Property Name="Category" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Supplier" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Unit" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="M_Supplier">
+          <Key>
+            <PropertyRef Name="SupplierID" />
+          </Key>
+          <Property Name="SupplierID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SupplierName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNo_1" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PhoneNo_2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Rate" Type="Int32" />
+        </EntityType>
+        <EntityType Name="T_Unit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="UnitName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="temp">
+          <Key>
+            <PropertyRef Name="aa" />
+          </Key>
+          <Property Name="aa" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="bb" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <ComplexType Name="sp_MUserAccount_GetAll_Result">
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="Role" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMAccount_Result">
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="Role" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMAccountsAll_Result">
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="Role" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMAccountsPaged_Result">
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="Role" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMCategoriesAll_Result">
+          <Property Type="String" Name="CategoryID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CategoryName_VI" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CategoryName_EN" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMCategoriesPaged_Result">
+          <Property Type="String" Name="CategoryID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CategoryName_VI" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CategoryName_EN" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMCategory_Result">
+          <Property Type="String" Name="CategoryID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="CategoryName_VI" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CategoryName_EN" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMCustomer_Result">
+          <Property Type="String" Name="CustomerID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="Gender" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhoneNo_1" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="PhoneNo_2" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CustomerType" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Detail" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+          <Property Type="String" Name="CreatedUser" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="true" />
+          <Property Type="String" Name="UpdateUser" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UserID" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMCustomersAll_Result">
+          <Property Type="String" Name="CustomerID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="Gender" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhoneNo_1" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="PhoneNo_2" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CustomerType" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Detail" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+          <Property Type="String" Name="CreatedUser" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="true" />
+          <Property Type="String" Name="UpdateUser" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UserID" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMCustomersPaged_Result">
+          <Property Type="String" Name="CustomerID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="Gender" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhoneNo_1" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="PhoneNo_2" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CustomerType" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Detail" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+          <Property Type="String" Name="CreatedUser" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="true" />
+          <Property Type="String" Name="UpdateUser" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UserID" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMEmployee_Result">
+          <Property Type="String" Name="EmployeeID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="Gender" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhoneNo_1" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PhoneNo_2" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Picture" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+          <Property Type="String" Name="CreatedUser" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Job" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UserID" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMEmployeesAll_Result">
+          <Property Type="String" Name="EmployeeID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="Gender" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhoneNo_1" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PhoneNo_2" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Picture" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+          <Property Type="String" Name="CreatedUser" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Job" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UserID" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMEmployeesPaged_Result">
+          <Property Type="String" Name="EmployeeID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="Gender" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhoneNo_1" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PhoneNo_2" Nullable="true" MaxLength="10" />
+          <Property Type="Binary" Name="Picture" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+          <Property Type="String" Name="CreatedUser" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Job" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UserID" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMProduct_Result">
+          <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ProductName_VI" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ProductName_EN" Nullable="true" MaxLength="100" />
+          <Property Type="Binary" Name="ProductImage" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="OriginalPrice" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="SellingPrice" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Quantity" Nullable="true" />
+          <Property Type="String" Name="DetailInfo" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="Rate" Nullable="true" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Supplier" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMProductsAll_Result">
+          <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ProductName_VI" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ProductName_EN" Nullable="true" MaxLength="100" />
+          <Property Type="Binary" Name="ProductImage" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="OriginalPrice" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="SellingPrice" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Quantity" Nullable="true" />
+          <Property Type="String" Name="DetailInfo" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="Rate" Nullable="true" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Supplier" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMProductsPaged_Result">
+          <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="ProductName_VI" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ProductName_EN" Nullable="true" MaxLength="100" />
+          <Property Type="Binary" Name="ProductImage" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="OriginalPrice" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="SellingPrice" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Quantity" Nullable="true" />
+          <Property Type="String" Name="DetailInfo" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="Rate" Nullable="true" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Supplier" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMSupplier_Result">
+          <Property Type="String" Name="SupplierID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhoneNo_1" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PhoneNo_2" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="Rate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMSuppliersAll_Result">
+          <Property Type="String" Name="SupplierID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhoneNo_1" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PhoneNo_2" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="Rate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectMSuppliersPaged_Result">
+          <Property Type="String" Name="SupplierID" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PhoneNo_1" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PhoneNo_2" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="Rate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectTemp_Result">
+          <Property Type="String" Name="aa" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="bb" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectTempsAll_Result">
+          <Property Type="String" Name="aa" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="bb" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectTempsPaged_Result">
+          <Property Type="String" Name="aa" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="bb" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectTUnit_Result">
+          <Property Type="String" Name="UnitID" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="UnitName" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectTUnitsAll_Result">
+          <Property Type="String" Name="UnitID" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="UnitName" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="usp_SelectTUnitsPaged_Result">
+          <Property Type="String" Name="UnitID" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="UnitName" Nullable="true" MaxLength="20" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cSalingManagement_LocalModelStoreContainer" CdmEntityContainer="cSalingManagement_LocalEntities">
+          <EntitySetMapping Name="M_Account">
+            <EntityTypeMapping TypeName="cSalingManagement_LocalModel.M_Account">
+              <MappingFragment StoreEntitySet="M_Account">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Category">
+            <EntityTypeMapping TypeName="cSalingManagement_LocalModel.M_Category">
+              <MappingFragment StoreEntitySet="M_Category">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName_VI" ColumnName="CategoryName_VI" />
+                <ScalarProperty Name="CategoryName_EN" ColumnName="CategoryName_EN" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Customer">
+            <EntityTypeMapping TypeName="cSalingManagement_LocalModel.M_Customer">
+              <MappingFragment StoreEntitySet="M_Customer">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Employee">
+            <EntityTypeMapping TypeName="cSalingManagement_LocalModel.M_Employee">
+              <MappingFragment StoreEntitySet="M_Employee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Product">
+            <EntityTypeMapping TypeName="cSalingManagement_LocalModel.M_Product">
+              <MappingFragment StoreEntitySet="M_Product">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName_VI" ColumnName="ProductName_VI" />
+                <ScalarProperty Name="ProductName_EN" ColumnName="ProductName_EN" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="OriginalPrice" ColumnName="OriginalPrice" />
+                <ScalarProperty Name="SellingPrice" ColumnName="SellingPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DetailInfo" ColumnName="DetailInfo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Supplier">
+            <EntityTypeMapping TypeName="cSalingManagement_LocalModel.M_Supplier">
+              <MappingFragment StoreEntitySet="M_Supplier">
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Unit">
+            <EntityTypeMapping TypeName="cSalingManagement_LocalModel.T_Unit">
+              <MappingFragment StoreEntitySet="T_Unit">
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="temps">
+            <EntityTypeMapping TypeName="cSalingManagement_LocalModel.temp">
+              <MappingFragment StoreEntitySet="temp">
+                <ScalarProperty Name="aa" ColumnName="aa" />
+                <ScalarProperty Name="bb" ColumnName="bb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_MUserAccount_Delete" FunctionName="cSalingManagement_LocalModel.Store.sp_MUserAccount_Delete" />
+          <FunctionImportMapping FunctionImportName="sp_MUserAccount_Get" FunctionName="cSalingManagement_LocalModel.Store.sp_MUserAccount_Get" />
+          <FunctionImportMapping FunctionImportName="sp_MUserAccount_GetAll" FunctionName="cSalingManagement_LocalModel.Store.sp_MUserAccount_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.sp_MUserAccount_GetAll_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_MUserAccount_Insert" FunctionName="cSalingManagement_LocalModel.Store.sp_MUserAccount_Insert" />
+          <FunctionImportMapping FunctionImportName="sp_MUserAccount_Update" FunctionName="cSalingManagement_LocalModel.Store.sp_MUserAccount_Update" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMAccount" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMAccount" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMAccountsDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMAccountsDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMCategoriesDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMCategoriesDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMCategory" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMCategory" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMCustomer" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMCustomer" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMCustomersDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMCustomersDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMEmployee" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMEmployee" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMEmployeesDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMEmployeesDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMProduct" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMProduct" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMProductsDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMProductsDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMSupplier" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMSupplier" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteMSuppliersDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteMSuppliersDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteTemp" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteTemp" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteTempsDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteTempsDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteTUnit" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteTUnit" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteTUnitsDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_DeleteTUnitsDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_InsertMAccount" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertMAccount" />
+          <FunctionImportMapping FunctionImportName="usp_InsertMCategory" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertMCategory" />
+          <FunctionImportMapping FunctionImportName="usp_InsertMCustomer" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertMCustomer" />
+          <FunctionImportMapping FunctionImportName="usp_InsertMEmployee" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertMEmployee" />
+          <FunctionImportMapping FunctionImportName="usp_InsertMProduct" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertMProduct" />
+          <FunctionImportMapping FunctionImportName="usp_InsertMSupplier" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertMSupplier" />
+          <FunctionImportMapping FunctionImportName="usp_InsertTemp" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertTemp" />
+          <FunctionImportMapping FunctionImportName="usp_InsertTUnit" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertTUnit" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateMAccount" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertUpdateMAccount" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateMCategory" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertUpdateMCategory" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateMCustomer" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertUpdateMCustomer" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateMEmployee" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertUpdateMEmployee" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateMProduct" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertUpdateMProduct" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateMSupplier" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertUpdateMSupplier" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateTemp" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertUpdateTemp" />
+          <FunctionImportMapping FunctionImportName="usp_InsertUpdateTUnit" FunctionName="cSalingManagement_LocalModel.Store.usp_InsertUpdateTUnit" />
+          <FunctionImportMapping FunctionImportName="usp_SelectMAccount" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMAccount">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMAccount_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMAccountsAll" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMAccountsAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMAccountsAll_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMAccountsDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMAccountsDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_SelectMAccountsPaged" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMAccountsPaged">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMAccountsPaged_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMCategoriesAll" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMCategoriesAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMCategoriesAll_Result">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName_VI" ColumnName="CategoryName_VI" />
+                <ScalarProperty Name="CategoryName_EN" ColumnName="CategoryName_EN" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMCategoriesDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMCategoriesDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_SelectMCategoriesPaged" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMCategoriesPaged">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMCategoriesPaged_Result">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName_VI" ColumnName="CategoryName_VI" />
+                <ScalarProperty Name="CategoryName_EN" ColumnName="CategoryName_EN" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMCategory" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMCategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMCategory_Result">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName_VI" ColumnName="CategoryName_VI" />
+                <ScalarProperty Name="CategoryName_EN" ColumnName="CategoryName_EN" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMCustomer" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMCustomer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMCustomer_Result">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMCustomersAll" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMCustomersAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMCustomersAll_Result">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMCustomersDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMCustomersDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_SelectMCustomersPaged" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMCustomersPaged">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMCustomersPaged_Result">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMEmployee" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMEmployee">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMEmployee_Result">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMEmployeesAll" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMEmployeesAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMEmployeesAll_Result">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMEmployeesDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMEmployeesDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_SelectMEmployeesPaged" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMEmployeesPaged">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMEmployeesPaged_Result">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMProduct" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMProduct_Result">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName_VI" ColumnName="ProductName_VI" />
+                <ScalarProperty Name="ProductName_EN" ColumnName="ProductName_EN" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="OriginalPrice" ColumnName="OriginalPrice" />
+                <ScalarProperty Name="SellingPrice" ColumnName="SellingPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DetailInfo" ColumnName="DetailInfo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMProductsAll" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMProductsAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMProductsAll_Result">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName_VI" ColumnName="ProductName_VI" />
+                <ScalarProperty Name="ProductName_EN" ColumnName="ProductName_EN" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="OriginalPrice" ColumnName="OriginalPrice" />
+                <ScalarProperty Name="SellingPrice" ColumnName="SellingPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DetailInfo" ColumnName="DetailInfo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMProductsDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMProductsDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_SelectMProductsPaged" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMProductsPaged">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMProductsPaged_Result">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName_VI" ColumnName="ProductName_VI" />
+                <ScalarProperty Name="ProductName_EN" ColumnName="ProductName_EN" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="OriginalPrice" ColumnName="OriginalPrice" />
+                <ScalarProperty Name="SellingPrice" ColumnName="SellingPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DetailInfo" ColumnName="DetailInfo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMSupplier" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMSupplier">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMSupplier_Result">
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMSuppliersAll" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMSuppliersAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMSuppliersAll_Result">
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectMSuppliersDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMSuppliersDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_SelectMSuppliersPaged" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectMSuppliersPaged">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectMSuppliersPaged_Result">
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNo_1" ColumnName="PhoneNo_1" />
+                <ScalarProperty Name="PhoneNo_2" ColumnName="PhoneNo_2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectTemp" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectTemp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectTemp_Result">
+                <ScalarProperty Name="aa" ColumnName="aa" />
+                <ScalarProperty Name="bb" ColumnName="bb" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectTempsAll" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectTempsAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectTempsAll_Result">
+                <ScalarProperty Name="aa" ColumnName="aa" />
+                <ScalarProperty Name="bb" ColumnName="bb" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectTempsDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectTempsDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_SelectTempsPaged" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectTempsPaged">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectTempsPaged_Result">
+                <ScalarProperty Name="aa" ColumnName="aa" />
+                <ScalarProperty Name="bb" ColumnName="bb" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectTUnit" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectTUnit">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectTUnit_Result">
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectTUnitsAll" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectTUnitsAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectTUnitsAll_Result">
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SelectTUnitsDynamic" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectTUnitsDynamic" />
+          <FunctionImportMapping FunctionImportName="usp_SelectTUnitsPaged" FunctionName="cSalingManagement_LocalModel.Store.usp_SelectTUnitsPaged">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagement_LocalModel.usp_SelectTUnitsPaged_Result">
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_UpdateMAccount" FunctionName="cSalingManagement_LocalModel.Store.usp_UpdateMAccount" />
+          <FunctionImportMapping FunctionImportName="usp_UpdateMCategory" FunctionName="cSalingManagement_LocalModel.Store.usp_UpdateMCategory" />
+          <FunctionImportMapping FunctionImportName="usp_UpdateMCustomer" FunctionName="cSalingManagement_LocalModel.Store.usp_UpdateMCustomer" />
+          <FunctionImportMapping FunctionImportName="usp_UpdateMEmployee" FunctionName="cSalingManagement_LocalModel.Store.usp_UpdateMEmployee" />
+          <FunctionImportMapping FunctionImportName="usp_UpdateMProduct" FunctionName="cSalingManagement_LocalModel.Store.usp_UpdateMProduct" />
+          <FunctionImportMapping FunctionImportName="usp_UpdateMSupplier" FunctionName="cSalingManagement_LocalModel.Store.usp_UpdateMSupplier" />
+          <FunctionImportMapping FunctionImportName="usp_UpdateTemp" FunctionName="cSalingManagement_LocalModel.Store.usp_UpdateTemp" />
+          <FunctionImportMapping FunctionImportName="usp_UpdateTUnit" FunctionName="cSalingManagement_LocalModel.Store.usp_UpdateTUnit" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
