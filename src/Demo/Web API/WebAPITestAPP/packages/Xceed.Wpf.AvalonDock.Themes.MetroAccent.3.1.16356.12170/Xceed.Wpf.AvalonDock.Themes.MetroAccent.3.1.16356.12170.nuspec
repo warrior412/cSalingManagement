@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Xceed.Wpf.AvalonDock.Themes.MetroAccent</id>
+    <version>3.1.16356.12170</version>
+    <title>Xceed - AvalonDock - Metro Theme</title>
+    <authors>Xceed</authors>
+    <owners>Xceed</owners>
+    <licenseUrl>https://xceed.com/wp-content/downloads/misc/Xceed%20Software%20License%20Agreement.rtf</licenseUrl>
+    <projectUrl>http://www.xceed.com/Extended_WPF_Toolkit_Intro.html</projectUrl>
+    <iconUrl>https://xceed.com/wp-content/downloads/misc/nuget/images/NuGet/LogoXCEEDTwitter.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Xceed Toolkit Plus for WPF is the commercial edition of the popular Toolkit plus for WPF project, the number one collection of WPF controls for creating next-gen Windows apps.</description>
+    <summary>Metro theme (with accent support) library for AvalonDock.</summary>
+    <releaseNotes>See Xceed Toolkit Plus for WPF package for complete release notes:
+				http://www.nuget.org/packages/Extended.Wpf.Toolkit.Plus/3.1.16356.12170</releaseNotes>
+    <copyright>Copyright © Xceed Software Inc. 2007-2016</copyright>
+    <tags>Xceed Toolkit Plus for WPF avalondock metro theme accent</tags>
+    <dependencies>
+      <dependency id="Xceed.Wpf.AvalonDock" version="[3.1.16356.12170]" />
+      <dependency id="Xceed.Wpf.Themes.Metro" version="[3.1.16356.12170]" />
+      <dependency id="Xceed.Wpf.Toolkit" version="[3.1.16356.12170]" />
+    </dependencies>
+    <references>
+      <reference file="Xceed.Wpf.AvalonDock.Themes.MetroAccent.dll" />
+    </references>
+  </metadata>
+</package>

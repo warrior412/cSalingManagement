@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Xceed.Wpf.ListBox</id>
+    <version>3.1.16356.12170</version>
+    <title>Xceed - ListBox</title>
+    <authors>Xceed</authors>
+    <owners>Xceed</owners>
+    <licenseUrl>https://xceed.com/wp-content/downloads/misc/Xceed%20Software%20License%20Agreement.rtf</licenseUrl>
+    <projectUrl>http://www.xceed.com/Extended_WPF_Toolkit_Intro.html</projectUrl>
+    <iconUrl>https://xceed.com/wp-content/downloads/misc/nuget/images/NuGet/LogoXCEEDTwitter.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Combines the streamlined form factor of a listbox—as well as unique “path” views—with lightning-fast remote data retrieval and absolute responsiveness</description>
+    <summary>Ultimate ListBox for WPF, part of Xceed Toolkit Plus for WPF.</summary>
+    <releaseNotes>See Xceed Toolkit Plus for WPF package for complete release notes:
+				http://www.nuget.org/packages/Extended.Wpf.Toolkit.Plus/3.1.16356.12170</releaseNotes>
+    <copyright>Copyright © Xceed Software Inc. 2007-2016</copyright>
+    <tags>Xceed Toolkit Plus for WPF ultimate listbox</tags>
+    <dependencies>
+      <dependency id="Xceed.Wpf.Toolkit" version="[3.1.16356.12170]" />
+    </dependencies>
+    <references>
+      <reference file="Xceed.Wpf.ListBox.dll" />
+    </references>
+  </metadata>
+</package>

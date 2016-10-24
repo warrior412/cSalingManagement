@@ -71,7 +71,7 @@ namespace WebAPITestAPP
                     wc.Encoding = Encoding.UTF8;
                     
                     wc.DownloadStringCompleted += wc_DownloadStringCompleted;
-                    wc.DownloadStringAsync(new Uri("http://localhost:50541/aaa/Book2"));
+                    wc.DownloadStringAsync(new Uri("http://localhost:50541/api/Accpunt/GetM_UserAccount"));
                     
                 });
 
@@ -97,10 +97,17 @@ namespace WebAPITestAPP
 
         void wc_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-            var result = JsonConvert.DeserializeObject<Book[]>(e.Result);
+            string s = e.Result;
+            var result = JsonConvert.DeserializeObject(e.Result);
+            JObject ob = JObject.Parse(result.ToString());
+            var status = ob["Status"];
+            var data = ob["Data"];
+            var list = JsonConvert.DeserializeObject<List<tblTemp>>(data.ToString());
+
+            
             this.Dispatcher.Invoke((Action)(() =>
             {
-                grdData.ItemsSource = result;
+                grdData.ItemsSource = list;
                 busyIndicator.IsBusy = false;
              }));
             

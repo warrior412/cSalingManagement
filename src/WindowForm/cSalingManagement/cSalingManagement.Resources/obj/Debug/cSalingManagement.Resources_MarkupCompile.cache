@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\PROJECT\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\
 cSalingManagement.Resources
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 6-186624855
 
 3-630027162
-13212281260
+13-1386834324
 Resources\en-EN.xaml;Resources\vi-VN.xaml;Themes\Generic.xaml;Themes\Images.xaml;Themes\OriginalControl.xaml;Themes\Theme.xaml;
 
 False

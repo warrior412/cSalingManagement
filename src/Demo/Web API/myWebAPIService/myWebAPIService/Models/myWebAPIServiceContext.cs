@@ -13,10 +13,13 @@ namespace myWebAPIService.Models
         // 
         // System.Data.Entity.Database.SetInitializer(new System.Data.Entity.DropCreateDatabaseIfModelChanges<myWebAPIService.Models.myWebAPIServiceContext>());
 
-        public myWebAPIServiceContext() : base("name=myWebAPIServiceContext")
+        public myWebAPIServiceContext()
+            : base("name=DBSampleEntities")
         {
         }
 
-        public DbSet<M_UserAccount> M_UserAccount { get; set; }
+        public DbSet<tblSample> TBLSample { get; set; }
+
+        public Entities entities { get; set; }
     }
 }

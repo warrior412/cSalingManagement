@@ -244,7 +244,23 @@
                 <StackPanel>
                     <Button Content="Add Data"  Style="{StaticResource btn-info}" Click="Button_Click"/>
                     <Button Content="Get Data" x:Name="btnGetData" Margin="5,5,5,5" HorizontalAlignment="Center" Style="{StaticResource btn-primary}" Height="49"  Width="118"/>
-                    <DataGrid x:Name="grdData" AutoGenerateColumns="True" ScrollViewer.CanContentScroll="True"/>
+                    <DataGrid Name="grdData" AutoGenerateColumns="False" Height="250" ScrollViewer.CanContentScroll="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="Age" Binding="{Binding Age}" />
+                            <DataGridTemplateColumn Header="PictureURI">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Path=PictureURI,  IsAsync=false}" Height="30" Width="30" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                        </DataGrid.Columns>
+                  
+                    </DataGrid>
+
                 </StackPanel>
             </xctk:BusyIndicator.Content>
 

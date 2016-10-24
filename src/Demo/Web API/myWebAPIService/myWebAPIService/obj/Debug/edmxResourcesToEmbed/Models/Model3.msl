@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBSampleModelStoreContainer" CdmEntityContainer="DBSampleEntities2">
+    <EntitySetMapping Name="tblSamples">
+      <EntityTypeMapping TypeName="DBSampleModel.tblSample">
+        <MappingFragment StoreEntitySet="tblSample">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_InsertTempData" FunctionName="DBSampleModel.Store.sp_InsertTempData" />
+    <FunctionImportMapping FunctionImportName="GetPictureByID1" FunctionName="DBSampleModel.Store.GetPictureByID" />
+    <FunctionImportMapping FunctionImportName="sp_SelectAll" FunctionName="DBSampleModel.Store.sp_SelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBSampleModel.sp_SelectAll_Result3">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
