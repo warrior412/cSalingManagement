@@ -138,4 +138,3 @@ D:\JunF\Projects\cSalingManagement\src\Demo\Web API\myWebAPIService\myWebAPIServ
 D:\JunF\Projects\cSalingManagement\src\Demo\Web API\myWebAPIService\myWebAPIService\bin\zh-Hant\System.Spatial.resources.dll
 D:\JunF\Projects\cSalingManagement\src\Demo\Web API\myWebAPIService\myWebAPIService\obj\Debug\myWebAPIService.dll
 D:\JunF\Projects\cSalingManagement\src\Demo\Web API\myWebAPIService\myWebAPIService\obj\Debug\myWebAPIService.pdb
-D:\JunF\Projects\cSalingManagement\src\Demo\Web API\myWebAPIService\myWebAPIService\obj\Debug\myWebAPIService.csprojResolveAssemblyReference.cache

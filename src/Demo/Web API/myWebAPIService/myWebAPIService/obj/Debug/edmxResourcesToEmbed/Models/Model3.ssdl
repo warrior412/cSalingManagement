@@ -14,6 +14,7 @@
   </Function>
   <Function Name="sp_InsertTempData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_SelectMProductAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="DBSampleModelStoreContainer">
     <EntitySet Name="tblSample" EntityType="Self.tblSample" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

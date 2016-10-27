@@ -57,26 +57,24 @@ namespace WebAPITestAPP
         //    }
         //}
 
+
+        void Completed (List<tblTemp> list)
+        {
+            this.Dispatcher.Invoke((Action)(() =>
+            {
+                grdData.ItemsSource = list;
+                busyIndicator.IsBusy = false;
+            }));
+        }
         //Async method to get the data from web service.
-        async void btnGetData_Click(object sender, RoutedEventArgs e)
+        void btnGetData_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 busyIndicator.IsBusy = true;
-                string json = "";
-                await Task.Run(() =>
-                {
-                    WebClient wc = new WebClient();
-                    // UTF-8 として取得
-                    wc.Encoding = Encoding.UTF8;
-                    
-                    wc.DownloadStringCompleted += wc_DownloadStringCompleted;
-                    wc.DownloadStringAsync(new Uri("http://localhost:50541/api/Accpunt/GetM_UserAccount"));
-                    
-                });
-
-                
-
+                DAOProvider dao = DAOProvider.GetInstance();
+                dao.GetAllData();
+                //dao.CallBackComplete=new DAOProvider.FinishCompleted(Completed);
 
             }
             catch (Exception ex)
@@ -95,23 +93,23 @@ namespace WebAPITestAPP
             this.UpdateLayout();
         }
 
-        void wc_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
-        {
-            string s = e.Result;
-            var result = JsonConvert.DeserializeObject(e.Result);
-            JObject ob = JObject.Parse(result.ToString());
-            var status = ob["Status"];
-            var data = ob["Data"];
-            var list = JsonConvert.DeserializeObject<List<tblTemp>>(data.ToString());
+        //void wc_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        //{
+        //    string s = e.Result;
+        //    var result = JsonConvert.DeserializeObject(e.Result);
+        //    JObject ob = JObject.Parse(result.ToString());
+        //    var status = ob["Status"];
+        //    var data = ob["Data"];
+        //    var list = JsonConvert.DeserializeObject<List<tblTemp>>(data.ToString());
 
             
-            this.Dispatcher.Invoke((Action)(() =>
-            {
-                grdData.ItemsSource = list;
-                busyIndicator.IsBusy = false;
-             }));
+        //    this.Dispatcher.Invoke((Action)(() =>
+        //    {
+        //        grdData.ItemsSource = list;
+        //        busyIndicator.IsBusy = false;
+        //     }));
             
-        }
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

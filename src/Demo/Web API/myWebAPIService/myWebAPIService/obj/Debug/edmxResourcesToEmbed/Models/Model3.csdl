@@ -17,6 +17,7 @@
       <Parameter Name="id" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_SelectAll" ReturnType="Collection(DBSampleModel.sp_SelectAll_Result3)" />
+    <FunctionImport Name="sp_SelectMProductAll" ReturnType="Collection(DBSampleModel.sp_SelectMProductAll_Result)" />
   </EntityContainer>
   <ComplexType Name="sp_SelectAll_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -32,5 +33,24 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="Age" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_SelectMProductAll_Result">
+    <Property Type="String" Name="ProductID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CategoryID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProductName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ProductName2" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="DetailDescription" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedUser" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UpdateUser" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="DateTime" Name="ArrivalDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Double" Name="Price" Nullable="true" />
+    <Property Type="Double" Name="SellingPrice" Nullable="true" />
+    <Property Type="String" Name="DetailProductID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ArrivalUser" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>

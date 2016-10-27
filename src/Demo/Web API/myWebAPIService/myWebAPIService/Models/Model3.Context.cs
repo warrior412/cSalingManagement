@@ -53,5 +53,10 @@ namespace myWebAPIService.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SelectAll_Result3>("sp_SelectAll");
         }
+    
+        public virtual ObjectResult<sp_SelectMProductAll_Result> sp_SelectMProductAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_SelectMProductAll_Result>("sp_SelectMProductAll");
+        }
     }
 }

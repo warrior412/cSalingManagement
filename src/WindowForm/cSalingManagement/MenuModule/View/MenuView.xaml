@@ -80,7 +80,7 @@
                                    helper:MouseCommands.MouseCommandParameter="{Binding Action}"
                                    helper:MouseCommands.MouseCommandAction="LeftClick"
                                    Cursor="Hand"
-                                   Foreground="Black"
+                                   Foreground="WhiteSmoke"
                                    Margin="16,0,0,0">
                                                     <TextBlock.ToolTip>
                                                         <ToolTip Content="{Binding Title}" ContentStringFormat="Click here to view {0}." />

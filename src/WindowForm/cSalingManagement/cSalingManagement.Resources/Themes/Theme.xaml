@@ -2,10 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 <!-- ====================Color=======================-->
-    <SolidColorBrush x:Key="MainColor" Color="#FFF7F7F7"/>
+    <!--<SolidColorBrush x:Key="MainColor" Color="#FFF7F7F7"/>
     <SolidColorBrush x:Key="MainDarkColor" Color="#FF9D9D9D"/>
-    <SolidColorBrush x:Key="MainLightColor" Color="Gainsboro"/>
-    <SolidColorBrush x:Key="TitleBackgroundColor" Color="#FFBBBBBB"/>
+    <SolidColorBrush x:Key="MainLightColor" Color="Gainsboro"/>-->
+
+    <SolidColorBrush x:Key="MainColor" Color="#FFD4E1FD"/>
+    <SolidColorBrush x:Key="MainDarkColor" Color="#241C44"/>
+    <SolidColorBrush x:Key="MainLightColor" Color="#FF7DBFF5"/>
+
+    <SolidColorBrush x:Key="TitleBackgroundColor" Color="#241C44"/>
     
     <SolidColorBrush x:Key="BorderColor" Color="#FF818181"/>
     
@@ -89,14 +94,13 @@
 
     <!--========================Datagrid=====================================-->
     <Style TargetType="DataGridColumnHeader" x:Key="styleDataGridColumnHeaderDefault">
-        <Setter Property="Background" Value="{StaticResource MainColor}"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontFamily" Value="Meiryo"/>
-        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="Background" Value="{StaticResource MainLightColor}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Height" Value="40"/>
-        <Setter Property="BorderBrush" Value="Black"/>
-        <Setter Property="BorderThickness" Value="0.5,0,0,0"/>
     </Style>
     <Style TargetType="DataGridCell" >
         <Setter Property="MinHeight" Value="30"/>

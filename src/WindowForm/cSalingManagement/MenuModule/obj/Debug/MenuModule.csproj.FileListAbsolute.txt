@@ -95,6 +95,8 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\b
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Wpf.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\ProductModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\System.Windows.Interactivity.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingmanagement.Webservice.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Newtonsoft.Json.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingManagement.Infrastructure.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\NewRequestModule.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\OrderModule.pdb
@@ -108,6 +110,7 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\b
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Unity.Wpf.xml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Wpf.xml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\System.Windows.Interactivity.xml
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingmanagement.Webservice.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\de\System.Windows.Interactivity.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\en\System.Windows.Interactivity.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\es\System.Windows.Interactivity.resources.dll
@@ -128,3 +131,4 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\o
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Xceed.Wpf.Toolkit.dll

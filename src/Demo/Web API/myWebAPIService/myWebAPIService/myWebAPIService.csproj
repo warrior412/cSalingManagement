@@ -15,7 +15,7 @@
     <AssemblyName>myWebAPIService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -168,6 +168,7 @@
     <Compile Include="Controllers\Book2Controller.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,6 +236,9 @@
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_SelectAll_Result3.cs">
+      <DependentUpon>Model3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_SelectMProductAll_Result.cs">
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblSample.cs">
@@ -438,7 +442,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50541</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50541/</IISUrl>
+          <IISUrl>http://localhost/myWebAPIService</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/myWebAPIService</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

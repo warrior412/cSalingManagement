@@ -3,56 +3,118 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="532.8">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80*"/>
-                <ColumnDefinition Width="20*"/>
-            </Grid.ColumnDefinitions>
-            <DockPanel Grid.Column="0">
-                <TextBlock Text="{DynamicResource 001_Search}" Style="{StaticResource H4}" Foreground="Gray" DockPanel.Dock="Left" Padding="5" Width="80" Height="30" Margin="5,10,0,10"/>
-                <TextBox DockPanel.Dock="Left" Text="{Binding test}" Style="{StaticResource styleTextBoxDefault}" Width="150" Height="30" HorizontalAlignment="Left" Margin="0,0,10,0"/>
-                <ComboBox Style="{StaticResource styleComboBoxDefault}" DockPanel.Dock="Left" Width="100" Height="30" HorizontalAlignment="Left"/>
-            </DockPanel>
-            <Grid Grid.Column="1">
-                <Button Style="{StaticResource btn-info}" Content="{DynamicResource 001_Add}" Height="35" Width="100" HorizontalAlignment="Right" Margin="0,0,5,0"/>
-            </Grid>
-        </Grid>
-        <DockPanel Grid.Row="1" LastChildFill="True">
-            <DataGrid AutoGenerateColumns="False" 
-                      ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderDefault}"
-                      ItemsSource="{Binding LstProductInfo}"
-                      CanUserAddRows="False"
-                      Background="WhiteSmoke">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Path=ProductID}" Header="Mã" Width="80"/>
-                    <DataGridTextColumn Binding="{Binding Path=ProductName}" Header="Tên Sản phẩm" Width="30*" />
-                    <DataGridTextColumn Binding="{Binding Path=Quantity}" Header="Số lượng" Width="80"/>    
-                    <DataGridTemplateColumn  Width="50">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <CheckBox/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn  Width="100">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="Xóa" Style="{StaticResource btn-danger}" Width="80" Padding="0" Height="26" Margin="5,2,5,2" />
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-           
-        </DockPanel>
+    <xctk:BusyIndicator Name="busyIndicator">
+        <xctk:BusyIndicator.BusyContent>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center">Please wait...</TextBlock>
+            </StackPanel>
+        </xctk:BusyIndicator.BusyContent>
 
-    </Grid>
+        <xctk:BusyIndicator.Content>
+            <Grid VerticalAlignment="Stretch" x:Name="mainContent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <DockPanel Grid.Column="0">
+                        <TextBlock Text="{DynamicResource 001_Search}" Style="{StaticResource H4}" Foreground="Gray" DockPanel.Dock="Left" Padding="5" Width="80" Height="30" Margin="5,10,0,10"/>
+                <TextBox DockPanel.Dock="Left" Text="{Binding Path=Text,Mode=TwoWay}" Style="{StaticResource styleTextBoxDefault}" Width="150" Height="30" HorizontalAlignment="Left" Margin="0,0,10,0"/>
+                        <ComboBox Style="{StaticResource styleComboBoxDefault}" DockPanel.Dock="Left" Width="100" Height="30" HorizontalAlignment="Left"/>
+                    </DockPanel>
+                    <Grid Grid.Column="1">
+                        <Button Style="{StaticResource btn-info}" Content="{DynamicResource 001_Add}" Height="35" Width="100" HorizontalAlignment="Right" Margin="0,0,5,0"/>
+                    </Grid>
+                </Grid>
+                <DockPanel Grid.Row="1" LastChildFill="True">
+                    <DataGrid HeadersVisibility="Column"
+                              AutoGenerateColumns="False" x:Name="gvCheckInfo" 
+                              CanUserAddRows="False" RowHeight="40" VerticalScrollBarVisibility="Auto"
+                              ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderDefault}" GridLinesVisibility="Horizontal">
+                        <DataGrid.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.Panel>
+                                    <ItemsPanelTemplate>
+                                        <DataGridRowsPresenter/>
+                                    </ItemsPanelTemplate>
+                                </GroupStyle.Panel>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="{x:Type GroupItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                    <StackPanel Background="{StaticResource MainDarkColor}">
+                                                        <Grid Height="40">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="6*" />
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="6*"/>
+                                                                <ColumnDefinition Width="1*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <DockPanel Grid.Column="0" Margin="5,0,0,0" MinWidth="150">
+                                                                <Button Style="{StaticResource btn-info}" Content="Chi tiết" Margin="5,0,10,0" Padding="10,2,10,2" Height="30" 
+                                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ProductDetailCommand}"/>
+                                                                <TextBlock Text="[" Style="{StaticResource H4}" />
+                                                                <TextBlock Text="{Binding Items[0].ProductID}" Style="{StaticResource H4}"  />
+                                                                <TextBlock Text="]" FontSize="16" Style="{StaticResource H4}"/>
+                                                                <TextBlock Text="{Binding Items[0].ProductName}" Style="{StaticResource H4}" />
+                                                            </DockPanel>
+                                                            
+                                                        </Grid>
+                                                        <ItemsPresenter />
+                                                    </StackPanel>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </DataGrid.GroupStyle>
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="Ngày Nhập"  MinWidth="150" IsReadOnly="True" Width="6*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ArrivalDate}" FontSize="14"  Margin="10,5,0,0"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Số lượng" MinWidth="100" IsReadOnly="True"  Width="2*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Quantity}" FontSize="14"  TextAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Giá" MinWidth="100" IsReadOnly="True"  Width="6*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding SellingPrice}" FontSize="14"  TextAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header=""  MinWidth="100" IsReadOnly="True"  Width="1*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Đặt hàng" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="2,2,2,2" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+
+            </Grid>
+
+        </xctk:BusyIndicator.Content>
+
+    </xctk:BusyIndicator>
+    
 </UserControl>
