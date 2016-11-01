@@ -8,11 +8,7 @@ namespace cSalingManagement.Infrastructure.Model
 {
     public class MProductInfo
     {
-        public string ProductID
-        {
-            get;
-            set;
-        }
+        public string ProductID{get;  set;}
         public string CategoryID { get; set; }
         public string ProductName { get; set; }
         public string ProductName2 { get; set; }

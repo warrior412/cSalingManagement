@@ -51,3 +51,4 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManag
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\cSalingManagement.Resources.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\cSalingManagement.Resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\cSalingManagement.Resources.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\cSalingManagement.Resources.csprojResolveAssemblyReference.cache
