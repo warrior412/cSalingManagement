@@ -35,10 +35,20 @@
                     </Grid>
                 </Grid>
                 <DockPanel Grid.Row="1" LastChildFill="True">
-                    <DataGrid HeadersVisibility="Column"
+                    <DataGrid HeadersVisibility="Column" 
                               AutoGenerateColumns="False" x:Name="gvCheckInfo" 
                               CanUserAddRows="False" RowHeight="40" VerticalScrollBarVisibility="Auto"
                               ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderDefault}" GridLinesVisibility="Horizontal">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Style.Triggers>
+                                    <Trigger Property="DataGridCell.IsSelected" Value="True">
+                                        <Setter Property="Background" Value="White" />
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.Resources>
                         <DataGrid.GroupStyle>
                             <GroupStyle>
                                 <GroupStyle.Panel>
@@ -101,9 +111,14 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
                             <DataGridTemplateColumn Header=""  MinWidth="100" IsReadOnly="True"  Width="1*">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Giỏ hàng" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="2,2,2,2" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Content="Đặt hàng" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="2,2,2,2" />
+                                        <Button Content="Khách đặt" Style="{StaticResource btn-primary}" Height="30" Width="80" Padding="2,2,2,2" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
