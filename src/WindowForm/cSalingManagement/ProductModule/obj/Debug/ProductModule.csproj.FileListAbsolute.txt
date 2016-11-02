@@ -101,3 +101,9 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModul
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csprojResolveAssemblyReference.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductDetailView.baml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductDetailView.g.cs
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule_MarkupCompile.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.pdb

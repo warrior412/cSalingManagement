@@ -78,3 +78,43 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\NewRequestMo
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\NewRequestModule.dll.config
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\NewRequestModule.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\NewRequestModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\cSalingManagement.Infrastructure.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.Unity.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\System.Windows.Interactivity.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\cSalingManagement.Infrastructure.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.Unity.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.Unity.Wpf.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.Wpf.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\System.Windows.Interactivity.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.csprojResolveAssemblyReference.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\View\NewRequestView.baml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\View\NewRequestView.g.cs
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule_MarkupCompile.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.g.resources
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.Properties.Resources.resources
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.csproj.GenerateResource.Cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.pdb

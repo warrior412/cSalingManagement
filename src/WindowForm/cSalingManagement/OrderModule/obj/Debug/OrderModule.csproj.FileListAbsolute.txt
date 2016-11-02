@@ -81,3 +81,45 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\OrderModule.dll.config
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\OrderModule.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\OrderModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Microsoft.Practices.Unity.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\System.Windows.Interactivity.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Microsoft.Practices.Unity.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.Unity.Wpf.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.Wpf.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\System.Windows.Interactivity.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\de\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\en\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\es\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\it\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.csprojResolveAssemblyReference.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderAddNewView.baml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderDetailView.baml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderListView.baml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderAddNewView.g.cs
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderDetailView.g.cs
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderListView.g.cs
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule_MarkupCompile.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.g.resources
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.Properties.Resources.resources
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.csproj.GenerateResource.Cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.pdb
