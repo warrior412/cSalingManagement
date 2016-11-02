@@ -10,7 +10,9 @@
     <projectUrl>http://wpftoolkit.codeplex.com/</projectUrl>
     <iconUrl>http://xceed.com/images/SocialNetworks/LogoXCEEDTwitter.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Extended WPF Toolkit is the number one collection of WPF controls, components and utilities for creating next generation Windows applications. Provides 46 controls, all offered under the Microsoft Public License for maximum freedom. Community Edition v2.9 provides 32 bug fixes and improvements. Documentation, source, and discussions are hosted on CodePlex at http://wpftoolkit.codeplex.com. Plus Edition at http://wpftoolkit.com</description>
+    <description>Extended WPF Toolkit is the number one collection of WPF controls, components and utilities for creating next generation Windows applications. Provides 46 controls, all offered under the Microsoft Public License for maximum freedom. Community Edition v2.9 provides 32 bug fixes and improvements. Documentation, source, and discussions are hosted on CodePlex at http://wpftoolkit.codeplex.com. Plus Edition at http://wpftoolkit.com
+
+*** 75% OFF SPECIAL OFFER ON PLUS EDITION CURRENTLY UNDERWAY ON CODEPLEX ***</description>
     <summary>Extended WPF Toolkit is the number one collection of WPF controls for creating next-gen Windows apps. Community Edition v2.9 provides 32 bug fixes and improvements.</summary>
     <releaseNotes>Community Edition v2.9 provides 32 bug fixes and improvements.</releaseNotes>
     <copyright>Copyright © Xceed Software Inc. 2010-2016</copyright>

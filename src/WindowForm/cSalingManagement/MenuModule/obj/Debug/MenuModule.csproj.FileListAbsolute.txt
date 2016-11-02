@@ -181,3 +181,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\M
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.csproj.GenerateResource.Cache
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingmanagement.Webservice.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingmanagement.Webservice.pdb

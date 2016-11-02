@@ -231,3 +231,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\obj\
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.g.resources
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.Properties.Resources.resources
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.csproj.GenerateResource.Cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingmanagement.Webservice.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingmanagement.Webservice.pdb
