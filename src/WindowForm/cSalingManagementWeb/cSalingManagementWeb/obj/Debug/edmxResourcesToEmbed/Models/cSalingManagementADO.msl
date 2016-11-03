@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="cSalingManagementModelStoreContainer" CdmEntityContainer="cSalingManagementEntities">
+    <EntitySetMapping Name="M_Account">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_Account">
+        <MappingFragment StoreEntitySet="M_Account">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="AccountStatus" ColumnName="AccountStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Category">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_Category">
+        <MappingFragment StoreEntitySet="M_Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Cate_Description" ColumnName="Cate_Description" />
+          <ScalarProperty Name="Cate_Image" ColumnName="Cate_Image" />
+          <ScalarProperty Name="Cate_Status" ColumnName="Cate_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Customer">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_Customer">
+        <MappingFragment StoreEntitySet="M_Customer">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_BirthDay" ColumnName="Customer_BirthDay" />
+          <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+          <ScalarProperty Name="Customer_Mobile" ColumnName="Customer_Mobile" />
+          <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+          <ScalarProperty Name="Customer_Street" ColumnName="Customer_Street" />
+          <ScalarProperty Name="Customer_District" ColumnName="Customer_District" />
+          <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
+          <ScalarProperty Name="Customer_Status" ColumnName="Customer_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Department">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_Department">
+        <MappingFragment StoreEntitySet="M_Department">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Employee">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_Employee">
+        <MappingFragment StoreEntitySet="M_Employee">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Employee_IDCard" ColumnName="Employee_IDCard" />
+          <ScalarProperty Name="Emp_Address" ColumnName="Emp_Address" />
+          <ScalarProperty Name="Emp_DateOfBirth" ColumnName="Emp_DateOfBirth" />
+          <ScalarProperty Name="Emp_Phone" ColumnName="Emp_Phone" />
+          <ScalarProperty Name="Emp_SubPhone" ColumnName="Emp_SubPhone" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Employee_Status" ColumnName="Employee_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_ProductInfo">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_ProductInfo">
+        <MappingFragment StoreEntitySet="M_ProductInfo">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="Pro_InStock" ColumnName="Pro_InStock" />
+          <ScalarProperty Name="Pro_Image" ColumnName="Pro_Image" />
+          <ScalarProperty Name="Pro_Price" ColumnName="Pro_Price" />
+          <ScalarProperty Name="Pro_Desciptions" ColumnName="Pro_Desciptions" />
+          <ScalarProperty Name="Pro_Preservation" ColumnName="Pro_Preservation" />
+          <ScalarProperty Name="Pro_HowToUse" ColumnName="Pro_HowToUse" />
+          <ScalarProperty Name="Pro_Origin" ColumnName="Pro_Origin" />
+          <ScalarProperty Name="Pro_Status" ColumnName="Pro_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Role">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_Role">
+        <MappingFragment StoreEntitySet="M_Role">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Supplier">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_Supplier">
+        <MappingFragment StoreEntitySet="M_Supplier">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="Supp_Address" ColumnName="Supp_Address" />
+          <ScalarProperty Name="Supp_Phone" ColumnName="Supp_Phone" />
+          <ScalarProperty Name="Supp_Sub_Phone" ColumnName="Supp_Sub_Phone" />
+          <ScalarProperty Name="Supp_Email" ColumnName="Supp_Email" />
+          <ScalarProperty Name="Supp_Website" ColumnName="Supp_Website" />
+          <ScalarProperty Name="Supp_Image" ColumnName="Supp_Image" />
+          <ScalarProperty Name="Supplier_Status" ColumnName="Supplier_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="cSalingManagementModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Import">
+      <EntityTypeMapping TypeName="cSalingManagementModel.T_Import">
+        <MappingFragment StoreEntitySet="T_Import">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="Import_Quantity" ColumnName="Import_Quantity" />
+          <ScalarProperty Name="Import_InStock" ColumnName="Import_InStock" />
+          <ScalarProperty Name="Import_OnOrder" ColumnName="Import_OnOrder" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="ExpirionDate" ColumnName="ExpirionDate" />
+          <ScalarProperty Name="Import_User" ColumnName="Import_User" />
+          <ScalarProperty Name="Import_Vote" ColumnName="Import_Vote" />
+          <ScalarProperty Name="Import_Status" ColumnName="Import_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="InsertM_ProductInfo" FunctionName="cSalingManagementModel.Store.InsertM_ProductInfo" />
+  </EntityContainerMapping>
+</Mapping>

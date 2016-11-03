@@ -1,4 +1,6 @@
-﻿using System;
+﻿using cSalingmanagement.Webservice;
+using cSalingManagement.Infrastructure.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,18 @@ namespace ProductModule.View
         public ProductDetailView()
         {
             InitializeComponent();
+            DAOProvider dao = DAOProvider.GetInstance();
+            M_ProductInfo product = new M_ProductInfo();
+            product.ProductName = "Test 2";
+            dao.InsertM_ProductInfo(product);
+            dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed); ;
+        }
+        void Completed(string rs)
+        {
+            this.Dispatcher.Invoke((Action)(() =>
+            {
+                
+            }));
         }
     }
 }

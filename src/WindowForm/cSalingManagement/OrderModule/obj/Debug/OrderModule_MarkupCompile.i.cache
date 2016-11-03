@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\
 OrderModule
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 3-2062868437
 
 11-1031897168
-201875230790
+20-104324175
 View\OrderAddNewView.xaml;View\OrderDetailView.xaml;View\OrderListView.xaml;
 
 False

@@ -50,8 +50,8 @@ namespace ProductModule.View
             {
                 busyIndicator.IsBusy = true;
                 DAOProvider dao = DAOProvider.GetInstance();
-                dao.GetAllData();
-                dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
+                //dao.GetAllData();
+                //dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
 
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace ProductModule.View
         {
             this.Dispatcher.Invoke((Action)(() =>
             {
-               _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<MProductInfo>>(rs.ToString());
+               _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfo>>(rs.ToString());
                _vm.Text = "text";
                 DataContext = _vm;
                 ListCollectionView collectionView = new ListCollectionView(_vm.LstProductInfo);

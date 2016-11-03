@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cSalingManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="M_Account">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="128" FixedLength="true" Unicode="false" />
+    <Property Name="EmployeeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RoleID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AccountStatus" Type="Int32" />
+  </EntityType>
+  <EntityType Name="M_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cate_Description" Type="Binary" MaxLength="100" FixedLength="false" />
+    <Property Name="Cate_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Cate_Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="M_Customer">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Customer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_BirthDay" Type="DateTime" Precision="0" />
+    <Property Name="Customer_Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Street" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_District" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="M_Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="M_Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DepartmentID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Employee_IDCard" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Emp_Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_SubPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Salary" Type="Double" />
+    <Property Name="Employee_Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="M_ProductInfo">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Category" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_InStock" Type="Int32" />
+    <Property Name="Pro_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_Price" Type="Double" />
+    <Property Name="Pro_Desciptions" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_Preservation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_HowToUse" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_Origin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="M_Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="M_Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Supp_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Supp_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Supp_Sub_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Supp_Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Supp_Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Supp_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Supplier_Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="T_Import">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="ImportDate" />
+    </Key>
+    <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ImportDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Supplier" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Import_Quantity" Type="Int32" />
+    <Property Name="Import_InStock" Type="Int32" />
+    <Property Name="Import_OnOrder" Type="Int32" />
+    <Property Name="UnitPrice" Type="Double" />
+    <Property Name="ExpirionDate" Type="DateTime" Precision="0" />
+    <Property Name="Import_User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Import_Vote" Type="Int32" />
+    <Property Name="Import_Status" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="cSalingManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="M_Account" EntityType="Self.M_Account" />
+    <EntitySet Name="M_Category" EntityType="Self.M_Category" />
+    <EntitySet Name="M_Customer" EntityType="Self.M_Customer" />
+    <EntitySet Name="M_Department" EntityType="Self.M_Department" />
+    <EntitySet Name="M_Employee" EntityType="Self.M_Employee" />
+    <EntitySet Name="M_ProductInfo" EntityType="Self.M_ProductInfo" />
+    <EntitySet Name="M_Role" EntityType="Self.M_Role" />
+    <EntitySet Name="M_Supplier" EntityType="Self.M_Supplier" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="T_Import" EntityType="Self.T_Import" />
+    <FunctionImport Name="InsertM_ProductInfo">
+      <Parameter Name="product_name" Mode="In" Type="String" />
+      <Parameter Name="Category" Mode="In" Type="String" />
+      <Parameter Name="Supplier" Mode="In" Type="String" />
+      <Parameter Name="instock" Mode="In" Type="Int32" />
+      <Parameter Name="image" Mode="In" Type="String" />
+      <Parameter Name="price" Mode="In" Type="Double" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="preservation" Mode="In" Type="String" />
+      <Parameter Name="howtouse" Mode="In" Type="String" />
+      <Parameter Name="origin" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(cSalingManagementModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(cSalingManagementModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

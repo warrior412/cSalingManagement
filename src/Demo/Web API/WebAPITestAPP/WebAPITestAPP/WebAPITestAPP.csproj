@@ -134,6 +134,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DAOProvider.cs" />
+    <Compile Include="M_ProductInfo.cs" />
     <Compile Include="ProductList.xaml.cs">
       <DependentUpon>ProductList.xaml</DependentUpon>
     </Compile>
