@@ -56,6 +56,11 @@ namespace cSalingmanagement.Webservice
 
         private void wc_UploadStringCompleted(object sender, UploadStringCompletedEventArgs e)
         {
+            if(e.Error!=null)
+            {
+                this.CallBackFail(e.Error.Message.ToString());
+                return;
+            }
             WebClient wc = (WebClient)sender;
             string s = e.Result;
             var result = JsonConvert.DeserializeObject(e.Result);

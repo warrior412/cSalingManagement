@@ -29,13 +29,22 @@ namespace ProductModule.View
             M_ProductInfo product = new M_ProductInfo();
             product.ProductName = "Test 2";
             dao.InsertM_ProductInfo(product);
-            dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed); ;
+            dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
+            dao.CallBackFail = new DAOProvider.FinishFail(Failed);
         }
         void Completed(string rs)
         {
             this.Dispatcher.Invoke((Action)(() =>
             {
-                
+                MessageBox.Show("Success");
+            }));
+        }
+
+        void Failed(string rs)
+        {
+            this.Dispatcher.Invoke((Action)(() =>
+            {
+                MessageBox.Show(rs);
             }));
         }
     }

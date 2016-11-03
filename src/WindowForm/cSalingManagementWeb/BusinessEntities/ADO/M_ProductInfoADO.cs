@@ -11,7 +11,10 @@ namespace BusinessEntities.ADO
         cSalingManagementEntities entities = new cSalingManagementEntities();
         public int Insert_M_ProductInfo(M_ProductInfo m_productinfo)
         {
-            int resultReturn = entities.InsertM_ProductInfo(m_productinfo.ProductName,
+            int resultReturn;
+            try
+            {
+                resultReturn = entities.InsertM_ProductInfo(m_productinfo.ProductName,
                                             m_productinfo.Category,
                                             m_productinfo.Supplier,
                                             m_productinfo.Pro_InStock,
@@ -22,6 +25,10 @@ namespace BusinessEntities.ADO
                                             m_productinfo.Pro_HowToUse,
                                             m_productinfo.Pro_Origin,
                                             m_productinfo.Pro_Status);
+            }catch(Exception ex)
+            {
+                throw new Exception();
+            }
             return resultReturn;
         }
     }

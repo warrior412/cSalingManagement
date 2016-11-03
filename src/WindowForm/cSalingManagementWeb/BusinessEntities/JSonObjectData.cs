@@ -39,7 +39,7 @@ namespace BusinessEntities
     }
 
 
-    public enum StatusCodes : int
+    public enum StatusCodes :int
     {
         BAD_REQUEST = -1,//URL webservice not found
         NO_DATA = 0,
@@ -48,6 +48,5 @@ namespace BusinessEntities
         UPDATED = 3, // Updated
         DELETED = 4, //Deleted
         UNKNOW_ERROR = -999
-
     }
 }
