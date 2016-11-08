@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADO\M_CategoryInfoDAO.cs" />
     <Compile Include="ADO\M_ProductInfoADO.cs" />
     <Compile Include="cSalingManagementADO.Context.cs">
       <AutoGen>True</AutoGen>
@@ -89,6 +90,9 @@
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectAll_M_ProductInfoWithImportInfo_Result.cs">
+      <DependentUpon>cSalingManagementADO.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>

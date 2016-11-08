@@ -3,7 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" MinWidth="600" MinHeight="406">
+    <xctk:BusyIndicator Name="busyIndicator">
+        <xctk:BusyIndicator.BusyContent>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center">Please wait...</TextBlock>
+            </StackPanel>
+        </xctk:BusyIndicator.BusyContent>
+
+        <xctk:BusyIndicator.Content>
     <Grid Background="{StaticResource MainColor}" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
@@ -57,7 +66,7 @@
 
             <TextBlock Text="MP0001" Grid.Column="1" Grid.Row="0" Style="{StaticResource styleTextBlockTitle}" />
             <TextBox Style="{StaticResource styleTextBoxDefault}" Text="Detail1" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
-            <ComboBox Style="{StaticResource styleComboBoxDefault}" Grid.Column="1" Grid.Row="2"></ComboBox>
+            <ComboBox x:Name="cbCategory" Style="{StaticResource styleComboBoxDefault}" Grid.Column="1" Grid.Row="2"></ComboBox>
             
             <TextBox Style="{StaticResource styleTextBoxDefault}" Text="Detail3" Grid.Column="4" Grid.Row="2"></TextBox>
             <TextBox Style="{StaticResource styleTextAreaDefault}" Text="Detail" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
@@ -177,5 +186,7 @@
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
-    
+        </xctk:BusyIndicator.Content>
+
+    </xctk:BusyIndicator>
 </UserControl>

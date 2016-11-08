@@ -46,6 +46,7 @@
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Prism, Version=6.1.0.0, Culture=neutral, PublicKeyToken=91a96d2a154366d8, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Core.6.1.0\lib\net45\Prism.dll</HintPath>
@@ -75,6 +76,7 @@
     <Compile Include="Common\SalingManagementConstant.cs" />
     <Compile Include="Common\SalingManagement_WebServiceTag.cs" />
     <Compile Include="Converter\CommonConverter.cs" />
+    <Compile Include="Model\MCategoryInfo.cs" />
     <Compile Include="Model\MenuItem.cs" />
     <Compile Include="Model\MProductInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

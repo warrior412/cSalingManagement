@@ -16,8 +16,8 @@ namespace BusinessEntities
     {
         public string CategoryID { get; set; }
         public string CategoryName { get; set; }
-        public byte[] Cate_Description { get; set; }
-        public byte[] Cate_Image { get; set; }
+        public string Cate_Description { get; set; }
+        public string Cate_Image { get; set; }
         public Nullable<int> Cate_Status { get; set; }
     }
 }

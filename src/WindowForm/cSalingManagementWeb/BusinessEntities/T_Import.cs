@@ -14,7 +14,7 @@ namespace BusinessEntities
     
     public partial class T_Import
     {
-        public string ProductID { get; set; }
+        public string fk_ProductID { get; set; }
         public System.DateTime ImportDate { get; set; }
         public string Supplier { get; set; }
         public Nullable<int> Import_Quantity { get; set; }

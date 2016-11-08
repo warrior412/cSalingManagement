@@ -17,7 +17,6 @@ namespace BusinessEntities
         public string ProductID { get; set; }
         public string ProductName { get; set; }
         public string Category { get; set; }
-        public string Supplier { get; set; }
         public Nullable<int> Pro_InStock { get; set; }
         public string Pro_Image { get; set; }
         public Nullable<double> Pro_Price { get; set; }

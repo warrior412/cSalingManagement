@@ -15,9 +15,9 @@
       <PropertyRef Name="CategoryID" />
     </Key>
     <Property Name="CategoryID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Cate_Description" Type="Binary" MaxLength="100" FixedLength="false" />
-    <Property Name="Cate_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cate_Description" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Cate_Image" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Cate_Status" Type="Int32" />
   </EntityType>
   <EntityType Name="M_Customer">
@@ -57,23 +57,6 @@
     <Property Name="Salary" Type="Double" />
     <Property Name="Employee_Status" Type="Int32" />
   </EntityType>
-  <EntityType Name="M_ProductInfo">
-    <Key>
-      <PropertyRef Name="ProductID" />
-    </Key>
-    <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Category" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Supplier" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Pro_InStock" Type="Int32" />
-    <Property Name="Pro_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Pro_Price" Type="Double" />
-    <Property Name="Pro_Desciptions" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="Pro_Preservation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="Pro_HowToUse" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="Pro_Origin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Pro_Status" Type="Int32" />
-  </EntityType>
   <EntityType Name="M_Role">
     <Key>
       <PropertyRef Name="RoleID" />
@@ -105,35 +88,26 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityType Name="T_Import">
-    <Key>
-      <PropertyRef Name="ProductID" />
-      <PropertyRef Name="ImportDate" />
-    </Key>
-    <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ImportDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Supplier" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Import_Quantity" Type="Int32" />
-    <Property Name="Import_InStock" Type="Int32" />
-    <Property Name="Import_OnOrder" Type="Int32" />
-    <Property Name="UnitPrice" Type="Double" />
-    <Property Name="ExpirionDate" Type="DateTime" Precision="0" />
-    <Property Name="Import_User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Import_Vote" Type="Int32" />
-    <Property Name="Import_Status" Type="Int32" />
-  </EntityType>
   <EntityContainer Name="cSalingManagementEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="M_Account" EntityType="Self.M_Account" />
     <EntitySet Name="M_Category" EntityType="Self.M_Category" />
     <EntitySet Name="M_Customer" EntityType="Self.M_Customer" />
     <EntitySet Name="M_Department" EntityType="Self.M_Department" />
     <EntitySet Name="M_Employee" EntityType="Self.M_Employee" />
-    <EntitySet Name="M_ProductInfo" EntityType="Self.M_ProductInfo" />
     <EntitySet Name="M_Role" EntityType="Self.M_Role" />
     <EntitySet Name="M_Supplier" EntityType="Self.M_Supplier" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="T_Import" EntityType="Self.T_Import" />
-    <FunctionImport Name="InsertM_ProductInfo">
+    <FunctionImport Name="InsertM_CategoryInfo" ReturnType="Collection(Int16)">
+      <Parameter Name="cate_name" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="image" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectAll_M_Category" EntitySet="M_Category" ReturnType="Collection(cSalingManagementModel.M_Category)" />
+    <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo" ReturnType="Collection(cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result)" />
+    <EntitySet Name="M_ProductInfo" EntityType="cSalingManagementModel.M_ProductInfo" />
+    <EntitySet Name="T_Import" EntityType="cSalingManagementModel.T_Import" />
+    <FunctionImport Name="InsertM_ProductInfo" ReturnType="Collection(Int16)">
       <Parameter Name="product_name" Mode="In" Type="String" />
       <Parameter Name="Category" Mode="In" Type="String" />
       <Parameter Name="Supplier" Mode="In" Type="String" />
@@ -147,4 +121,61 @@
       <Parameter Name="status" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
+    <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="ProductName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Category" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Pro_InStock" Nullable="true" />
+    <Property Type="String" Name="Pro_Image" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="Pro_Price" Nullable="true" />
+    <Property Type="String" Name="Pro_Desciptions" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Pro_Preservation" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Pro_HowToUse" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Pro_Origin" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Pro_Status" Nullable="true" />
+    <Property Type="String" Name="fk_ProductID" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="ImportDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Supplier" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Import_Quantity" Nullable="true" />
+    <Property Type="Int32" Name="Import_InStock" Nullable="true" />
+    <Property Type="Int32" Name="Import_OnOrder" Nullable="true" />
+    <Property Type="Double" Name="UnitPrice" Nullable="true" />
+    <Property Type="DateTime" Name="ExpirionDate" Nullable="true" />
+    <Property Type="String" Name="Import_User" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Import_Vote" Nullable="true" />
+    <Property Type="Int32" Name="Import_Status" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="M_ProductInfo">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Category" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_InStock" Type="Int32" />
+    <Property Name="Pro_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_Price" Type="Double" />
+    <Property Name="Pro_Desciptions" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_Preservation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_HowToUse" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_Origin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="T_Import">
+    <Key>
+      <PropertyRef Name="fk_ProductID" />
+      <PropertyRef Name="ImportDate" />
+    </Key>
+    <Property Name="fk_ProductID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ImportDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Supplier" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Import_Quantity" Type="Int32" />
+    <Property Name="Import_InStock" Type="Int32" />
+    <Property Name="Import_OnOrder" Type="Int32" />
+    <Property Name="UnitPrice" Type="Double" />
+    <Property Name="ExpirionDate" Type="DateTime" Precision="0" />
+    <Property Name="Import_User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Import_Vote" Type="Int32" />
+    <Property Name="Import_Status" Type="Int32" />
+  </EntityType>
 </Schema>

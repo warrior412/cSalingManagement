@@ -1,4 +1,5 @@
 ﻿using cSalingmanagement.Webservice;
+using cSalingManagement.Infrastructure.Common;
 using cSalingManagement.Infrastructure.Model;
 using Newtonsoft.Json;
 using Prism.Commands;
@@ -41,18 +42,17 @@ namespace ProductModule.View
         {
             InitializeComponent();
             _vm = vm;
-            GetProductData();
+            GetInitData();
         }
         
-        public void GetProductData()
+        public void GetInitData()
         {
             try
             {
                 busyIndicator.IsBusy = true;
                 DAOProvider dao = DAOProvider.GetInstance();
-                //dao.GetAllData();
-                //dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
-
+                dao.GetALL_M_ProductInfoWithImportData();
+                dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
             }
             catch (Exception ex)
             {
@@ -67,18 +67,24 @@ namespace ProductModule.View
             }
         }
 
-        void Completed(string rs)
+
+        void Completed(string tag, object data)
         {
+
             this.Dispatcher.Invoke((Action)(() =>
             {
-               _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfo>>(rs.ToString());
-               _vm.Text = "text";
-                DataContext = _vm;
-                ListCollectionView collectionView = new ListCollectionView(_vm.LstProductInfo);
-                collectionView.GroupDescriptions.Add(new PropertyGroupDescription("ProductID"));
-                this.gvCheckInfo.ItemsSource = collectionView;
-                this.UpdateLayout();
-                busyIndicator.IsBusy = false;
+                MessageBox.Show("Success");
+                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO)
+                {
+                    _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfo>>(data.ToString());
+                    _vm.Text = "text";
+                    DataContext = _vm;
+                    ListCollectionView collectionView = new ListCollectionView(_vm.LstProductInfo);
+                    collectionView.GroupDescriptions.Add(new PropertyGroupDescription("ProductID"));
+                    this.gvCheckInfo.ItemsSource = collectionView;
+                    this.UpdateLayout();
+                    busyIndicator.IsBusy = false;
+                }
             }));
         }
 

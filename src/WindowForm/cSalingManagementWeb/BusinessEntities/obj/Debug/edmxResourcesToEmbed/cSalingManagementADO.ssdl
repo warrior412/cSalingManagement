@@ -15,9 +15,9 @@
       <PropertyRef Name="CategoryID" />
     </Key>
     <Property Name="CategoryID" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="CategoryName" Type="varchar" MaxLength="50" />
-    <Property Name="Cate_Description" Type="varbinary" MaxLength="100" />
-    <Property Name="Cate_Image" Type="varbinary(max)" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cate_Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Cate_Image" Type="varchar" MaxLength="50" />
     <Property Name="Cate_Status" Type="int" />
   </EntityType>
   <EntityType Name="M_Customer">
@@ -64,7 +64,6 @@
     <Property Name="ProductID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="ProductName" Type="varchar" MaxLength="50" />
     <Property Name="Category" Type="varchar" MaxLength="10" />
-    <Property Name="Supplier" Type="varchar" MaxLength="10" />
     <Property Name="Pro_InStock" Type="int" />
     <Property Name="Pro_Image" Type="varchar" MaxLength="50" />
     <Property Name="Pro_Price" Type="float" />
@@ -107,10 +106,10 @@
   </EntityType>
   <EntityType Name="T_Import">
     <Key>
-      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="fk_ProductID" />
       <PropertyRef Name="ImportDate" />
     </Key>
-    <Property Name="ProductID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="fk_ProductID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="ImportDate" Type="datetime" Nullable="false" />
     <Property Name="Supplier" Type="varchar" MaxLength="10" />
     <Property Name="Import_Quantity" Type="int" />
@@ -122,6 +121,12 @@
     <Property Name="Import_Vote" Type="int" />
     <Property Name="Import_Status" Type="int" />
   </EntityType>
+  <Function Name="InsertM_CategoryInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cate_name" Type="varchar" Mode="In" />
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="image" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="int" Mode="In" />
+  </Function>
   <Function Name="InsertM_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="product_name" Type="varchar" Mode="In" />
     <Parameter Name="Category" Type="varchar" Mode="In" />
@@ -135,6 +140,8 @@
     <Parameter Name="origin" Type="varchar" Mode="In" />
     <Parameter Name="status" Type="int" Mode="In" />
   </Function>
+  <Function Name="SelectAll_M_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_ProductInfoWithImportInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="cSalingManagementModelStoreContainer">
     <EntitySet Name="M_Account" EntityType="Self.M_Account" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="M_Category" EntityType="Self.M_Category" Schema="dbo" store:Type="Tables" />

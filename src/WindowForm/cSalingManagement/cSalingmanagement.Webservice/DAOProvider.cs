@@ -15,9 +15,9 @@ namespace cSalingmanagement.Webservice
     public class DAOProvider
     {
 
-        public delegate void FinishCompleted(string rs);
+        public delegate void FinishCompleted(string tag,object data);
         public FinishCompleted CallBackComplete;
-        public delegate void FinishFail(string rs);
+        public delegate void FinishFail(string tag, string data);
         public FinishFail CallBackFail;
 
         public static DAOProvider _instance = null;
@@ -28,14 +28,31 @@ namespace cSalingmanagement.Webservice
             return _instance;
         }
 
-        async public void GetALL_M_ProductInfo()
+        async public void GetALL_M_ProductInfoWithImportData()
         {
+            string url = ConfigurationManager.AppSettings["WSURL"];
             await Task.Run(() =>
             {
                 WebClient wc = new WebClient();
                 wc.Encoding = Encoding.UTF8;
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO);
                 wc.DownloadStringCompleted += wc_DownloadStringCompleted;
-                wc.DownloadStringAsync(new Uri("http://localhost/myWebAPIService/api/Product/GetM_ProductAll"));
+                wc.DownloadStringAsync(new Uri(url + "Product/SelectAll_M_ProductInfoWithImportInfo"));
+            });
+        }
+
+        async public void GetALL_M_CategoryInfo()
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                wc.Encoding = Encoding.UTF8;
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_CATEGORYINFO);
+                wc.DownloadStringCompleted += wc_DownloadStringCompleted;
+                wc.DownloadStringAsync(new Uri(url + "Category/SelectAll_M_CategoryInfo"));
             });
         }
 
@@ -47,32 +64,42 @@ namespace cSalingmanagement.Webservice
                 WebClient wc = new WebClient();
                 string json = JsonConvert.SerializeObject(m_productinfo);
                 wc.Headers[HttpRequestHeader.ContentType] = "application/json";
-                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG,SalingManagement_WebServiceTag.TAG_INSERT_MPRODUCTINFO);
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG,SalingManagement_WebServiceTag.TAG_INSERT_M_PRODUCTINFO);
                 wc.Encoding = Encoding.UTF8;
                 wc.UploadStringCompleted += wc_UploadStringCompleted;
                 wc.UploadStringAsync(new Uri(url + "Product/Insert_M_ProductInfo"), json);
             });
         }
 
+
+
+
+
+
+
         private void wc_UploadStringCompleted(object sender, UploadStringCompletedEventArgs e)
         {
+            WebClient wc = (WebClient)sender;
+            string tag = wc.Headers[SalingManagement_WebServiceTag.SERVICE_TAG];
+
             if(e.Error!=null)
             {
-                this.CallBackFail(e.Error.Message.ToString());
+                this.CallBackFail( tag ,e.Error.Message.ToString());
                 return;
             }
-            WebClient wc = (WebClient)sender;
+            
             string s = e.Result;
             var result = JsonConvert.DeserializeObject(e.Result);
             JObject ob = JObject.Parse(result.ToString());
             var status = ob["Status"];
             var data = ob["Data"];
 
-            string tag = wc.Headers[SalingManagement_WebServiceTag.SERVICE_TAG];
+           
             switch (tag)
             {
-                case SalingManagement_WebServiceTag.TAG_INSERT_MPRODUCTINFO:
-                    this.CallBackComplete(data.ToString());
+                case SalingManagement_WebServiceTag.TAG_INSERT_M_PRODUCTINFO:
+                    this.CallBackComplete(tag,data);
+
                     break;
                 default:
                     break;
@@ -83,12 +110,33 @@ namespace cSalingmanagement.Webservice
         private void wc_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
             WebClient wc = (WebClient)sender;
+            string tag = wc.Headers[SalingManagement_WebServiceTag.SERVICE_TAG];
+
+            if (e.Error != null)
+            {
+                this.CallBackFail(tag,e.Error.Message.ToString());
+                return;
+            }
+            
             string s = e.Result;
             var result = JsonConvert.DeserializeObject(e.Result);
             JObject ob = JObject.Parse(result.ToString());
             var status = ob["Status"];
             var data = ob["Data"];
-            this.CallBackComplete(data.ToString());
+
+            
+            switch (tag)
+            {
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_CATEGORYINFO:
+                    this.CallBackComplete(tag,data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO:
+                    this.CallBackComplete(tag, data);
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
 }

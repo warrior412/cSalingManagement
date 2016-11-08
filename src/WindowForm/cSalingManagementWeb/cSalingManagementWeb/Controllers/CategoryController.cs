@@ -3,23 +3,20 @@ using BusinessEntities.ADO;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Data.Objects;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http;
 
 namespace cSalingManagementWeb.Models
 {
-    public class ProductController : ApiController
+    public class CategoryController : ApiController
     {
-        //
-        // GET: /Product/
 
-
-        // POST api/Product/Insert_M_ProductInfo
+        // POST api/Category/Insert_M_CategoryInfo
         [HttpPost]
-        public string Insert_M_ProductInfo(M_ProductInfo m_productinfo)
+        public string Insert_M_CategoryInfo(M_Category m_categoryinfo)
         {
             JsonObjectData returnData = new JsonObjectData();
             Status status = new Status();
@@ -27,7 +24,7 @@ namespace cSalingManagementWeb.Models
             status.StatusCode = StatusCodes.NO_DATA;
             try
             {
-                resultReturn = new M_ProductInfoADO().Insert_M_ProductInfo(m_productinfo);
+                resultReturn = new M_CategoryInfoDAO().Insert_M_CategoryInfo(m_categoryinfo);
                 status.StatusCode = StatusCodes.CREATED;
             }
             catch (Exception ex)
@@ -41,18 +38,19 @@ namespace cSalingManagementWeb.Models
             return JsonConvert.SerializeObject(returnData, Formatting.None, st);
         }
 
-        // GET api/Product/SelectAll_M_ProductInfoWithImportInfo
+        // GET api/Category/SelectAll_M_CategoryInfo
         [HttpGet]
-        public string SelectAll_M_ProductInfoWithImportInfo()
+        public string SelectAll_M_CategoryInfo()
         {
             JsonObjectData returnData = new JsonObjectData();
             Status status = new Status();
-            List<SelectAll_M_ProductInfoWithImportInfo_Result> resultReturn = null;
+            List<M_Category> resultReturn = null;
             status.StatusCode = StatusCodes.NO_DATA;
             try
             {
-                resultReturn = new M_ProductInfoADO().SelectAll_M_ProductInfoWithImportInfo().ToList();
-                status.StatusCode = StatusCodes.OK;
+                resultReturn = new M_CategoryInfoDAO().SelectAll_M_CategoryInfo().ToList();
+                status.StatusCode = StatusCodes.CREATED;
+                status.Count = resultReturn.Count().ToString();
             }
             catch (Exception ex)
             {
@@ -64,6 +62,5 @@ namespace cSalingManagementWeb.Models
             JsonSerializerSettings st = new JsonSerializerSettings();
             return JsonConvert.SerializeObject(returnData, Formatting.None, st);
         }
-
     }
 }
