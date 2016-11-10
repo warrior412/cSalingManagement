@@ -63,11 +63,19 @@ namespace cSalingManagement.Infrastructure.Common
                         }
                     },
                     new SubMenuItem{
-                        Name = SalingManagementCommonFunction.GetInstance().GetResourceLanguageStringByKey("ProductDetail"),
+                        Name = SalingManagementCommonFunction.GetInstance().GetResourceLanguageStringByKey("ProductAdd"),
                         Action = new cSalingManagement.Model.Action{
                             ModuleName= SalingManagementConstant.STRING_MODULE_PRODUCT,
                             RegionName= SalingManagementConstant.STRING_REGION_CONTENT,
                             ViewName = SalingManagementConstant.STRING_VIEW_PRODUCT_DETAIL
+                        }
+                    },
+                    new SubMenuItem{
+                        Name = SalingManagementCommonFunction.GetInstance().GetResourceLanguageStringByKey("ProductImportRequest"),
+                        Action = new cSalingManagement.Model.Action{
+                            ModuleName= SalingManagementConstant.STRING_MODULE_PRODUCT,
+                            RegionName= SalingManagementConstant.STRING_REGION_CONTENT,
+                            ViewName = SalingManagementConstant.STRING_VIEW_PRODUCT_IMPORT_REQUEST
                         }
                     }
                 }

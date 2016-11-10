@@ -30,6 +30,13 @@ namespace ProductModule.ViewModel
             get { return text; }
             set { text = value; }
         }
+        private bool isAddNew;
+
+        public bool IsAddNew
+        {
+            get { return isAddNew; }
+            set { isAddNew = value; }
+        }
         public ProductDetailViewModel(IRegionManager regionManager, IModuleManager moduleManager, IUnityContainer container)
         {
             this.RegionManager = regionManager;

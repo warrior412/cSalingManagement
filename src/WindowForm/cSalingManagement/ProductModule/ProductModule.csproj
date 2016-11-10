@@ -114,6 +114,9 @@
     <Compile Include="View\ProductDetailView.xaml.cs">
       <DependentUpon>ProductDetailView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ProductImportRequestView.xaml.cs">
+      <DependentUpon>ProductImportRequestView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductListView.xaml.cs">
       <DependentUpon>ProductListView.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\ProductDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductImportRequestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

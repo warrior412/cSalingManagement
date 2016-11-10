@@ -38,10 +38,19 @@ namespace MenuModule
         private void RegisterAllViewToContainer()
         {
             //NewRequest Module
-            this.container.RegisterType(typeof(Object), typeof(NewRequestModule.View.NewRequestView), SalingManagementConstant.STRING_VIEW_NEW_REQUEST);
+            this.container.RegisterType(typeof(Object),
+                typeof(NewRequestModule.View.NewRequestView),
+                SalingManagementConstant.STRING_VIEW_NEW_REQUEST);
             //Product Module
-            this.container.RegisterType(typeof(Object), typeof(ProductDetailView), SalingManagementConstant.STRING_VIEW_PRODUCT_DETAIL);
-            this.container.RegisterType(typeof(Object), typeof(ProductListView), SalingManagementConstant.STRING_VIEW_PRODUCT_LIST);
+            this.container.RegisterType(typeof(Object), 
+                typeof(ProductDetailView), 
+                SalingManagementConstant.STRING_VIEW_PRODUCT_DETAIL);
+            this.container.RegisterType(typeof(Object), 
+                typeof(ProductListView), 
+                SalingManagementConstant.STRING_VIEW_PRODUCT_LIST);
+            this.container.RegisterType(typeof(Object),
+                typeof(ProductImportRequestView), 
+                SalingManagementConstant.STRING_VIEW_PRODUCT_IMPORT_REQUEST);
 
             //Order Module
             this.container.RegisterType(typeof(Object), typeof(OrderAddNewView), SalingManagementConstant.STRING_VIEW_ORDER_ADD);

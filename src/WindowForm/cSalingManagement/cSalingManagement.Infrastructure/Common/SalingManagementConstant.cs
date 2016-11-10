@@ -30,13 +30,14 @@ namespace cSalingManagement.Common
 
         public static string STRING_VIEW_PRODUCT_DETAIL = "ProductDetailView";
         public static string STRING_VIEW_PRODUCT_LIST = "ProductListView";
+        public static string STRING_VIEW_PRODUCT_IMPORT_REQUEST = "ProductImportRequestView";
+        public static string STRING_VIEW_PRODUCT_ADD = "ProductAddView";
 
         public static string STRING_VIEW_NEW_REQUEST = "NewRequestView";
 
 
-        
-
-
+        public static double Applicaton_Width = 1024;
+        public static double Application_Height = 768;
         
     }
 }

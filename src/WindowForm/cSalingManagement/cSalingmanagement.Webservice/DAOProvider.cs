@@ -16,8 +16,9 @@ namespace cSalingmanagement.Webservice
     {
 
         public delegate void FinishCompleted(string tag,object data);
-        public FinishCompleted CallBackComplete;
         public delegate void FinishFail(string tag, string data);
+
+        public FinishCompleted CallBackComplete;
         public FinishFail CallBackFail;
 
         public static DAOProvider _instance = null;
@@ -84,10 +85,10 @@ namespace cSalingmanagement.Webservice
 
             if(e.Error!=null)
             {
-                this.CallBackFail( tag ,e.Error.Message.ToString());
+                this.CallBackFail( tag ,"");
                 return;
             }
-            
+
             string s = e.Result;
             var result = JsonConvert.DeserializeObject(e.Result);
             JObject ob = JObject.Parse(result.ToString());

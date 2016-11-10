@@ -11,11 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using cSalingManagement.Infrastructure;
+using cSalingManagement.Common;
 
 namespace TitleModule.ViewModel
 {
     public class TitleViewModel:BindableBase
     {
+        private bool isMaximized = false;
         public TitleViewModel(IRegionManager regionManager, IModuleManager moduleManager, IUnityContainer container)
         {
             this.RegionManager = regionManager;
@@ -60,10 +63,24 @@ namespace TitleModule.ViewModel
         }
         public void ExpandCommandExecute()
         {
-            if(Application.Current.MainWindow.WindowState== WindowState.Normal)
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            if (!isMaximized)
+            {
+                
+                Application.Current.MainWindow.Top = 0;
+                Application.Current.MainWindow.Left = 0;
+                Application.Current.MainWindow.Height = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height;
+                Application.Current.MainWindow.Width = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width;
+                isMaximized = true;
+            }
             else
-                Application.Current.MainWindow.WindowState = WindowState.Normal;
+            {
+                Application.Current.MainWindow.Height = SalingManagementConstant.Application_Height;
+                Application.Current.MainWindow.Width = SalingManagementConstant.Applicaton_Width;
+                Application.Current.MainWindow.Top = 0;
+                Application.Current.MainWindow.Left = 
+                    (System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width -SalingManagementConstant.Applicaton_Width)/2  ;
+                isMaximized = false;
+            }
         }
         public void MinimizedCommandExecute()
         {

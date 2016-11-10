@@ -64,6 +64,5 @@ namespace cSalingManagementWeb.Models
             JsonSerializerSettings st = new JsonSerializerSettings();
             return JsonConvert.SerializeObject(returnData, Formatting.None, st);
         }
-
     }
 }

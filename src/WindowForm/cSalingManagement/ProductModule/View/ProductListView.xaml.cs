@@ -53,6 +53,7 @@ namespace ProductModule.View
                 DAOProvider dao = DAOProvider.GetInstance();
                 dao.GetALL_M_ProductInfoWithImportData();
                 dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
+                dao.CallBackFail = new DAOProvider.FinishFail(Failed);
             }
             catch (Exception ex)
             {
@@ -88,6 +89,14 @@ namespace ProductModule.View
             }));
         }
 
+        void Failed(string tag, string data)
+        {
+            this.Dispatcher.Invoke((Action)(() =>
+            {
+                MessageBox.Show(data);
+                busyIndicator.IsBusy = false;
+            }));
+        }
         
 
 

@@ -35,7 +35,7 @@ namespace BusinessEntities.ADO
             }
             catch (Exception ex)
             {
-                throw new Exception();
+                throw ex;
             }
             return resultReturn;
         }

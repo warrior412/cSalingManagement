@@ -51,9 +51,9 @@ namespace ProductModule.View
         {
             busyIndicator.IsBusy = true;
             DAOProvider dao = DAOProvider.GetInstance();
-            dao.GetALL_M_CategoryInfo();
             dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
             dao.CallBackFail = new DAOProvider.FinishFail(Failed);
+            dao.GetALL_M_CategoryInfo();
         }
         void Completed(string tag,object data)
         {

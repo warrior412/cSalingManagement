@@ -9,7 +9,8 @@
     <!--Menu-->
     <system:String x:Key="ProductManagement">Quản lý sản phẩm</system:String>
     <system:String x:Key="ProductList">Danh sách sản phẩm</system:String>
-    <system:String x:Key="ProductDetail">Chi tiết sản phẩm</system:String>
+    <system:String x:Key="ProductAdd">Tạo mới sản phẩm</system:String>
+    <system:String x:Key="ProductImportRequest">Yêu cầu nhập hàng</system:String>
     
     <system:String x:Key="OrderManagement">Quản lý hóa đơn</system:String>
     <system:String x:Key="OrderList">Danh sách hóa đơn</system:String>
