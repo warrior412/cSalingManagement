@@ -149,3 +149,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\cSalingManagement.Infrastructure.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Newtonsoft.Json.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\cSalingManagement.Infrastructure.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\cSalingManagement.Infrastructure.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Newtonsoft.Json.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\cSalingManagement.Infrastructure.pdb

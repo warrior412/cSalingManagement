@@ -14,3 +14,5 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webs
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\obj\Debug\cSalingmanagement.Webservice.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingManagement.Infrastructure.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingManagement.Infrastructure.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingManagement.Infrastructure.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingManagement.Infrastructure.pdb

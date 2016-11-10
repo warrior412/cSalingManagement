@@ -65,3 +65,38 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\cSalingMa
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\obj\Debug\cSalingManagementWeb.csprojResolveAssemblyReference.cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\obj\Debug\cSalingManagementWeb.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\obj\Debug\cSalingManagementWeb.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\cSalingManagementWeb.dll.config
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\cSalingManagementWeb.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\cSalingManagementWeb.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\Antlr3.Runtime.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\BusinessEntities.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\EntityFramework.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\Newtonsoft.Json.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Net.Http.Formatting.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Helpers.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Http.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Http.WebHost.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Mvc.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Optimization.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Providers.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Razor.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.WebPages.Deployment.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.WebPages.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.WebPages.Razor.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\WebGrease.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\BusinessEntities.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\EntityFramework.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\Newtonsoft.Json.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Net.Http.Formatting.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Helpers.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Http.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Http.WebHost.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Mvc.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.Razor.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.WebPages.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.WebPages.Deployment.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\bin\System.Web.WebPages.Razor.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\obj\Debug\cSalingManagementWeb.csprojResolveAssemblyReference.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\obj\Debug\cSalingManagementWeb.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\cSalingManagementWeb\obj\Debug\cSalingManagementWeb.pdb

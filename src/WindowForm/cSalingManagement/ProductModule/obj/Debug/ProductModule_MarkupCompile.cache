@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\
 ProductModule
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 3306001343
 
 9-452728592
-79-1101632489
+791735956736
 View\ProductDetailView.xaml;View\ProductImportRequestView.xaml;View\ProductListView.xaml;
 
 False

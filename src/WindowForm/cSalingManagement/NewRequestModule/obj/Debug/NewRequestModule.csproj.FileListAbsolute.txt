@@ -119,3 +119,4 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\D
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Newtonsoft.Json.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Newtonsoft.Json.dll

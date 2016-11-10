@@ -8,3 +8,13 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\DataModel
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\DataModel\obj\Debug\DataModel.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\DataModel\obj\Debug\DataModel.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\DataModel\bin\Debug\DataModel.dll.config
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\DataModel\bin\Debug\DataModel.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\DataModel\bin\Debug\DataModel.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\DataModel\bin\Debug\BusinessEntities.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\DataModel\bin\Debug\EntityFramework.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\DataModel\bin\Debug\BusinessEntities.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\DataModel\bin\Debug\EntityFramework.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\DataModel\obj\Debug\DataModel.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\DataModel\obj\Debug\DataModel.pdb

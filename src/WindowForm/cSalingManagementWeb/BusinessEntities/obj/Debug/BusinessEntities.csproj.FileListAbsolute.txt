@@ -6,3 +6,10 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessE
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\obj\Debug\BusinessEntities.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Debug\BusinessEntities.dll.config
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Debug\BusinessEntities.dll.config
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Debug\BusinessEntities.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Debug\BusinessEntities.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Debug\EntityFramework.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Debug\EntityFramework.xml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\BusinessEntities\obj\Debug\BusinessEntities.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\BusinessEntities\obj\Debug\BusinessEntities.pdb

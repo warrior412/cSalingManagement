@@ -164,3 +164,5 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debu
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductImportRequestView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductImportRequestView.g.cs
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductImportRequestView.baml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductImportRequestView.g.cs
