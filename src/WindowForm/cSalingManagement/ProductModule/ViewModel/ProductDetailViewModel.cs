@@ -23,6 +23,14 @@ namespace ProductModule.ViewModel
             get { return lstCategoryInfo; }
             set { lstCategoryInfo = value; }
         }
+
+        private M_ProductInfoWithImportInfo productDetail = null;
+
+        public M_ProductInfoWithImportInfo ProductDetail
+        {
+            get { return productDetail; }
+            set { productDetail = value; }
+        }
         private string text;
 
         public string Text

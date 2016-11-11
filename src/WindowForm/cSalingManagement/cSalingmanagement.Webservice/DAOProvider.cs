@@ -29,6 +29,7 @@ namespace cSalingmanagement.Webservice
             return _instance;
         }
 
+
         async public void GetALL_M_ProductInfoWithImportData()
         {
             string url = ConfigurationManager.AppSettings["WSURL"];
@@ -42,7 +43,36 @@ namespace cSalingmanagement.Webservice
                 wc.DownloadStringAsync(new Uri(url + "Product/SelectAll_M_ProductInfoWithImportInfo"));
             });
         }
-
+        async public void InsertM_ProductInfo(M_ProductInfo m_productinfo)
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                string json = JsonConvert.SerializeObject(m_productinfo);
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_INSERT_M_PRODUCTINFO);
+                wc.Encoding = Encoding.UTF8;
+                wc.UploadStringCompleted += wc_UploadStringCompleted;
+                wc.UploadStringAsync(new Uri(url + "Product/Insert_M_ProductInfo"), json);
+            });
+        }
+        async public void GetALL_M_ProductInfoWithImportData_ByProductID(string productID)
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                M_ProductInfo product = new M_ProductInfo();
+                product.ProductID = productID;
+                string json = JsonConvert.SerializeObject(product);
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID);
+                wc.Encoding = Encoding.UTF8;
+                wc.UploadStringCompleted += wc_UploadStringCompleted;
+                wc.UploadStringAsync(new Uri(url + "Product/SelectAll_M_ProductInfoWithImportInfo_ByProductID"),json);
+            });
+        }
         async public void GetALL_M_CategoryInfo()
         {
             string url = ConfigurationManager.AppSettings["WSURL"];
@@ -57,20 +87,7 @@ namespace cSalingmanagement.Webservice
             });
         }
 
-        async public void InsertM_ProductInfo(M_ProductInfo m_productinfo)
-        {
-            string url = ConfigurationManager.AppSettings["WSURL"];
-            await Task.Run(() =>
-            {
-                WebClient wc = new WebClient();
-                string json = JsonConvert.SerializeObject(m_productinfo);
-                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
-                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG,SalingManagement_WebServiceTag.TAG_INSERT_M_PRODUCTINFO);
-                wc.Encoding = Encoding.UTF8;
-                wc.UploadStringCompleted += wc_UploadStringCompleted;
-                wc.UploadStringAsync(new Uri(url + "Product/Insert_M_ProductInfo"), json);
-            });
-        }
+        
 
 
 
@@ -100,7 +117,9 @@ namespace cSalingmanagement.Webservice
             {
                 case SalingManagement_WebServiceTag.TAG_INSERT_M_PRODUCTINFO:
                     this.CallBackComplete(tag,data);
-
+                    break;
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID:
+                    this.CallBackComplete(tag, data);
                     break;
                 default:
                     break;

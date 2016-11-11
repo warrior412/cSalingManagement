@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,5 +36,13 @@ namespace cSalingManagement.Infrastructure.Model
         public string Import_User { get; set; }
         public Nullable<int> Import_Vote { get; set; }
         public Nullable<int> Import_Status { get; set; }
+        public ObservableCollection<M_ProductInfoWithImportInfo> JSonToListProductInfoWithImportInfo(object json)
+        {
+            return JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfoWithImportInfo>>(json.ToString());
+        }
+        public M_ProductInfoWithImportInfo JSonToProductInfoWithImportInfo(object json)
+        {
+            return JsonConvert.DeserializeObject<M_ProductInfoWithImportInfo>(json.ToString());
+        }
     }
 }

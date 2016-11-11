@@ -1,10 +1,3 @@
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingmanagement.Webservice.dll.config
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingmanagement.Webservice.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingmanagement.Webservice.pdb
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\Newtonsoft.Json.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\obj\Debug\cSalingmanagement.Webservice.csprojResolveAssemblyReference.cache
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\obj\Debug\cSalingmanagement.Webservice.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\obj\Debug\cSalingmanagement.Webservice.pdb
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingmanagement.Webservice.dll.config
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingmanagement.Webservice.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingmanagement.Webservice.pdb
@@ -12,7 +5,14 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webs
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\obj\Debug\cSalingmanagement.Webservice.csprojResolveAssemblyReference.cache
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\obj\Debug\cSalingmanagement.Webservice.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\obj\Debug\cSalingmanagement.Webservice.pdb
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingManagement.Infrastructure.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingManagement.Infrastructure.pdb
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingManagement.Infrastructure.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingManagement.Infrastructure.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingmanagement.Webservice.dll.config
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingmanagement.Webservice.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingmanagement.Webservice.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingManagement.Infrastructure.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\Newtonsoft.Json.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\bin\Debug\cSalingManagement.Infrastructure.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\obj\Debug\cSalingmanagement.Webservice.csprojResolveAssemblyReference.cache
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\obj\Debug\cSalingmanagement.Webservice.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingmanagement.Webservice\obj\Debug\cSalingmanagement.Webservice.pdb

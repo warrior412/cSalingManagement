@@ -27,7 +27,7 @@ namespace BusinessEntities.ADO
                                             m_productinfo.Pro_Status).ToString());
             }catch(Exception ex)
             {
-                throw new Exception();
+                throw ex;
             }
             return resultReturn;
         }
@@ -40,7 +40,20 @@ namespace BusinessEntities.ADO
             }
             catch (Exception ex)
             {
-                throw new Exception();
+                throw ex;
+            }
+            return resultReturn;
+        }
+        public SelectAll_M_ProductInfoWithImportInfo_Result SelectAll_M_ProductInfoWithImportInfo_ByProductID(string productID)
+        {
+            SelectAll_M_ProductInfoWithImportInfo_Result resultReturn = null;
+            try
+            {
+                resultReturn = entities.SelectAll_M_ProductInfoWithImportInfo_ByProductID(productID).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             return resultReturn;
         }

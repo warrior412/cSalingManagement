@@ -64,20 +64,6 @@
     <Property Name="RoleID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="M_Supplier">
-    <Key>
-      <PropertyRef Name="SupplierID" />
-    </Key>
-    <Property Name="SupplierID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Supp_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="Supp_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Supp_Sub_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Supp_Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Supp_Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Supp_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="Supplier_Status" Type="Int32" />
-  </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -95,7 +81,6 @@
     <EntitySet Name="M_Department" EntityType="Self.M_Department" />
     <EntitySet Name="M_Employee" EntityType="Self.M_Employee" />
     <EntitySet Name="M_Role" EntityType="Self.M_Role" />
-    <EntitySet Name="M_Supplier" EntityType="Self.M_Supplier" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <FunctionImport Name="InsertM_CategoryInfo" ReturnType="Collection(Int16)">
       <Parameter Name="cate_name" Mode="In" Type="String" />
@@ -107,6 +92,10 @@
     <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo" ReturnType="Collection(cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result)" />
     <EntitySet Name="M_ProductInfo" EntityType="cSalingManagementModel.M_ProductInfo" />
     <EntitySet Name="T_Import" EntityType="cSalingManagementModel.T_Import" />
+    <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo_ByProductID" ReturnType="Collection(cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result)">
+      <Parameter Name="ProductID" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="M_Supplier" EntityType="cSalingManagementModel.M_Supplier" />
     <FunctionImport Name="InsertM_ProductInfo" ReturnType="Collection(Int16)">
       <Parameter Name="product_name" Mode="In" Type="String" />
       <Parameter Name="Category" Mode="In" Type="String" />
@@ -177,5 +166,19 @@
     <Property Name="Import_User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Import_Vote" Type="Int32" />
     <Property Name="Import_Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="M_Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Supp_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Supp_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Supp_Sub_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Supp_Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Supp_Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Supp_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Status" Type="Int32" />
   </EntityType>
 </Schema>

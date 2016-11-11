@@ -41,6 +41,31 @@ namespace cSalingManagementWeb.Models
             return JsonConvert.SerializeObject(returnData, Formatting.None, st);
         }
 
+        // POST api/Product/SelectAll_M_ProductInfoWithImportInfo_ByProductID
+        [HttpPost]
+        public string SelectAll_M_ProductInfoWithImportInfo_ByProductID(M_ProductInfo m_productinfo)
+        {
+            JsonObjectData returnData = new JsonObjectData();
+            Status status = new Status();
+            SelectAll_M_ProductInfoWithImportInfo_Result resultReturn = null;
+            status.StatusCode = StatusCodes.NO_DATA;
+            try
+            {
+                resultReturn = new M_ProductInfoADO().SelectAll_M_ProductInfoWithImportInfo_ByProductID(m_productinfo.ProductID);
+                status.StatusCode = StatusCodes.OK;
+            }
+            catch (Exception ex)
+            {
+                status.StatusMsg = ex.Message;
+                status.StatusCode = StatusCodes.UNKNOW_ERROR;
+            }
+            returnData.Status = status;
+            returnData.Data = resultReturn;
+            JsonSerializerSettings st = new JsonSerializerSettings();
+            return JsonConvert.SerializeObject(returnData, Formatting.None, st);
+        }
+
+
         // GET api/Product/SelectAll_M_ProductInfoWithImportInfo
         [HttpGet]
         public string SelectAll_M_ProductInfoWithImportInfo()
@@ -64,5 +89,6 @@ namespace cSalingManagementWeb.Models
             JsonSerializerSettings st = new JsonSerializerSettings();
             return JsonConvert.SerializeObject(returnData, Formatting.None, st);
         }
+        
     }
 }

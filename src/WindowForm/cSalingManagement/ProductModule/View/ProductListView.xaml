@@ -71,7 +71,8 @@
                                                             </Grid.ColumnDefinitions>
                                                             <DockPanel Grid.Column="0" Margin="5,0,0,0" MinWidth="150">
                                                                 <Button Style="{StaticResource btn-info}" Content="Chi tiết" Margin="5,0,10,0" Padding="10,2,10,2" Height="30" 
-                                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ProductDetailCommand}"/>
+                                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ProductDetailCommand}"
+                                                                        CommandParameter="{Binding Items[0].ProductID}"/>
                                                                 <TextBlock Text="[" Style="{StaticResource H4}" />
                                                                 <TextBlock Text="{Binding Items[0].ProductID}" Style="{StaticResource H4}"  />
                                                                 <TextBlock Text="]" FontSize="16" Style="{StaticResource H4}"/>

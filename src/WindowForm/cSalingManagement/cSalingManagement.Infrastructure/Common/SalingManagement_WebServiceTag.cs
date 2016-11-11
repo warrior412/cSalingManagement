@@ -20,7 +20,9 @@ namespace cSalingManagement.Infrastructure.Common
         #region Select TAG
         public  const string TAG_GETALL_M_PRODUCTINFO = "101";
         public  const string TAG_GETALL_M_ACCOUNTINFO = "102";
-        public  const string TAG_GETALL_M_CATEGORYINFO = "103"; 
+        public  const string TAG_GETALL_M_CATEGORYINFO = "103";
+
+        public const string TAG_GETALL_M_PRODUCTINFO_BYID = "104";
         #endregion
     }
 }

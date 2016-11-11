@@ -21,7 +21,7 @@ namespace BusinessEntities
         public string Supp_Sub_Phone { get; set; }
         public string Supp_Email { get; set; }
         public string Supp_Website { get; set; }
-        public byte[] Supp_Image { get; set; }
+        public string Supp_Image { get; set; }
         public Nullable<int> Supplier_Status { get; set; }
     }
 }

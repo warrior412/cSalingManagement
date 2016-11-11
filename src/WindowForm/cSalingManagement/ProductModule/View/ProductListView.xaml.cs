@@ -3,6 +3,7 @@ using cSalingManagement.Infrastructure.Common;
 using cSalingManagement.Infrastructure.Model;
 using Newtonsoft.Json;
 using Prism.Commands;
+using Prism.Regions;
 using ProductModule.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -25,8 +26,27 @@ namespace ProductModule.View
     /// <summary>
     /// Interaction logic for ProductListView.xaml
     /// </summary>
-    public partial class ProductListView : UserControl
+    public partial class ProductListView : UserControl, INavigationAware
     {
+        #region Navigation Region
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            Console.WriteLine("ProductListView :IsNavigationTarget");
+            return false;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            Console.WriteLine("ProductListView :OnNavigatedFrom");
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            Console.WriteLine("ProductListView :OnNavigatedTo");
+        } 
+        #endregion
+
+
         private ProductListViewModel _vm = null;
 
         public ProductListViewModel Vm
@@ -74,7 +94,6 @@ namespace ProductModule.View
 
             this.Dispatcher.Invoke((Action)(() =>
             {
-                MessageBox.Show("Success");
                 if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO)
                 {
                     _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfo>>(data.ToString());
@@ -97,8 +116,10 @@ namespace ProductModule.View
                 busyIndicator.IsBusy = false;
             }));
         }
+
+
+
+
         
-
-
     }
 }

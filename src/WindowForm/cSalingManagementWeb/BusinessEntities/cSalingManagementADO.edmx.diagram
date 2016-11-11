@@ -11,10 +11,10 @@
         <EntityTypeShape EntityType="cSalingManagementModel.M_Department" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cSalingManagementModel.M_Employee" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cSalingManagementModel.M_Role" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cSalingManagementModel.M_Supplier" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cSalingManagementModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="cSalingManagementModel.M_ProductInfo" Width="1.5" PointX="3.375" PointY="6.75" />
         <EntityTypeShape EntityType="cSalingManagementModel.T_Import" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="cSalingManagementModel.M_Supplier" Width="1.5" PointX="7.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

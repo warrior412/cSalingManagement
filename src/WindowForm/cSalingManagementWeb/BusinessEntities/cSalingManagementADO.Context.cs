@@ -34,10 +34,10 @@ namespace BusinessEntities
         public DbSet<M_Department> M_Department { get; set; }
         public DbSet<M_Employee> M_Employee { get; set; }
         public DbSet<M_Role> M_Role { get; set; }
-        public DbSet<M_Supplier> M_Supplier { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<M_ProductInfo> M_ProductInfo { get; set; }
         public DbSet<T_Import> T_Import { get; set; }
+        public DbSet<M_Supplier> M_Supplier { get; set; }
     
         public virtual ObjectResult<Nullable<short>> InsertM_CategoryInfo(string cate_name, string description, string image, Nullable<int> status)
         {
@@ -75,6 +75,15 @@ namespace BusinessEntities
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAll_M_ProductInfoWithImportInfo_Result>("SelectAll_M_ProductInfoWithImportInfo");
         }
     
+        public virtual ObjectResult<SelectAll_M_ProductInfoWithImportInfo_Result> SelectAll_M_ProductInfoWithImportInfo_ByProductID(string productID)
+        {
+            var productIDParameter = productID != null ?
+                new ObjectParameter("ProductID", productID) :
+                new ObjectParameter("ProductID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAll_M_ProductInfoWithImportInfo_Result>("SelectAll_M_ProductInfoWithImportInfo_ByProductID", productIDParameter);
+        }
+    
         public virtual ObjectResult<Nullable<short>> InsertM_ProductInfo(string product_name, string category, Nullable<int> instock, string image, Nullable<double> price, string description, string preservation, string howtouse, string origin, Nullable<int> status)
         {
             var product_nameParameter = product_name != null ?
@@ -84,8 +93,7 @@ namespace BusinessEntities
             var categoryParameter = category != null ?
                 new ObjectParameter("Category", category) :
                 new ObjectParameter("Category", typeof(string));
-   
-    
+     
             var instockParameter = instock.HasValue ?
                 new ObjectParameter("instock", instock) :
                 new ObjectParameter("instock", typeof(int));

@@ -21,9 +21,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="35"/>
             <RowDefinition Height="40*"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
         <DockPanel HorizontalAlignment="Right" Grid.Column="0" Grid.ColumnSpan="2">
             <Button Content="Thêm mới" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="0,0,0,0" Margin="0,0,5,0"/>
@@ -58,44 +58,46 @@
                 </Rectangle.Fill>
             </Rectangle>-->
 
-            <TextBlock Text="Mã sản phẩm" Grid.Column="0" Grid.Row="0" Style="{StaticResource styleTextBlockTitle}"/>
-            <TextBlock Text="Tên sản phẩm" Grid.Column="0" Grid.Row="1" Style="{StaticResource styleTextBlockTitle}"/>
-            <TextBlock Text="Phân loại" Grid.Column="0" Grid.Row="2" Style="{StaticResource styleTextBlockTitle}"/>
-            <TextBlock Text="Nguồn gốc" Grid.Column="2" Grid.Row="2" Style="{StaticResource styleTextBlockTitle}"/>
-            <TextBlock Text="Đặc tính" Style="{StaticResource styleTextBlockTitle}" Grid.Row="3" Grid.Column="0"/>
+                    <TextBlock Text="Mã sản phẩm" Grid.Column="0" Grid.Row="0" Style="{StaticResource styleTextBlockTitle}"/>
+                    <TextBlock Text="Tên sản phẩm" Grid.Column="0" Grid.Row="1" Style="{StaticResource styleTextBlockTitle}"/>
+                    <TextBlock Text="Phân loại" Grid.Column="0" Grid.Row="2" Style="{StaticResource styleTextBlockTitle}"/>
+                    <TextBlock Text="Nguồn gốc" Grid.Column="2" Grid.Row="2" Style="{StaticResource styleTextBlockTitle}"/>
+                    <TextBlock Text="Phân loại" Grid.Column="0" Grid.Row="2" Style="{StaticResource styleTextBlockTitle}"/>
+                    <TextBlock Text="Hình Ảnh" Grid.Column="0" Grid.Row="3" Style="{StaticResource styleTextBlockTitle}"/>
 
-            <TextBlock Text="MP0001" Grid.Column="1" Grid.Row="0" Style="{StaticResource styleTextBlockTitle}" />
-            <TextBox Style="{StaticResource styleTextBoxDefault}" Text="Detail1" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
-            <ComboBox x:Name="cbCategory" Style="{StaticResource styleComboBoxDefault}" Grid.Column="1" Grid.Row="2"></ComboBox>
+
+                    <TextBlock Text="{Binding ProductDetail.ProductID }" Grid.Column="1" Grid.Row="0" Style="{StaticResource styleTextBlockTitle}" />
+                    <TextBox Style="{StaticResource styleTextBoxDefault}" Text="{Binding ProductDetail.ProductName}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+                    <ComboBox x:Name="cbCategory" Style="{StaticResource styleComboBoxDefault}" Grid.Column="1" Grid.Row="2"></ComboBox>
             
-            <TextBox Style="{StaticResource styleTextBoxDefault}" Text="Detail3" Grid.Column="4" Grid.Row="2"></TextBox>
-            <TextBox Style="{StaticResource styleTextAreaDefault}" Text="Detail" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
-            
-            
-        </Grid>
+                    <TextBox Style="{StaticResource styleTextBoxDefault}" Text="Detail3" Grid.Column="4" Grid.Row="2"></TextBox>
+                    <DockPanel Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="2" Background="LightGray"  Margin="5" LastChildFill="True">
+                        <Image Source="{Binding ProductDetail.Pro_Image}"/>
+                    </DockPanel>
+
+
+
+                </Grid>
         <Grid Grid.Column="1" Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="6*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
-            <!--<Rectangle Grid.Column="0" Grid.RowSpan="1000">
-                <Rectangle.Fill>
-                    <SolidColorBrush Color="#FF7DBFF5"/>
-                </Rectangle.Fill>
-            </Rectangle>-->
-            <TextBlock Text="Giới thiệu" Grid.Column="0" Grid.Row="0" Style="{StaticResource styleTextBlockTitle}"/>
-            <TextBlock Text="Hướng dẫn sử dụng" Grid.Column="0" Grid.Row="2" Style="{StaticResource styleTextBlockTitle}"/>
-
-            <TextBox Style="{StaticResource styleTextAreaDefault}" Text="Detail" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"></TextBox>
-            <TextBox Style="{StaticResource styleTextAreaDefault}" Text="Detail" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"></TextBox>
-
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Giới thiệu" Grid.Column="0" Grid.Row="0" Style="{StaticResource styleTextBlockTitle}"/>
+                    <TextBlock Text="Hướng dẫn sử dụng" Grid.Column="0" Grid.Row="2" Style="{StaticResource styleTextBlockTitle}"/>
+                    <TextBlock Text="Đặc tính" Style="{StaticResource styleTextBlockTitle}" Grid.Row="4" Grid.Column="0"/>
+            
+                    <TextBox Style="{StaticResource styleTextAreaDefault}" Text="Detail" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"></TextBox>
+                    <TextBox Style="{StaticResource styleTextAreaDefault}" Text="Detail" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"></TextBox>
+                    <TextBox Style="{StaticResource styleTextAreaDefault}" Text="Detail" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
         </Grid>
         <DataGrid Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"  HeadersVisibility="Column"
                               AutoGenerateColumns="False" x:Name="gvCheckInfo" 

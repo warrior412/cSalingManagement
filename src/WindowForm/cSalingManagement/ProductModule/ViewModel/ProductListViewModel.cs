@@ -16,7 +16,7 @@ using System.Windows.Input;
 
 namespace ProductModule.ViewModel
 {
-    public class ProductListViewModel:BindableBase
+    public class ProductListViewModel : BindableBase
     {
         private ObservableCollection<M_ProductInfo> lstProductInfo = new ObservableCollection<M_ProductInfo>();
 
@@ -51,13 +51,18 @@ namespace ProductModule.ViewModel
         {
             get
             {
-                return new DelegateCommand(openProductDetailView);
+                return new DelegateCommand<object>(openProductDetailView);
             }
         }
 
-        private void openProductDetailView()
+        private void openProductDetailView(object productID)
         {
-            this.RegionManager.Regions[SalingManagementConstant.STRING_REGION_CONTENT].RequestNavigate(SalingManagementConstant.STRING_VIEW_PRODUCT_DETAIL);
+            if (productID == null)
+                return;
+            var navigationParameters = new NavigationParameters();
+            navigationParameters.Add("ProductID", productID.ToString());
+            RegionManager.RequestNavigate(SalingManagementConstant.STRING_REGION_CONTENT,
+                 new Uri(SalingManagementConstant.STRING_VIEW_PRODUCT_DETAIL + navigationParameters.ToString(), UriKind.Relative));
         }
     }
 }

@@ -85,13 +85,13 @@
       <PropertyRef Name="SupplierID" />
     </Key>
     <Property Name="SupplierID" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="SupplierName" Type="varchar" MaxLength="50" />
-    <Property Name="Supp_Address" Type="varchar" MaxLength="200" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supp_Address" Type="nvarchar" MaxLength="200" />
     <Property Name="Supp_Phone" Type="varchar" MaxLength="20" />
     <Property Name="Supp_Sub_Phone" Type="varchar" MaxLength="20" />
     <Property Name="Supp_Email" Type="varchar" MaxLength="20" />
     <Property Name="Supp_Website" Type="varchar" MaxLength="50" />
-    <Property Name="Supp_Image" Type="varbinary(max)" />
+    <Property Name="Supp_Image" Type="varchar" MaxLength="50" />
     <Property Name="Supplier_Status" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
@@ -140,8 +140,21 @@
     <Parameter Name="origin" Type="varchar" Mode="In" />
     <Parameter Name="status" Type="int" Mode="In" />
   </Function>
+  <Function Name="InsertM_SupplierInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="sub_phone" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="website" Type="varchar" Mode="In" />
+    <Parameter Name="image" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="int" Mode="In" />
+  </Function>
   <Function Name="SelectAll_M_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SelectAll_M_ProductInfoWithImportInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_ProductInfoWithImportInfo_ByProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductID" Type="varchar" Mode="In" />
+  </Function>
   <EntityContainer Name="cSalingManagementModelStoreContainer">
     <EntitySet Name="M_Account" EntityType="Self.M_Account" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="M_Category" EntityType="Self.M_Category" Schema="dbo" store:Type="Tables" />

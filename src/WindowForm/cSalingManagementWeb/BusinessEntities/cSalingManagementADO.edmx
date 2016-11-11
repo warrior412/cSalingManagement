@@ -90,13 +90,13 @@
             <PropertyRef Name="SupplierID" />
           </Key>
           <Property Name="SupplierID" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="SupplierName" Type="varchar" MaxLength="50" />
-          <Property Name="Supp_Address" Type="varchar" MaxLength="200" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Supp_Address" Type="nvarchar" MaxLength="200" />
           <Property Name="Supp_Phone" Type="varchar" MaxLength="20" />
           <Property Name="Supp_Sub_Phone" Type="varchar" MaxLength="20" />
           <Property Name="Supp_Email" Type="varchar" MaxLength="20" />
           <Property Name="Supp_Website" Type="varchar" MaxLength="50" />
-          <Property Name="Supp_Image" Type="varbinary(max)" />
+          <Property Name="Supp_Image" Type="varchar" MaxLength="50" />
           <Property Name="Supplier_Status" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -145,8 +145,21 @@
           <Parameter Name="origin" Type="varchar" Mode="In" />
           <Parameter Name="status" Type="int" Mode="In" />
         </Function>
+        <Function Name="InsertM_SupplierInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+          <Parameter Name="phone" Type="varchar" Mode="In" />
+          <Parameter Name="sub_phone" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="website" Type="varchar" Mode="In" />
+          <Parameter Name="image" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="In" />
+        </Function>
         <Function Name="SelectAll_M_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SelectAll_M_ProductInfoWithImportInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectAll_M_ProductInfoWithImportInfo_ByProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="cSalingManagementModelStoreContainer">
           <EntitySet Name="M_Account" EntityType="Self.M_Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_Category" EntityType="Self.M_Category" Schema="dbo" store:Type="Tables" />
@@ -227,20 +240,6 @@
           <Property Name="RoleID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="M_Supplier">
-          <Key>
-            <PropertyRef Name="SupplierID" />
-          </Key>
-          <Property Name="SupplierID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Supp_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Supp_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Supp_Sub_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Supp_Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Supp_Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Supp_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="Supplier_Status" Type="Int32" />
-        </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -258,7 +257,6 @@
           <EntitySet Name="M_Department" EntityType="Self.M_Department" />
           <EntitySet Name="M_Employee" EntityType="Self.M_Employee" />
           <EntitySet Name="M_Role" EntityType="Self.M_Role" />
-          <EntitySet Name="M_Supplier" EntityType="Self.M_Supplier" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <FunctionImport Name="InsertM_CategoryInfo" ReturnType="Collection(Int16)">
             <Parameter Name="cate_name" Mode="In" Type="String" />
@@ -270,6 +268,10 @@
           <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo" ReturnType="Collection(cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result)" />
           <EntitySet Name="M_ProductInfo" EntityType="cSalingManagementModel.M_ProductInfo" />
           <EntitySet Name="T_Import" EntityType="cSalingManagementModel.T_Import" />
+          <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo_ByProductID" ReturnType="Collection(cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result)">
+          <Parameter Name="ProductID" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="M_Supplier" EntityType="cSalingManagementModel.M_Supplier" />
           <FunctionImport Name="InsertM_ProductInfo" ReturnType="Collection(Int16)">
             <Parameter Name="product_name" Mode="In" Type="String" />
             <Parameter Name="Category" Mode="In" Type="String" />
@@ -340,6 +342,20 @@
           <Property Name="Import_User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Import_Vote" Type="Int32" />
           <Property Name="Import_Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="M_Supplier">
+          <Key>
+            <PropertyRef Name="SupplierID" />
+          </Key>
+          <Property Name="SupplierID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SupplierName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Supp_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Supp_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Supp_Sub_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Supp_Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Supp_Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Supp_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Supplier_Status" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -417,21 +433,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="M_Supplier">
-            <EntityTypeMapping TypeName="cSalingManagementModel.M_Supplier">
-              <MappingFragment StoreEntitySet="M_Supplier">
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-                <ScalarProperty Name="Supp_Address" ColumnName="Supp_Address" />
-                <ScalarProperty Name="Supp_Phone" ColumnName="Supp_Phone" />
-                <ScalarProperty Name="Supp_Sub_Phone" ColumnName="Supp_Sub_Phone" />
-                <ScalarProperty Name="Supp_Email" ColumnName="Supp_Email" />
-                <ScalarProperty Name="Supp_Website" ColumnName="Supp_Website" />
-                <ScalarProperty Name="Supp_Image" ColumnName="Supp_Image" />
-                <ScalarProperty Name="Supplier_Status" ColumnName="Supplier_Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="cSalingManagementModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -504,6 +505,49 @@
                 <ScalarProperty Name="Supplier" ColumnName="Supplier" />
                 <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
                 <ScalarProperty Name="fk_ProductID" ColumnName="fk_ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectAll_M_ProductInfoWithImportInfo_ByProductID" FunctionName="cSalingManagementModel.Store.SelectAll_M_ProductInfoWithImportInfo_ByProductID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Pro_InStock" ColumnName="Pro_InStock" />
+                <ScalarProperty Name="Pro_Image" ColumnName="Pro_Image" />
+                <ScalarProperty Name="Pro_Price" ColumnName="Pro_Price" />
+                <ScalarProperty Name="Pro_Desciptions" ColumnName="Pro_Desciptions" />
+                <ScalarProperty Name="Pro_Preservation" ColumnName="Pro_Preservation" />
+                <ScalarProperty Name="Pro_HowToUse" ColumnName="Pro_HowToUse" />
+                <ScalarProperty Name="Pro_Origin" ColumnName="Pro_Origin" />
+                <ScalarProperty Name="Pro_Status" ColumnName="Pro_Status" />
+                <ScalarProperty Name="fk_ProductID" ColumnName="fk_ProductID" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="Import_Quantity" ColumnName="Import_Quantity" />
+                <ScalarProperty Name="Import_InStock" ColumnName="Import_InStock" />
+                <ScalarProperty Name="Import_OnOrder" ColumnName="Import_OnOrder" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ExpirionDate" ColumnName="ExpirionDate" />
+                <ScalarProperty Name="Import_User" ColumnName="Import_User" />
+                <ScalarProperty Name="Import_Vote" ColumnName="Import_Vote" />
+                <ScalarProperty Name="Import_Status" ColumnName="Import_Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="M_Supplier">
+            <EntityTypeMapping TypeName="cSalingManagementModel.M_Supplier">
+              <MappingFragment StoreEntitySet="M_Supplier">
+                <ScalarProperty Name="Supplier_Status" ColumnName="Supplier_Status" />
+                <ScalarProperty Name="Supp_Image" ColumnName="Supp_Image" />
+                <ScalarProperty Name="Supp_Website" ColumnName="Supp_Website" />
+                <ScalarProperty Name="Supp_Email" ColumnName="Supp_Email" />
+                <ScalarProperty Name="Supp_Sub_Phone" ColumnName="Supp_Sub_Phone" />
+                <ScalarProperty Name="Supp_Phone" ColumnName="Supp_Phone" />
+                <ScalarProperty Name="Supp_Address" ColumnName="Supp_Address" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
