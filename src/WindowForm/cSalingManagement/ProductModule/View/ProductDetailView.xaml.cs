@@ -6,6 +6,7 @@ using ProductModule.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace ProductModule.View
     /// <summary>
     /// Interaction logic for ProductDetailView.xaml
     /// </summary>
-    public partial class ProductDetailView : UserControl,INavigationAware
+    public partial class ProductDetailView : UserControl, INavigationAware
     {
         private int CallServiceCount = 0;
 
@@ -58,11 +59,8 @@ namespace ProductModule.View
         public ProductDetailViewModel Vm
         {
             get { return _vm; }
-            set
-            {
-                _vm = value;
-            }
-        } 
+            set{_vm = value;}
+        }
         #endregion
 
         #region Constructor
@@ -107,17 +105,19 @@ namespace ProductModule.View
                 if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_CATEGORYINFO)
                 {
                     CallServiceCount--;
-                    _vm.LstCategoryInfo = new M_CategoryInfo().JSonToListCategory(data);
-                    //DataContext = _vm;
-                    this.cbCategory.ItemsSource = _vm.LstCategoryInfo;
+                    Vm.LstCategoryInfo = new M_CategoryInfo().JSonToListCategory(data);
+                    DataContext = null;
+                    DataContext = Vm;
+                    this.cbCategory.ItemsSource = Vm.LstCategoryInfo;
                     this.cbCategory.DisplayMemberPath = "CategoryName";
                     this.UpdateLayout();
                 }
                 if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID)
                 {
                     CallServiceCount--;
-                    _vm.ProductDetail = new M_ProductInfoWithImportInfo().JSonToProductInfoWithImportInfo(data.ToString());
-                    DataContext = _vm;
+                    Vm.ProductDetail = new M_ProductInfoWithImportInfo().JSonToProductInfoWithImportInfo(data.ToString());
+                    DataContext = null;
+                    DataContext = Vm;
                     this.UpdateLayout();
                 }
                 if (CallServiceCount <= 0)
@@ -137,5 +137,7 @@ namespace ProductModule.View
             }));
         } 
         #endregion
+
+        
     }
 }

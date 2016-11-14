@@ -110,7 +110,6 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\ko\System.Windows.Interactivity.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.csprojResolveAssemblyReference.cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderAddNewView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderDetailView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderListView.baml
