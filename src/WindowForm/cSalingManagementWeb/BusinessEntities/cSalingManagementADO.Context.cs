@@ -93,7 +93,7 @@ namespace BusinessEntities
             var categoryParameter = category != null ?
                 new ObjectParameter("Category", category) :
                 new ObjectParameter("Category", typeof(string));
-     
+    
             var instockParameter = instock.HasValue ?
                 new ObjectParameter("instock", instock) :
                 new ObjectParameter("instock", typeof(int));
@@ -127,6 +127,55 @@ namespace BusinessEntities
                 new ObjectParameter("status", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<short>>("InsertM_ProductInfo", product_nameParameter, categoryParameter, instockParameter, imageParameter, priceParameter, descriptionParameter, preservationParameter, howtouseParameter, originParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<short>> UpdateM_ProductInfo(string product_id, string product_name, string category, Nullable<int> instock, string image, Nullable<double> price, string description, string preservation, string howtouse, string origin, Nullable<int> status)
+        {
+            var product_idParameter = product_id != null ?
+                new ObjectParameter("product_id", product_id) :
+                new ObjectParameter("product_id", typeof(string));
+    
+            var product_nameParameter = product_name != null ?
+                new ObjectParameter("product_name", product_name) :
+                new ObjectParameter("product_name", typeof(string));
+    
+            var categoryParameter = category != null ?
+                new ObjectParameter("Category", category) :
+                new ObjectParameter("Category", typeof(string));
+    
+            var instockParameter = instock.HasValue ?
+                new ObjectParameter("instock", instock) :
+                new ObjectParameter("instock", typeof(int));
+    
+            var imageParameter = image != null ?
+                new ObjectParameter("image", image) :
+                new ObjectParameter("image", typeof(string));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("price", price) :
+                new ObjectParameter("price", typeof(double));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("description", description) :
+                new ObjectParameter("description", typeof(string));
+    
+            var preservationParameter = preservation != null ?
+                new ObjectParameter("preservation", preservation) :
+                new ObjectParameter("preservation", typeof(string));
+    
+            var howtouseParameter = howtouse != null ?
+                new ObjectParameter("howtouse", howtouse) :
+                new ObjectParameter("howtouse", typeof(string));
+    
+            var originParameter = origin != null ?
+                new ObjectParameter("origin", origin) :
+                new ObjectParameter("origin", typeof(string));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<short>>("UpdateM_ProductInfo", product_idParameter, product_nameParameter, categoryParameter, instockParameter, imageParameter, priceParameter, descriptionParameter, preservationParameter, howtouseParameter, originParameter, statusParameter);
         }
     }
 }

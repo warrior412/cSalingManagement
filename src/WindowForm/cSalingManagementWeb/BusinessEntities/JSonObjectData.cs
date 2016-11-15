@@ -47,6 +47,7 @@ namespace BusinessEntities
         CREATED = 2, // Inserted
         UPDATED = 3, // Updated
         DELETED = 4, //Deleted
+        FILE_FORMAT_ERROR = -2,
         UNKNOW_ERROR = -999
     }
 }

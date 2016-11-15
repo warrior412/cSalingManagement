@@ -99,7 +99,19 @@
     <FunctionImport Name="InsertM_ProductInfo" ReturnType="Collection(Int16)">
       <Parameter Name="product_name" Mode="In" Type="String" />
       <Parameter Name="Category" Mode="In" Type="String" />
-      <Parameter Name="Supplier" Mode="In" Type="String" />
+      <Parameter Name="instock" Mode="In" Type="Int32" />
+      <Parameter Name="image" Mode="In" Type="String" />
+      <Parameter Name="price" Mode="In" Type="Double" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="preservation" Mode="In" Type="String" />
+      <Parameter Name="howtouse" Mode="In" Type="String" />
+      <Parameter Name="origin" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateM_ProductInfo" ReturnType="Collection(Int16)">
+      <Parameter Name="product_id" Mode="In" Type="String" />
+      <Parameter Name="product_name" Mode="In" Type="String" />
+      <Parameter Name="Category" Mode="In" Type="String" />
       <Parameter Name="instock" Mode="In" Type="Int32" />
       <Parameter Name="image" Mode="In" Type="String" />
       <Parameter Name="price" Mode="In" Type="Double" />
@@ -142,7 +154,7 @@
     <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Category" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Pro_InStock" Type="Int32" />
-    <Property Name="Pro_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_Image" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="Pro_Price" Type="Double" />
     <Property Name="Pro_Desciptions" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="Pro_Preservation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />

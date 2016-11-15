@@ -41,6 +41,29 @@ namespace cSalingManagementWeb.Models
             return JsonConvert.SerializeObject(returnData, Formatting.None, st);
         }
 
+        // POST api/Product/UpdateM_ProductInfo
+        [HttpPost]
+        public string UpdateM_ProductInfo(M_ProductInfo m_productinfo)
+        {
+            JsonObjectData returnData = new JsonObjectData();
+            Status status = new Status();
+            int resultReturn = -1;
+            status.StatusCode = StatusCodes.NO_DATA;
+            try
+            {
+                resultReturn = new M_ProductInfoADO().UpdateM_ProductInfo(m_productinfo);
+                status.StatusCode = StatusCodes.OK;
+            }
+            catch (Exception ex)
+            {
+                status.StatusMsg = ex.Message;
+                status.StatusCode = StatusCodes.UNKNOW_ERROR;
+            }
+            returnData.Status = status;
+            returnData.Data = resultReturn;
+            JsonSerializerSettings st = new JsonSerializerSettings();
+            return JsonConvert.SerializeObject(returnData, Formatting.None, st);
+        }
         // POST api/Product/SelectAll_M_ProductInfoWithImportInfo_ByProductID
         [HttpPost]
         public string SelectAll_M_ProductInfoWithImportInfo_ByProductID(M_ProductInfo m_productinfo)

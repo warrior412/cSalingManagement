@@ -10,12 +10,15 @@ namespace cSalingManagement.Infrastructure.Common
     {
         public static string SERVICE_TAG = "SERVICE_TAG";
 
+        public const string TAG_UPLOAD_IMAGES = "0";
+
         #region Insert TAG
         public  const string TAG_INSERT_M_PRODUCTINFO = "1";
         public  const string TAG_INSERT_M_ACCOUNTINFO = "2";
         public  const string TAG_INSERT_M_CATEGORYINFO = "3"; 
         #endregion
 
+        
 
         #region Select TAG
         public  const string TAG_GETALL_M_PRODUCTINFO = "101";
@@ -23,6 +26,11 @@ namespace cSalingManagement.Infrastructure.Common
         public  const string TAG_GETALL_M_CATEGORYINFO = "103";
 
         public const string TAG_GETALL_M_PRODUCTINFO_BYID = "104";
+        #endregion
+
+        #region Update TAG
+        public const string TAG_UPDATE_M_PRODUCTINFO = "201";
+
         #endregion
     }
 }

@@ -8,11 +8,12 @@
              xmlns:converter="clr-namespace:cSalingManagement.Infrastructure.Converter;assembly=cSalingManagement.Infrastructure">
     <UserControl.Resources>
         <converter:ChooseURLToDisplayConverter x:Key="ChooseURLToDisplayConverter"/>
+        <converter:ProductModule_IsEditingToWidthConverter x:Key="ProductModule_IsEditingToWidthConverter"/>
     </UserControl.Resources>
-    <xctk:BusyIndicator Name="busyIndicator">
+    <xctk:BusyIndicator Name="busyIndicator" IsBusy="{Binding IsBusy}">
         <xctk:BusyIndicator.BusyContent>
             <StackPanel>
-                <TextBlock HorizontalAlignment="Center">Please wait...</TextBlock>
+                <TextBlock HorizontalAlignment="Center">Đang xử lý....</TextBlock>
             </StackPanel>
         </xctk:BusyIndicator.BusyContent>
 
@@ -32,9 +33,20 @@
                         <RowDefinition Height="10*"/>
                     </Grid.RowDefinitions>
                     <DockPanel Grid.Row="0" HorizontalAlignment="Stretch" Background="{StaticResource MainDarkColor}" LastChildFill="True">
-                        <Button  DockPanel.Dock="Right" Content="Xóa" Style="{StaticResource btn-danger}" Height="30" Width="80" Padding="0,0,0,0" Margin="0,0,5,0"/>
-                        <Button IsEnabled="False" DockPanel.Dock="Right" Content="Cập nhật" Style="{StaticResource btn-primary}" Height="30" Width="80" Padding="0,0,0,0" Margin="0,0,5,0"/>
-                        <Button IsEnabled="False" DockPanel.Dock="Right" Content="Thêm mới" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="0,0,0,0" Margin="0,0,5,0"/>
+                        <Button  DockPanel.Dock="Right" Content="Hoàn thành" Style="{StaticResource btn-primary}" 
+                                 Height="30" Width="{Binding IsEditing,Converter={StaticResource ProductModule_IsEditingToWidthConverter},ConverterParameter=Finish}"
+                                 Padding="0,0,0,0" Margin="0,0,5,0"
+                                 Command="{Binding FinishCommand}"/>
+                        <Button  DockPanel.Dock="Right" Content="Xóa" Style="{StaticResource btn-danger}" 
+                                 Height="30" Width="{Binding IsEditing,Converter={StaticResource ProductModule_IsEditingToWidthConverter}}"
+                                 Padding="0,0,0,0" Margin="0,0,5,0"/>
+                        <Button  DockPanel.Dock="Right" Content="Chỉnh sửa" Style="{StaticResource btn-primary}" 
+                                 Height="30" Width="{Binding IsEditing,Converter={StaticResource ProductModule_IsEditingToWidthConverter}}" 
+                                 Padding="0,0,0,0" Margin="0,0,5,0"
+                                 Command="{Binding UpdateCommand}"/>
+                        <Button  DockPanel.Dock="Right" Content="Thêm mới" Style="{StaticResource btn-success}"
+                                 Height="30" Width="{Binding IsEditing,Converter={StaticResource ProductModule_IsEditingToWidthConverter}}"
+                                 Padding="0,0,0,0" Margin="0,0,5,0"/>
                         <TextBlock Text="Thông tin sản phẩm" Style="{StaticResource H4}" Margin="10"/>
                     </DockPanel>
                     <Grid Grid.Row="1">
@@ -62,11 +74,10 @@
                                                 </MultiBinding>
                                             </Image.Source>
                                         </Image>
-                                        <!--<Image x:Name="imgProduct" Source="{Binding ProductDetail.Pro_Image}" />-->
                                     </DockPanel>
                                     <StackPanel Grid.Column="2">
-                                        <Button Style="{StaticResource btn}" Content="Browse..." Margin="5" Command="{Binding BrowseCommand}"/>
-                                        <Button Style="{StaticResource btn-danger}" Content="Clear" Margin="5" />
+                                        <Button IsEnabled="{Binding IsEditing}" Style="{StaticResource btn}" Content="Browse..." Margin="5" Command="{Binding BrowseCommand}"/>
+                                        <Button IsEnabled="{Binding IsEditing}" Style="{StaticResource btn-danger}" Content="Clear" Margin="5" />
                                     </StackPanel>
                                 </Grid>
                             </Border>
@@ -78,7 +89,7 @@
                                     <RowDefinition Height="10*"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock Text="Giới thiệu" Grid.Column="0" Style="{StaticResource styleTextBlockTitle}"/>
-                                <TextBox Style="{StaticResource styleTextAreaDefault}" Text="Detail"  Grid.Row="1" Margin="5" ></TextBox>
+                                <TextBox Style="{StaticResource styleTextAreaDefault}" IsEnabled="{Binding IsEditing}" Text="{Binding ProductDetail.Pro_Desciptions }"  Grid.Row="1" Margin="5" ></TextBox>
                             </Grid>
                         </Grid>
                         <Grid Grid.Column="1">
@@ -103,11 +114,11 @@
                            
 
                             <TextBlock Text="{Binding ProductDetail.ProductID }" Grid.Column="1" Grid.Row="0" Style="{StaticResource styleTextBlockTitle}" />
-                            <TextBox  Text="{Binding ProductDetail.ProductName, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>
-                            <ComboBox x:Name="cbCategory" Style="{StaticResource styleComboBoxDefault}" Grid.Column="1" Grid.Row="2"></ComboBox>
-                            <TextBox Style="{StaticResource styleTextBoxDefault}" Text="Detail3" Grid.Column="1" Grid.Row="3"></TextBox>
-                            <TextBox Style="{StaticResource styleTextAreaDefault}" Text="Detail"  Grid.Column="1" Grid.Row="4" ></TextBox>
-                            <TextBox Style="{StaticResource styleTextAreaDefault}" Text="Detail"  Grid.Column="1" Grid.Row="5" ></TextBox>
+                            <TextBox  Text="{Binding ProductDetail.ProductName, Mode=TwoWay}" IsEnabled="{Binding IsEditing}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>
+                            <ComboBox x:Name="cbCategory" IsEnabled="{Binding IsEditing}" Style="{StaticResource styleComboBoxDefault}" SelectionChanged="cbCategory_SelectionChanged" Grid.Column="1" Grid.Row="2"></ComboBox>
+                            <TextBox Style="{StaticResource styleTextBoxDefault}" Text="{Binding ProductDetail.Pro_Origin }" IsEnabled="{Binding IsEditing}" Grid.Column="1" Grid.Row="3"></TextBox>
+                            <TextBox Style="{StaticResource styleTextAreaDefault}" Text="{Binding ProductDetail.Pro_HowToUse }" IsEnabled="{Binding IsEditing}"  Grid.Column="1" Grid.Row="4" ></TextBox>
+                            <TextBox Style="{StaticResource styleTextAreaDefault}" Text="{Binding ProductDetail.Pro_Preservation }" IsEnabled="{Binding IsEditing}"  Grid.Column="1" Grid.Row="5" ></TextBox>
                         </Grid>
                     </Grid>
                 </Grid>

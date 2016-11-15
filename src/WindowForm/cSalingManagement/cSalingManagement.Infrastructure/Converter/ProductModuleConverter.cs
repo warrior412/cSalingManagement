@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace cSalingManagement.Infrastructure.Converter
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             string url = "";
+            string imagePath = ConfigurationManager.AppSettings["ImageProductURL"];
             if(values==null || values.Count()==0)
                 return null;
             object currentImage = values[0];
@@ -20,7 +22,7 @@ namespace cSalingManagement.Infrastructure.Converter
             if(newImage==null)
             {
                 if (currentImage != null)
-                    url= currentImage.ToString();
+                    url= imagePath +currentImage.ToString();
             }
             else
             {
@@ -32,6 +34,37 @@ namespace cSalingManagement.Infrastructure.Converter
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
         {
             return null;
+        }
+    }
+
+    public class ProductModule_IsEditingToWidthConverter : IValueConverter
+    {
+
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value != null )
+            {
+                if(parameter==null)
+                {
+                    if (bool.Parse(value.ToString()))
+                        return 0;
+                    else
+                        return 80;
+                }
+                else
+                {
+                    if (bool.Parse(value.ToString()))
+                        return 80;
+                    else
+                        return 0;
+                }
+            }
+            return 80;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }

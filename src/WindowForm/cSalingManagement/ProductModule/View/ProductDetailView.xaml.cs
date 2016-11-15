@@ -46,8 +46,12 @@ namespace ProductModule.View
             Console.WriteLine("ProductDetailView :IsNavigationTarget");
             var param = navigationContext.Parameters;
             if (param["ProductID"] == null)
+            {
+                Vm.IsEditing = true;
                 return;
+            }
             string productID = param["ProductID"].ToString();
+            Vm.IsEditing = false;
             GetProductDetailByID(productID);
         }
         #endregion
@@ -68,6 +72,7 @@ namespace ProductModule.View
         {
             InitializeComponent();
             _vm = vm;
+            _vm.view = this;
             GetInitData();
         } 
         #endregion
@@ -76,9 +81,13 @@ namespace ProductModule.View
             GetAllCategoryInfo();
         }
 
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
         private void GetAllCategoryInfo()
         {
-            busyIndicator.IsBusy = true;
+            Vm.IsBusy = true;
             CallServiceCount++;
             DAOProvider dao = DAOProvider.GetInstance();
             dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
@@ -88,7 +97,7 @@ namespace ProductModule.View
 
         private void GetProductDetailByID(string productID)
         {
-            busyIndicator.IsBusy = true;
+            Vm.IsBusy = true;
             CallServiceCount++;
             DAOProvider dao = DAOProvider.GetInstance();
             dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
@@ -110,18 +119,20 @@ namespace ProductModule.View
                     DataContext = Vm;
                     this.cbCategory.ItemsSource = Vm.LstCategoryInfo;
                     this.cbCategory.DisplayMemberPath = "CategoryName";
+                    this.cbCategory.SelectedValuePath = "CategoryID";
                     this.UpdateLayout();
                 }
                 if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID)
                 {
                     CallServiceCount--;
                     Vm.ProductDetail = new M_ProductInfoWithImportInfo().JSonToProductInfoWithImportInfo(data.ToString());
+                    this.cbCategory.SelectedValue = Vm.ProductDetail.Category;
                     DataContext = null;
                     DataContext = Vm;
                     this.UpdateLayout();
                 }
                 if (CallServiceCount <= 0)
-                    busyIndicator.IsBusy = false;
+                    Vm.IsBusy = false;
             }));
         }
 
@@ -130,13 +141,19 @@ namespace ProductModule.View
             this.Dispatcher.Invoke((Action)(() =>
             {
                 MessageBox.Show(data);
-                busyIndicator.IsBusy = false;
+                Vm.IsBusy = false;
                 if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID)
                 {
                 }
             }));
         } 
         #endregion
+
+        private void cbCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(cbCategory.SelectedValue!=null)
+                Vm.ProductDetail.Category = cbCategory.SelectedValue.ToString();
+        }
 
         
     }
