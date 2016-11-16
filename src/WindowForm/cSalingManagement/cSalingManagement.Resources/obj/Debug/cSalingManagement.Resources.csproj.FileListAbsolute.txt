@@ -39,7 +39,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Reso
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Resources\bin\Debug\ko\System.Windows.Interactivity.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Resources\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Resources\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\cSalingManagement.Resources.csprojResolveAssemblyReference.cache
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\Resources\en-EN.baml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\Resources\vi-VN.baml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Resources\obj\Debug\Themes\Generic.baml

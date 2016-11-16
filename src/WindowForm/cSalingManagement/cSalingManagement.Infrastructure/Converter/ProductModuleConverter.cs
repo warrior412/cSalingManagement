@@ -1,5 +1,7 @@
-﻿using System;
+﻿using cSalingManagement.Infrastructure.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Linq;
 using System.Text;
@@ -37,14 +39,48 @@ namespace cSalingManagement.Infrastructure.Converter
         }
     }
 
+    public class ProductModule_SupplierToWidth : IValueConverter
+    {
+
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value != null && !value.ToString().Equals("") )
+            {
+                if(parameter==null)
+                {
+                    return 40;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                if (parameter == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 40;
+                }
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
     public class ProductModule_IsEditingToWidthConverter : IValueConverter
     {
 
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (value != null )
+            if (value != null)
             {
-                if(parameter==null)
+                if (parameter == null)
                 {
                     if (bool.Parse(value.ToString()))
                         return 0;
@@ -63,6 +99,32 @@ namespace cSalingManagement.Infrastructure.Converter
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class ProductModule_SupplierIDToSupplierNameConverter : IMultiValueConverter
+    {
+                      
+        public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            try{
+                string supplierID = values[0].ToString();
+                ObservableCollection<M_Supplier> arr = values[1] as ObservableCollection<M_Supplier>;
+                foreach(M_Supplier item in arr)
+                {
+                    if (item.SupplierID.Equals(supplierID))
+                        return item.SupplierName;
+                }
+            }catch(Exception ex)
+            {
+                return "";
+            }
+            return "";
+            
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
         {
             throw new NotImplementedException();
         }

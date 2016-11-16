@@ -13,3 +13,4 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessE
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\obj\Debug\BusinessEntities.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\obj\Debug\BusinessEntities.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache

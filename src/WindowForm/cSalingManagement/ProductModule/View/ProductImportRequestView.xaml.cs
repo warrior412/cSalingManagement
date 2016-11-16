@@ -105,7 +105,7 @@ namespace ProductModule.View
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBox cb = sender as ComboBox;
-            if (cb.SelectedValue != null)
+            if (cb.SelectedValue != null&& this.gvImportList.SelectedItem!=null)
             {
                 int selectedIndex = this.gvImportList.Items.IndexOf(this.gvImportList.SelectedItem);
                 _vm.LstProductInfoWithImportInfo[selectedIndex].Supplier = cb.SelectedValue.ToString();

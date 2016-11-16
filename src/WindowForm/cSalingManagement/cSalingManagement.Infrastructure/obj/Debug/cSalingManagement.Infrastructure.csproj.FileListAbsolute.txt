@@ -90,7 +90,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Infr
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\bin\Debug\ko\System.Windows.Interactivity.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\obj\Debug\cSalingManagement.Infrastructure.csprojResolveAssemblyReference.cache
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\obj\Debug\cSalingManagement.Infrastructure.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\obj\Debug\cSalingManagement.Infrastructure.pdb
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\bin\Debug\Newtonsoft.Json.dll
