@@ -112,6 +112,29 @@ namespace cSalingManagementWeb.Models
             JsonSerializerSettings st = new JsonSerializerSettings();
             return JsonConvert.SerializeObject(returnData, Formatting.None, st);
         }
+        // GET api/Product/SelectAll_M_ProductInfo
+        [HttpGet]
+        public string SelectAll_M_ProductInfo()
+        {
+            JsonObjectData returnData = new JsonObjectData();
+            Status status = new Status();
+            List<M_ProductInfo> resultReturn = null;
+            status.StatusCode = StatusCodes.NO_DATA;
+            try
+            {
+                resultReturn = new M_ProductInfoADO().SelectAll_M_ProductInfo().ToList();
+                status.StatusCode = StatusCodes.OK;
+            }
+            catch (Exception ex)
+            {
+                status.StatusMsg = ex.Message;
+                status.StatusCode = StatusCodes.UNKNOW_ERROR;
+            }
+            returnData.Status = status;
+            returnData.Data = resultReturn;
+            JsonSerializerSettings st = new JsonSerializerSettings();
+            return JsonConvert.SerializeObject(returnData, Formatting.None, st);
+        }
         
     }
 }

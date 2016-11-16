@@ -84,7 +84,7 @@ namespace BusinessEntities
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAll_M_ProductInfoWithImportInfo_Result>("SelectAll_M_ProductInfoWithImportInfo_ByProductID", productIDParameter);
         }
     
-        public virtual ObjectResult<Nullable<short>> InsertM_ProductInfo(string product_name, string category, Nullable<int> instock, string image, Nullable<double> price, string description, string preservation, string howtouse, string origin, Nullable<int> status)
+        public virtual int InsertM_ProductInfo(string product_name, string category, Nullable<int> instock, string image, Nullable<double> price, string description, string preservation, string howtouse, string origin, Nullable<int> status)
         {
             var product_nameParameter = product_name != null ?
                 new ObjectParameter("product_name", product_name) :
@@ -126,10 +126,10 @@ namespace BusinessEntities
                 new ObjectParameter("status", status) :
                 new ObjectParameter("status", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<short>>("InsertM_ProductInfo", product_nameParameter, categoryParameter, instockParameter, imageParameter, priceParameter, descriptionParameter, preservationParameter, howtouseParameter, originParameter, statusParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertM_ProductInfo", product_nameParameter, categoryParameter, instockParameter, imageParameter, priceParameter, descriptionParameter, preservationParameter, howtouseParameter, originParameter, statusParameter);
         }
     
-        public virtual ObjectResult<Nullable<short>> UpdateM_ProductInfo(string product_id, string product_name, string category, Nullable<int> instock, string image, Nullable<double> price, string description, string preservation, string howtouse, string origin, Nullable<int> status)
+        public virtual int UpdateM_ProductInfo(string product_id, string product_name, string category, Nullable<int> instock, string image, Nullable<double> price, string description, string preservation, string howtouse, string origin, Nullable<int> status)
         {
             var product_idParameter = product_id != null ?
                 new ObjectParameter("product_id", product_id) :
@@ -175,7 +175,27 @@ namespace BusinessEntities
                 new ObjectParameter("status", status) :
                 new ObjectParameter("status", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<short>>("UpdateM_ProductInfo", product_idParameter, product_nameParameter, categoryParameter, instockParameter, imageParameter, priceParameter, descriptionParameter, preservationParameter, howtouseParameter, originParameter, statusParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateM_ProductInfo", product_idParameter, product_nameParameter, categoryParameter, instockParameter, imageParameter, priceParameter, descriptionParameter, preservationParameter, howtouseParameter, originParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<M_ProductInfo> SelectAll_M_ProductInfo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_ProductInfo>("SelectAll_M_ProductInfo");
+        }
+    
+        public virtual ObjectResult<M_ProductInfo> SelectAll_M_ProductInfo(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_ProductInfo>("SelectAll_M_ProductInfo", mergeOption);
+        }
+    
+        public virtual ObjectResult<M_Supplier> SelectAll_M_Supplier()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Supplier>("SelectAll_M_Supplier");
+        }
+    
+        public virtual ObjectResult<M_Supplier> SelectAll_M_Supplier(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Supplier>("SelectAll_M_Supplier", mergeOption);
         }
     }
 }

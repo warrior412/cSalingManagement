@@ -83,6 +83,7 @@
     <Compile Include="Model\MCategoryInfo.cs" />
     <Compile Include="Model\MenuItem.cs" />
     <Compile Include="Model\MProductInfo.cs" />
+    <Compile Include="Model\M_Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -42,7 +42,8 @@ namespace cSalingmanagement.Webservice
                 wc.UploadFileAsync(new Uri(url + "Image/PostProductImage"), imageURL);
             });
         }
-        async public void GetALL_M_ProductInfoWithImportData()
+
+        async public void GetALL_M_ProductInfo()
         {
             string url = ConfigurationManager.AppSettings["WSURL"];
             await Task.Run(() =>
@@ -51,6 +52,33 @@ namespace cSalingmanagement.Webservice
                 wc.Encoding = Encoding.UTF8;
                 wc.Headers[HttpRequestHeader.ContentType] = "application/json";
                 wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO);
+                wc.DownloadStringCompleted += wc_DownloadStringCompleted;
+                wc.DownloadStringAsync(new Uri(url + "Product/SelectAll_M_ProductInfo"));
+            });
+        }
+        async public void GetALL_M_SupplierInfo()
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                wc.Encoding = Encoding.UTF8;
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_SUPPLIERINFO);
+                wc.DownloadStringCompleted += wc_DownloadStringCompleted;
+                wc.DownloadStringAsync(new Uri(url + "Supplier/SelectAll_M_Supplier"));
+            });
+        }
+
+        async public void GetALL_M_ProductInfoWithImportData()
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                wc.Encoding = Encoding.UTF8;
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA);
                 wc.DownloadStringCompleted += wc_DownloadStringCompleted;
                 wc.DownloadStringAsync(new Uri(url + "Product/SelectAll_M_ProductInfoWithImportInfo"));
             });
@@ -207,6 +235,12 @@ namespace cSalingmanagement.Webservice
                     this.CallBackComplete(tag,data);
                     break;
                 case SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_SUPPLIERINFO:
                     this.CallBackComplete(tag, data);
                     break;
                 default:

@@ -96,7 +96,7 @@
       <Parameter Name="ProductID" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="M_Supplier" EntityType="cSalingManagementModel.M_Supplier" />
-    <FunctionImport Name="InsertM_ProductInfo" ReturnType="Collection(Int16)">
+    <FunctionImport Name="InsertM_ProductInfo">
       <Parameter Name="product_name" Mode="In" Type="String" />
       <Parameter Name="Category" Mode="In" Type="String" />
       <Parameter Name="instock" Mode="In" Type="Int32" />
@@ -108,7 +108,7 @@
       <Parameter Name="origin" Mode="In" Type="String" />
       <Parameter Name="status" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="UpdateM_ProductInfo" ReturnType="Collection(Int16)">
+    <FunctionImport Name="UpdateM_ProductInfo">
       <Parameter Name="product_id" Mode="In" Type="String" />
       <Parameter Name="product_name" Mode="In" Type="String" />
       <Parameter Name="Category" Mode="In" Type="String" />
@@ -121,6 +121,8 @@
       <Parameter Name="origin" Mode="In" Type="String" />
       <Parameter Name="status" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="SelectAll_M_ProductInfo" EntitySet="M_ProductInfo" ReturnType="Collection(cSalingManagementModel.M_ProductInfo)" />
+    <FunctionImport Name="SelectAll_M_Supplier" EntitySet="M_Supplier" ReturnType="Collection(cSalingManagementModel.M_Supplier)" />
   </EntityContainer>
   <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
     <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
@@ -151,15 +153,15 @@
       <PropertyRef Name="ProductID" />
     </Key>
     <Property Name="ProductID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Category" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Pro_InStock" Type="Int32" />
     <Property Name="Pro_Image" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="Pro_Price" Type="Double" />
-    <Property Name="Pro_Desciptions" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="Pro_Preservation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="Pro_HowToUse" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="Pro_Origin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Pro_Desciptions" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Pro_Preservation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Pro_HowToUse" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Pro_Origin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Pro_Status" Type="Int32" />
   </EntityType>
   <EntityType Name="T_Import">

@@ -191,5 +191,7 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="InsertM_ProductInfo" FunctionName="cSalingManagementModel.Store.InsertM_ProductInfo" />
     <FunctionImportMapping FunctionImportName="UpdateM_ProductInfo" FunctionName="cSalingManagementModel.Store.UpdateM_ProductInfo" />
+    <FunctionImportMapping FunctionImportName="SelectAll_M_ProductInfo" FunctionName="cSalingManagementModel.Store.SelectAll_M_ProductInfo" />
+    <FunctionImportMapping FunctionImportName="SelectAll_M_Supplier" FunctionName="cSalingManagementModel.Store.SelectAll_M_Supplier" />
   </EntityContainerMapping>
 </Mapping>

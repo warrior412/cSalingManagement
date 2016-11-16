@@ -33,7 +33,7 @@
                         <RowDefinition Height="10*"/>
                     </Grid.RowDefinitions>
                     <DockPanel Grid.Row="0" HorizontalAlignment="Stretch" Background="{StaticResource MainDarkColor}" LastChildFill="True">
-                        <Button  DockPanel.Dock="Right" Content="Hoàn thành" Style="{StaticResource btn-primary}" 
+                        <Button  DockPanel.Dock="Right" Content="Lưu" Style="{StaticResource btn-primary}" 
                                  Height="30" Width="{Binding IsEditing,Converter={StaticResource ProductModule_IsEditingToWidthConverter},ConverterParameter=Finish}"
                                  Padding="0,0,0,0" Margin="0,0,5,0"
                                  Command="{Binding FinishCommand}"/>

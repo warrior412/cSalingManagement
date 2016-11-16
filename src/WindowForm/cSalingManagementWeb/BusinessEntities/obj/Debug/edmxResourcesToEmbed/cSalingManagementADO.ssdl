@@ -62,15 +62,15 @@
       <PropertyRef Name="ProductID" />
     </Key>
     <Property Name="ProductID" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="ProductName" Type="varchar" MaxLength="50" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
     <Property Name="Category" Type="varchar" MaxLength="10" />
     <Property Name="Pro_InStock" Type="int" />
     <Property Name="Pro_Image" Type="varchar" MaxLength="200" />
     <Property Name="Pro_Price" Type="float" />
-    <Property Name="Pro_Desciptions" Type="varchar" MaxLength="200" />
-    <Property Name="Pro_Preservation" Type="varchar" MaxLength="200" />
-    <Property Name="Pro_HowToUse" Type="varchar" MaxLength="200" />
-    <Property Name="Pro_Origin" Type="varchar" MaxLength="10" />
+    <Property Name="Pro_Desciptions" Type="nvarchar" MaxLength="500" />
+    <Property Name="Pro_Preservation" Type="nvarchar" MaxLength="200" />
+    <Property Name="Pro_HowToUse" Type="nvarchar" MaxLength="200" />
+    <Property Name="Pro_Origin" Type="nvarchar" MaxLength="50" />
     <Property Name="Pro_Status" Type="int" />
   </EntityType>
   <EntityType Name="M_Role">
@@ -128,15 +128,15 @@
     <Parameter Name="status" Type="int" Mode="In" />
   </Function>
   <Function Name="InsertM_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="product_name" Type="varchar" Mode="In" />
+    <Parameter Name="product_name" Type="nvarchar" Mode="In" />
     <Parameter Name="Category" Type="varchar" Mode="In" />
     <Parameter Name="instock" Type="int" Mode="In" />
     <Parameter Name="image" Type="varchar" Mode="In" />
     <Parameter Name="price" Type="float" Mode="In" />
-    <Parameter Name="description" Type="varchar" Mode="In" />
-    <Parameter Name="preservation" Type="varchar" Mode="In" />
-    <Parameter Name="howtouse" Type="varchar" Mode="In" />
-    <Parameter Name="origin" Type="varchar" Mode="In" />
+    <Parameter Name="description" Type="nvarchar" Mode="In" />
+    <Parameter Name="preservation" Type="nvarchar" Mode="In" />
+    <Parameter Name="howtouse" Type="nvarchar" Mode="In" />
+    <Parameter Name="origin" Type="nvarchar" Mode="In" />
     <Parameter Name="status" Type="int" Mode="In" />
   </Function>
   <Function Name="InsertM_SupplierInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -149,22 +149,30 @@
     <Parameter Name="image" Type="varchar" Mode="In" />
     <Parameter Name="status" Type="int" Mode="In" />
   </Function>
+  <Function Name="InsertT_Import" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="productID" Type="varchar" Mode="In" />
+    <Parameter Name="supplier" Type="varchar" Mode="In" />
+    <Parameter Name="quantity" Type="int" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="SelectAll_M_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SelectAll_M_ProductInfoWithImportInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SelectAll_M_ProductInfoWithImportInfo_ByProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ProductID" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="SelectAll_M_Supplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="UpdateM_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="product_id" Type="varchar" Mode="In" />
-    <Parameter Name="product_name" Type="varchar" Mode="In" />
+    <Parameter Name="product_name" Type="nvarchar" Mode="In" />
     <Parameter Name="Category" Type="varchar" Mode="In" />
     <Parameter Name="instock" Type="int" Mode="In" />
     <Parameter Name="image" Type="varchar" Mode="In" />
     <Parameter Name="price" Type="float" Mode="In" />
-    <Parameter Name="description" Type="varchar" Mode="In" />
-    <Parameter Name="preservation" Type="varchar" Mode="In" />
-    <Parameter Name="howtouse" Type="varchar" Mode="In" />
-    <Parameter Name="origin" Type="varchar" Mode="In" />
+    <Parameter Name="description" Type="nvarchar" Mode="In" />
+    <Parameter Name="preservation" Type="nvarchar" Mode="In" />
+    <Parameter Name="howtouse" Type="nvarchar" Mode="In" />
+    <Parameter Name="origin" Type="nvarchar" Mode="In" />
     <Parameter Name="status" Type="int" Mode="In" />
   </Function>
   <EntityContainer Name="cSalingManagementModelStoreContainer">

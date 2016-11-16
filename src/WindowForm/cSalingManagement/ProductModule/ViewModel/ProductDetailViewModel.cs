@@ -32,7 +32,7 @@ namespace ProductModule.ViewModel
             set { lstCategoryInfo = value; }
         }
 
-        private M_ProductInfoWithImportInfo productDetail = null;
+        private M_ProductInfoWithImportInfo productDetail = new M_ProductInfoWithImportInfo();
 
         public M_ProductInfoWithImportInfo ProductDetail
         {
@@ -118,6 +118,19 @@ namespace ProductModule.ViewModel
         }
         private void doFinish()
         {
+            //Insert new product
+            if (this.ProductDetail.ProductID == null || this.ProductDetail.ProductID.Equals(""))
+            {
+                if (this.NewProductImage == null || this.NewProductImage.Equals(""))
+                {
+                    this.InsertNewProduct();
+                    return;
+                }
+                this.UploadImage();
+                return;
+            }
+
+            //Update product
             if(this.NewProductImage==null||this.NewProductImage.Equals(""))
             {
                 this.UpdateProductDetail();
@@ -172,6 +185,15 @@ namespace ProductModule.ViewModel
             dao.CallBackFail = new DAOProvider.FinishFail(Failed);
             dao.UpdateM_ProductInfo(this.ProductDetail);
         }
+        private void InsertNewProduct()
+        {
+            IsBusy = true;
+            CallServiceCount++;
+            DAOProvider dao = DAOProvider.GetInstance();
+            dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
+            dao.CallBackFail = new DAOProvider.FinishFail(Failed);
+            dao.InsertM_ProductInfo(this.ProductDetail);
+        }
 
         #region Delegate CallBack Method
         void Completed(string tag, object data)
@@ -180,13 +202,22 @@ namespace ProductModule.ViewModel
             {
                 CallServiceCount--;
                 this.ProductDetail.Pro_Image = data.ToString();
-                this.UpdateProductDetail();
+                if (this.ProductDetail.ProductID == null || this.ProductDetail.ProductID.Equals(""))
+                    this.InsertNewProduct();
+                else
+                    this.UpdateProductDetail();
             }
             if (tag == SalingManagement_WebServiceTag.TAG_UPDATE_M_PRODUCTINFO)
             {
                 CallServiceCount--;
                 this.IsEditing = false;
                 this.view.ShowMessage("Update successfully");
+            }
+            if (tag == SalingManagement_WebServiceTag.TAG_INSERT_M_PRODUCTINFO)
+            {
+                CallServiceCount--;
+                this.IsEditing = false;
+                this.view.ShowMessage("Insert successfully");
             }
             if (CallServiceCount <= 0)
                 IsBusy = false;

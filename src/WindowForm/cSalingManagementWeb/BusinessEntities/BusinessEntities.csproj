@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ADO\M_CategoryInfoDAO.cs" />
     <Compile Include="ADO\M_ProductInfoADO.cs" />
+    <Compile Include="ADO\M_SupplierADO.cs" />
     <Compile Include="cSalingManagementADO.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

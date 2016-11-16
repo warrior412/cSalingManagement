@@ -94,7 +94,7 @@ namespace ProductModule.View
 
             this.Dispatcher.Invoke((Action)(() =>
             {
-                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO)
+                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA)
                 {
                     _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfo>>(data.ToString());
                     _vm.Text = "text";
