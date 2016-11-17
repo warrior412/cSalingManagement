@@ -1,33 +1,69 @@
-﻿using Prism.Mvvm;
+﻿using cSalingManagement.Infrastructure.Model;
+using Microsoft.Practices.Unity;
+using Prism.Commands;
+using Prism.Modularity;
+using Prism.Mvvm;
+using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NewRequestModule.ViewModel
 {
     public class NewRequestViewModel:BindableBase
     {
-        private ObservableCollection<TabControlItemsResource> _tabItems;
+        private ObservableCollection<M_ProductInfoWithImportInfo> lstProductInfo = 
+            new ObservableCollection<M_ProductInfoWithImportInfo>();
 
-        public ObservableCollection<TabControlItemsResource> TabItems
+        public ObservableCollection<M_ProductInfoWithImportInfo> LstProductInfo
         {
-            get { return new ObservableCollection<TabControlItemsResource> { 
-                new TabControlItemsResource{TabName= "Tab 1",ItemResource= null},
-                new TabControlItemsResource{TabName= "Tab 2",ItemResource= null},
-                new TabControlItemsResource{TabName= "Tab 3",ItemResource= null}
-            }; }
-            set { _tabItems = value; }
+            get { return lstProductInfo; }
+            set { lstProductInfo = value; }
         }
-    }
-    public class TabControlItemsResource
-    {
-        public string TabName { get; set; }
-        public ObservableCollection<ItemResource> ItemResource { get; set; }
-    }
-    public class ItemResource
-    {
+        private ObservableCollection<M_Supplier> lstSupplierInfo = new ObservableCollection<M_Supplier>();
+
+        public ObservableCollection<M_Supplier> LstSupplierInfo
+        {
+            get { return lstSupplierInfo; }
+            set { SetProperty(ref this.lstSupplierInfo, value); }
+        }
+        private string text;
+
+        public string Text
+        {
+            get { return text; }
+            set { text = value; }
+        }
+        public NewRequestViewModel(IRegionManager regionManager, IModuleManager moduleManager, IUnityContainer container)
+        {
+            this.RegionManager = regionManager;
+            this.ModuleManager = moduleManager;
+            this.UnityContainer = container;
+        }
+
+
+
+        #region Public Properties
+        public IRegionManager RegionManager { get; set; }
+        public IUnityContainer UnityContainer { get; set; }
+        public IModuleManager ModuleManager { get; set; }
+        #endregion
+
+        public ICommand ProductDetailCommand
+        {
+            get
+            {
+                return new DelegateCommand<object>(openProductDetailView);
+            }
+        }
+
+        private void openProductDetailView(object productID)
+        {
+            
+        }
     }
 }

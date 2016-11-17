@@ -123,6 +123,13 @@
     </FunctionImport>
     <FunctionImport Name="SelectAll_M_ProductInfo" EntitySet="M_ProductInfo" ReturnType="Collection(cSalingManagementModel.M_ProductInfo)" />
     <FunctionImport Name="SelectAll_M_Supplier" EntitySet="M_Supplier" ReturnType="Collection(cSalingManagementModel.M_Supplier)" />
+    <FunctionImport Name="InsertT_Import">
+      <Parameter Name="productID" Mode="In" Type="String" />
+      <Parameter Name="supplier" Mode="In" Type="String" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+      <Parameter Name="user" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo_OnWaiting" ReturnType="Collection(cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result)" />
   </EntityContainer>
   <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
     <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />

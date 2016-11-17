@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace BusinessEntities.ADO
 {
@@ -31,6 +33,32 @@ namespace BusinessEntities.ADO
             }
             return resultReturn;
         }
+
+        public int Insert_T_ImportInfo(List<SelectAll_M_ProductInfoWithImportInfo_Result> lstImportInfo)
+        {
+            int resultReturn=0;
+            using (TransactionScope trans = new TransactionScope())
+            {
+                try
+                {
+                    foreach (SelectAll_M_ProductInfoWithImportInfo_Result item in lstImportInfo)
+                    {
+                        resultReturn = int.Parse(entities.InsertT_Import(item.ProductID, item.Supplier, item.Import_Quantity, "admin").ToString());
+                    }
+                    trans.Complete(); //  To commit.
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
+            }
+            return resultReturn;
+        }
+
         public int UpdateM_ProductInfo(M_ProductInfo m_productinfo)
         {
             int resultReturn;
@@ -59,6 +87,19 @@ namespace BusinessEntities.ADO
             try
             {
                 resultReturn = entities.SelectAll_M_ProductInfoWithImportInfo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return resultReturn;
+        }
+        public ObjectResult<SelectAll_M_ProductInfoWithImportInfo_Result> SelectAll_M_ProductInfoWithImportInfo_OnWaiting()
+        {
+            ObjectResult<SelectAll_M_ProductInfoWithImportInfo_Result> resultReturn = null;
+            try
+            {
+                resultReturn = entities.SelectAll_M_ProductInfoWithImportInfo_OnWaiting();
             }
             catch (Exception ex)
             {

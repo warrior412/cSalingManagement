@@ -3,6 +3,7 @@ using cSalingManagement.Infrastructure.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -83,6 +84,20 @@ namespace cSalingmanagement.Webservice
                 wc.DownloadStringAsync(new Uri(url + "Product/SelectAll_M_ProductInfoWithImportInfo"));
             });
         }
+
+        async public void GetAll_M_ProductInfoWithImportInfo_OnWaiting()
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                wc.Encoding = Encoding.UTF8;
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA_ONWAITING);
+                wc.DownloadStringCompleted += wc_DownloadStringCompleted;
+                wc.DownloadStringAsync(new Uri(url + "Product/SelectAll_M_ProductInfoWithImportInfo_OnWaiting"));
+            });
+        }
         async public void InsertM_ProductInfo(M_ProductInfo m_productinfo)
         {
             string url = ConfigurationManager.AppSettings["WSURL"];
@@ -142,10 +157,23 @@ namespace cSalingmanagement.Webservice
             });
         }
 
-        
 
 
 
+        async public void InsertT_ImportInfo(ObservableCollection<M_ProductInfoWithImportInfo> lstProductImport)
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                string json = JsonConvert.SerializeObject(lstProductImport);
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_INSERT_T_IMPORTPRODUCTINFO);
+                wc.Encoding = Encoding.UTF8;
+                wc.UploadStringCompleted += wc_UploadStringCompleted;
+                wc.UploadStringAsync(new Uri(url + "Product/Insert_T_ImportInfo"), json);
+            });
+        }
 
 
         private void wc_UploadFileCompleted(object sender,UploadFileCompletedEventArgs e)
@@ -199,6 +227,9 @@ namespace cSalingmanagement.Webservice
                 case SalingManagement_WebServiceTag.TAG_INSERT_M_PRODUCTINFO:
                     this.CallBackComplete(tag,data);
                     break;
+                case SalingManagement_WebServiceTag.TAG_INSERT_T_IMPORTPRODUCTINFO:
+                    this.CallBackComplete(tag, data);
+                    break;
                 case SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID:
                     this.CallBackComplete(tag, data);
                     break;
@@ -238,6 +269,9 @@ namespace cSalingmanagement.Webservice
                     this.CallBackComplete(tag, data);
                     break;
                 case SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA_ONWAITING:
                     this.CallBackComplete(tag, data);
                     break;
                 case SalingManagement_WebServiceTag.TAG_GETALL_M_SUPPLIERINFO:

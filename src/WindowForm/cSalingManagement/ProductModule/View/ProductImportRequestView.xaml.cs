@@ -2,10 +2,12 @@
 using cSalingManagement.Infrastructure.Common;
 using cSalingManagement.Infrastructure.Model;
 using Newtonsoft.Json;
+using Prism.Regions;
 using ProductModule.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +26,26 @@ namespace ProductModule.View
     /// <summary>
     /// Interaction logic for ProductImportRequestView.xaml
     /// </summary>
-    public partial class ProductImportRequestView : UserControl
+    public partial class ProductImportRequestView : UserControl, INavigationAware
     {
+        private int CallServiceCount = 0; 
+        #region Navigation Region
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            Console.WriteLine("ProductListView :IsNavigationTarget");
+            return false;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            Console.WriteLine("ProductListView :OnNavigatedFrom");
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            Console.WriteLine("ProductListView :OnNavigatedTo");
+        }
+        #endregion
         private ProductImportRequestViewModel _vm = null;
 
         public ProductImportRequestViewModel Vm
@@ -41,7 +61,18 @@ namespace ProductModule.View
         {
             InitializeComponent();
             _vm = vm;
+            _vm.view = this;
             GetInitData();
+        }
+
+        public void Insert_T_ImportProductInfo(ObservableCollection<M_ProductInfoWithImportInfo> lstImportProduct)
+        {
+            busyIndicator.IsBusy = true;
+            CallServiceCount++;
+            DAOProvider dao = DAOProvider.GetInstance();
+            dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
+            dao.CallBackFail = new DAOProvider.FinishFail(Failed);
+            dao.InsertT_ImportInfo(lstImportProduct);
         }
         public void GetInitData()
         {
@@ -51,7 +82,9 @@ namespace ProductModule.View
                 DAOProvider dao = DAOProvider.GetInstance();
                 dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
                 dao.CallBackFail = new DAOProvider.FinishFail(Failed);
-                dao.GetALL_M_ProductInfoWithImportData();
+                CallServiceCount++;
+                dao.GetALL_M_ProductInfo();
+                CallServiceCount++;
                 dao.GetALL_M_SupplierInfo();
             }
             catch (Exception ex)
@@ -68,10 +101,10 @@ namespace ProductModule.View
         }
         void Completed(string tag, object data)
         {
-
+            
             this.Dispatcher.Invoke((Action)(() =>
             {
-                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA)
+                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO)
                 {
                     _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfo>>(data.ToString());
                     DataContext = null;
@@ -80,17 +113,26 @@ namespace ProductModule.View
 
                     ListCollectionView collectionView = new ListCollectionView(_vm.LstProductInfoWithImportInfo);
                     collectionView.GroupDescriptions.Add(new PropertyGroupDescription("Supplier"));
+                    collectionView.SortDescriptions.Add(new SortDescription("Supplier", ListSortDirection.Ascending));
                     this.gvImportList.ItemsSource = collectionView;
                     this.UpdateLayout();
-                    busyIndicator.IsBusy = false;
+                    CallServiceCount--;
                 }
                 if(tag==SalingManagement_WebServiceTag.TAG_GETALL_M_SUPPLIERINFO)
                 {
                     _vm.LstSupplierInfo = JsonConvert.DeserializeObject<ObservableCollection<M_Supplier>>(data.ToString());
                     DataContext = null;
                     DataContext = _vm;
+                    CallServiceCount--;
                 }
+                if(tag==SalingManagement_WebServiceTag.TAG_INSERT_T_IMPORTPRODUCTINFO)
+                {
+                    CallServiceCount--;
+                }
+                if (CallServiceCount <= 0)
+                    this.busyIndicator.IsBusy = false;
             }));
+            
         }
 
         void Failed(string tag, string data)
@@ -98,8 +140,11 @@ namespace ProductModule.View
             this.Dispatcher.Invoke((Action)(() =>
             {
                 MessageBox.Show(data);
-                busyIndicator.IsBusy = false;
+                CallServiceCount--;
+                if (CallServiceCount <= 0)
+                    this.busyIndicator.IsBusy = false;
             }));
+            
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -108,11 +153,33 @@ namespace ProductModule.View
             if (cb.SelectedValue != null&& this.gvImportList.SelectedItem!=null)
             {
                 int selectedIndex = this.gvImportList.Items.IndexOf(this.gvImportList.SelectedItem);
-                _vm.LstProductInfoWithImportInfo[selectedIndex].Supplier = cb.SelectedValue.ToString();
+                M_ProductInfoWithImportInfo selectedItem = this.gvImportList.SelectedItem as M_ProductInfoWithImportInfo;
+                foreach(M_ProductInfoWithImportInfo item in _vm.LstProductInfoWithImportInfo)
+                {
+                    if (item.ProductID.Equals(selectedItem.ProductID))
+                    {
+                        if(item.Supplier!=null && item.Supplier.Equals(cb.SelectedValue.ToString()))
+                        {
+                            cb.SelectedValue = null;
+                            return;
+                        }    
+                    }
+                }
+                _vm.LstProductInfoWithImportInfo[_vm.LstProductInfoWithImportInfo.IndexOf(selectedItem)].Supplier
+                    = cb.SelectedValue.ToString();
                 ListCollectionView collectionView = new ListCollectionView(_vm.LstProductInfoWithImportInfo);
                 collectionView.GroupDescriptions.Add(new PropertyGroupDescription("Supplier"));
+                collectionView.SortDescriptions.Add(new SortDescription("Supplier", ListSortDirection.Ascending));
                 this.gvImportList.ItemsSource = collectionView;
             }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            M_ProductInfoWithImportInfo selectedItem = this.gvImportList.SelectedItem as M_ProductInfoWithImportInfo;
+            _vm.LstProductInfoWithImportInfo[_vm.LstProductInfoWithImportInfo.IndexOf(selectedItem)].Import_Quantity 
+                = tb.Text.ToString().Trim().Equals("")?0: int.Parse(tb.Text.ToString());
         }
     }
 }

@@ -15,7 +15,8 @@ namespace cSalingManagement.Infrastructure.Common
         #region Insert TAG
         public  const string TAG_INSERT_M_PRODUCTINFO = "1";
         public  const string TAG_INSERT_M_ACCOUNTINFO = "2";
-        public  const string TAG_INSERT_M_CATEGORYINFO = "3"; 
+        public  const string TAG_INSERT_M_CATEGORYINFO = "3";
+        public const string TAG_INSERT_T_IMPORTPRODUCTINFO = "4"; 
         #endregion
 
         
@@ -26,6 +27,7 @@ namespace cSalingManagement.Infrastructure.Common
         public  const string TAG_GETALL_M_CATEGORYINFO = "103";
         public  const string TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA = "104";
         public const string TAG_GETALL_M_SUPPLIERINFO = "105";
+        public const string TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA_ONWAITING = "106";
 
         public const string TAG_GETALL_M_PRODUCTINFO_BYID = "150";
         #endregion

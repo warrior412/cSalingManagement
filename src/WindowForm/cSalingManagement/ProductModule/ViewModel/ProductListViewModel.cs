@@ -18,9 +18,10 @@ namespace ProductModule.ViewModel
 {
     public class ProductListViewModel : BindableBase
     {
-        private ObservableCollection<M_ProductInfo> lstProductInfo = new ObservableCollection<M_ProductInfo>();
+        private ObservableCollection<M_ProductInfoWithImportInfo> lstProductInfo = 
+            new ObservableCollection<M_ProductInfoWithImportInfo>();
 
-        public ObservableCollection<M_ProductInfo> LstProductInfo
+        public ObservableCollection<M_ProductInfoWithImportInfo> LstProductInfo
         {
             get { return lstProductInfo; }
             set { lstProductInfo = value; }

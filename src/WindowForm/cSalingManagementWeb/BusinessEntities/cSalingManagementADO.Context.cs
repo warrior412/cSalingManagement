@@ -197,5 +197,31 @@ namespace BusinessEntities
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Supplier>("SelectAll_M_Supplier", mergeOption);
         }
+    
+        public virtual int InsertT_Import(string productID, string supplier, Nullable<int> quantity, string user)
+        {
+            var productIDParameter = productID != null ?
+                new ObjectParameter("productID", productID) :
+                new ObjectParameter("productID", typeof(string));
+    
+            var supplierParameter = supplier != null ?
+                new ObjectParameter("supplier", supplier) :
+                new ObjectParameter("supplier", typeof(string));
+    
+            var quantityParameter = quantity.HasValue ?
+                new ObjectParameter("quantity", quantity) :
+                new ObjectParameter("quantity", typeof(int));
+    
+            var userParameter = user != null ?
+                new ObjectParameter("user", user) :
+                new ObjectParameter("user", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertT_Import", productIDParameter, supplierParameter, quantityParameter, userParameter);
+        }
+    
+        public virtual ObjectResult<SelectAll_M_ProductInfoWithImportInfo_Result> SelectAll_M_ProductInfoWithImportInfo_OnWaiting()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAll_M_ProductInfoWithImportInfo_Result>("SelectAll_M_ProductInfoWithImportInfo_OnWaiting");
+        }
     }
 }

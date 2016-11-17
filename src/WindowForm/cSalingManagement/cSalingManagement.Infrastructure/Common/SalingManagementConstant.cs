@@ -38,6 +38,12 @@ namespace cSalingManagement.Common
 
         public static double Applicaton_Width = 1024;
         public static double Application_Height = 768;
+
+
+        public static int STATUS_DELETED = -1;
+        public static int STATUS_ONWAITING = 0;
+        public static int STATUS_READY = 1;
+        
         
     }
 }

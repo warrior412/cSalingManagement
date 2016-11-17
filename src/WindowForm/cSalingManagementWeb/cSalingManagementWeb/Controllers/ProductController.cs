@@ -41,6 +41,30 @@ namespace cSalingManagementWeb.Models
             return JsonConvert.SerializeObject(returnData, Formatting.None, st);
         }
 
+        // POST api/Product/Insert_T_ImportInfo
+        [HttpPost]
+        public string Insert_T_ImportInfo(List<SelectAll_M_ProductInfoWithImportInfo_Result> lstImportProduct)
+        {
+            JsonObjectData returnData = new JsonObjectData();
+            Status status = new Status();
+            int resultReturn = -1;
+            status.StatusCode = StatusCodes.NO_DATA;
+            try
+            {
+                resultReturn = new M_ProductInfoADO().Insert_T_ImportInfo(lstImportProduct);
+                status.StatusCode = StatusCodes.CREATED;
+            }
+            catch (Exception ex)
+            {
+                status.StatusMsg = ex.Message;
+                status.StatusCode = StatusCodes.UNKNOW_ERROR;
+            }
+            returnData.Status = status;
+            returnData.Data = resultReturn;
+            JsonSerializerSettings st = new JsonSerializerSettings();
+            return JsonConvert.SerializeObject(returnData, Formatting.None, st);
+        }
+
         // POST api/Product/UpdateM_ProductInfo
         [HttpPost]
         public string UpdateM_ProductInfo(M_ProductInfo m_productinfo)
@@ -64,7 +88,7 @@ namespace cSalingManagementWeb.Models
             JsonSerializerSettings st = new JsonSerializerSettings();
             return JsonConvert.SerializeObject(returnData, Formatting.None, st);
         }
-        // POST api/Product/SelectAll_M_ProductInfoWithImportInfo_ByProductID
+        // GET api/Product/SelectAll_M_ProductInfoWithImportInfo_ByProductID
         [HttpPost]
         public string SelectAll_M_ProductInfoWithImportInfo_ByProductID(M_ProductInfo m_productinfo)
         {
@@ -100,6 +124,29 @@ namespace cSalingManagementWeb.Models
             try
             {
                 resultReturn = new M_ProductInfoADO().SelectAll_M_ProductInfoWithImportInfo().ToList();
+                status.StatusCode = StatusCodes.OK;
+            }
+            catch (Exception ex)
+            {
+                status.StatusMsg = ex.Message;
+                status.StatusCode = StatusCodes.UNKNOW_ERROR;
+            }
+            returnData.Status = status;
+            returnData.Data = resultReturn;
+            JsonSerializerSettings st = new JsonSerializerSettings();
+            return JsonConvert.SerializeObject(returnData, Formatting.None, st);
+        }
+        // GET api/Product/SelectAll_M_ProductInfoWithImportInfo_OnWaiting
+        [HttpGet]
+        public string SelectAll_M_ProductInfoWithImportInfo_OnWaiting()
+        {
+            JsonObjectData returnData = new JsonObjectData();
+            Status status = new Status();
+            List<SelectAll_M_ProductInfoWithImportInfo_Result> resultReturn = null;
+            status.StatusCode = StatusCodes.NO_DATA;
+            try
+            {
+                resultReturn = new M_ProductInfoADO().SelectAll_M_ProductInfoWithImportInfo_OnWaiting().ToList();
                 status.StatusCode = StatusCodes.OK;
             }
             catch (Exception ex)

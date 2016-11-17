@@ -161,6 +161,7 @@
   <Function Name="SelectAll_M_ProductInfoWithImportInfo_ByProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ProductID" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="SelectAll_M_ProductInfoWithImportInfo_OnWaiting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SelectAll_M_Supplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="UpdateM_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="product_id" Type="varchar" Mode="In" />

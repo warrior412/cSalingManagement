@@ -166,6 +166,7 @@
         <Function Name="SelectAll_M_ProductInfoWithImportInfo_ByProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ProductID" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SelectAll_M_ProductInfoWithImportInfo_OnWaiting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SelectAll_M_Supplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="UpdateM_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="product_id" Type="varchar" Mode="In" />
@@ -319,6 +320,13 @@
           </FunctionImport>
           <FunctionImport Name="SelectAll_M_ProductInfo" EntitySet="M_ProductInfo" ReturnType="Collection(cSalingManagementModel.M_ProductInfo)" />
           <FunctionImport Name="SelectAll_M_Supplier" EntitySet="M_Supplier" ReturnType="Collection(cSalingManagementModel.M_Supplier)" />
+          <FunctionImport Name="InsertT_Import">
+            <Parameter Name="productID" Mode="In" Type="String" />
+            <Parameter Name="supplier" Mode="In" Type="String" />
+            <Parameter Name="quantity" Mode="In" Type="Int32" />
+            <Parameter Name="user" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo_OnWaiting" ReturnType="Collection(cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result)" />
         </EntityContainer>
         <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
           <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
@@ -589,6 +597,35 @@
           <FunctionImportMapping FunctionImportName="UpdateM_ProductInfo" FunctionName="cSalingManagementModel.Store.UpdateM_ProductInfo" />
           <FunctionImportMapping FunctionImportName="SelectAll_M_ProductInfo" FunctionName="cSalingManagementModel.Store.SelectAll_M_ProductInfo" />
           <FunctionImportMapping FunctionImportName="SelectAll_M_Supplier" FunctionName="cSalingManagementModel.Store.SelectAll_M_Supplier" />
+          <FunctionImportMapping FunctionImportName="InsertT_Import" FunctionName="cSalingManagementModel.Store.InsertT_Import" />
+          <FunctionImportMapping FunctionImportName="SelectAll_M_ProductInfoWithImportInfo_OnWaiting" FunctionName="cSalingManagementModel.Store.SelectAll_M_ProductInfoWithImportInfo_OnWaiting">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Pro_InStock" ColumnName="Pro_InStock" />
+                <ScalarProperty Name="Pro_Image" ColumnName="Pro_Image" />
+                <ScalarProperty Name="Pro_Price" ColumnName="Pro_Price" />
+                <ScalarProperty Name="Pro_Desciptions" ColumnName="Pro_Desciptions" />
+                <ScalarProperty Name="Pro_Preservation" ColumnName="Pro_Preservation" />
+                <ScalarProperty Name="Pro_HowToUse" ColumnName="Pro_HowToUse" />
+                <ScalarProperty Name="Pro_Origin" ColumnName="Pro_Origin" />
+                <ScalarProperty Name="Pro_Status" ColumnName="Pro_Status" />
+                <ScalarProperty Name="fk_ProductID" ColumnName="fk_ProductID" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="Import_Quantity" ColumnName="Import_Quantity" />
+                <ScalarProperty Name="Import_InStock" ColumnName="Import_InStock" />
+                <ScalarProperty Name="Import_OnOrder" ColumnName="Import_OnOrder" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ExpirionDate" ColumnName="ExpirionDate" />
+                <ScalarProperty Name="Import_User" ColumnName="Import_User" />
+                <ScalarProperty Name="Import_Vote" ColumnName="Import_Vote" />
+                <ScalarProperty Name="Import_Status" ColumnName="Import_Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

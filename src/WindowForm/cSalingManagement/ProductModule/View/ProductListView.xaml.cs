@@ -96,7 +96,7 @@ namespace ProductModule.View
             {
                 if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA)
                 {
-                    _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfo>>(data.ToString());
+                    _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfoWithImportInfo>>(data.ToString());
                     _vm.Text = "text";
                     DataContext = _vm;
                     ListCollectionView collectionView = new ListCollectionView(_vm.LstProductInfo);

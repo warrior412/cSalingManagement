@@ -44,6 +44,13 @@ namespace cSalingManagement.Infrastructure.Converter
 
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
+            if (parameter != null && parameter.ToString().Equals("ShowEditButton"))
+            {
+                if (value == null || value.ToString().Equals(""))
+                    return 0;
+                else
+                    return null;
+            }
             if (value != null && !value.ToString().Equals("") )
             {
                 if(parameter==null)

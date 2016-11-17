@@ -13,20 +13,24 @@ namespace NewRequestModule
 {
     public class NewRequestModule:IModule
     {
-        private readonly IRegionManager regionManager;
-        private readonly IUnityContainer container;
+        #region Public Properties
+        public IRegionManager RegionManager { get; set; }
+        public IUnityContainer UnityContainer { get; set; }
+        public IModuleManager ModuleManager { get; set; }
+        #endregion
 
 
-        public NewRequestModule(IUnityContainer container, IRegionManager regionManager)
+        public NewRequestModule(IRegionManager regionManager, IModuleManager moduleManager, IUnityContainer container)
         {
-            this.container = container;
-            this.regionManager = regionManager;
+            this.UnityContainer = container;
+            this.RegionManager = regionManager;
+            this.ModuleManager = moduleManager;
         }
 
         public void Initialize()
         {
-            this.regionManager.RegisterViewWithRegion(SalingManagementConstant.STRING_REGION_CONTENT,
-                                                      () => this.container.Resolve<NewRequestView>());
+            this.RegionManager.RegisterViewWithRegion(SalingManagementConstant.STRING_REGION_CONTENT,
+                                                      () => this.UnityContainer.Resolve<NewRequestView>());
         }
     }
 }

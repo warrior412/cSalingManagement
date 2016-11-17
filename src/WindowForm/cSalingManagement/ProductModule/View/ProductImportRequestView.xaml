@@ -23,10 +23,14 @@
                     <RowDefinition />
                     <RowDefinition Height="30" />
                 </Grid.RowDefinitions>
+                <DockPanel Grid.Row="0">
+                    <Button Style="{StaticResource btn-info}" Content="Hoàn thành" Height="35" Width="100" HorizontalAlignment="Right" Margin="0,0,5,0"
+                            Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.FinishImportCommand}"/>
+                </DockPanel>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="5*" />
-                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="6*"/>
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="0" BorderThickness="1" Margin="1">
                         <Grid>
@@ -76,7 +80,7 @@
                                     <DataGridTemplateColumn Header=""  MinWidth="60" IsReadOnly="True"  Width="1*">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Content="→" Style="{StaticResource btn-success}" 
+                                                <Button Content="→" Style="{StaticResource btn-success}" Grid.Column="0"
                                                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.TransferCommand}"
                                                         CommandParameter="{Binding ProductID}" Height="30" Width="40" Padding="2,2,2,2" />
                                             </DataTemplate>
@@ -129,8 +133,21 @@
                                                                         <ColumnDefinition Width="6*"/>
                                                                         <ColumnDefinition Width="1*"/>
                                                                     </Grid.ColumnDefinitions>
-                                                                    <DockPanel Grid.Column="0" Margin="5,0,0,0" MinWidth="150">
-                                                                        <TextBlock Text="{Binding Name}" Style="{StaticResource H4}"  />
+                                                                    <DockPanel Grid.Column="0" Margin="5,0,0,0" MinWidth="150" LastChildFill="True">
+                                                                        <!--<TextBlock Style="{StaticResource H4}" Text="["/>
+                                                                        <TextBlock Style="{StaticResource H4}" Text="{Binding Name}"/>
+                                                                        <TextBlock Style="{StaticResource H4}" Text="]"/>-->
+
+                                                                        <TextBlock Style="{StaticResource H4}" FontWeight="Light" FontSize="12" Text="{Binding ItemCount}"  DockPanel.Dock="Right"/>
+                                                                        <TextBlock Style="{StaticResource H4}" FontWeight="Light" FontSize="12" Text="Số lượng sản phẩm :" DockPanel.Dock="Right" />
+                                                                        <TextBlock  Style="{StaticResource H4}" DockPanel.Dock="Left">
+                                                                            <TextBlock.Text>
+                                                                                <MultiBinding Converter="{StaticResource ProductModule_SupplierIDToSupplierNameConverter}">
+                                                                                    <Binding Path="Name"/>
+                                                                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type UserControl}}" Path="DataContext.LstSupplierInfo"/>
+                                                                                </MultiBinding>
+                                                                            </TextBlock.Text>
+                                                                        </TextBlock>
                                                                     </DockPanel>
                                                                 </Grid>
                                                                 <ItemsPresenter />
@@ -153,7 +170,19 @@
                                     <DataGridTemplateColumn Header=""  MinWidth="60" IsReadOnly="True"  Width="1*">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Button Content="←" Style="{StaticResource btn-danger}" Height="30" Width="40" Padding="2,2,2,2" />
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition Width="{Binding Supplier, Converter={StaticResource ProductModule_SupplierToWidth},ConverterParameter=ShowEditButton}" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Button Content="X" Style="{StaticResource btn-danger}" Height="25" Width="25" Padding="1" Margin="0" 
+                                                            Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.RemoveCommand}"
+                                                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type DataGrid}}}"/>
+                                                    <Button Content="↺" Style="{StaticResource btn-primary}" Grid.Column="1"
+                                                            Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.EditCommand}"
+                                                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type DataGrid}}}"
+                                                            Height="25" Width="25" Padding="1" Margin="0" />
+                                                </Grid>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -195,7 +224,7 @@
                                     <DataGridTemplateColumn Header="Số lượng" MinWidth="60" IsReadOnly="True"  Width="2*">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBox Style="{StaticResource styleTextBoxDefault}" Text="{Binding Quantity}" FontSize="14"  TextAlignment="Center"/>
+                                                <TextBox Style="{StaticResource styleTextBoxDefault}" Text="{Binding Import_Quantity, Mode=TwoWay}" FontSize="14"  TextAlignment="Center" TextChanged="TextBox_TextChanged"/>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
