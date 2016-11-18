@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Web;
 using System.Web.Http;
 
@@ -53,6 +54,30 @@ namespace cSalingManagementWeb.Models
             {
                 resultReturn = new M_ProductInfoADO().Insert_T_ImportInfo(lstImportProduct);
                 status.StatusCode = StatusCodes.CREATED;
+            }
+            catch (Exception ex)
+            {
+                status.StatusMsg = ex.Message;
+                status.StatusCode = StatusCodes.UNKNOW_ERROR;
+            }
+            returnData.Status = status;
+            returnData.Data = resultReturn;
+            JsonSerializerSettings st = new JsonSerializerSettings();
+            return JsonConvert.SerializeObject(returnData, Formatting.None, st);
+        }
+
+        // POST api/Product/Update_T_ImportProduct
+        [HttpPost]
+        public string Update_T_ImportProduct(List<SelectAll_M_ProductInfoWithImportInfo_Result> lstImportProduct)
+        {
+            JsonObjectData returnData = new JsonObjectData();
+            Status status = new Status();
+            int resultReturn = -1;
+            status.StatusCode = StatusCodes.NO_DATA;
+            try
+            {
+                resultReturn = new M_ProductInfoADO().Update_T_ImportProduct(lstImportProduct);
+                status.StatusCode = StatusCodes.UPDATED;
             }
             catch (Exception ex)
             {

@@ -24,7 +24,7 @@ namespace cSalingManagement.Infrastructure.Model
     }
     public partial class M_ProductInfoWithImportInfo:M_ProductInfo
     {
-        public string ProductID1 { get; set; }
+        public string fk_ProductID { get; set; }
         public Nullable<System.DateTime> ImportDate { get; set; }
         public string Supplier { get; set; }
         public Nullable<int> Import_Quantity { get; set; }
@@ -43,6 +43,14 @@ namespace cSalingManagement.Infrastructure.Model
         public M_ProductInfoWithImportInfo JSonToProductInfoWithImportInfo(object json)
         {
             return JsonConvert.DeserializeObject<M_ProductInfoWithImportInfo>(json.ToString());
+        }
+    }
+    public partial class NewRequestView_ImportList_Row:M_ProductInfoWithImportInfo
+    {
+        public bool IsReady
+        { 
+            get; 
+            set; 
         }
     }
 }

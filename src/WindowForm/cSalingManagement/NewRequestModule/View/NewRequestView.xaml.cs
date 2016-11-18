@@ -61,6 +61,7 @@ namespace NewRequestModule.View
         {
             InitializeComponent();
             _vm = vm;
+            _vm.view = this;
             GetInitData();
         }
 
@@ -90,6 +91,24 @@ namespace NewRequestModule.View
                 }
             }
         }
+        public void UpdateImportList(ObservableCollection<NewRequestView_ImportList_Row> lstImport)
+        {
+            busyIndicator.IsBusy = true;
+            DAOProvider dao = DAOProvider.GetInstance();
+            CallServiceCount++;
+            dao.Update_T_ImportProduct(lstImport);
+            dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
+            dao.CallBackFail = new DAOProvider.FinishFail(Failed);
+        }
+
+        public void ShowMessageBox(string message)
+        {
+            MessageBox.Show(message);
+        }
+        public bool ShowMessageBoxConfirm(string message)
+        {
+            return MessageBox.Show(message,"Xác nhận",MessageBoxButton.OKCancel) == MessageBoxResult.OK?true:false;
+        }
 
         #region Delegate Callback Methods
         void Completed(string tag, object data)
@@ -100,12 +119,8 @@ namespace NewRequestModule.View
                 if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA_ONWAITING)
                 {
                     CallServiceCount--;
-                    _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfoWithImportInfo>>(data.ToString());
-                    _vm.Text = "text";
+                    _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<NewRequestView_ImportList_Row>>(data.ToString());
                     DataContext = _vm;
-                    ListCollectionView collectionView = new ListCollectionView(_vm.LstProductInfo);
-                    collectionView.GroupDescriptions.Add(new PropertyGroupDescription("Supplier"));
-                    this.gvCheckInfo.ItemsSource = collectionView;
                     this.UpdateLayout();
                     
                 }
@@ -115,6 +130,11 @@ namespace NewRequestModule.View
                     DataContext = null;
                     DataContext = _vm;
                     CallServiceCount--;
+                }
+                if(tag == SalingManagement_WebServiceTag.TAG_UPDATE_T_IMPORTPRODUCT)
+                {
+                    CallServiceCount--;
+                    MessageBox.Show("Xác nhận thay đổi thành công!");
                 }
                 if(CallServiceCount<=0)
                     busyIndicator.IsBusy = false;

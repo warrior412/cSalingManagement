@@ -5,11 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="532.8">
-    <xctk:BusyIndicator Name="busyIndicator">
+             d:DesignHeight="300" d:DesignWidth="532.8"
+             xmlns:converter="clr-namespace:cSalingManagement.Infrastructure.Converter;assembly=cSalingManagement.Infrastructure">
+    <UserControl.Resources>
+        <converter:ProductModule_SupplierToWidth x:Key="ProductModule_SupplierToWidth"/>
+        <converter:ProductModule_SupplierIDToSupplierNameConverter x:Key="ProductModule_SupplierIDToSupplierNameConverter"/>
+        <converter:DateToDateFormatConverter x:Key="DateToDateFormatConverter"/>
+    </UserControl.Resources>
+    <xctk:BusyIndicator Name="busyIndicator" IsBusy="{Binding IsLoading}">
         <xctk:BusyIndicator.BusyContent>
             <StackPanel>
-                <TextBlock HorizontalAlignment="Center">Please wait...</TextBlock>
+                <TextBlock HorizontalAlignment="Center">Vui lòng đợi...</TextBlock>
             </StackPanel>
         </xctk:BusyIndicator.BusyContent>
 
@@ -93,21 +99,42 @@
                             <DataGridTemplateColumn Header="Ngày Nhập"  MinWidth="150" IsReadOnly="True" Width="6*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ImportDate}" FontSize="14"  Margin="10,5,0,0"/>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ImportDate,Converter={StaticResource DateToDateFormatConverter}}" FontSize="14"  Margin="10,5,0,0"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Hạn sử dụng"  MinWidth="150" IsReadOnly="True" Width="6*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ExpirionDate,Converter={StaticResource DateToDateFormatConverter}}" FontSize="14"  Margin="10,5,0,0"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Nhà cung cấp"  MinWidth="150" IsReadOnly="True" Width="6*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Grid.Row="1" Style="{StaticResource styleDataGridTextCenter}" FontWeight="Bold" FontSize="14"  Margin="10,5,0,0">
+                                            <TextBlock.Text>
+                                                <MultiBinding Converter="{StaticResource ProductModule_SupplierIDToSupplierNameConverter}">
+                                                    <Binding Path="Supplier"/>
+                                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type UserControl}}" Path="DataContext.LstSupplierInfo"/>
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
                             <DataGridTemplateColumn Header="Số lượng" MinWidth="100" IsReadOnly="True"  Width="2*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Import_Quantity}" FontSize="14"  TextAlignment="Center"/>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Import_InStock}" FontSize="14"  TextAlignment="Center"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
                             <DataGridTemplateColumn Header="Giá" MinWidth="100" IsReadOnly="True"  Width="6*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Supplier}" FontSize="14"  TextAlignment="Center"/>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding UnitPrice}" FontSize="14"  TextAlignment="Center"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>

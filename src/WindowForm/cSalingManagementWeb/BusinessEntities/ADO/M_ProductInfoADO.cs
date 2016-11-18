@@ -59,6 +59,44 @@ namespace BusinessEntities.ADO
             return resultReturn;
         }
 
+        public int Update_T_ImportProduct(List<SelectAll_M_ProductInfoWithImportInfo_Result> lstImportInfo)
+        {
+            int resultReturn = 0;
+            using (TransactionScope trans = new TransactionScope())
+            {
+                try
+                {
+                    foreach (SelectAll_M_ProductInfoWithImportInfo_Result item in lstImportInfo)
+                    {
+                        resultReturn = int.Parse(
+                            entities.Update_T_ImportProduct(item.ProductID,
+                                                            item.ImportDate,
+                                                            item.Supplier,
+                                                            item.Import_Quantity,
+                                                            item.Import_InStock,
+                                                            item.Import_OnOrder,
+                                                            item.UnitPrice,
+                                                            item.ExpirionDate,
+                                                            item.Import_User,
+                                                            item.Import_Vote,
+                                                            item.Import_Status,
+                                                            DateTime.Now).ToString());
+                        //last parameter is not null only when confirms import status.
+                    }
+                    trans.Complete(); //  To commit.
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    trans.Dispose();
+                }
+            }
+            return resultReturn;
+        }
+
         public int UpdateM_ProductInfo(M_ProductInfo m_productinfo)
         {
             int resultReturn;

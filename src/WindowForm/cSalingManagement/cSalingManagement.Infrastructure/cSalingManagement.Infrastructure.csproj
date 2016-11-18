@@ -79,6 +79,7 @@
     <Compile Include="Common\SalingManagementConstant.cs" />
     <Compile Include="Common\SalingManagement_WebServiceTag.cs" />
     <Compile Include="Converter\CommonConverter.cs" />
+    <Compile Include="Converter\NewRequestModuleConverter.cs" />
     <Compile Include="Converter\ProductModuleConverter.cs" />
     <Compile Include="Model\MCategoryInfo.cs" />
     <Compile Include="Model\MenuItem.cs" />

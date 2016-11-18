@@ -130,6 +130,20 @@
       <Parameter Name="user" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo_OnWaiting" ReturnType="Collection(cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result)" />
+    <FunctionImport Name="Update_T_ImportProduct">
+      <Parameter Name="productid" Mode="In" Type="String" />
+      <Parameter Name="importdate" Mode="In" Type="DateTime" />
+      <Parameter Name="supplier" Mode="In" Type="String" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+      <Parameter Name="instock" Mode="In" Type="Int32" />
+      <Parameter Name="onorder" Mode="In" Type="Int32" />
+      <Parameter Name="price" Mode="In" Type="Double" />
+      <Parameter Name="expiriondate" Mode="In" Type="DateTime" />
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="vote" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="Int32" />
+      <Parameter Name="newimportdate" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
     <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />

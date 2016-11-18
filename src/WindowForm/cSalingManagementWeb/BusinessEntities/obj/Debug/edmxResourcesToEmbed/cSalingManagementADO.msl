@@ -222,5 +222,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Update_T_ImportProduct" FunctionName="cSalingManagementModel.Store.Update_T_ImportProduct" />
   </EntityContainerMapping>
 </Mapping>

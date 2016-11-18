@@ -9,6 +9,8 @@
     <UserControl.Resources>
         <converter:ProductModule_SupplierToWidth x:Key="ProductModule_SupplierToWidth"/>
         <converter:ProductModule_SupplierIDToSupplierNameConverter x:Key="ProductModule_SupplierIDToSupplierNameConverter"/>
+        <converter:IsReadyToWidthConverter x:Key="IsReadyToWidthConverter"/>
+        <converter:IsReadyToEnabledConverter x:Key="IsReadyToEnabledConverter"/>
     </UserControl.Resources>
     <xctk:BusyIndicator Name="busyIndicator">
         <xctk:BusyIndicator.BusyContent>
@@ -41,14 +43,15 @@
             </TabItem>
                     <TabItem Header="Yêu cầu nhập hàng" Style="{StaticResource styleTabControlTemplate}">
                         <DataGrid HeadersVisibility="Column" BorderThickness="0" 
-                              AutoGenerateColumns="False" x:Name="gvCheckInfo" 
+                              AutoGenerateColumns="False"
                               CanUserAddRows="False" RowHeight="40" VerticalScrollBarVisibility="Auto"
+                              ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.LstCollectionView,Mode=TwoWay}"
                               ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderDefault}" >
                             <DataGrid.Resources>
                                 <Style TargetType="{x:Type DataGridCell}">
                                     <Style.Triggers>
                                         <Trigger Property="DataGridCell.IsSelected" Value="True">
-                                            <Setter Property="Background" Value="White" />
+                                            <Setter Property="Background" Value="{StaticResource MainLightColor}" />
                                             <Setter Property="BorderThickness" Value="0"/>
                                         </Trigger>
                                     </Style.Triggers>
@@ -123,29 +126,66 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>-->
-                                <DataGridTemplateColumn Header="Số lượng" MinWidth="50" IsReadOnly="True"  Width="3*">
+                                <DataGridTemplateColumn Header="Số lượng" MinWidth="50" IsReadOnly="True"  Width="2*">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox Style="{StaticResource styleTextBoxDefault}" Text="{Binding Import_Quantity}" FontSize="14"  TextAlignment="Center"/>
+                                            <TextBox Style="{StaticResource styleTextBoxDefault}" 
+                                                     Text="{Binding Import_Quantity,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                     IsEnabled="{Binding IsReady,Converter={StaticResource IsReadyToEnabledConverter}}"
+                                                     FontSize="14"  TextAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Giá" MinWidth="100" IsReadOnly="True"  Width="3*">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox Style="{StaticResource styleTextBoxDefault}" Text="{Binding UnitPrice}" FontSize="14"  TextAlignment="Center"/>
+                                            <TextBox Style="{StaticResource styleTextBoxDefault}" 
+                                                     Text="{Binding UnitPrice,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                     IsEnabled="{Binding IsReady,Converter={StaticResource IsReadyToEnabledConverter}}"
+                                                     FontSize="14"  TextAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTemplateColumn Header=""  MinWidth="80" IsReadOnly="True"  Width="2*">
+                                <DataGridTemplateColumn Header="Hạn sử dụng"  MinWidth="100" IsReadOnly="True" Width="3*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <DatePicker 
+                                                        SelectedDate="{Binding ExpirionDate,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                        IsEnabled="{Binding IsReady,Converter={StaticResource IsReadyToEnabledConverter}}"
+                                                        VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="14"/>
+                                            <!--<TextBox Style="{StaticResource styleTextBoxDefault}" 
+                                                     Text="{Binding ExpirionDate,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                     IsEnabled="{Binding IsReady,Converter={StaticResource IsReadyToEnabledConverter}}"
+                                                     FontSize="14"  TextAlignment="Center"/>-->
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header=""  MinWidth="80" IsReadOnly="True"  Width="80">
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <Button Content="Refresh" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="2,2,2,2" />
+                                            <Button Content="Xác nhận" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="2,2,2,2"
+                                                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ConfirmImportRowCommand}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Content="Xác nhận" Style="{StaticResource btn-primary}" Height="30" Width="80" Padding="2,2,2,2" />
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="{Binding IsReady,Converter={StaticResource IsReadyToWidthConverter},ConverterParameter=ButtonEdit}"/>
+                                                    <ColumnDefinition Width="{Binding IsReady,Converter={StaticResource IsReadyToWidthConverter},ConverterParameter=ButtonEdit}"/>
+                                                    <ColumnDefinition Width="{Binding IsReady,Converter={StaticResource IsReadyToWidthConverter},ConverterParameter=ButtonSaved}"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Button Content="💾" Grid.Column="0" Style="{StaticResource btn-default}" Height="25" Width="25" Padding="2,2,2,2" 
+                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.SaveRowCommand}"
+                                                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}"/>
+                                                <Button Content="✗" Grid.Column="1" Style="{StaticResource btn-danger}" Height="25" Width="25" Padding="2,2,2,2"
+                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.DeleteRowCommand}"
+                                                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}"/>
+                                                <Button Content="✓" Grid.Column="2" Style="{StaticResource btn-success}" Height="25" Width="25" Padding="2,2,2,2"
+                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.CheckRowCommand}"
+                                                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}"/>
+                                            </Grid>
+                                           
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>

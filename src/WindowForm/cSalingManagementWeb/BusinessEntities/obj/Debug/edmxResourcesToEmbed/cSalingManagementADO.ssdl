@@ -163,6 +163,20 @@
   </Function>
   <Function Name="SelectAll_M_ProductInfoWithImportInfo_OnWaiting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SelectAll_M_Supplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Update_T_ImportProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="productid" Type="varchar" Mode="In" />
+    <Parameter Name="importdate" Type="datetime" Mode="In" />
+    <Parameter Name="supplier" Type="varchar" Mode="In" />
+    <Parameter Name="quantity" Type="int" Mode="In" />
+    <Parameter Name="instock" Type="int" Mode="In" />
+    <Parameter Name="onorder" Type="int" Mode="In" />
+    <Parameter Name="price" Type="float" Mode="In" />
+    <Parameter Name="expiriondate" Type="date" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+    <Parameter Name="vote" Type="int" Mode="In" />
+    <Parameter Name="status" Type="int" Mode="In" />
+    <Parameter Name="newimportdate" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="UpdateM_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="product_id" Type="varchar" Mode="In" />
     <Parameter Name="product_name" Type="nvarchar" Mode="In" />

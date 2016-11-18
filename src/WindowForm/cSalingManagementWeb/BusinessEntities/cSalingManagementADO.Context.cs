@@ -223,5 +223,58 @@ namespace BusinessEntities
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAll_M_ProductInfoWithImportInfo_Result>("SelectAll_M_ProductInfoWithImportInfo_OnWaiting");
         }
+    
+        public virtual int Update_T_ImportProduct(string productid, Nullable<System.DateTime> importdate, string supplier, Nullable<int> quantity, Nullable<int> instock, Nullable<int> onorder, Nullable<double> price, Nullable<System.DateTime> expiriondate, string user, Nullable<int> vote, Nullable<int> status, Nullable<System.DateTime> newimportdate)
+        {
+            var productidParameter = productid != null ?
+                new ObjectParameter("productid", productid) :
+                new ObjectParameter("productid", typeof(string));
+    
+            var importdateParameter = importdate.HasValue ?
+                new ObjectParameter("importdate", importdate) :
+                new ObjectParameter("importdate", typeof(System.DateTime));
+    
+            var supplierParameter = supplier != null ?
+                new ObjectParameter("supplier", supplier) :
+                new ObjectParameter("supplier", typeof(string));
+    
+            var quantityParameter = quantity.HasValue ?
+                new ObjectParameter("quantity", quantity) :
+                new ObjectParameter("quantity", typeof(int));
+    
+            var instockParameter = instock.HasValue ?
+                new ObjectParameter("instock", instock) :
+                new ObjectParameter("instock", typeof(int));
+    
+            var onorderParameter = onorder.HasValue ?
+                new ObjectParameter("onorder", onorder) :
+                new ObjectParameter("onorder", typeof(int));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("price", price) :
+                new ObjectParameter("price", typeof(double));
+    
+            var expiriondateParameter = expiriondate.HasValue ?
+                new ObjectParameter("expiriondate", expiriondate) :
+                new ObjectParameter("expiriondate", typeof(System.DateTime));
+    
+            var userParameter = user != null ?
+                new ObjectParameter("user", user) :
+                new ObjectParameter("user", typeof(string));
+    
+            var voteParameter = vote.HasValue ?
+                new ObjectParameter("vote", vote) :
+                new ObjectParameter("vote", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(int));
+    
+            var newimportdateParameter = newimportdate.HasValue ?
+                new ObjectParameter("newimportdate", newimportdate) :
+                new ObjectParameter("newimportdate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_T_ImportProduct", productidParameter, importdateParameter, supplierParameter, quantityParameter, instockParameter, onorderParameter, priceParameter, expiriondateParameter, userParameter, voteParameter, statusParameter, newimportdateParameter);
+        }
     }
 }

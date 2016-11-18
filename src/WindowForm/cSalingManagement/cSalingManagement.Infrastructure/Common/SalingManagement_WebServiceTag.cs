@@ -34,6 +34,7 @@ namespace cSalingManagement.Infrastructure.Common
 
         #region Update TAG
         public const string TAG_UPDATE_M_PRODUCTINFO = "201";
+        public const string TAG_UPDATE_T_IMPORTPRODUCT = "202";
 
         #endregion
     }

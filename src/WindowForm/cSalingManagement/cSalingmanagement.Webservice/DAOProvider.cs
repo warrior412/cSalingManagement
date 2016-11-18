@@ -175,6 +175,21 @@ namespace cSalingmanagement.Webservice
             });
         }
 
+        async public void Update_T_ImportProduct(object lstProductImport)
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                string json = JsonConvert.SerializeObject(lstProductImport);
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_UPDATE_T_IMPORTPRODUCT);
+                wc.Encoding = Encoding.UTF8;
+                wc.UploadStringCompleted += wc_UploadStringCompleted;
+                wc.UploadStringAsync(new Uri(url + "Product/Update_T_ImportProduct"), json);
+            });
+        }
+
 
         private void wc_UploadFileCompleted(object sender,UploadFileCompletedEventArgs e)
         {
@@ -234,6 +249,9 @@ namespace cSalingmanagement.Webservice
                     this.CallBackComplete(tag, data);
                     break;
                 case SalingManagement_WebServiceTag.TAG_UPDATE_M_PRODUCTINFO:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_UPDATE_T_IMPORTPRODUCT:
                     this.CallBackComplete(tag, data);
                     break;
                 default:

@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,6 +29,8 @@ namespace ProductModule.View
     /// </summary>
     public partial class ProductListView : UserControl, INavigationAware
     {
+
+        private int CallServiceCount = 0;
         #region Navigation Region
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
@@ -69,15 +72,18 @@ namespace ProductModule.View
         {
             try
             {
-                busyIndicator.IsBusy = true;
+                Vm.IsLoading = true;
                 DAOProvider dao = DAOProvider.GetInstance();
+                CallServiceCount++;
                 dao.GetALL_M_ProductInfoWithImportData();
+                CallServiceCount++;
+                dao.GetALL_M_SupplierInfo();
                 dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
                 dao.CallBackFail = new DAOProvider.FinishFail(Failed);
             }
             catch (Exception ex)
             {
-                busyIndicator.IsBusy = false;
+                Vm.IsLoading  = false;
 
                 if (!ex.Message.Contains("The request was aborted: The request was canceled."))
                 {
@@ -96,6 +102,7 @@ namespace ProductModule.View
             {
                 if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA)
                 {
+                    CallServiceCount--;
                     _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfoWithImportInfo>>(data.ToString());
                     _vm.Text = "text";
                     DataContext = _vm;
@@ -103,7 +110,18 @@ namespace ProductModule.View
                     collectionView.GroupDescriptions.Add(new PropertyGroupDescription("ProductID"));
                     this.gvCheckInfo.ItemsSource = collectionView;
                     this.UpdateLayout();
-                    busyIndicator.IsBusy = false;
+                    
+                }
+                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_SUPPLIERINFO)
+                {
+                    _vm.LstSupplierInfo = JsonConvert.DeserializeObject<ObservableCollection<M_Supplier>>(data.ToString());
+                    DataContext = null;
+                    DataContext = _vm;
+                    CallServiceCount--;
+                }
+                if(CallServiceCount<=0)
+                {
+                    Vm.IsLoading = false;
                 }
             }));
         }
@@ -113,7 +131,7 @@ namespace ProductModule.View
             this.Dispatcher.Invoke((Action)(() =>
             {
                 MessageBox.Show(data);
-                busyIndicator.IsBusy = false;
+                Vm.IsLoading = false;
             }));
         }
 

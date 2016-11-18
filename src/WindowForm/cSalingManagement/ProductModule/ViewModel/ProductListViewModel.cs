@@ -26,6 +26,23 @@ namespace ProductModule.ViewModel
             get { return lstProductInfo; }
             set { lstProductInfo = value; }
         }
+
+        private ObservableCollection<M_Supplier> lstSupplierInfo = new ObservableCollection<M_Supplier>();
+
+        public ObservableCollection<M_Supplier> LstSupplierInfo
+        {
+            get { return lstSupplierInfo; }
+            set { SetProperty(ref this.lstSupplierInfo, value); }
+        }
+
+        private bool isLoading;
+
+        public bool IsLoading
+        {
+            get { return isLoading; }
+            set { SetProperty(ref this.isLoading, value); }
+        }
+
         private string text;
 
         public string Text

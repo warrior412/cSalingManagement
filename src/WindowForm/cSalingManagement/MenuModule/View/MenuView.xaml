@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:helper ="clr-namespace:MenuModule.HelperClasses"
              mc:Ignorable="d" 
-             xmlns:convert="clr-namespace:cSalingManagement.Converter;assembly=cSalingManagement.Infrastructure"
+             xmlns:converter="clr-namespace:cSalingManagement.Infrastructure.Converter;assembly=cSalingManagement.Infrastructure"
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <ResourceDictionary>
            
             <!-- Put your not shared resource here -->
-            <convert:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
         </ResourceDictionary>
         
     </UserControl.Resources>
