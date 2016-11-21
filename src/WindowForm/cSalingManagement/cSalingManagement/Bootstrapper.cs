@@ -35,6 +35,7 @@ namespace cSalingManagement
             moduleCatalog.AddModule(typeof(NewRequestModule.NewRequestModule));
             moduleCatalog.AddModule(typeof(OrderModule.OrderModule), InitializationMode.OnDemand);
             moduleCatalog.AddModule(typeof(ProductModule.ProductModule), InitializationMode.OnDemand);
+            moduleCatalog.AddModule(typeof(CustomerModule.CustomerModule), InitializationMode.OnDemand);
         }
 
         protected override void ConfigureContainer()

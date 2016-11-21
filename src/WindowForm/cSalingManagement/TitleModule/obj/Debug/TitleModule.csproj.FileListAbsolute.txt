@@ -111,6 +111,8 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\cSalingManagement.Infrastructure.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Newtonsoft.Json.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\cSalingManagement.Infrastructure.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.csprojResolveAssemblyReference.cache
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\TitleModule.dll.config
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\TitleModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\TitleModule.pdb
@@ -133,22 +135,10 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.xml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Unity.Wpf.xml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Wpf.xml
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\System.Windows.Interactivity.xml
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\de\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\en\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\es\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\it\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.csprojResolveAssemblyReference.cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\View\TitleView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\View\TitleView.g.cs
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule_MarkupCompile.cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.g.resources
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.Properties.Resources.resources
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.csproj.GenerateResource.Cache
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.pdb

@@ -15,7 +15,11 @@
     <system:String x:Key="OrderAddNew">Create a new order</system:String>
     <system:String x:Key="OrderDetail">Order details</system:String>
     <system:String x:Key="Notification">New requests</system:String>
-    
+
+    <system:String x:Key="CustomerManagement">Customer Management</system:String>
+    <system:String x:Key="CustomerList">List customers</system:String>
+    <system:String x:Key="CustomerDetail">Customer details</system:String>
+
     <!--Login Form-->
     <system:String x:Key="lf_Title">Login Form</system:String>
     <system:String x:Key="lf_Username">User name</system:String>

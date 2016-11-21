@@ -132,7 +132,7 @@
         </member>
         <member name="M:Prism.Common.ListDictionary`2.Add(`0,`1)">
             <summary>
-            Adds a value to a list with the given key. If a list does not already exist, 
+            Adds a value to a list with the given key. If a list does not already exist,
             it will be created automatically.
             </summary>
             <param name="key">The key of the list that will hold the value.</param>
@@ -159,7 +159,7 @@
         </member>
         <member name="M:Prism.Common.ListDictionary`2.FindAllValuesByKey(System.Predicate{`0})">
             <summary>
-            Retrieves the all the elements from the list which have a key that matches the condition 
+            Retrieves the all the elements from the list which have a key that matches the condition
             defined by the specified predicate.
             </summary>
             <param name="keyFilter">The filter with the condition to use to filter lists by their key.</param>
@@ -206,7 +206,7 @@
         </member>
         <member name="P:Prism.Common.ListDictionary`2.Item(`0)">
             <summary>
-            Gets or sets the list associated with the given key. The 
+            Gets or sets the list associated with the given key. The
             access always succeeds, eventually returning an empty list.
             </summary>
             <param name="key">The key of the list to access.</param>
@@ -318,7 +318,7 @@
         </member>
         <member name="T:Prism.Interactivity.CommandBehaviorBase`1">
             <summary>
-            Base behavior to handle connecting a <see cref="!:Control"/> to a Command.
+            Base behavior to handle connecting a <see cref="T:System.Windows.Controls.Control"/> to a Command.
             </summary>
             <typeparam name="T">The target object must derive from Control</typeparam>
             <remarks>
@@ -672,6 +672,11 @@
             Determines if the content should be initially shown centered over the view that raised the interaction request or not.
             </summary>
         </member>
+        <member name="F:Prism.Interactivity.PopupWindowAction.WindowStartupLocationProperty">
+            <summary>
+            If set, applies this WindowStartupLocation to the child window.
+            </summary>
+        </member>
         <member name="F:Prism.Interactivity.PopupWindowAction.WindowStyleProperty">
             <summary>
             If set, applies this Style to the child window.
@@ -690,6 +695,11 @@
         <member name="P:Prism.Interactivity.PopupWindowAction.CenterOverAssociatedObject">
             <summary>
             Gets or sets if the window will be initially shown centered over the view that raised the interaction request or not.
+            </summary>
+        </member>
+        <member name="P:Prism.Interactivity.PopupWindowAction.WindowStartupLocation">
+            <summary>
+            Gets or sets the startup location of the Window.
             </summary>
         </member>
         <member name="P:Prism.Interactivity.PopupWindowAction.WindowStyle">
@@ -713,8 +723,7 @@
         <member name="M:Prism.Interactivity.PopupWindowAction.PrepareContentForWindow(Prism.Interactivity.InteractionRequest.INotification,System.Windows.Window)">
             <summary>
             Checks if the WindowContent or its DataContext implements <see cref="T:Prism.Interactivity.InteractionRequest.IInteractionRequestAware"/>.
-            If so, it sets the corresponding value.
-            Also, if WindowContent does not have a RegionManager attached, it creates a new scoped RegionManager for it.
+            If so, it sets the corresponding values.
             </summary>
             <param name="notification">The notification to be set as a DataContext in the HostWindow.</param>
             <param name="wrapperWindow">The HostWindow</param>
@@ -886,17 +895,17 @@
             <param name="context">Contains contextual information about the source or destination.</param>
         </member>
         <member name="T:Prism.Modularity.DirectoryModuleCatalog">
-            <summary>
-            Represets a catalog created from a directory on disk.
-            </summary>
-            <remarks>
-            The directory catalog will scan the contents of a directory, locating classes that implement
-            <see cref="T:Prism.Modularity.IModule"/> and add them to the catalog based on contents in their associated <see cref="T:Prism.Modularity.ModuleAttribute"/>.
-            Assemblies are loaded into a new application domain with ReflectionOnlyLoad.  The application domain is destroyed
-            once the assemblies have been discovered.
+             <summary>
+             Represets a catalog created from a directory on disk.
+             </summary>
+             <remarks>
+             The directory catalog will scan the contents of a directory, locating classes that implement
+             <see cref="T:Prism.Modularity.IModule"/> and add them to the catalog based on contents in their associated <see cref="T:Prism.Modularity.ModuleAttribute"/>.
+             Assemblies are loaded into a new application domain with ReflectionOnlyLoad.  The application domain is destroyed
+             once the assemblies have been discovered.
             
-            The diretory catalog does not continue to monitor the directory after it has created the initialze catalog.
-            </remarks>
+             The diretory catalog does not continue to monitor the directory after it has created the initialze catalog.
+             </remarks>
         </member>
         <member name="P:Prism.Modularity.DirectoryModuleCatalog.ModulePath">
             <summary>
@@ -917,10 +926,10 @@
             <remarks>
             Grabs the <paramref name="parentDomain"/> evidence and uses it to construct the new
             <see cref="T:System.AppDomain"/> because in a ClickOnce execution environment, creating an
-            <see cref="T:System.AppDomain"/> will by default pick up the partial trust environment of 
-            the AppLaunch.exe, which was the root executable. The AppLaunch.exe does a 
-            create domain and applies the evidence from the ClickOnce manifests to 
-            create the domain that the application is actually executing in. This will 
+            <see cref="T:System.AppDomain"/> will by default pick up the partial trust environment of
+            the AppLaunch.exe, which was the root executable. The AppLaunch.exe does a
+            create domain and applies the evidence from the ClickOnce manifests to
+            create the domain that the application is actually executing in. This will
             need to be Full Trust for Prism applications.
             </remarks>
             <exception cref="T:System.ArgumentNullException">An <see cref="T:System.ArgumentNullException"/> is thrown if <paramref name="parentDomain"/> is null.</exception>
@@ -973,8 +982,8 @@
         </member>
         <member name="T:Prism.Modularity.FileModuleTypeLoader">
             <summary>
-            Loads modules from an arbitrary location on the filesystem. This typeloader is only called if 
-            <see cref="T:Prism.Modularity.ModuleInfo"/> classes have a Ref parameter that starts with "file://". 
+            Loads modules from an arbitrary location on the filesystem. This typeloader is only called if
+            <see cref="T:Prism.Modularity.ModuleInfo"/> classes have a Ref parameter that starts with "file://".
             This class is only used on the Desktop version of the Prism Library.
             </summary>
         </member>
@@ -1003,7 +1012,7 @@
             <summary>
             Evaluates the <see cref="P:Prism.Modularity.ModuleInfo.Ref"/> property to see if the current typeloader will be able to retrieve the <paramref name="moduleInfo"/>.
             Returns true if the <see cref="P:Prism.Modularity.ModuleInfo.Ref"/> property starts with "file://", because this indicates that the file
-            is a local file. 
+            is a local file.
             </summary>
             <param name="moduleInfo">Module that should have it's type loaded.</param>
             <returns>
@@ -1306,23 +1315,23 @@
             Otherwise you should explicitily load this module via the <see cref="T:Prism.Modularity.ModuleManager"/>.
         </member>
         <member name="T:Prism.Modularity.ModuleCatalog">
-            <summary>
-            The <see cref="T:Prism.Modularity.ModuleCatalog"/> holds information about the modules that can be used by the 
-            application. Each module is described in a <see cref="T:Prism.Modularity.ModuleInfo"/> class, that records the 
-            name, type and location of the module. 
+             <summary>
+             The <see cref="T:Prism.Modularity.ModuleCatalog"/> holds information about the modules that can be used by the
+             application. Each module is described in a <see cref="T:Prism.Modularity.ModuleInfo"/> class, that records the
+             name, type and location of the module.
             
-            It also verifies that the <see cref="T:Prism.Modularity.ModuleCatalog"/> is internally valid. That means that
-            it does not have:
-            <list>
-                <item>Circular dependencies</item>
-                <item>Missing dependencies</item>
-                <item>
-                    Invalid dependencies, such as a Module that's loaded at startup that depends on a module 
-                    that might need to be retrieved.
-                </item>
-            </list>
-            The <see cref="T:Prism.Modularity.ModuleCatalog"/> also serves as a baseclass for more specialized Catalogs .
-            </summary>
+             It also verifies that the <see cref="T:Prism.Modularity.ModuleCatalog"/> is internally valid. That means that
+             it does not have:
+             <list>
+                 <item>Circular dependencies</item>
+                 <item>Missing dependencies</item>
+                 <item>
+                     Invalid dependencies, such as a Module that's loaded at startup that depends on a module
+                     that might need to be retrieved.
+                 </item>
+             </list>
+             The <see cref="T:Prism.Modularity.ModuleCatalog"/> also serves as a baseclass for more specialized Catalogs .
+             </summary>
         </member>
         <member name="M:Prism.Modularity.ModuleCatalog.#ctor">
             <summary>
@@ -1331,39 +1340,39 @@
         </member>
         <member name="M:Prism.Modularity.ModuleCatalog.#ctor(System.Collections.Generic.IEnumerable{Prism.Modularity.ModuleInfo})">
             <summary>
-            Initializes a new instance of the <see cref="T:Prism.Modularity.ModuleCatalog"/> class while providing an 
+            Initializes a new instance of the <see cref="T:Prism.Modularity.ModuleCatalog"/> class while providing an
             initial list of <see cref="T:Prism.Modularity.ModuleInfo"/>s.
             </summary>
             <param name="modules">The initial list of modules.</param>
         </member>
         <member name="P:Prism.Modularity.ModuleCatalog.Items">
             <summary>
-            Gets the items in the <see cref="T:Prism.Modularity.ModuleCatalog"/>. This property is mainly used to add <see cref="T:Prism.Modularity.ModuleInfoGroup"/>s or 
-            <see cref="T:Prism.Modularity.ModuleInfo"/>s through XAML. 
+            Gets the items in the <see cref="T:Prism.Modularity.ModuleCatalog"/>. This property is mainly used to add <see cref="T:Prism.Modularity.ModuleInfoGroup"/>s or
+            <see cref="T:Prism.Modularity.ModuleInfo"/>s through XAML.
             </summary>
             <value>The items in the catalog.</value>
         </member>
         <member name="P:Prism.Modularity.ModuleCatalog.Modules">
             <summary>
-            Gets all the <see cref="T:Prism.Modularity.ModuleInfo"/> classes that are in the <see cref="T:Prism.Modularity.ModuleCatalog"/>, regardless 
-            if they are within a <see cref="T:Prism.Modularity.ModuleInfoGroup"/> or not. 
+            Gets all the <see cref="T:Prism.Modularity.ModuleInfo"/> classes that are in the <see cref="T:Prism.Modularity.ModuleCatalog"/>, regardless
+            if they are within a <see cref="T:Prism.Modularity.ModuleInfoGroup"/> or not.
             </summary>
             <value>The modules.</value>
         </member>
         <member name="P:Prism.Modularity.ModuleCatalog.Groups">
             <summary>
-            Gets the <see cref="T:Prism.Modularity.ModuleInfoGroup"/>s that have been added to the <see cref="T:Prism.Modularity.ModuleCatalog"/>. 
+            Gets the <see cref="T:Prism.Modularity.ModuleInfoGroup"/>s that have been added to the <see cref="T:Prism.Modularity.ModuleCatalog"/>.
             </summary>
             <value>The groups.</value>
         </member>
         <member name="P:Prism.Modularity.ModuleCatalog.Validated">
             <summary>
-            Gets or sets a value that remembers whether the <see cref="T:Prism.Modularity.ModuleCatalog"/> has been validated already. 
+            Gets or sets a value that remembers whether the <see cref="T:Prism.Modularity.ModuleCatalog"/> has been validated already.
             </summary>
         </member>
         <member name="P:Prism.Modularity.ModuleCatalog.GrouplessModules">
             <summary>
-            Returns the list of <see cref="T:Prism.Modularity.ModuleInfo"/>s that are not contained within any <see cref="T:Prism.Modularity.ModuleInfoGroup"/>. 
+            Returns the list of <see cref="T:Prism.Modularity.ModuleInfo"/>s that are not contained within any <see cref="T:Prism.Modularity.ModuleInfoGroup"/>.
             </summary>
             <value>The groupless modules.</value>
         </member>
@@ -1398,8 +1407,8 @@
         </member>
         <member name="M:Prism.Modularity.ModuleCatalog.CompleteListWithDependencies(System.Collections.Generic.IEnumerable{Prism.Modularity.ModuleInfo})">
             <summary>
-            Returns a list of <see cref="T:Prism.Modularity.ModuleInfo"/>s that contain both the <see cref="T:Prism.Modularity.ModuleInfo"/>s in 
-            <paramref name="modules"/>, but also all the modules they depend on. 
+            Returns a list of <see cref="T:Prism.Modularity.ModuleInfo"/>s that contain both the <see cref="T:Prism.Modularity.ModuleInfo"/>s in
+            <paramref name="modules"/>, but also all the modules they depend on.
             </summary>
             <param name="modules">The modules to get the dependencies for.</param>
             <returns>
@@ -1484,7 +1493,7 @@
         </member>
         <member name="M:Prism.Modularity.ModuleCatalog.SolveDependencies(System.Collections.Generic.IEnumerable{Prism.Modularity.ModuleInfo})">
             <summary>
-            Checks for cyclic dependencies, by calling the dependencysolver. 
+            Checks for cyclic dependencies, by calling the dependencysolver.
             </summary>
             <param name="modules">the.</param>
             <returns></returns>
@@ -1496,7 +1505,7 @@
             </summary>
             <param name="modules">The modules to validate modules for.</param>
             <exception cref="T:Prism.Modularity.ModularityException">
-            Throws if a <see cref="T:Prism.Modularity.ModuleInfo"/> in <paramref name="modules"/> depends on a module that's 
+            Throws if a <see cref="T:Prism.Modularity.ModuleInfo"/> in <paramref name="modules"/> depends on a module that's
             not in <paramref name="modules"/>.
             </exception>
             <exception cref="T:System.ArgumentNullException">Throws if <paramref name="modules"/> is <see langword="null"/>.</exception>
@@ -1509,22 +1518,22 @@
         <member name="M:Prism.Modularity.ModuleCatalog.Sort(System.Collections.Generic.IEnumerable{Prism.Modularity.ModuleInfo})">
             <summary>
             Sorts a list of <see cref="T:Prism.Modularity.ModuleInfo"/>s. This method is called by <see cref="M:Prism.Modularity.ModuleCatalog.CompleteListWithDependencies(System.Collections.Generic.IEnumerable{Prism.Modularity.ModuleInfo})"/>
-            to return a sorted list. 
+            to return a sorted list.
             </summary>
             <param name="modules">The <see cref="T:Prism.Modularity.ModuleInfo"/>s to sort.</param>
             <returns>Sorted list of <see cref="T:Prism.Modularity.ModuleInfo"/>s</returns>
         </member>
         <member name="M:Prism.Modularity.ModuleCatalog.ValidateUniqueModules">
             <summary>
-            Makes sure all modules have an Unique name. 
+            Makes sure all modules have an Unique name.
             </summary>
             <exception cref="T:Prism.Modularity.DuplicateModuleException">
-            Thrown if the names of one or more modules are not unique. 
+            Thrown if the names of one or more modules are not unique.
             </exception>
         </member>
         <member name="M:Prism.Modularity.ModuleCatalog.ValidateDependencyGraph">
             <summary>
-            Ensures that there are no cyclic dependencies. 
+            Ensures that there are no cyclic dependencies.
             </summary>
         </member>
         <member name="M:Prism.Modularity.ModuleCatalog.ValidateCrossGroupDependencies">
@@ -1826,7 +1835,7 @@
             </summary>
             <param name="moduleInfo">The module info.</param>
             <param name="bytesReceived">The bytes received.</param>
-            <param name="totalBytesToReceive">The total bytes to receive.</param>        
+            <param name="totalBytesToReceive">The total bytes to receive.</param>
         </member>
         <member name="P:Prism.Modularity.ModuleDownloadProgressChangedEventArgs.ModuleInfo">
             <summary>
@@ -1909,14 +1918,14 @@
             </summary>
         </member>
         <member name="T:Prism.Modularity.ModuleInfoGroup">
-            <summary>
-            Represents a group of <see cref="T:Prism.Modularity.ModuleInfo"/> instances that are usually deployed together. <see cref="T:Prism.Modularity.ModuleInfoGroup"/>s 
-            are also used by the <see cref="T:Prism.Modularity.ModuleCatalog"/> to prevent common deployment problems such as having a module that's required 
-            at startup that depends on modules that will only be downloaded on demand. 
+             <summary>
+             Represents a group of <see cref="T:Prism.Modularity.ModuleInfo"/> instances that are usually deployed together. <see cref="T:Prism.Modularity.ModuleInfoGroup"/>s
+             are also used by the <see cref="T:Prism.Modularity.ModuleCatalog"/> to prevent common deployment problems such as having a module that's required
+             at startup that depends on modules that will only be downloaded on demand.
             
-            The group also forwards <see cref="P:Prism.Modularity.ModuleInfoGroup.Ref"/> and <see cref="P:Prism.Modularity.ModuleInfoGroup.InitializationMode"/> values to the <see cref="T:Prism.Modularity.ModuleInfo"/>s that it
-            contains. 
-            </summary>
+             The group also forwards <see cref="P:Prism.Modularity.ModuleInfoGroup.Ref"/> and <see cref="P:Prism.Modularity.ModuleInfoGroup.InitializationMode"/> values to the <see cref="T:Prism.Modularity.ModuleInfo"/>s that it
+             contains.
+             </summary>
         </member>
         <member name="P:Prism.Modularity.ModuleInfoGroup.InitializationMode">
             <summary>
@@ -1927,16 +1936,16 @@
             <value>The initialization mode.</value>
         </member>
         <member name="P:Prism.Modularity.ModuleInfoGroup.Ref">
-            <summary>
-            Gets or sets the <see cref="P:Prism.Modularity.ModuleInfo.Ref"/> value for the whole group. Any <see cref="T:Prism.Modularity.ModuleInfo"/> classes that are
-            added after setting this value will also get this <see cref="P:Prism.Modularity.ModuleInfoGroup.Ref"/>.
+             <summary>
+             Gets or sets the <see cref="P:Prism.Modularity.ModuleInfo.Ref"/> value for the whole group. Any <see cref="T:Prism.Modularity.ModuleInfo"/> classes that are
+             added after setting this value will also get this <see cref="P:Prism.Modularity.ModuleInfoGroup.Ref"/>.
             
-            The ref value will also be used by the <see cref="T:Prism.Modularity.IModuleManager"/> to determine which  <see cref="T:Prism.Modularity.IModuleTypeLoader"/> to use. 
-            For example, using an "file://" prefix with a valid URL will cause the FileModuleTypeLoader to be used
-            (Only available in the desktop version of CAL).
-            </summary>
-            <see cref="P:Prism.Modularity.ModuleInfo.Ref"/>
-            <value>The ref value that will be used.</value>
+             The ref value will also be used by the <see cref="T:Prism.Modularity.IModuleManager"/> to determine which  <see cref="T:Prism.Modularity.IModuleTypeLoader"/> to use.
+             For example, using an "file://" prefix with a valid URL will cause the FileModuleTypeLoader to be used
+             (Only available in the desktop version of CAL).
+             </summary>
+             <see cref="P:Prism.Modularity.ModuleInfo.Ref"/>
+             <value>The ref value that will be used.</value>
         </member>
         <member name="M:Prism.Modularity.ModuleInfoGroup.Add(Prism.Modularity.ModuleInfo)">
             <summary>
@@ -2095,7 +2104,7 @@
             Removes the first occurrence of a specific object from the <see cref="T:Prism.Modularity.ModuleInfoGroup"/>.
             </summary>
             <param name="value">
-            The <see cref="T:System.Object"/> to remove from the <see cref="T:Prism.Modularity.ModuleInfoGroup"/>. 
+            The <see cref="T:System.Object"/> to remove from the <see cref="T:Prism.Modularity.ModuleInfoGroup"/>.
             Must be of type <see cref="T:Prism.Modularity.ModuleInfo"/>
             </param>
         </member>
@@ -2288,7 +2297,7 @@
             <summary>
             Handles any exception occurred in the module Initialization process,
             logs the error using the <see cref="T:Prism.Logging.ILoggerFacade"/> and throws a <see cref="T:Prism.Modularity.ModuleInitializeException"/>.
-            This method can be overridden to provide a different behavior. 
+            This method can be overridden to provide a different behavior.
             </summary>
             <param name="moduleInfo">The module metadata where the error happenened.</param>
             <param name="assemblyName">The assembly name.</param>
@@ -2311,7 +2320,7 @@
         </member>
         <member name="T:Prism.Modularity.ModuleManager">
             <summary>
-            Component responsible for coordinating the modules' type loading and module initialization process. 
+            Component responsible for coordinating the modules' type loading and module initialization process.
             </summary>
             <summary>
             Component responsible for coordinating the modules' type loading and module initialization process. 
@@ -2367,7 +2376,7 @@
             <summary>
             Handles any exception occurred in the module typeloading process,
             logs the error using the <see cref="T:Prism.Logging.ILoggerFacade"/> and throws a <see cref="T:Prism.Modularity.ModuleTypeLoadingException"/>.
-            This method can be overridden to provide a different behavior. 
+            This method can be overridden to provide a different behavior.
             </summary>
             <param name="moduleInfo">The module metadata where the error happenened.</param>
             <param name="exception">The exception thrown that is the cause of the current error.</param>
@@ -2597,7 +2606,7 @@
             Sets the DataContext of a View
             </summary>
             <param name="view">The View to set the DataContext on</param>
-            <param name="dataContext">The object to use as the DataContext for the View</param>
+            <param name="viewModel">The object to use as the DataContext for the View</param>
         </member>
         <member name="T:Prism.Properties.Resources">
             <summary>
@@ -2954,7 +2963,7 @@
         </member>
         <member name="M:Prism.Regions.Behaviors.AutoPopulateRegionBehavior.#ctor(Prism.Regions.IRegionViewRegistry)">
             <summary>
-            Creates a new instance of the AutoPopulateRegionBehavior 
+            Creates a new instance of the AutoPopulateRegionBehavior
             associated with the <see cref="T:Prism.Regions.IRegionViewRegistry"/> received.
             </summary>
             <param name="regionViewRegistry"><see cref="T:Prism.Regions.IRegionViewRegistry"/> that the behavior will monitor for views to populate the region.</param>
@@ -2967,19 +2976,19 @@
         <member name="M:Prism.Regions.Behaviors.AutoPopulateRegionBehavior.CreateViewsToAutoPopulate">
             <summary>
             Returns a collection of views that will be added to the
-            View collection. 
+            View collection.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Prism.Regions.Behaviors.AutoPopulateRegionBehavior.AddViewIntoRegion(System.Object)">
             <summary>
-            Adds a view into the views collection of this region. 
+            Adds a view into the views collection of this region.
             </summary>
             <param name="viewToAdd"></param>
         </member>
         <member name="M:Prism.Regions.Behaviors.AutoPopulateRegionBehavior.OnViewRegistered(System.Object,Prism.Regions.ViewRegisteredEventArgs)">
             <summary>
-            Handler of the event that fires when a new viewtype is registered to the registry. 
+            Handler of the event that fires when a new viewtype is registered to the registry.
             </summary>
             <remarks>Although this is a public method to support Weak Delegates in Silverlight, it should not be called by the user.</remarks>
             <param name="sender"></param>
@@ -3011,7 +3020,7 @@
             Behavior that removes the RegionManager attached property of all the views in a region once the RegionManager property of a region becomes null.
             This is useful when removing views with nested regions, to ensure these nested regions get removed from the RegionManager as well.
             <remarks>
-            This behavior does not apply by default. 
+            This behavior does not apply by default.
             In order to activate it, the ClearChildViews attached property must be set to True in the view containing the affected child regions.
             </remarks>
             </summary>
@@ -3049,11 +3058,11 @@
             <summary>
             Behavior that creates a new <see cref="T:Prism.Regions.IRegion"/>, when the control that will host the <see cref="T:Prism.Regions.IRegion"/> (see <see cref="P:Prism.Regions.Behaviors.DelayedRegionCreationBehavior.TargetElement"/>)
             is added to the VisualTree. This behavior will use the <see cref="T:Prism.Regions.RegionAdapterMappings"/> class to find the right type of adapter to create
-            the region. After the region is created, this behavior will detach. 
+            the region. After the region is created, this behavior will detach.
             </summary>
             <remarks>
             Attached property value inheritance is not available in Silverlight, so the current approach walks up the visual tree when requesting a region from a region manager.
-            The <see cref="T:Prism.Regions.Behaviors.RegionManagerRegistrationBehavior"/> is now responsible for walking up the Tree. 
+            The <see cref="T:Prism.Regions.Behaviors.RegionManagerRegistrationBehavior"/> is now responsible for walking up the Tree.
             </remarks>
         </member>
         <member name="M:Prism.Regions.Behaviors.DelayedRegionCreationBehavior.#ctor(Prism.Regions.RegionAdapterMappings)">
@@ -3061,20 +3070,20 @@
             Initializes a new instance of the <see cref="T:Prism.Regions.Behaviors.DelayedRegionCreationBehavior"/> class.
             </summary>
             <param name="regionAdapterMappings">
-            The region adapter mappings, that are used to find the correct adapter for 
-            a given controltype. The controltype is determined by the <see name="TargetElement"/> value. 
+            The region adapter mappings, that are used to find the correct adapter for
+            a given controltype. The controltype is determined by the <see name="TargetElement"/> value.
             </param>
         </member>
         <member name="P:Prism.Regions.Behaviors.DelayedRegionCreationBehavior.RegionManagerAccessor">
             <summary>
             Sets a class that interfaces between the <see cref="T:Prism.Regions.RegionManager"/> 's static properties/events and this behavior,
-            so this behavior can be tested in isolation. 
+            so this behavior can be tested in isolation.
             </summary>
             <value>The region manager accessor.</value>
         </member>
         <member name="P:Prism.Regions.Behaviors.DelayedRegionCreationBehavior.TargetElement">
             <summary>
-            The element that will host the Region. 
+            The element that will host the Region.
             </summary>
             <value>The target element.</value>
         </member>
@@ -3086,12 +3095,12 @@
         </member>
         <member name="M:Prism.Regions.Behaviors.DelayedRegionCreationBehavior.Detach">
             <summary>
-            Stop monitoring the <see cref="T:Prism.Regions.RegionManager"/> and the  <see cref="P:Prism.Regions.Behaviors.DelayedRegionCreationBehavior.TargetElement"/>, so that this behavior can be garbage collected. 
+            Stop monitoring the <see cref="T:Prism.Regions.RegionManager"/> and the  <see cref="P:Prism.Regions.Behaviors.DelayedRegionCreationBehavior.TargetElement"/>, so that this behavior can be garbage collected.
             </summary>
         </member>
         <member name="M:Prism.Regions.Behaviors.DelayedRegionCreationBehavior.OnUpdatingRegions(System.Object,System.EventArgs)">
             <summary>
-            Called when the <see cref="T:Prism.Regions.RegionManager"/> is updating it's <see cref="P:Prism.Regions.RegionManager.Regions"/> collection. 
+            Called when the <see cref="T:Prism.Regions.RegionManager"/> is updating it's <see cref="P:Prism.Regions.RegionManager.Regions"/> collection.
             </summary>
             <remarks>
             This method has to be public, because it has to be callable using weak references in silverlight and other partial trust environments.
@@ -3101,7 +3110,7 @@
         </member>
         <member name="M:Prism.Regions.Behaviors.DelayedRegionCreationBehavior.CreateRegion(System.Windows.DependencyObject,System.String)">
             <summary>
-            Method that will create the region, by calling the right <see cref="T:Prism.Regions.IRegionAdapter"/>. 
+            Method that will create the region, by calling the right <see cref="T:Prism.Regions.IRegionAdapter"/>.
             </summary>
             <param name="targetElement">The target element that will host the <see cref="T:Prism.Regions.IRegion"/>.</param>
             <param name="regionName">Name of the region.</param>
@@ -3129,7 +3138,7 @@
             </summary>
             <remarks>
             This class can also sync the active state for any scoped regions directly on the view based on the <see cref="T:Prism.Regions.SyncActiveStateAttribute"/>.
-            If you use the <see cref="!:Microsoft.Practices.Prism.Regions.Region.Add(object,string,bool)" /> method with the createRegionManagerScope option, the scoped manager will be attached to the view.
+            If you use the <see cref="M:Prism.Regions.Region.Add(System.Object,System.String,System.Boolean)" /> method with the createRegionManagerScope option, the scoped manager will be attached to the view.
             </remarks>
         </member>
         <member name="F:Prism.Regions.Behaviors.RegionActiveAwareBehavior.BehaviorKey">
@@ -3328,7 +3337,7 @@
         <member name="T:Prism.Regions.ContentControlRegionAdapter">
             <summary>
             Adapter that creates a new <see cref="T:Prism.Regions.SingleActiveRegion"/> and monitors its
-            active view to set it on the adapted <see cref="T:System.Windows.Controls.ContentControl"/>. 
+            active view to set it on the adapted <see cref="T:System.Windows.Controls.ContentControl"/>.
             </summary>
         </member>
         <member name="M:Prism.Regions.ContentControlRegionAdapter.#ctor(Prism.Regions.IRegionBehaviorFactory)">
@@ -3362,7 +3371,7 @@
             Gets the value for the RegionName attached property.
             </summary>
             <param name="element">The object to adapt. This is typically a container (i.e a control).</param>
-            <returns>The name of the region that should be created when 
+            <returns>The name of the region that should be created when
             the RegionManager is also set in this element.</returns>
         </member>
         <member name="M:Prism.Regions.DefaultRegionManagerAccessor.GetRegionManager(System.Windows.DependencyObject)">
@@ -3511,6 +3520,11 @@
             Removes the specified view from the region.
             </summary>
             <param name="view">The view to remove.</param>
+        </member>
+        <member name="M:Prism.Regions.IRegion.RemoveAll">
+            <summary>
+            Removes all views from the region.
+            </summary>
         </member>
         <member name="M:Prism.Regions.IRegion.Activate(System.Object)">
             <summary>
@@ -4032,7 +4046,7 @@
         <member name="T:Prism.Regions.ItemsControlRegionAdapter">
             <summary>
             Adapter that creates a new <see cref="T:Prism.Regions.AllActiveRegion"/> and binds all
-            the views to the adapted <see cref="T:System.Windows.Controls.ItemsControl"/>. 
+            the views to the adapted <see cref="T:System.Windows.Controls.ItemsControl"/>.
             </summary>
         </member>
         <member name="M:Prism.Regions.ItemsControlRegionAdapter.#ctor(Prism.Regions.IRegionBehaviorFactory)">
@@ -4256,7 +4270,7 @@
         </member>
         <member name="P:Prism.Regions.Region.Behaviors">
             <summary>
-            Gets the collection of <see cref="T:Prism.Regions.IRegionBehavior"/>s that can extend the behavior of regions. 
+            Gets the collection of <see cref="T:Prism.Regions.IRegionBehavior"/>s that can extend the behavior of regions.
             </summary>
         </member>
         <member name="P:Prism.Regions.Region.Context">
@@ -4340,15 +4354,20 @@
             </summary>
             <param name="view">The view to remove.</param>
         </member>
+        <member name="M:Prism.Regions.Region.RemoveAll">
+            <summary>
+            Removes all views from the region.
+            </summary>
+        </member>
         <member name="M:Prism.Regions.Region.Activate(System.Object)">
             <summary>
-            Marks the specified view as active. 
+            Marks the specified view as active.
             </summary>
             <param name="view">The view to activate.</param>
         </member>
         <member name="M:Prism.Regions.Region.Deactivate(System.Object)">
             <summary>
-            Marks the specified view as inactive. 
+            Marks the specified view as inactive.
             </summary>
             <param name="view">The view to deactivate.</param>
         </member>
@@ -4522,7 +4541,7 @@
             <param name="key">The key that specifies the type of <see cref="T:Prism.Regions.IRegionBehavior"/> that's added.</param>
             <param name="regionBehavior">The <see cref="T:Prism.Regions.IRegionBehavior"/> to add.</param>
             <exception cref="T:System.ArgumentNullException">
-            Thrown is the <paramref name="key"/> parameter is Null, 
+            Thrown is the <paramref name="key"/> parameter is Null,
             or if the <paramref name="regionBehavior"/> parameter is Null.
             </exception>
             <exception cref="T:System.ArgumentException">Thrown if a behavior with the specified Key parameter already exists.</exception>
@@ -4553,7 +4572,7 @@
         <member name="T:Prism.Regions.RegionBehaviorFactory">
             <summary>
             Defines a factory that allows the registration of the default set of <see cref="T:Prism.Regions.IRegionBehavior"/>, that will
-            be added to the <see cref="T:Prism.Regions.IRegionBehaviorCollection"/> of all <see cref="T:Prism.Regions.IRegion"/>s, unless overridden on a 'per-region' basis. 
+            be added to the <see cref="T:Prism.Regions.IRegionBehaviorCollection"/> of all <see cref="T:Prism.Regions.IRegion"/>s, unless overridden on a 'per-region' basis.
             </summary>
         </member>
         <member name="M:Prism.Regions.RegionBehaviorFactory.#ctor(Microsoft.Practices.ServiceLocation.IServiceLocator)">
@@ -4604,29 +4623,29 @@
             </returns>
         </member>
         <member name="T:Prism.Regions.RegionContext">
-            <summary>
-            Class that holds methods to Set and Get the RegionContext from a DependencyObject. 
+             <summary>
+             Class that holds methods to Set and Get the RegionContext from a DependencyObject.
             
-            RegionContext allows sharing of contextual information between the view that's hosting a <see cref="T:Prism.Regions.IRegion"/>
-            and any views that are inside the Region. 
-            </summary>
+             RegionContext allows sharing of contextual information between the view that's hosting a <see cref="T:Prism.Regions.IRegion"/>
+             and any views that are inside the Region.
+             </summary>
         </member>
         <member name="M:Prism.Regions.RegionContext.GetObservableContext(System.Windows.DependencyObject)">
-            <summary>
-            Returns an <see cref="T:Prism.Common.ObservableObject`1"/> wrapper around the RegionContext value. The RegionContext
-            will be set on any views (dependency objects) that are inside the <see cref="P:Prism.Regions.IRegion.Views"/> collection by 
-            the <see cref="T:Prism.Regions.Behaviors.BindRegionContextToDependencyObjectBehavior"/> Behavior.
-            The RegionContext will also be set to the control that hosts the Region, by the <see cref="T:Prism.Regions.Behaviors.SyncRegionContextWithHostBehavior"/> Behavior.
+             <summary>
+             Returns an <see cref="T:Prism.Common.ObservableObject`1"/> wrapper around the RegionContext value. The RegionContext
+             will be set on any views (dependency objects) that are inside the <see cref="P:Prism.Regions.IRegion.Views"/> collection by
+             the <see cref="T:Prism.Regions.Behaviors.BindRegionContextToDependencyObjectBehavior"/> Behavior.
+             The RegionContext will also be set to the control that hosts the Region, by the <see cref="T:Prism.Regions.Behaviors.SyncRegionContextWithHostBehavior"/> Behavior.
             
-            If the <see cref="T:Prism.Common.ObservableObject`1"/> wrapper does not already exist, an empty one will be created. This way, an observer can 
-            notify when the value is set for the first time. 
-            </summary>
-            <param name="view">Any view that hold the RegionContext value. </param>
-            <returns>Wrapper around the Regioncontext value. </returns>
+             If the <see cref="T:Prism.Common.ObservableObject`1"/> wrapper does not already exist, an empty one will be created. This way, an observer can
+             notify when the value is set for the first time.
+             </summary>
+             <param name="view">Any view that hold the RegionContext value. </param>
+             <returns>Wrapper around the Regioncontext value. </returns>
         </member>
         <member name="T:Prism.Regions.RegionManager">
             <summary>
-            This class is responsible for maintaining a collection of regions and attaching regions to controls. 
+            This class is responsible for maintaining a collection of regions and attaching regions to controls.
             </summary>
             <remarks>
             This class supplies the attached properties that can be used for simple region creation from XAML.
@@ -4657,20 +4676,20 @@
             Gets the value for the <see cref="F:Prism.Regions.RegionManager.RegionNameProperty"/> attached property.
             </summary>
             <param name="regionTarget">The object to adapt. This is typically a container (i.e a control).</param>
-            <returns>The name of the region that should be created when 
+            <returns>The name of the region that should be created when
             <see cref="F:Prism.Regions.RegionManager.RegionManagerProperty"/> is also set in this element.</returns>
         </member>
         <member name="M:Prism.Regions.RegionManager.GetObservableRegion(System.Windows.DependencyObject)">
-            <summary>
-            Returns an <see cref="T:Prism.Common.ObservableObject`1"/> wrapper that can hold an <see cref="T:Prism.Regions.IRegion"/>. Using this wrapper
-            you can detect when an <see cref="T:Prism.Regions.IRegion"/> has been created by the <see cref="T:Prism.Regions.RegionAdapterBase`1"/>. 
+             <summary>
+             Returns an <see cref="T:Prism.Common.ObservableObject`1"/> wrapper that can hold an <see cref="T:Prism.Regions.IRegion"/>. Using this wrapper
+             you can detect when an <see cref="T:Prism.Regions.IRegion"/> has been created by the <see cref="T:Prism.Regions.RegionAdapterBase`1"/>.
             
-            If the <see cref="T:Prism.Common.ObservableObject`1"/> wrapper does not yet exist, a new wrapper will be created. When the region
-            gets created and assigned to the wrapper, you can use the <see cref="E:Prism.Common.ObservableObject`1.PropertyChanged"/> event 
-            to get notified of that change. 
-            </summary>
-            <param name="view">The view that will host the region. </param>
-            <returns>Wrapper that can hold an <see cref="T:Prism.Regions.IRegion"/> value and can notify when the <see cref="T:Prism.Regions.IRegion"/> value changes. </returns>
+             If the <see cref="T:Prism.Common.ObservableObject`1"/> wrapper does not yet exist, a new wrapper will be created. When the region
+             gets created and assigned to the wrapper, you can use the <see cref="E:Prism.Common.ObservableObject`1.PropertyChanged"/> event
+             to get notified of that change.
+             </summary>
+             <param name="view">The view that will host the region. </param>
+             <returns>Wrapper that can hold an <see cref="T:Prism.Regions.IRegion"/> value and can notify when the <see cref="T:Prism.Regions.IRegion"/> value changes. </returns>
         </member>
         <member name="F:Prism.Regions.RegionManager.RegionManagerProperty">
             <summary>
@@ -4727,7 +4746,7 @@
         </member>
         <member name="M:Prism.Regions.RegionManager.UpdateRegions">
             <summary>
-            Notifies attached behaviors to update the region managers appropriatelly if needed to. 
+            Notifies attached behaviors to update the region managers appropriatelly if needed to.
             </summary>
             <remarks>
             This method is normally called internally, and there is usually no need to call this from user code.
@@ -4752,7 +4771,7 @@
         </member>
         <member name="M:Prism.Regions.RegionManager.AddToRegion(System.String,System.Object)">
             <summary>
-                Add a view to the Views collection of a Region. Note that the region must already exist in this regionmanager. 
+                Add a view to the Views collection of a Region. Note that the region must already exist in this regionmanager.
             </summary>
             <param name="regionName">The name of the region to add a view to</param>
             <param name="view">The view to add to the views collection</param>
@@ -4770,9 +4789,9 @@
         </member>
         <member name="M:Prism.Regions.RegionManager.RegisterViewWithRegion(System.String,System.Func{System.Object})">
             <summary>
-            Associate a view with a region, using a delegate to resolve a concreate instance of the view. 
+            Associate a view with a region, using a delegate to resolve a concreate instance of the view.
             When the region get's displayed, this delelgate will be called and the result will be added to the
-            views collection of the region. 
+            views collection of the region.
             </summary>
             <param name="regionName">The name of the region to associate the view with.</param>
             <param name="getContentDelegate">The delegate used to resolve a concreate instance of the view.</param>
@@ -4847,7 +4866,7 @@
             Adds a region to the regionmanager with the name received as argument.
             </summary>
             <param name="regionName">The name to be given to the region.</param>
-            <param name="region">The region to be added to the regionmanager.</param>        
+            <param name="region">The region to be added to the regionmanager.</param>
             <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="region"/> is <see langword="null"/>.</exception>
             <exception cref="T:System.ArgumentException">Thrown if <paramref name="regionName"/> and <paramref name="region"/>'s name do not match and the <paramref name="region"/> <see cref="P:Prism.Regions.IRegion.Name"/> is not <see langword="null"/>.</exception>
         </member>

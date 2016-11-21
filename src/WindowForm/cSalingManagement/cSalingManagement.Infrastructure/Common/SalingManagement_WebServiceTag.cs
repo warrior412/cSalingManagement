@@ -28,6 +28,9 @@ namespace cSalingManagement.Infrastructure.Common
         public  const string TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA = "104";
         public const string TAG_GETALL_M_SUPPLIERINFO = "105";
         public const string TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA_ONWAITING = "106";
+        public const string TAG_GETALL_M_CITYINFO = "107";
+        public const string TAG_GETALL_M_DISTRICTINFO = "108";
+        public const string TAG_GETALL_M_WARDINFO = "109";
 
         public const string TAG_GETALL_M_PRODUCTINFO_BYID = "150";
         #endregion

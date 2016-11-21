@@ -157,6 +157,47 @@ namespace cSalingmanagement.Webservice
             });
         }
 
+        async public void GetALL_M_CityInfo()
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                wc.Encoding = Encoding.UTF8;
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_CITYINFO);
+                wc.DownloadStringCompleted += wc_DownloadStringCompleted;
+                wc.DownloadStringAsync(new Uri(url + "Address/SelectAll_M_CityInfo"));
+            });
+        }
+        async public void GetALL_M_DistrictInfo()
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                wc.Encoding = Encoding.UTF8;
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_DISTRICTINFO);
+                wc.DownloadStringCompleted += wc_DownloadStringCompleted;
+                wc.DownloadStringAsync(new Uri(url + "Address/SelectAll_M_DistrictInfo"));
+            });
+        }
+        async public void GetALL_M_WardInfo()
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                wc.Encoding = Encoding.UTF8;
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_WARDINFO);
+                wc.DownloadStringCompleted += wc_DownloadStringCompleted;
+                wc.DownloadStringAsync(new Uri(url + "Address/SelectAll_M_WardInfo"));
+            });
+        }
+
+
 
 
 
@@ -293,6 +334,15 @@ namespace cSalingmanagement.Webservice
                     this.CallBackComplete(tag, data);
                     break;
                 case SalingManagement_WebServiceTag.TAG_GETALL_M_SUPPLIERINFO:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_CITYINFO:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_DISTRICTINFO:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_WARDINFO:
                     this.CallBackComplete(tag, data);
                     break;
                 default:

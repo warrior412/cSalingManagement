@@ -19,6 +19,8 @@ namespace cSalingManagement.Common
         public static string STRING_MODULE_TITLE = "TitleModule";
         public static string STRING_MODULE_ORDER = "OrderModule";
         public static string STRING_MODULE_PRODUCT = "ProductModule";
+        public static string STRING_MODULE_CUSTOMER = "CustomerModule";
+
 
         public static string STRING_VIEW_MENU = "MenuView";
         public static string STRING_VIEW_TITLE = "TitleView";
@@ -34,6 +36,9 @@ namespace cSalingManagement.Common
         public static string STRING_VIEW_PRODUCT_ADD = "ProductAddView";
 
         public static string STRING_VIEW_NEW_REQUEST = "NewRequestView";
+
+        public static string STRING_VIEW_CUSTOMER_DETAIL = "CustomerDetailView";
+        public static string STRING_VIEW_CUSTOMER_LIST = "CustomerListView";
 
 
         public static double Applicaton_Width = 1024;

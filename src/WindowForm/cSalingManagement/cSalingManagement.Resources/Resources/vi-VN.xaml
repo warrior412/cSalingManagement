@@ -18,6 +18,10 @@
     <system:String x:Key="OrderDetail">Chi tiết hóa đơn</system:String>
     <system:String x:Key="Notification">Yêu cầu mới</system:String>
 
+    <system:String x:Key="CustomerManagement">Quản lý khách hàng</system:String>
+    <system:String x:Key="CustomerList">Danh sách khách hàng</system:String>
+    <system:String x:Key="CustomerDetail">Thông tin khách hàng</system:String>
+
 
     <!--Login Form-->
     <system:String x:Key="lf_Title">Màn hình đăng nhập</system:String>

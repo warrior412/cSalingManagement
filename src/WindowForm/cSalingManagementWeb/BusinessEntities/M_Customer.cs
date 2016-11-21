@@ -24,5 +24,7 @@ namespace BusinessEntities
         public string Customer_District { get; set; }
         public string Customer_Type { get; set; }
         public Nullable<int> Customer_Status { get; set; }
+        public string Customer_Ward { get; set; }
+        public string Customer_City { get; set; }
     }
 }

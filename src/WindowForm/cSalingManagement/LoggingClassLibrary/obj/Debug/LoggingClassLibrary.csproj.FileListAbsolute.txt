@@ -34,25 +34,6 @@ C:\Users\JunF\Downloads\cSalingManagement-develop\cSalingManagement-develop\src\
 C:\Users\JunF\Downloads\cSalingManagement-develop\cSalingManagement-develop\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.csprojResolveAssemblyReference.cache
 C:\Users\JunF\Downloads\cSalingManagement-develop\cSalingManagement-develop\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.dll
 C:\Users\JunF\Downloads\cSalingManagement-develop\cSalingManagement-develop\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.pdb
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\NLog.config
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\LoggingClassLibrary.dll.config
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\LoggingClassLibrary.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\LoggingClassLibrary.pdb
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\NLog.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\System.Windows.Interactivity.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\NLog.xml
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\System.Windows.Interactivity.xml
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\de\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\en\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\es\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\it\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.pdb
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\NLog.config
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\LoggingClassLibrary.dll.config
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\LoggingClassLibrary.dll
@@ -72,3 +53,23 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\LoggingClassLibrary\bi
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\NLog.config
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\LoggingClassLibrary.dll.config
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\LoggingClassLibrary.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\LoggingClassLibrary.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\NLog.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\System.Windows.Interactivity.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\NLog.xml
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\System.Windows.Interactivity.xml
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\de\System.Windows.Interactivity.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\en\System.Windows.Interactivity.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\es\System.Windows.Interactivity.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\it\System.Windows.Interactivity.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.csprojResolveAssemblyReference.cache

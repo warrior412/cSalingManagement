@@ -1,0 +1,251 @@
+﻿<UserControl x:Class="CustomerModule.View.CustomerDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" MinWidth="600" MinHeight="406"
+             xmlns:converter="clr-namespace:cSalingManagement.Infrastructure.Converter;assembly=cSalingManagement.Infrastructure">
+    <UserControl.Resources>
+        <converter:ChooseURLToDisplayConverter x:Key="ChooseURLToDisplayConverter"/>
+        <converter:ProductModule_IsEditingToWidthConverter x:Key="ProductModule_IsEditingToWidthConverter"/>
+    </UserControl.Resources>
+    <xctk:BusyIndicator Name="busyIndicator" IsBusy="{Binding IsBusy}">
+        <xctk:BusyIndicator.BusyContent>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center">Đang xử lý....</TextBlock>
+            </StackPanel>
+        </xctk:BusyIndicator.BusyContent>
+
+        <xctk:BusyIndicator.Content>
+
+
+            <Grid Background="{StaticResource MainColor}" Margin="0,0,0,-36" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="50*" />
+                    <RowDefinition Height="40*"/>
+
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                    <DockPanel Grid.Row="0" HorizontalAlignment="Stretch" Background="{StaticResource MainDarkColor}" LastChildFill="True">
+                        <Button  DockPanel.Dock="Right" Content="Lưu" Style="{StaticResource btn-primary}" 
+                                 Height="30" Width="{Binding IsEditing,Converter={StaticResource ProductModule_IsEditingToWidthConverter},ConverterParameter=Finish}"
+                                 Padding="0,0,0,0" Margin="0,0,5,0"
+                                 Command="{Binding FinishCommand}"/>
+                        <Button  DockPanel.Dock="Right" Content="Xóa" Style="{StaticResource btn-danger}" 
+                                 Height="30" Width="{Binding IsEditing,Converter={StaticResource ProductModule_IsEditingToWidthConverter}}"
+                                 Padding="0,0,0,0" Margin="0,0,5,0"/>
+                        <Button  DockPanel.Dock="Right" Content="Chỉnh sửa" Style="{StaticResource btn-primary}" 
+                                 Height="30" Width="{Binding IsEditing,Converter={StaticResource ProductModule_IsEditingToWidthConverter}}" 
+                                 Padding="0,0,0,0" Margin="0,0,5,0"
+                                 Command="{Binding UpdateCommand}"/>
+                        <Button  DockPanel.Dock="Right" Content="Thêm mới" Style="{StaticResource btn-success}"
+                                 Height="30" Width="{Binding IsEditing,Converter={StaticResource ProductModule_IsEditingToWidthConverter}}"
+                                 Padding="0,0,0,0" Margin="0,0,5,0"/>
+                        <TextBlock Text="Thông tin khách hàng" Style="{StaticResource H4}" Margin="10"/>
+                    </DockPanel>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" Grid.Row="1" MinWidth="200" Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="5*"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="1" BorderBrush="{StaticResource MainDarkColor}" BorderThickness="2" Padding="5">
+                                <Grid Background="Gray">
+                                </Grid>
+                            </Border>
+
+
+                            <Grid Grid.Row="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="10*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Mô tả về khách hàng" Grid.Column="0" Style="{StaticResource styleTextBlockTitle}"/>
+                                <TextBox Style="{StaticResource styleTextAreaDefault}" IsEnabled="{Binding IsEditing}" Text="{Binding ProductDetail.Pro_Desciptions }"  Grid.Row="1" Margin="5" ></TextBox>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Column="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="20*"/>
+                                <RowDefinition Height="10*" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.ColumnSpan="2">
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Mã khách hàng" Grid.Column="0"  Style="{StaticResource styleTextBlockTitle}"/>
+                                <TextBlock Text="Điểm tích lũy" Grid.Column="2" Style="{StaticResource styleTextBlockTitle}"/>
+                                <TextBlock Text="{Binding ProductDetail.ProductID }" Grid.Column="1"  Style="{StaticResource styleTextBlockTitle}" />
+                                <TextBlock Text="{Binding ProductDetail.ProductID }" Grid.Column="3"  Style="{StaticResource styleTextBlockTitle}" />
+                            </Grid>
+                            
+                            
+                            <TextBlock Text="Tên khách hàng" Grid.Column="0" Grid.Row="1" Style="{StaticResource styleTextBlockTitle}"/>
+                            <TextBlock Text="Phân loại" Grid.Column="0" Grid.Row="2" Style="{StaticResource styleTextBlockTitle}"/>
+                            <TextBlock Text="Số điện thoại" Grid.Column="0" Grid.Row="3" Style="{StaticResource styleTextBlockTitle}"/>
+                            <TextBlock Text="Địa chỉ" Grid.Column="0" Grid.Row="4" Style="{StaticResource styleTextBlockTitle}"/>
+                            <TextBlock Text="Ngày sinh" Grid.Column="0" Grid.Row="5" Style="{StaticResource styleTextBlockTitle}"/>
+                            
+
+
+                            
+                            <TextBox  Text="{Binding ProductDetail.ProductName, Mode=TwoWay}" IsEnabled="{Binding IsEditing}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>
+                            <ComboBox x:Name="cbCategory" IsEnabled="{Binding IsEditing}" Style="{StaticResource styleComboBoxDefault}"  Grid.Column="1" Grid.Row="2"></ComboBox>
+
+                            <Grid Grid.Column="1" Grid.Row="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0" Style="{StaticResource styleTextBoxDefault}" Text="{Binding ProductDetail.Pro_Origin }" IsEnabled="{Binding IsEditing}" ></TextBox>
+                                <TextBox Grid.Column="1" Style="{StaticResource styleTextBoxDefault}" Text="{Binding ProductDetail.Pro_Origin }" IsEnabled="{Binding IsEditing}"></TextBox>
+                            </Grid>
+                            <Grid Grid.Column="1" Grid.Row="4">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <ComboBox x:Name="cbCity" IsEnabled="{Binding IsEditing}" Style="{StaticResource styleComboBoxDefault}"  Grid.Column="0"
+                                          ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.LstCityInfo}"
+                                          DisplayMemberPath="City_Name"
+                                          SelectedValuePath="CityID"
+                                          SelectionChanged="cbCity_SelectionChanged"/>
+                                <ComboBox IsEnabled="{Binding IsEditing}" Style="{StaticResource styleComboBoxDefault}"  Grid.Column="1"
+                                          x:Name="cbDistrict"
+                                          SelectionChanged="cbDistrict_SelectionChanged"></ComboBox>
+                                <ComboBox IsEnabled="{Binding IsEditing}" Style="{StaticResource styleComboBoxDefault}"  Grid.Column="2"
+                                          x:Name="cbWard" SelectionChanged="cbWard_SelectionChanged"></ComboBox>
+                                <TextBox  Text="{Binding ProductDetail.ProductName, Mode=TwoWay}" IsEnabled="{Binding IsEditing}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>
+                            </Grid>
+                            <DatePicker Style="{StaticResource styleDatePickerDefault}"  Text="{Binding ProductDetail.Pro_Preservation }" IsEnabled="{Binding IsEditing}"  Grid.Column="1" Grid.Row="5" ></DatePicker>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+
+
+                <StackPanel Grid.Row="2">
+                    <DockPanel HorizontalAlignment="Stretch"  Background="{StaticResource MainDarkColor}">
+                        <TextBlock Text="Lịch sử mua hàng" Style="{StaticResource H4}" Margin="5"/>
+                    </DockPanel>
+                    <DataGrid   HeadersVisibility="Column"
+                              AutoGenerateColumns="False" x:Name="gvCheckInfo" 
+                              CanUserAddRows="False" RowHeight="30" VerticalScrollBarVisibility="Auto"
+                              ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderSmall}" GridLinesVisibility="Horizontal">
+                        <DataGrid.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.Panel>
+                                    <ItemsPanelTemplate>
+                                        <DataGridRowsPresenter/>
+                                    </ItemsPanelTemplate>
+                                </GroupStyle.Panel>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="{x:Type GroupItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                    <StackPanel Background="{StaticResource MainDarkColor}">
+                                                        <Grid Height="40">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="6*" />
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="6*"/>
+                                                                <ColumnDefinition Width="1*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <DockPanel Grid.Column="0" Margin="5,0,0,0" MinWidth="150">
+                                                                <Button Style="{StaticResource btn-info}" Content="Chi tiết" Margin="5,0,10,0" Padding="10,2,10,2" Height="30" 
+                                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ProductDetailCommand}"/>
+                                                                <TextBlock Text="[" Style="{StaticResource H4}" />
+                                                                <TextBlock Text="{Binding Items[0].ProductID}" Style="{StaticResource H4}"  />
+                                                                <TextBlock Text="]" FontSize="16" Style="{StaticResource H4}"/>
+                                                                <TextBlock Text="{Binding Items[0].ProductName}" Style="{StaticResource H4}" />
+                                                            </DockPanel>
+
+                                                        </Grid>
+                                                        <ItemsPresenter />
+                                                    </StackPanel>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </DataGrid.GroupStyle>
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="Ngày Nhập"  MinWidth="150" IsReadOnly="True" Width="6*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ArrivalDate}" FontSize="14"  Margin="10,5,0,0"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Nhà cung cấp"  MinWidth="150" IsReadOnly="True" Width="6*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ArrivalDate}" FontSize="14"  Margin="10,5,0,0"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Số lượng" MinWidth="100" IsReadOnly="True"  Width="2*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Quantity}" FontSize="14"  TextAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Giá" MinWidth="100" IsReadOnly="True"  Width="6*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding SellingPrice}" FontSize="14"  TextAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Hạn sử dụng" MinWidth="100" IsReadOnly="True"  Width="6*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding SellingPrice}" FontSize="14"  TextAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header=""  MinWidth="100" IsReadOnly="True"  Width="1*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Đặt hàng" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="2,2,2,2" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+
+            </Grid>
+        </xctk:BusyIndicator.Content>
+
+    </xctk:BusyIndicator>
+</UserControl>

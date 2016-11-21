@@ -55,6 +55,10 @@ namespace MenuModule
             //Order Module
             this.container.RegisterType(typeof(Object), typeof(OrderAddNewView), SalingManagementConstant.STRING_VIEW_ORDER_ADD);
             this.container.RegisterType(typeof(Object), typeof(OrderListView), SalingManagementConstant.STRING_VIEW_ORDER_LIST);
+
+            //Customer Module
+            this.container.RegisterType(typeof(Object),typeof(CustomerModule.View.CustomerListView),SalingManagementConstant.STRING_VIEW_CUSTOMER_LIST);
+            this.container.RegisterType(typeof(Object), typeof(CustomerModule.View.CustomerDetailView), SalingManagementConstant.STRING_VIEW_CUSTOMER_DETAIL);
         }
     }
 }

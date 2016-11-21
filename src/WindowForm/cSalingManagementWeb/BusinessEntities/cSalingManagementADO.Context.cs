@@ -38,6 +38,9 @@ namespace BusinessEntities
         public DbSet<M_ProductInfo> M_ProductInfo { get; set; }
         public DbSet<T_Import> T_Import { get; set; }
         public DbSet<M_Supplier> M_Supplier { get; set; }
+        public DbSet<M_City> M_City { get; set; }
+        public DbSet<M_District> M_District { get; set; }
+        public DbSet<M_Ward> M_Ward { get; set; }
     
         public virtual ObjectResult<Nullable<short>> InsertM_CategoryInfo(string cate_name, string description, string image, Nullable<int> status)
         {
@@ -275,6 +278,36 @@ namespace BusinessEntities
                 new ObjectParameter("newimportdate", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_T_ImportProduct", productidParameter, importdateParameter, supplierParameter, quantityParameter, instockParameter, onorderParameter, priceParameter, expiriondateParameter, userParameter, voteParameter, statusParameter, newimportdateParameter);
+        }
+    
+        public virtual ObjectResult<M_City> SelectAll_M_City()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_City>("SelectAll_M_City");
+        }
+    
+        public virtual ObjectResult<M_City> SelectAll_M_City(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_City>("SelectAll_M_City", mergeOption);
+        }
+    
+        public virtual ObjectResult<M_District> SelectAll_M_District()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_District>("SelectAll_M_District");
+        }
+    
+        public virtual ObjectResult<M_District> SelectAll_M_District(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_District>("SelectAll_M_District", mergeOption);
+        }
+    
+        public virtual ObjectResult<M_Ward> SelectAll_M_Ward()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Ward>("SelectAll_M_Ward");
+        }
+    
+        public virtual ObjectResult<M_Ward> SelectAll_M_Ward(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Ward>("SelectAll_M_Ward", mergeOption);
         }
     }
 }

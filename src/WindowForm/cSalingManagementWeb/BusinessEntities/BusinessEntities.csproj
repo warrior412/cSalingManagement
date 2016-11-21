@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADO\M_AddressInfoADO.cs" />
     <Compile Include="ADO\M_CategoryInfoDAO.cs" />
     <Compile Include="ADO\M_ProductInfoADO.cs" />
     <Compile Include="ADO\M_SupplierADO.cs" />
@@ -73,10 +74,16 @@
     <Compile Include="M_Category.cs">
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
+    <Compile Include="M_City.cs">
+      <DependentUpon>cSalingManagementADO.tt</DependentUpon>
+    </Compile>
     <Compile Include="M_Customer.cs">
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
     <Compile Include="M_Department.cs">
+      <DependentUpon>cSalingManagementADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_District.cs">
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
     <Compile Include="M_Employee.cs">
@@ -89,6 +96,9 @@
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
     <Compile Include="M_Supplier.cs">
+      <DependentUpon>cSalingManagementADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_Ward.cs">
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

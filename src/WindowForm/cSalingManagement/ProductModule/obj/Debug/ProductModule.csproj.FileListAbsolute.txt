@@ -133,16 +133,6 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModul
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.xml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Unity.Wpf.xml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Wpf.xml
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\System.Windows.Interactivity.xml
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\de\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\en\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\es\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\it\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
@@ -153,7 +143,6 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModul
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csprojResolveAssemblyReference.cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductDetailView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductImportRequestView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductListView.baml

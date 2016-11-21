@@ -102,6 +102,30 @@ namespace cSalingManagement.Infrastructure.Common
                         }
                     }
                 }
+            },
+            new MenuItem{
+                Name = SalingManagementCommonFunction.GetInstance().GetResourceLanguageStringByKey("CustomerManagement"),
+                Action = null,
+                SubMenuItems = new List<SubMenuItem>{
+                     new SubMenuItem{
+                        Name = SalingManagementCommonFunction.GetInstance().GetResourceLanguageStringByKey("CustomerList"),
+                        Action = new cSalingManagement.Model.Action{
+                            ModuleName= SalingManagementConstant.STRING_MODULE_CUSTOMER,
+                            RegionName= SalingManagementConstant.STRING_REGION_CONTENT,
+                            ViewName = SalingManagementConstant.STRING_VIEW_CUSTOMER_LIST
+                        }
+                    }
+                    ,
+                     new SubMenuItem{
+                        Name = SalingManagementCommonFunction.GetInstance().GetResourceLanguageStringByKey("CustomerDetail"),
+                        Action = new cSalingManagement.Model.Action{
+                            ModuleName= SalingManagementConstant.STRING_MODULE_CUSTOMER,
+                            RegionName= SalingManagementConstant.STRING_REGION_CONTENT,
+                            ViewName = SalingManagementConstant.STRING_VIEW_CUSTOMER_DETAIL
+                        }
+                    }
+
+                }
             }
             };
         }

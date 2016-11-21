@@ -236,6 +236,7 @@
             Registers an object for navigation.
             </summary>
             <typeparam name="T">The Type of the object to register</typeparam>
+            <param name="container"><see cref="T:Microsoft.Practices.Unity.IUnityContainer"/> used to register type for Navigation.</param>
             <param name="name">The unique name to register with the object.</param>
         </member>
         <member name="T:Prism.Unity.UnityContainerHelper">

@@ -26,13 +26,14 @@
     <EntitySetMapping Name="M_Customer">
       <EntityTypeMapping TypeName="cSalingManagementModel.M_Customer">
         <MappingFragment StoreEntitySet="M_Customer">
+          <ScalarProperty Name="Customer_City" ColumnName="Customer_City" />
+          <ScalarProperty Name="Customer_Ward" ColumnName="Customer_Ward" />
           <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
           <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
           <ScalarProperty Name="Customer_BirthDay" ColumnName="Customer_BirthDay" />
           <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
           <ScalarProperty Name="Customer_Mobile" ColumnName="Customer_Mobile" />
           <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
-          <ScalarProperty Name="Customer_Street" ColumnName="Customer_Street" />
           <ScalarProperty Name="Customer_District" ColumnName="Customer_District" />
           <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
           <ScalarProperty Name="Customer_Status" ColumnName="Customer_Status" />
@@ -223,5 +224,37 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="Update_T_ImportProduct" FunctionName="cSalingManagementModel.Store.Update_T_ImportProduct" />
+    <EntitySetMapping Name="M_City">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_City">
+        <MappingFragment StoreEntitySet="M_City">
+          <ScalarProperty Name="City_Status" ColumnName="City_Status" />
+          <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_District">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_District">
+        <MappingFragment StoreEntitySet="M_District">
+          <ScalarProperty Name="District_Status" ColumnName="District_Status" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="M_Ward">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_Ward">
+        <MappingFragment StoreEntitySet="M_Ward">
+          <ScalarProperty Name="Ward_Status" ColumnName="Ward_Status" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Ward_Name" ColumnName="Ward_Name" />
+          <ScalarProperty Name="WardID" ColumnName="WardID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SelectAll_M_City" FunctionName="cSalingManagementModel.Store.SelectAll_M_City" />
+    <FunctionImportMapping FunctionImportName="SelectAll_M_District" FunctionName="cSalingManagementModel.Store.SelectAll_M_District" />
+    <FunctionImportMapping FunctionImportName="SelectAll_M_Ward" FunctionName="cSalingManagementModel.Store.SelectAll_M_Ward" />
   </EntityContainerMapping>
 </Mapping>

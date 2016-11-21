@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewRequestModule", "NewRequ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cSalingmanagement.Webservice", "cSalingmanagement.Webservice\cSalingmanagement.Webservice.csproj", "{6BF4DCA0-BC52-4481-9829-ED176F9CA5CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerModule", "CustomerModule\CustomerModule.csproj", "{7648F040-7A13-46DD-9D76-5995443C0633}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{6BF4DCA0-BC52-4481-9829-ED176F9CA5CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BF4DCA0-BC52-4481-9829-ED176F9CA5CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BF4DCA0-BC52-4481-9829-ED176F9CA5CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7648F040-7A13-46DD-9D76-5995443C0633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7648F040-7A13-46DD-9D76-5995443C0633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7648F040-7A13-46DD-9D76-5995443C0633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7648F040-7A13-46DD-9D76-5995443C0633}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,5 +90,6 @@ Global
 		{E69B46D3-B826-42E1-9654-ED36E27C0925} = {7E34CD1E-900B-4841-A58E-8CF261614816}
 		{5531A46B-316B-4060-86B5-EE302B7CA1D0} = {7E34CD1E-900B-4841-A58E-8CF261614816}
 		{F6B2F38F-3AAC-47F2-AF88-A2D3CC6FF3F5} = {7E34CD1E-900B-4841-A58E-8CF261614816}
+		{7648F040-7A13-46DD-9D76-5995443C0633} = {7E34CD1E-900B-4841-A58E-8CF261614816}
 	EndGlobalSection
 EndGlobal

@@ -25,6 +25,14 @@
           <Property Name="Cate_Image" Type="varchar" MaxLength="50" />
           <Property Name="Cate_Status" Type="int" />
         </EntityType>
+        <EntityType Name="M_City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="City_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="City_Status" Type="int" />
+        </EntityType>
         <EntityType Name="M_Customer">
           <Key>
             <PropertyRef Name="Customer_ID" />
@@ -35,8 +43,9 @@
           <Property Name="Customer_Phone" Type="varchar" MaxLength="10" />
           <Property Name="Customer_Mobile" Type="varchar" MaxLength="10" />
           <Property Name="Customer_Address" Type="varchar" MaxLength="50" />
-          <Property Name="Customer_Street" Type="varchar" MaxLength="10" />
+          <Property Name="Customer_Ward" Type="varchar" MaxLength="10" />
           <Property Name="Customer_District" Type="varchar" MaxLength="10" />
+          <Property Name="Customer_City" Type="varchar" MaxLength="10" />
           <Property Name="Customer_Type" Type="varchar" MaxLength="10" />
           <Property Name="Customer_Status" Type="int" />
         </EntityType>
@@ -46,6 +55,15 @@
           </Key>
           <Property Name="DepartmentID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="DepartmentName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="M_District">
+          <Key>
+            <PropertyRef Name="DistrictID" />
+          </Key>
+          <Property Name="DistrictID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="District_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="10" />
+          <Property Name="District_Status" Type="int" />
         </EntityType>
         <EntityType Name="M_Employee">
           <Key>
@@ -98,6 +116,15 @@
           <Property Name="Supp_Website" Type="varchar" MaxLength="50" />
           <Property Name="Supp_Image" Type="varchar" MaxLength="50" />
           <Property Name="Supplier_Status" Type="int" />
+        </EntityType>
+        <EntityType Name="M_Ward">
+          <Key>
+            <PropertyRef Name="WardID" />
+          </Key>
+          <Property Name="WardID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ward_Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="District" Type="varchar" MaxLength="10" />
+          <Property Name="Ward_Status" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -161,6 +188,8 @@
           <Parameter Name="user" Type="varchar" Mode="In" />
         </Function>
         <Function Name="SelectAll_M_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectAll_M_City" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectAll_M_District" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SelectAll_M_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SelectAll_M_ProductInfoWithImportInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SelectAll_M_ProductInfoWithImportInfo_ByProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -168,6 +197,7 @@
         </Function>
         <Function Name="SelectAll_M_ProductInfoWithImportInfo_OnWaiting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SelectAll_M_Supplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectAll_M_Ward" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Update_T_ImportProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="productid" Type="varchar" Mode="In" />
           <Parameter Name="importdate" Type="datetime" Mode="In" />
@@ -198,12 +228,15 @@
         <EntityContainer Name="cSalingManagementModelStoreContainer">
           <EntitySet Name="M_Account" EntityType="Self.M_Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_Category" EntityType="Self.M_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_City" EntityType="Self.M_City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_Customer" EntityType="Self.M_Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_Department" EntityType="Self.M_Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_District" EntityType="Self.M_District" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_Employee" EntityType="Self.M_Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_ProductInfo" EntityType="Self.M_ProductInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_Role" EntityType="Self.M_Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_Supplier" EntityType="Self.M_Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_Ward" EntityType="Self.M_Ward" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Import" EntityType="Self.T_Import" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -245,6 +278,8 @@
           <Property Name="Customer_District" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Customer_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Customer_Status" Type="Int32" />
+          <Property Name="Customer_Ward" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_City" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="M_Department">
           <Key>
@@ -355,6 +390,12 @@
             <Parameter Name="status" Mode="In" Type="Int32" />
             <Parameter Name="newimportdate" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <EntitySet Name="M_City" EntityType="cSalingManagementModel.M_City" />
+          <EntitySet Name="M_District" EntityType="cSalingManagementModel.M_District" />
+          <EntitySet Name="M_Ward" EntityType="cSalingManagementModel.M_Ward" />
+          <FunctionImport Name="SelectAll_M_City" EntitySet="M_City" ReturnType="Collection(cSalingManagementModel.M_City)" />
+          <FunctionImport Name="SelectAll_M_District" EntitySet="M_District" ReturnType="Collection(cSalingManagementModel.M_District)" />
+          <FunctionImport Name="SelectAll_M_Ward" EntitySet="M_Ward" ReturnType="Collection(cSalingManagementModel.M_Ward)" />
         </EntityContainer>
         <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
           <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
@@ -427,6 +468,32 @@
           <Property Name="Supp_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Supplier_Status" Type="Int32" />
         </EntityType>
+        <EntityType Name="M_City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="City_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City_Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="M_District">
+          <Key>
+            <PropertyRef Name="DistrictID" />
+          </Key>
+          <Property Name="DistrictID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="District_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="District_Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="M_Ward">
+          <Key>
+            <PropertyRef Name="WardID" />
+          </Key>
+          <Property Name="WardID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Ward_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Ward_Status" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -458,13 +525,14 @@
           <EntitySetMapping Name="M_Customer">
             <EntityTypeMapping TypeName="cSalingManagementModel.M_Customer">
               <MappingFragment StoreEntitySet="M_Customer">
+                <ScalarProperty Name="Customer_City" ColumnName="Customer_City" />
+                <ScalarProperty Name="Customer_Ward" ColumnName="Customer_Ward" />
                 <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
                 <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
                 <ScalarProperty Name="Customer_BirthDay" ColumnName="Customer_BirthDay" />
                 <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
                 <ScalarProperty Name="Customer_Mobile" ColumnName="Customer_Mobile" />
                 <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
-                <ScalarProperty Name="Customer_Street" ColumnName="Customer_Street" />
                 <ScalarProperty Name="Customer_District" ColumnName="Customer_District" />
                 <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
                 <ScalarProperty Name="Customer_Status" ColumnName="Customer_Status" />
@@ -655,6 +723,38 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Update_T_ImportProduct" FunctionName="cSalingManagementModel.Store.Update_T_ImportProduct" />
+          <EntitySetMapping Name="M_City">
+            <EntityTypeMapping TypeName="cSalingManagementModel.M_City">
+              <MappingFragment StoreEntitySet="M_City">
+                <ScalarProperty Name="City_Status" ColumnName="City_Status" />
+                <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_District">
+            <EntityTypeMapping TypeName="cSalingManagementModel.M_District">
+              <MappingFragment StoreEntitySet="M_District">
+                <ScalarProperty Name="District_Status" ColumnName="District_Status" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Ward">
+            <EntityTypeMapping TypeName="cSalingManagementModel.M_Ward">
+              <MappingFragment StoreEntitySet="M_Ward">
+                <ScalarProperty Name="Ward_Status" ColumnName="Ward_Status" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Ward_Name" ColumnName="Ward_Name" />
+                <ScalarProperty Name="WardID" ColumnName="WardID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectAll_M_City" FunctionName="cSalingManagementModel.Store.SelectAll_M_City" />
+          <FunctionImportMapping FunctionImportName="SelectAll_M_District" FunctionName="cSalingManagementModel.Store.SelectAll_M_District" />
+          <FunctionImportMapping FunctionImportName="SelectAll_M_Ward" FunctionName="cSalingManagementModel.Store.SelectAll_M_Ward" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
