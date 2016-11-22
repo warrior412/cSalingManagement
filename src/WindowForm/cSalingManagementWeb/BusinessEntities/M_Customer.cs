@@ -20,11 +20,12 @@ namespace BusinessEntities
         public string Customer_Phone { get; set; }
         public string Customer_Mobile { get; set; }
         public string Customer_Address { get; set; }
-        public string Customer_Street { get; set; }
-        public string Customer_District { get; set; }
-        public string Customer_Type { get; set; }
-        public Nullable<int> Customer_Status { get; set; }
         public string Customer_Ward { get; set; }
+        public string Customer_District { get; set; }
         public string Customer_City { get; set; }
+        public string Customer_Description { get; set; }
+        public string Customer_Type { get; set; }
+        public Nullable<int> Customer_Point { get; set; }
+        public Nullable<int> Customer_Status { get; set; }
     }
 }

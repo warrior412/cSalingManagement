@@ -71,7 +71,7 @@
                                     <RowDefinition Height="10*"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock Text="Mô tả về khách hàng" Grid.Column="0" Style="{StaticResource styleTextBlockTitle}"/>
-                                <TextBox Style="{StaticResource styleTextAreaDefault}" IsEnabled="{Binding IsEditing}" Text="{Binding ProductDetail.Pro_Desciptions }"  Grid.Row="1" Margin="5" ></TextBox>
+                                <TextBox Style="{StaticResource styleTextAreaDefault}" IsEnabled="{Binding IsEditing}" Text="{Binding CustomerInfo.Customer_Description,Mode=TwoWay}"  Grid.Row="1" Margin="5" ></TextBox>
                             </Grid>
                         </Grid>
                         <Grid Grid.Column="0">
@@ -96,8 +96,9 @@
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Text="Mã khách hàng" Grid.Column="0"  Style="{StaticResource styleTextBlockTitle}"/>
                                 <TextBlock Text="Điểm tích lũy" Grid.Column="2" Style="{StaticResource styleTextBlockTitle}"/>
-                                <TextBlock Text="{Binding ProductDetail.ProductID }" Grid.Column="1"  Style="{StaticResource styleTextBlockTitle}" />
-                                <TextBlock Text="{Binding ProductDetail.ProductID }" Grid.Column="3"  Style="{StaticResource styleTextBlockTitle}" />
+                                <TextBlock  Grid.Column="1"  Style="{StaticResource styleTextBlockTitle}" FontSize="22"
+                                            Text="{Binding CustomerInfo.Customer_ID}"/>
+                                <TextBlock Text="{Binding CustomerInfo.Customer_ID }" Grid.Column="3"  Style="{StaticResource styleTextBlockTitle}" />
                             </Grid>
                             
                             
@@ -106,20 +107,26 @@
                             <TextBlock Text="Số điện thoại" Grid.Column="0" Grid.Row="3" Style="{StaticResource styleTextBlockTitle}"/>
                             <TextBlock Text="Địa chỉ" Grid.Column="0" Grid.Row="4" Style="{StaticResource styleTextBlockTitle}"/>
                             <TextBlock Text="Ngày sinh" Grid.Column="0" Grid.Row="5" Style="{StaticResource styleTextBlockTitle}"/>
-                            
 
 
-                            
-                            <TextBox  Text="{Binding ProductDetail.ProductName, Mode=TwoWay}" IsEnabled="{Binding IsEditing}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>
-                            <ComboBox x:Name="cbCategory" IsEnabled="{Binding IsEditing}" Style="{StaticResource styleComboBoxDefault}"  Grid.Column="1" Grid.Row="2"></ComboBox>
+
+
+                            <TextBox  Text="{Binding CustomerInfo.Customer_Name, Mode=TwoWay}" IsEnabled="{Binding IsEditing}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>
+                            <ComboBox x:Name="cbCustomerType" IsEnabled="{Binding IsEditing}" Style="{StaticResource styleComboBoxDefault}"  Grid.Column="1" Grid.Row="2"
+                                      ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.LstCustomerType}"
+                                      DisplayMemberPath="CustomerType_Name"
+                                      SelectedValuePath="CustomerTypeID"
+                                      SelectedValue="{Binding CustomerInfo.Customer_Type,Mode=TwoWay}">
+                                
+                            </ComboBox>
 
                             <Grid Grid.Column="1" Grid.Row="3">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBox Grid.Column="0" Style="{StaticResource styleTextBoxDefault}" Text="{Binding ProductDetail.Pro_Origin }" IsEnabled="{Binding IsEditing}" ></TextBox>
-                                <TextBox Grid.Column="1" Style="{StaticResource styleTextBoxDefault}" Text="{Binding ProductDetail.Pro_Origin }" IsEnabled="{Binding IsEditing}"></TextBox>
+                                <TextBox Grid.Column="0" Style="{StaticResource styleTextBoxDefault}" Text="{Binding CustomerInfo.Customer_Phone,Mode=TwoWay}" IsEnabled="{Binding IsEditing}" ></TextBox>
+                                <TextBox Grid.Column="1" Style="{StaticResource styleTextBoxDefault}" Text="{Binding CustomerInfo.Customer_Mobile,Mode=TwoWay }" IsEnabled="{Binding IsEditing}"></TextBox>
                             </Grid>
                             <Grid Grid.Column="1" Grid.Row="4">
                                 <Grid.RowDefinitions>
@@ -135,15 +142,18 @@
                                           ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.LstCityInfo}"
                                           DisplayMemberPath="City_Name"
                                           SelectedValuePath="CityID"
+                                          SelectedValue="{Binding CustomerInfo.Customer_City,Mode=TwoWay}"
                                           SelectionChanged="cbCity_SelectionChanged"/>
                                 <ComboBox IsEnabled="{Binding IsEditing}" Style="{StaticResource styleComboBoxDefault}"  Grid.Column="1"
                                           x:Name="cbDistrict"
-                                          SelectionChanged="cbDistrict_SelectionChanged"></ComboBox>
+                                          SelectionChanged="cbDistrict_SelectionChanged"
+                                          SelectedValue="{Binding CustomerInfo.Customer_District,Mode=TwoWay}"></ComboBox>
                                 <ComboBox IsEnabled="{Binding IsEditing}" Style="{StaticResource styleComboBoxDefault}"  Grid.Column="2"
-                                          x:Name="cbWard" SelectionChanged="cbWard_SelectionChanged"></ComboBox>
-                                <TextBox  Text="{Binding ProductDetail.ProductName, Mode=TwoWay}" IsEnabled="{Binding IsEditing}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>
+                                          x:Name="cbWard" SelectionChanged="cbWard_SelectionChanged"
+                                          SelectedValue="{Binding CustomerInfo.Customer_Ward,Mode=TwoWay}"></ComboBox>
+                                <TextBox  Text="{Binding CustomerInfo.Customer_Address, Mode=TwoWay}" IsEnabled="{Binding IsEditing}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>
                             </Grid>
-                            <DatePicker Style="{StaticResource styleDatePickerDefault}"  Text="{Binding ProductDetail.Pro_Preservation }" IsEnabled="{Binding IsEditing}"  Grid.Column="1" Grid.Row="5" ></DatePicker>
+                            <DatePicker Style="{StaticResource styleDatePickerDefault}"  Text="{Binding CustomerInfo.Customer_BirthDay,Mode=TwoWay}" IsEnabled="{Binding IsEditing}"  Grid.Column="1" Grid.Row="5" ></DatePicker>
                         </Grid>
                     </Grid>
                 </Grid>

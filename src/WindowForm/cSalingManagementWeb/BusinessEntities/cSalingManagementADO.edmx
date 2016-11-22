@@ -38,16 +38,26 @@
             <PropertyRef Name="Customer_ID" />
           </Key>
           <Property Name="Customer_ID" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Customer_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Customer_BirthDay" Type="date" />
           <Property Name="Customer_Phone" Type="varchar" MaxLength="10" />
           <Property Name="Customer_Mobile" Type="varchar" MaxLength="10" />
-          <Property Name="Customer_Address" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_Address" Type="nvarchar" MaxLength="50" />
           <Property Name="Customer_Ward" Type="varchar" MaxLength="10" />
           <Property Name="Customer_District" Type="varchar" MaxLength="10" />
           <Property Name="Customer_City" Type="varchar" MaxLength="10" />
+          <Property Name="Customer_Description" Type="nvarchar" MaxLength="500" />
           <Property Name="Customer_Type" Type="varchar" MaxLength="10" />
+          <Property Name="Customer_Point" Type="int" />
           <Property Name="Customer_Status" Type="int" />
+        </EntityType>
+        <EntityType Name="M_CustomerType">
+          <Key>
+            <PropertyRef Name="CustomerTypeID" />
+          </Key>
+          <Property Name="CustomerTypeID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CustomerType_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerType_Status" Type="int" />
         </EntityType>
         <EntityType Name="M_Department">
           <Key>
@@ -159,6 +169,20 @@
           <Parameter Name="image" Type="varchar" Mode="In" />
           <Parameter Name="status" Type="int" Mode="In" />
         </Function>
+        <Function Name="InsertM_CustomerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="birthday" Type="date" Mode="In" />
+          <Parameter Name="phone" Type="varchar" Mode="In" />
+          <Parameter Name="mobile" Type="varchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+          <Parameter Name="ward" Type="varchar" Mode="In" />
+          <Parameter Name="district" Type="varchar" Mode="In" />
+          <Parameter Name="city" Type="varchar" Mode="In" />
+          <Parameter Name="descript" Type="nvarchar" Mode="In" />
+          <Parameter Name="customer_type" Type="varchar" Mode="In" />
+          <Parameter Name="customer_status" Type="int" Mode="In" />
+          <Parameter Name="customer_point" Type="int" Mode="In" />
+        </Function>
         <Function Name="InsertM_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="product_name" Type="nvarchar" Mode="In" />
           <Parameter Name="Category" Type="varchar" Mode="In" />
@@ -187,8 +211,13 @@
           <Parameter Name="quantity" Type="int" Mode="In" />
           <Parameter Name="user" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="Select_M_CustomerInfo_ByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="customerid" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SelectAll_M_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SelectAll_M_City" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectAll_M_CustomerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SelectAll_M_CustomerType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SelectAll_M_District" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SelectAll_M_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SelectAll_M_ProductInfoWithImportInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -230,6 +259,7 @@
           <EntitySet Name="M_Category" EntityType="Self.M_Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_City" EntityType="Self.M_City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_Customer" EntityType="Self.M_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_CustomerType" EntityType="Self.M_CustomerType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_Department" EntityType="Self.M_Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_District" EntityType="Self.M_District" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_Employee" EntityType="Self.M_Employee" Schema="dbo" store:Type="Tables" />
@@ -263,23 +293,6 @@
           <Property Name="Cate_Description" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
           <Property Name="Cate_Image" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Cate_Status" Type="Int32" />
-        </EntityType>
-        <EntityType Name="M_Customer">
-          <Key>
-            <PropertyRef Name="Customer_ID" />
-          </Key>
-          <Property Name="Customer_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Customer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Customer_BirthDay" Type="DateTime" Precision="0" />
-          <Property Name="Customer_Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Customer_Mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Customer_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Customer_Street" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Customer_District" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Customer_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Customer_Status" Type="Int32" />
-          <Property Name="Customer_Ward" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Customer_City" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="M_Department">
           <Key>
@@ -323,7 +336,6 @@
         <EntityContainer Name="cSalingManagementEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="M_Account" EntityType="Self.M_Account" />
           <EntitySet Name="M_Category" EntityType="Self.M_Category" />
-          <EntitySet Name="M_Customer" EntityType="Self.M_Customer" />
           <EntitySet Name="M_Department" EntityType="Self.M_Department" />
           <EntitySet Name="M_Employee" EntityType="Self.M_Employee" />
           <EntitySet Name="M_Role" EntityType="Self.M_Role" />
@@ -396,6 +408,27 @@
           <FunctionImport Name="SelectAll_M_City" EntitySet="M_City" ReturnType="Collection(cSalingManagementModel.M_City)" />
           <FunctionImport Name="SelectAll_M_District" EntitySet="M_District" ReturnType="Collection(cSalingManagementModel.M_District)" />
           <FunctionImport Name="SelectAll_M_Ward" EntitySet="M_Ward" ReturnType="Collection(cSalingManagementModel.M_Ward)" />
+          <EntitySet Name="M_CustomerType" EntityType="cSalingManagementModel.M_CustomerType" />
+          <FunctionImport Name="SelectAll_M_CustomerType" EntitySet="M_CustomerType" ReturnType="Collection(cSalingManagementModel.M_CustomerType)" />
+          <EntitySet Name="M_Customer" EntityType="cSalingManagementModel.M_Customer" />
+          <FunctionImport Name="InsertM_CustomerInfo" ReturnType="Collection(String)">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="birthday" Mode="In" Type="DateTime" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="mobile" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="ward" Mode="In" Type="String" />
+            <Parameter Name="district" Mode="In" Type="String" />
+            <Parameter Name="city" Mode="In" Type="String" />
+            <Parameter Name="descript" Mode="In" Type="String" />
+            <Parameter Name="customer_type" Mode="In" Type="String" />
+            <Parameter Name="customer_status" Mode="In" Type="Int32" />
+            <Parameter Name="customer_point" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SelectAll_M_CustomerInfo" EntitySet="M_Customer" ReturnType="Collection(cSalingManagementModel.M_Customer)" />
+          <FunctionImport Name="Select_M_CustomerInfo_ByCustomerID" EntitySet="M_Customer" ReturnType="Collection(cSalingManagementModel.M_Customer)">
+            <Parameter Name="customerid" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
           <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
@@ -494,6 +527,32 @@
           <Property Name="District" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Ward_Status" Type="Int32" />
         </EntityType>
+        <EntityType Name="M_CustomerType">
+          <Key>
+            <PropertyRef Name="CustomerTypeID" />
+          </Key>
+          <Property Name="CustomerTypeID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerType_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerType_Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="M_Customer">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_BirthDay" Type="DateTime" Precision="0" />
+          <Property Name="Customer_Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_Ward" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_District" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_City" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Point" Type="Int32" />
+          <Property Name="Customer_Status" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -519,23 +578,6 @@
                 <ScalarProperty Name="Cate_Description" ColumnName="Cate_Description" />
                 <ScalarProperty Name="Cate_Image" ColumnName="Cate_Image" />
                 <ScalarProperty Name="Cate_Status" ColumnName="Cate_Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="M_Customer">
-            <EntityTypeMapping TypeName="cSalingManagementModel.M_Customer">
-              <MappingFragment StoreEntitySet="M_Customer">
-                <ScalarProperty Name="Customer_City" ColumnName="Customer_City" />
-                <ScalarProperty Name="Customer_Ward" ColumnName="Customer_Ward" />
-                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
-                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
-                <ScalarProperty Name="Customer_BirthDay" ColumnName="Customer_BirthDay" />
-                <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
-                <ScalarProperty Name="Customer_Mobile" ColumnName="Customer_Mobile" />
-                <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
-                <ScalarProperty Name="Customer_District" ColumnName="Customer_District" />
-                <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
-                <ScalarProperty Name="Customer_Status" ColumnName="Customer_Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -755,6 +797,38 @@
           <FunctionImportMapping FunctionImportName="SelectAll_M_City" FunctionName="cSalingManagementModel.Store.SelectAll_M_City" />
           <FunctionImportMapping FunctionImportName="SelectAll_M_District" FunctionName="cSalingManagementModel.Store.SelectAll_M_District" />
           <FunctionImportMapping FunctionImportName="SelectAll_M_Ward" FunctionName="cSalingManagementModel.Store.SelectAll_M_Ward" />
+          <EntitySetMapping Name="M_CustomerType">
+            <EntityTypeMapping TypeName="cSalingManagementModel.M_CustomerType">
+              <MappingFragment StoreEntitySet="M_CustomerType">
+                <ScalarProperty Name="CustomerType_Status" ColumnName="CustomerType_Status" />
+                <ScalarProperty Name="CustomerType_Name" ColumnName="CustomerType_Name" />
+                <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SelectAll_M_CustomerType" FunctionName="cSalingManagementModel.Store.SelectAll_M_CustomerType" />
+          <EntitySetMapping Name="M_Customer">
+            <EntityTypeMapping TypeName="cSalingManagementModel.M_Customer">
+              <MappingFragment StoreEntitySet="M_Customer">
+                <ScalarProperty Name="Customer_Status" ColumnName="Customer_Status" />
+                <ScalarProperty Name="Customer_Point" ColumnName="Customer_Point" />
+                <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
+                <ScalarProperty Name="Customer_Description" ColumnName="Customer_Description" />
+                <ScalarProperty Name="Customer_City" ColumnName="Customer_City" />
+                <ScalarProperty Name="Customer_District" ColumnName="Customer_District" />
+                <ScalarProperty Name="Customer_Ward" ColumnName="Customer_Ward" />
+                <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+                <ScalarProperty Name="Customer_Mobile" ColumnName="Customer_Mobile" />
+                <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+                <ScalarProperty Name="Customer_BirthDay" ColumnName="Customer_BirthDay" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertM_CustomerInfo" FunctionName="cSalingManagementModel.Store.InsertM_CustomerInfo" />
+          <FunctionImportMapping FunctionImportName="SelectAll_M_CustomerInfo" FunctionName="cSalingManagementModel.Store.SelectAll_M_CustomerInfo" />
+          <FunctionImportMapping FunctionImportName="Select_M_CustomerInfo_ByCustomerID" FunctionName="cSalingManagementModel.Store.Select_M_CustomerInfo_ByCustomerID" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -136,6 +136,7 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\b
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\MenuModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\MenuModule.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingManagement.Infrastructure.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\CustomerModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Practices.Unity.dll
@@ -151,6 +152,7 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\b
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Xceed.Wpf.Toolkit.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingmanagement.Webservice.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingManagement.Infrastructure.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\CustomerModule.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\NewRequestModule.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\OrderModule.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\ProductModule.pdb
@@ -174,5 +176,3 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\o
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.pdb
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\CustomerModule.dll
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\CustomerModule.pdb

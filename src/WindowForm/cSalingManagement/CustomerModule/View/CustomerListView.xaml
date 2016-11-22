@@ -11,8 +11,10 @@
         <converter:ProductModule_SupplierToWidth x:Key="ProductModule_SupplierToWidth"/>
         <converter:ProductModule_SupplierIDToSupplierNameConverter x:Key="ProductModule_SupplierIDToSupplierNameConverter"/>
         <converter:DateToDateFormatConverter x:Key="DateToDateFormatConverter"/>
+        <converter:DisplayMultiPhoneNumberConverter x:Key="DisplayMultiPhoneNumberConverter"/>
+        <converter:FullCustomerAddressConverter x:Key="FullCustomerAddressConverter"/>
     </UserControl.Resources>
-    <xctk:BusyIndicator Name="busyIndicator" IsBusy="{Binding IsLoading}">
+    <xctk:BusyIndicator Name="busyIndicator" IsBusy="{Binding IsBusy}">
         <xctk:BusyIndicator.BusyContent>
             <StackPanel>
                 <TextBlock HorizontalAlignment="Center">Vui lòng đợi...</TextBlock>
@@ -41,10 +43,11 @@
                     </Grid>
                 </Grid>
                 <DockPanel Grid.Row="1" LastChildFill="True">
-                    <DataGrid HeadersVisibility="Column" 
-                              AutoGenerateColumns="False" x:Name="gvCheckInfo" 
-                              CanUserAddRows="False" RowHeight="40" VerticalScrollBarVisibility="Auto"
-                              ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderDefault}" GridLinesVisibility="Horizontal">
+                    <DataGrid HeadersVisibility="Column"  
+                              AutoGenerateColumns="False" x:Name="gvCheckInfo"
+                              ItemsSource="{Binding LstCustomer}"
+                              CanUserAddRows="False" MinRowHeight="40" VerticalScrollBarVisibility="Auto"
+                              ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderDefault}" GridLinesVisibility="Horizontal"> 
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridCell}">
                                 <Style.Triggers>
@@ -55,69 +58,32 @@
                                 </Style.Triggers>
                             </Style>
                         </DataGrid.Resources>
-                        <DataGrid.GroupStyle>
-                            <GroupStyle>
-                                <GroupStyle.Panel>
-                                    <ItemsPanelTemplate>
-                                        <DataGridRowsPresenter/>
-                                    </ItemsPanelTemplate>
-                                </GroupStyle.Panel>
-                                <GroupStyle.ContainerStyle>
-                                    <Style TargetType="{x:Type GroupItem}">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="{x:Type GroupItem}">
-                                                    <StackPanel Background="{StaticResource MainDarkColor}">
-                                                        <Grid Height="40">
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="6*" />
-                                                                <ColumnDefinition Width="2*"/>
-                                                                <ColumnDefinition Width="6*"/>
-                                                                <ColumnDefinition Width="1*"/>
-                                                            </Grid.ColumnDefinitions>
-                                                            <DockPanel Grid.Column="0" Margin="5,0,0,0" MinWidth="150">
-                                                                <Button Style="{StaticResource btn-info}" Content="Chi tiết" Margin="5,0,10,0" Padding="10,2,10,2" Height="30" 
-                                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ProductDetailCommand}"
-                                                                        CommandParameter="{Binding Items[0].ProductID}"/>
-                                                                <TextBlock Text="[" Style="{StaticResource H4}" />
-                                                                <TextBlock Text="{Binding Items[0].ProductID}" Style="{StaticResource H4}"  />
-                                                                <TextBlock Text="]" FontSize="16" Style="{StaticResource H4}"/>
-                                                                <TextBlock Text="{Binding Items[0].ProductName}" Style="{StaticResource H4}" />
-                                                            </DockPanel>
-
-                                                        </Grid>
-                                                        <ItemsPresenter />
-                                                    </StackPanel>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </GroupStyle.ContainerStyle>
-                            </GroupStyle>
-                        </DataGrid.GroupStyle>
                         <DataGrid.Columns>
-                            <DataGridTemplateColumn Header="Mã KH"  MinWidth="60" IsReadOnly="True" Width="2*">
+                            <DataGridTemplateColumn Header="Mã KH"  MinWidth="80" IsReadOnly="True" Width="1*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ImportDate,Converter={StaticResource DateToDateFormatConverter}}" FontSize="14"  Margin="10,5,0,0"/>
+                                        <Button Style="{StaticResource btn-primary}" Content="{Binding Customer_ID}" 
+                                                FontSize="14"  Height="30" Width="80" Padding="2,2,2,2"
+                                                Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.CustomerDetailCommand}"
+                                                CommandParameter="{Binding Customer_ID}"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Tên khách hàng"  MinWidth="150" IsReadOnly="True" Width="6*">
+                            <DataGridTemplateColumn Header="Tên khách hàng"  MinWidth="120" IsReadOnly="True" Width="3*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ExpirionDate,Converter={StaticResource DateToDateFormatConverter}}" FontSize="14"  Margin="10,5,0,0"/>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Customer_Name}" FontWeight="Bold" FontSize="14"  Margin="10,5,0,0"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Số điện thoại"  MinWidth="60" IsReadOnly="True" Width="3*">
+                            <DataGridTemplateColumn Header="Số điện thoại"  MinWidth="80" IsReadOnly="True" Width="1*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Grid.Row="1" Style="{StaticResource styleDataGridTextCenter}" FontWeight="Bold" FontSize="14"  Margin="10,5,0,0">
+                                        <TextBlock Grid.Row="1" Style="{StaticResource styleDataGridTextCenter}" TextAlignment="Center"  FontSize="14"  Margin="0,5,0,0">
                                             <TextBlock.Text>
-                                                <MultiBinding Converter="{StaticResource ProductModule_SupplierIDToSupplierNameConverter}">
-                                                    <Binding Path="Supplier"/>
-                                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType={x:Type UserControl}}" Path="DataContext.LstSupplierInfo"/>
+                                                <MultiBinding Converter="{StaticResource DisplayMultiPhoneNumberConverter}">
+                                                    <Binding Path="Customer_Phone"/>
+                                                    <Binding Path="Customer_Mobile"/>
                                                 </MultiBinding>
                                             </TextBlock.Text>
                                         </TextBlock>
@@ -127,14 +93,26 @@
                             <DataGridTemplateColumn Header="Địa chỉ" MinWidth="150" IsReadOnly="True"  Width="6*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Import_InStock}" FontSize="14"  TextAlignment="Center"/>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" FontSize="14" TextWrapping="WrapWithOverflow"  TextAlignment="Center">
+                                            <TextBlock.Text>
+                                                <MultiBinding Converter="{StaticResource FullCustomerAddressConverter}">
+                                                    <Binding Path="Customer_Address"/>
+                                                    <Binding Path="Customer_Ward"/>
+                                                    <Binding Path="Customer_District"/>
+                                                    <Binding Path="Customer_City"/>
+                                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType=UserControl}" Path="DataContext.LstWardInfo" UpdateSourceTrigger="PropertyChanged"/>
+                                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType=UserControl}" Path="DataContext.LstDistrictInfo" UpdateSourceTrigger="PropertyChanged"/>
+                                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType=UserControl}" Path="DataContext.LstCityInfo" UpdateSourceTrigger="PropertyChanged"/>
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
                             <DataGridTemplateColumn Header=""  MinWidth="100" IsReadOnly="True"  Width="1*">
                                 <DataGridTemplateColumn.HeaderTemplate>
                                     <DataTemplate>
-                                        <Button Content="Giỏ hàng" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="2,2,2,2" />
+                                        
                                     </DataTemplate>
                                 </DataGridTemplateColumn.HeaderTemplate>
                                 <DataGridTemplateColumn.CellTemplate>

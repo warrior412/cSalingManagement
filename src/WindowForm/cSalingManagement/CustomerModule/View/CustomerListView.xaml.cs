@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CustomerModule.ViewModel;
+using Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +20,45 @@ namespace CustomerModule.View
     /// <summary>
     /// Interaction logic for CustomerListView.xaml
     /// </summary>
-    public partial class CustomerListView : UserControl
+    public partial class CustomerListView : UserControl, INavigationAware
     {
-        public CustomerListView()
+        #region Navigation Region
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return false;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+        }
+        #endregion
+
+        private CustomerListViewModel _vm = null;
+
+        public CustomerListViewModel Vm
+        {
+            get { return _vm; }
+            set
+            {
+                _vm = value;
+            }
+        }
+        public CustomerListView(CustomerListViewModel vm)
         {
             InitializeComponent();
+            vm.GetInitData();
+            vm.view = this;
+            _vm = vm;
+            DataContext = _vm;
+        }
+
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
         }
     }
 }

@@ -23,23 +23,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="M_Customer">
-      <EntityTypeMapping TypeName="cSalingManagementModel.M_Customer">
-        <MappingFragment StoreEntitySet="M_Customer">
-          <ScalarProperty Name="Customer_City" ColumnName="Customer_City" />
-          <ScalarProperty Name="Customer_Ward" ColumnName="Customer_Ward" />
-          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
-          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
-          <ScalarProperty Name="Customer_BirthDay" ColumnName="Customer_BirthDay" />
-          <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
-          <ScalarProperty Name="Customer_Mobile" ColumnName="Customer_Mobile" />
-          <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
-          <ScalarProperty Name="Customer_District" ColumnName="Customer_District" />
-          <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
-          <ScalarProperty Name="Customer_Status" ColumnName="Customer_Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="M_Department">
       <EntityTypeMapping TypeName="cSalingManagementModel.M_Department">
         <MappingFragment StoreEntitySet="M_Department">
@@ -256,5 +239,37 @@
     <FunctionImportMapping FunctionImportName="SelectAll_M_City" FunctionName="cSalingManagementModel.Store.SelectAll_M_City" />
     <FunctionImportMapping FunctionImportName="SelectAll_M_District" FunctionName="cSalingManagementModel.Store.SelectAll_M_District" />
     <FunctionImportMapping FunctionImportName="SelectAll_M_Ward" FunctionName="cSalingManagementModel.Store.SelectAll_M_Ward" />
+    <EntitySetMapping Name="M_CustomerType">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_CustomerType">
+        <MappingFragment StoreEntitySet="M_CustomerType">
+          <ScalarProperty Name="CustomerType_Status" ColumnName="CustomerType_Status" />
+          <ScalarProperty Name="CustomerType_Name" ColumnName="CustomerType_Name" />
+          <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SelectAll_M_CustomerType" FunctionName="cSalingManagementModel.Store.SelectAll_M_CustomerType" />
+    <EntitySetMapping Name="M_Customer">
+      <EntityTypeMapping TypeName="cSalingManagementModel.M_Customer">
+        <MappingFragment StoreEntitySet="M_Customer">
+          <ScalarProperty Name="Customer_Status" ColumnName="Customer_Status" />
+          <ScalarProperty Name="Customer_Point" ColumnName="Customer_Point" />
+          <ScalarProperty Name="Customer_Type" ColumnName="Customer_Type" />
+          <ScalarProperty Name="Customer_Description" ColumnName="Customer_Description" />
+          <ScalarProperty Name="Customer_City" ColumnName="Customer_City" />
+          <ScalarProperty Name="Customer_District" ColumnName="Customer_District" />
+          <ScalarProperty Name="Customer_Ward" ColumnName="Customer_Ward" />
+          <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+          <ScalarProperty Name="Customer_Mobile" ColumnName="Customer_Mobile" />
+          <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+          <ScalarProperty Name="Customer_BirthDay" ColumnName="Customer_BirthDay" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="InsertM_CustomerInfo" FunctionName="cSalingManagementModel.Store.InsertM_CustomerInfo" />
+    <FunctionImportMapping FunctionImportName="SelectAll_M_CustomerInfo" FunctionName="cSalingManagementModel.Store.SelectAll_M_CustomerInfo" />
+    <FunctionImportMapping FunctionImportName="Select_M_CustomerInfo_ByCustomerID" FunctionName="cSalingManagementModel.Store.Select_M_CustomerInfo_ByCustomerID" />
   </EntityContainerMapping>
 </Mapping>

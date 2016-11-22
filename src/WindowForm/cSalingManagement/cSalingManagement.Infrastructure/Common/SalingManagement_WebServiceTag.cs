@@ -16,7 +16,8 @@ namespace cSalingManagement.Infrastructure.Common
         public  const string TAG_INSERT_M_PRODUCTINFO = "1";
         public  const string TAG_INSERT_M_ACCOUNTINFO = "2";
         public  const string TAG_INSERT_M_CATEGORYINFO = "3";
-        public const string TAG_INSERT_T_IMPORTPRODUCTINFO = "4"; 
+        public const string TAG_INSERT_T_IMPORTPRODUCTINFO = "4";
+        public const string TAG_INSERT_M_CUSTOMERINFO = "5"; 
         #endregion
 
         
@@ -31,8 +32,11 @@ namespace cSalingManagement.Infrastructure.Common
         public const string TAG_GETALL_M_CITYINFO = "107";
         public const string TAG_GETALL_M_DISTRICTINFO = "108";
         public const string TAG_GETALL_M_WARDINFO = "109";
+        public const string TAG_GETALL_M_CUSTOMERTYPEINFO = "110";
+        public const string TAG_GETALL_M_CUSTOMERINFO = "111";
 
         public const string TAG_GETALL_M_PRODUCTINFO_BYID = "150";
+        public const string TAG_GET_M_CUSTOMERINFO_BYID = "151";
         #endregion
 
         #region Update TAG

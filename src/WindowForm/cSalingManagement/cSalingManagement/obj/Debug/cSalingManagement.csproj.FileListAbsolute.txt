@@ -174,17 +174,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\obj\
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Xceed.Wpf.Toolkit.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingmanagement.Webservice.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingmanagement.Webservice.pdb
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.csprojResolveAssemblyReference.cache
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\View\LoginView.baml
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\View\MainView.baml
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\App.baml
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\View\LoginView.g.cs
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\View\MainView.g.cs
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\App.g.cs
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement_MarkupCompile.cache
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.g.resources
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.Properties.Resources.resources
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingManagement.exe.config
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingManagement.exe
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingManagement.pdb
@@ -224,5 +213,16 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManag
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.Unity.Wpf.xml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.Wpf.xml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingmanagement.Webservice.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.csprojResolveAssemblyReference.cache
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\View\LoginView.baml
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\View\MainView.baml
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\App.baml
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\View\LoginView.g.cs
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\View\MainView.g.cs
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\App.g.cs
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement_MarkupCompile.cache
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.g.resources
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.Properties.Resources.resources
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.exe
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.pdb

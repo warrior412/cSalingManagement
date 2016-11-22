@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ADO\M_AddressInfoADO.cs" />
     <Compile Include="ADO\M_CategoryInfoDAO.cs" />
+    <Compile Include="ADO\M_CustomerInfoADO.cs" />
     <Compile Include="ADO\M_ProductInfoADO.cs" />
     <Compile Include="ADO\M_SupplierADO.cs" />
     <Compile Include="cSalingManagementADO.Context.cs">
@@ -78,6 +79,9 @@
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
     <Compile Include="M_Customer.cs">
+      <DependentUpon>cSalingManagementADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_CustomerType.cs">
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
     <Compile Include="M_Department.cs">

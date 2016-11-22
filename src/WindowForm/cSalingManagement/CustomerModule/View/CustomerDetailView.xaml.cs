@@ -27,19 +27,25 @@ namespace CustomerModule.View
         #region Navigation Region
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
-            Console.WriteLine("ProductListView :IsNavigationTarget");
             return false;
         }
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
-            Console.WriteLine("ProductListView :OnNavigatedFrom");
         }
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            Console.WriteLine("ProductListView :OnNavigatedTo");
-        } 
+            var param = navigationContext.Parameters;
+            if (param["CustomerID"] == null)
+            {
+                Vm.IsEditing = true;
+                return;
+            }
+            string customerID = param["CustomerID"].ToString();
+            Vm.GetCustomerInfoByID(customerID);
+            Vm.IsEditing = false;
+        }
         #endregion
 
 
@@ -58,15 +64,24 @@ namespace CustomerModule.View
         {
             InitializeComponent();
             vm.GetInitData();
+            vm.view = this;
             _vm = vm;
             DataContext = _vm;
         }
 
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
+
+        #region Control Event Raise
         private void cbCity_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (cbCity.SelectedValue == null)
+                return;
             string selectedCity = cbCity.SelectedValue.ToString();
             ObservableCollection<M_District> lstDistrictByCity = new ObservableCollection<M_District>();
-            foreach(M_District district in Vm.LstDistrictInfo)
+            foreach (M_District district in Vm.LstDistrictInfo)
             {
                 if (selectedCity.Equals(district.City))
                     lstDistrictByCity.Add(district);
@@ -78,11 +93,18 @@ namespace CustomerModule.View
 
         private void cbWard_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            if (cbWard.SelectedValue == null)
+                return;
         }
 
         private void cbDistrict_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (cbDistrict.SelectedValue == null)
+            {
+                cbWard.ItemsSource = null;
+                return;
+            }
+
             string selectedDistrict = cbDistrict.SelectedValue.ToString();
             ObservableCollection<M_Ward> lstWardByDistrict = new ObservableCollection<M_Ward>();
             foreach (M_Ward ward in Vm.LstWardInfo)
@@ -93,6 +115,7 @@ namespace CustomerModule.View
             this.cbWard.ItemsSource = lstWardByDistrict;
             this.cbWard.DisplayMemberPath = "Ward_Name";
             this.cbWard.SelectedValuePath = "WardID";
-        }
+        } 
+        #endregion
     }
 }

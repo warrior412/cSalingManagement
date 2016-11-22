@@ -30,7 +30,6 @@ namespace BusinessEntities
     
         public DbSet<M_Account> M_Account { get; set; }
         public DbSet<M_Category> M_Category { get; set; }
-        public DbSet<M_Customer> M_Customer { get; set; }
         public DbSet<M_Department> M_Department { get; set; }
         public DbSet<M_Employee> M_Employee { get; set; }
         public DbSet<M_Role> M_Role { get; set; }
@@ -41,6 +40,8 @@ namespace BusinessEntities
         public DbSet<M_City> M_City { get; set; }
         public DbSet<M_District> M_District { get; set; }
         public DbSet<M_Ward> M_Ward { get; set; }
+        public DbSet<M_CustomerType> M_CustomerType { get; set; }
+        public DbSet<M_Customer> M_Customer { get; set; }
     
         public virtual ObjectResult<Nullable<short>> InsertM_CategoryInfo(string cate_name, string description, string image, Nullable<int> status)
         {
@@ -308,6 +309,97 @@ namespace BusinessEntities
         public virtual ObjectResult<M_Ward> SelectAll_M_Ward(MergeOption mergeOption)
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Ward>("SelectAll_M_Ward", mergeOption);
+        }
+    
+        public virtual ObjectResult<M_CustomerType> SelectAll_M_CustomerType()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_CustomerType>("SelectAll_M_CustomerType");
+        }
+    
+        public virtual ObjectResult<M_CustomerType> SelectAll_M_CustomerType(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_CustomerType>("SelectAll_M_CustomerType", mergeOption);
+        }
+    
+        public virtual ObjectResult<string> InsertM_CustomerInfo(string name, Nullable<System.DateTime> birthday, string phone, string mobile, string address, string ward, string district, string city, string descript, string customer_type, Nullable<int> customer_status, Nullable<int> customer_point)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var birthdayParameter = birthday.HasValue ?
+                new ObjectParameter("birthday", birthday) :
+                new ObjectParameter("birthday", typeof(System.DateTime));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            var mobileParameter = mobile != null ?
+                new ObjectParameter("mobile", mobile) :
+                new ObjectParameter("mobile", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("address", address) :
+                new ObjectParameter("address", typeof(string));
+    
+            var wardParameter = ward != null ?
+                new ObjectParameter("ward", ward) :
+                new ObjectParameter("ward", typeof(string));
+    
+            var districtParameter = district != null ?
+                new ObjectParameter("district", district) :
+                new ObjectParameter("district", typeof(string));
+    
+            var cityParameter = city != null ?
+                new ObjectParameter("city", city) :
+                new ObjectParameter("city", typeof(string));
+    
+            var descriptParameter = descript != null ?
+                new ObjectParameter("descript", descript) :
+                new ObjectParameter("descript", typeof(string));
+    
+            var customer_typeParameter = customer_type != null ?
+                new ObjectParameter("customer_type", customer_type) :
+                new ObjectParameter("customer_type", typeof(string));
+    
+            var customer_statusParameter = customer_status.HasValue ?
+                new ObjectParameter("customer_status", customer_status) :
+                new ObjectParameter("customer_status", typeof(int));
+    
+            var customer_pointParameter = customer_point.HasValue ?
+                new ObjectParameter("customer_point", customer_point) :
+                new ObjectParameter("customer_point", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("InsertM_CustomerInfo", nameParameter, birthdayParameter, phoneParameter, mobileParameter, addressParameter, wardParameter, districtParameter, cityParameter, descriptParameter, customer_typeParameter, customer_statusParameter, customer_pointParameter);
+        }
+    
+        public virtual ObjectResult<M_Customer> SelectAll_M_CustomerInfo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Customer>("SelectAll_M_CustomerInfo");
+        }
+    
+        public virtual ObjectResult<M_Customer> SelectAll_M_CustomerInfo(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Customer>("SelectAll_M_CustomerInfo", mergeOption);
+        }
+    
+        public virtual ObjectResult<M_Customer> Select_M_CustomerInfo_ByCustomerID(string customerid)
+        {
+            var customeridParameter = customerid != null ?
+                new ObjectParameter("customerid", customerid) :
+                new ObjectParameter("customerid", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Customer>("Select_M_CustomerInfo_ByCustomerID", customeridParameter);
+        }
+    
+        public virtual ObjectResult<M_Customer> Select_M_CustomerInfo_ByCustomerID(string customerid, MergeOption mergeOption)
+        {
+            var customeridParameter = customerid != null ?
+                new ObjectParameter("customerid", customerid) :
+                new ObjectParameter("customerid", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Customer>("Select_M_CustomerInfo_ByCustomerID", mergeOption, customeridParameter);
         }
     }
 }

@@ -33,16 +33,26 @@
       <PropertyRef Name="Customer_ID" />
     </Key>
     <Property Name="Customer_ID" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="Customer_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Customer_Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Customer_BirthDay" Type="date" />
     <Property Name="Customer_Phone" Type="varchar" MaxLength="10" />
     <Property Name="Customer_Mobile" Type="varchar" MaxLength="10" />
-    <Property Name="Customer_Address" Type="varchar" MaxLength="50" />
+    <Property Name="Customer_Address" Type="nvarchar" MaxLength="50" />
     <Property Name="Customer_Ward" Type="varchar" MaxLength="10" />
     <Property Name="Customer_District" Type="varchar" MaxLength="10" />
     <Property Name="Customer_City" Type="varchar" MaxLength="10" />
+    <Property Name="Customer_Description" Type="nvarchar" MaxLength="500" />
     <Property Name="Customer_Type" Type="varchar" MaxLength="10" />
+    <Property Name="Customer_Point" Type="int" />
     <Property Name="Customer_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="M_CustomerType">
+    <Key>
+      <PropertyRef Name="CustomerTypeID" />
+    </Key>
+    <Property Name="CustomerTypeID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CustomerType_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerType_Status" Type="int" />
   </EntityType>
   <EntityType Name="M_Department">
     <Key>
@@ -154,6 +164,20 @@
     <Parameter Name="image" Type="varchar" Mode="In" />
     <Parameter Name="status" Type="int" Mode="In" />
   </Function>
+  <Function Name="InsertM_CustomerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="mobile" Type="varchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="ward" Type="varchar" Mode="In" />
+    <Parameter Name="district" Type="varchar" Mode="In" />
+    <Parameter Name="city" Type="varchar" Mode="In" />
+    <Parameter Name="descript" Type="nvarchar" Mode="In" />
+    <Parameter Name="customer_type" Type="varchar" Mode="In" />
+    <Parameter Name="customer_status" Type="int" Mode="In" />
+    <Parameter Name="customer_point" Type="int" Mode="In" />
+  </Function>
   <Function Name="InsertM_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="product_name" Type="nvarchar" Mode="In" />
     <Parameter Name="Category" Type="varchar" Mode="In" />
@@ -182,8 +206,13 @@
     <Parameter Name="quantity" Type="int" Mode="In" />
     <Parameter Name="user" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="Select_M_CustomerInfo_ByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="customerid" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="SelectAll_M_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SelectAll_M_City" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_CustomerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_CustomerType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SelectAll_M_District" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SelectAll_M_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SelectAll_M_ProductInfoWithImportInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -225,6 +254,7 @@
     <EntitySet Name="M_Category" EntityType="Self.M_Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="M_City" EntityType="Self.M_City" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="M_Customer" EntityType="Self.M_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_CustomerType" EntityType="Self.M_CustomerType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="M_Department" EntityType="Self.M_Department" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="M_District" EntityType="Self.M_District" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="M_Employee" EntityType="Self.M_Employee" Schema="dbo" store:Type="Tables" />

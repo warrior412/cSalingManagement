@@ -143,6 +143,7 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModul
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csprojResolveAssemblyReference.cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductDetailView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductImportRequestView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductListView.baml

@@ -43,7 +43,7 @@ namespace cSalingmanagement.Webservice
                 wc.UploadFileAsync(new Uri(url + "Image/PostProductImage"), imageURL);
             });
         }
-
+        
         async public void GetALL_M_ProductInfo()
         {
             string url = ConfigurationManager.AppSettings["WSURL"];
@@ -55,6 +55,32 @@ namespace cSalingmanagement.Webservice
                 wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO);
                 wc.DownloadStringCompleted += wc_DownloadStringCompleted;
                 wc.DownloadStringAsync(new Uri(url + "Product/SelectAll_M_ProductInfo"));
+            });
+        }
+        async public void GetAll_M_CustomerInfo()
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                wc.Encoding = Encoding.UTF8;
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_CUSTOMERINFO);
+                wc.DownloadStringCompleted += wc_DownloadStringCompleted;
+                wc.DownloadStringAsync(new Uri(url + "Customer/SelectAll_M_CustomerInfo"));
+            });
+        }
+        async public void GetALL_M_CustomerTypetInfo()
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                wc.Encoding = Encoding.UTF8;
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GETALL_M_CUSTOMERTYPEINFO);
+                wc.DownloadStringCompleted += wc_DownloadStringCompleted;
+                wc.DownloadStringAsync(new Uri(url + "Customer/SelectAll_M_CustomerTypeInfo"));
             });
         }
         async public void GetALL_M_SupplierInfo()
@@ -113,6 +139,21 @@ namespace cSalingmanagement.Webservice
             });
         }
 
+        async public void InsertM_CustomerInfo(M_Customer m_customerinfo)
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                string json = JsonConvert.SerializeObject(m_customerinfo);
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_INSERT_M_CUSTOMERINFO);
+                wc.Encoding = Encoding.UTF8;
+                wc.UploadStringCompleted += wc_UploadStringCompleted;
+                wc.UploadStringAsync(new Uri(url + "Customer/Insert_M_CustomerInfo"), json);
+            });
+        }
+
         async public void UpdateM_ProductInfo(M_ProductInfo m_productinfo)
         {
             string url = ConfigurationManager.AppSettings["WSURL"];
@@ -141,6 +182,23 @@ namespace cSalingmanagement.Webservice
                 wc.Encoding = Encoding.UTF8;
                 wc.UploadStringCompleted += wc_UploadStringCompleted;
                 wc.UploadStringAsync(new Uri(url + "Product/SelectAll_M_ProductInfoWithImportInfo_ByProductID"),json);
+            });
+        }
+
+        async public void Get_M_CustomerInfo_ByCustomerID(string customerID)
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                M_Customer customer = new M_Customer();
+                customer.Customer_ID = customerID;
+                string json = JsonConvert.SerializeObject(customer);
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_GET_M_CUSTOMERINFO_BYID);
+                wc.Encoding = Encoding.UTF8;
+                wc.UploadStringCompleted += wc_UploadStringCompleted;
+                wc.UploadStringAsync(new Uri(url + "Customer/Select_M_CustomerInfo_ByCustomerID"), json);
             });
         }
         async public void GetALL_M_CategoryInfo()
@@ -289,10 +347,16 @@ namespace cSalingmanagement.Webservice
                 case SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID:
                     this.CallBackComplete(tag, data);
                     break;
+                case SalingManagement_WebServiceTag.TAG_GET_M_CUSTOMERINFO_BYID:
+                    this.CallBackComplete(tag, data);
+                    break;
                 case SalingManagement_WebServiceTag.TAG_UPDATE_M_PRODUCTINFO:
                     this.CallBackComplete(tag, data);
                     break;
                 case SalingManagement_WebServiceTag.TAG_UPDATE_T_IMPORTPRODUCT:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_INSERT_M_CUSTOMERINFO:
                     this.CallBackComplete(tag, data);
                     break;
                 default:
@@ -343,6 +407,12 @@ namespace cSalingmanagement.Webservice
                     this.CallBackComplete(tag, data);
                     break;
                 case SalingManagement_WebServiceTag.TAG_GETALL_M_WARDINFO:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_CUSTOMERTYPEINFO:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_GETALL_M_CUSTOMERINFO:
                     this.CallBackComplete(tag, data);
                     break;
                 default:
