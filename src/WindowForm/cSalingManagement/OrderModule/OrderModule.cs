@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Unity;
+﻿using cSalingManagement.Common;
+using Microsoft.Practices.Unity;
 using OrderModule.View;
 using Prism.Modularity;
 using Prism.Regions;
@@ -12,20 +13,25 @@ namespace OrderModule
 {
     public class OrderModule:IModule
     {
-        private readonly IRegionManager regionManager;
-        private readonly IUnityContainer container;
+        #region Public Properties
+        public IRegionManager RegionManager { get; set; }
+        public IUnityContainer UnityContainer { get; set; }
+        public IModuleManager ModuleManager { get; set; }
+        #endregion
 
 
-        public OrderModule(IUnityContainer container, IRegionManager regionManager)
+        public OrderModule(IRegionManager regionManager, IModuleManager moduleManager, IUnityContainer container)
         {
-            this.container = container;
-            this.regionManager = regionManager;
+            this.UnityContainer = container;
+            this.RegionManager = regionManager;
+            this.ModuleManager = moduleManager;
         }
 
         public void Initialize()
         {
-            
-            
+
+            this.RegionManager.RegisterViewWithRegion(SalingManagementConstant.STRING_REGION_CONTENT,
+                                                      () => this.UnityContainer.Resolve<OrderModule>());
         }
     }
 }

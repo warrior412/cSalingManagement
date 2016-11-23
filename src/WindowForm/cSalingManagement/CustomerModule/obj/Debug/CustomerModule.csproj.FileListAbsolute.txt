@@ -1,6 +1,7 @@
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\CustomerModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\CustomerModule.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\cSalingManagement.Infrastructure.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\cSalingManagement.Resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\cSalingmanagement.Webservice.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
@@ -18,6 +19,7 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModu
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\Xceed.Wpf.DataGrid.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\Xceed.Wpf.Toolkit.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\cSalingManagement.Infrastructure.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\cSalingManagement.Resources.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\cSalingmanagement.Webservice.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\bin\Debug\Microsoft.Practices.ServiceLocation.xml

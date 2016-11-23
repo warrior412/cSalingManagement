@@ -76,6 +76,24 @@ namespace CustomerModule.ViewModel
                 return new DelegateCommand<object>(doEditCustomer);
             }
         }
+
+        public ICommand GoToOrderCommand
+        {
+            get
+            {
+                return new DelegateCommand<object>(doGoToOrder);
+            }
+        }
+        private void doGoToOrder(object param)
+        {
+            if (param == null)
+                return;
+            string customerID = param.ToString();
+            var navigationParameters = new NavigationParameters();
+            navigationParameters.Add("CustomerID", customerID);
+            RegionManager.RequestNavigate(SalingManagementConstant.STRING_REGION_CONTENT,
+                 new Uri(SalingManagementConstant.STRING_VIEW_ORDER_ADD + navigationParameters.ToString(), UriKind.Relative));
+        }
         
         private void doEditCustomer(object param)
         {

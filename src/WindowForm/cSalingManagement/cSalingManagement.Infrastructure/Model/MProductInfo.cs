@@ -45,6 +45,13 @@ namespace cSalingManagement.Infrastructure.Model
             return JsonConvert.DeserializeObject<M_ProductInfoWithImportInfo>(json.ToString());
         }
     }
+
+    public partial class M_ProductInfoWithImportInfo_Row:M_ProductInfoWithImportInfo
+    {
+        public bool IsAddedToCard
+        { get; set; }
+    }
+
     public partial class NewRequestView_ImportList_Row:M_ProductInfoWithImportInfo
     {
         public bool IsReady

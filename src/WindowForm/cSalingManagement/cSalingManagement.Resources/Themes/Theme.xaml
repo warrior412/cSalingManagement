@@ -151,6 +151,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="5,0,5,0"/>
         <Setter Property="Margin" Value="5,0,5,0"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
     <!--==================Button=======================-->
     <Style TargetType="Button" x:Key="styleButtonDefault">
@@ -184,6 +185,7 @@
         <Setter Property="Margin" Value="5,10,5,10"/>
         <Setter Property="AcceptsReturn" Value="True"/>
         <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
 
 </ResourceDictionary>

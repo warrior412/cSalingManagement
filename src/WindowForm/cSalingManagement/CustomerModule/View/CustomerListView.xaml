@@ -79,7 +79,7 @@
                             <DataGridTemplateColumn Header="Số điện thoại"  MinWidth="80" IsReadOnly="True" Width="1*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Grid.Row="1" Style="{StaticResource styleDataGridTextCenter}" TextAlignment="Center"  FontSize="14"  Margin="0,5,0,0">
+                                        <TextBlock Grid.Row="1" Style="{StaticResource styleDataGridTextCenter}" Foreground="Blue" TextAlignment="Center"  FontSize="14"  Margin="0,5,0,0">
                                             <TextBlock.Text>
                                                 <MultiBinding Converter="{StaticResource DisplayMultiPhoneNumberConverter}">
                                                     <Binding Path="Customer_Phone"/>
@@ -117,7 +117,9 @@
                                 </DataGridTemplateColumn.HeaderTemplate>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Content="Khách đặt" Style="{StaticResource btn-primary}" Height="30" Width="80" Padding="2,2,2,2" />
+                                        <Button Content="Khách đặt" Style="{StaticResource btn-primary}" Height="30" Width="80" Padding="2,2,2,2"
+                                                Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.GoToOrderCommand}"
+                                                CommandParameter="{Binding Customer_ID}"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>

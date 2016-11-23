@@ -11,6 +11,7 @@
         <converter:ProductModule_SupplierToWidth x:Key="ProductModule_SupplierToWidth"/>
         <converter:ProductModule_SupplierIDToSupplierNameConverter x:Key="ProductModule_SupplierIDToSupplierNameConverter"/>
         <converter:DateToDateFormatConverter x:Key="DateToDateFormatConverter"/>
+        <converter:IsReadyToWidthConverter x:Key="IsReadyToWidthConverter"/>
     </UserControl.Resources>
     <xctk:BusyIndicator Name="busyIndicator" IsBusy="{Binding IsLoading}">
         <xctk:BusyIndicator.BusyContent>
@@ -41,10 +42,18 @@
                     </Grid>
                 </Grid>
                 <DockPanel Grid.Row="1" LastChildFill="True">
-                    <DataGrid HeadersVisibility="Column" 
+                    <DataGrid HeadersVisibility="Column"     
                               AutoGenerateColumns="False" x:Name="gvCheckInfo" 
                               CanUserAddRows="False" RowHeight="40" VerticalScrollBarVisibility="Auto"
-                              ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderDefault}" GridLinesVisibility="Horizontal">
+                              ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderDefault}" GridLinesVisibility="Horizontal"
+                             >
+                        <!--<DataGrid.Items>
+                            <CollectionViewSource Source="{Binding LstProductInfo,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
+                                <CollectionViewSource.GroupDescriptions>
+                                    <PropertyGroupDescription PropertyName="ProductID"/>
+                                </CollectionViewSource.GroupDescriptions>
+                            </CollectionViewSource>
+                        </DataGrid.Items>-->
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridCell}">
                                 <Style.Triggers>
@@ -141,12 +150,25 @@
                             <DataGridTemplateColumn Header=""  MinWidth="100" IsReadOnly="True"  Width="1*">
                                 <DataGridTemplateColumn.HeaderTemplate>
                                     <DataTemplate>
-                                        <Button Content="Giỏ hàng" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="2,2,2,2" />
+                                        <Button Content="Giỏ hàng" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="2,2,2,2"
+                                                Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.GoToCartCommand}"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.HeaderTemplate>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Content="Khách đặt" Style="{StaticResource btn-primary}" Height="30" Width="80" Padding="2,2,2,2" />
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{Binding IsAddedToCard,Converter={StaticResource IsReadyToWidthConverter},ConverterParameter=ButtonSaved}" />
+                                                <ColumnDefinition Width="{Binding IsAddedToCard,Converter={StaticResource IsReadyToWidthConverter},ConverterParameter=ButtonEdit}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Button Grid.Column="0" Content="Đã đặt" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="2"
+                                                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.RemoveCartCommand}"
+                                                    CommandParameter="{Binding ElementName=gvCheckInfo}"/>
+                                            <Button Grid.Column="1" Content="Khách đặt" Style="{StaticResource btn-primary}"
+                                                    Height="30" Width="80" Padding="2,2,2,2"
+                                                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.AddCartCommand}"
+                                                    CommandParameter="{Binding ElementName=gvCheckInfo}"/>
+                                        </Grid>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>

@@ -110,6 +110,10 @@
       <Project>{9dad695c-7987-48b4-aa07-0990329646e0}</Project>
       <Name>cSalingManagement.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\cSalingManagement.Resources\cSalingManagement.Resources.csproj">
+      <Project>{22bf4adb-7e24-4f81-b63c-9d8cae6947a4}</Project>
+      <Name>cSalingManagement.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\cSalingmanagement.Webservice\cSalingmanagement.Webservice.csproj">
       <Project>{6bf4dca0-bc52-4481-9829-ed176f9ca5cb}</Project>
       <Name>cSalingmanagement.Webservice</Name>
