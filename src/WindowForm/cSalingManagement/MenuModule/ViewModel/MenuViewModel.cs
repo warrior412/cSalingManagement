@@ -76,7 +76,10 @@ namespace MenuModule.ViewModel
             
 
             cSalingManagement.Model.Action action = param as cSalingManagement.Model.Action;
-            this.RegionManager.Regions[SalingManagementConstant.STRING_REGION_CONTENT].RequestNavigate(action.ViewName);
+            var navigationParameters = new NavigationParameters();
+            navigationParameters.Add("IsInit", true);
+            RegionManager.RequestNavigate(SalingManagementConstant.STRING_REGION_CONTENT,
+                 new Uri(action.ViewName + navigationParameters.ToString(), UriKind.Relative));
 
 
             //// LoadModule method is responsible to load and initialize the module

@@ -42,6 +42,8 @@ namespace BusinessEntities
         public DbSet<M_Ward> M_Ward { get; set; }
         public DbSet<M_CustomerType> M_CustomerType { get; set; }
         public DbSet<M_Customer> M_Customer { get; set; }
+        public DbSet<T_Order> T_Order { get; set; }
+        public DbSet<T_OrderDetail> T_OrderDetail { get; set; }
     
         public virtual ObjectResult<Nullable<short>> InsertM_CategoryInfo(string cate_name, string description, string image, Nullable<int> status)
         {
@@ -400,6 +402,68 @@ namespace BusinessEntities
                 new ObjectParameter("customerid", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Customer>("Select_M_CustomerInfo_ByCustomerID", mergeOption, customeridParameter);
+        }
+    
+        public virtual ObjectResult<string> InsertT_OrderInfo(string customerid, Nullable<System.DateTime> createdate, string user, string memo, Nullable<System.DateTime> shiptime, Nullable<int> orderstatus)
+        {
+            var customeridParameter = customerid != null ?
+                new ObjectParameter("customerid", customerid) :
+                new ObjectParameter("customerid", typeof(string));
+    
+            var createdateParameter = createdate.HasValue ?
+                new ObjectParameter("createdate", createdate) :
+                new ObjectParameter("createdate", typeof(System.DateTime));
+    
+            var userParameter = user != null ?
+                new ObjectParameter("user", user) :
+                new ObjectParameter("user", typeof(string));
+    
+            var memoParameter = memo != null ?
+                new ObjectParameter("memo", memo) :
+                new ObjectParameter("memo", typeof(string));
+    
+            var shiptimeParameter = shiptime.HasValue ?
+                new ObjectParameter("shiptime", shiptime) :
+                new ObjectParameter("shiptime", typeof(System.DateTime));
+    
+            var orderstatusParameter = orderstatus.HasValue ?
+                new ObjectParameter("orderstatus", orderstatus) :
+                new ObjectParameter("orderstatus", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("InsertT_OrderInfo", customeridParameter, createdateParameter, userParameter, memoParameter, shiptimeParameter, orderstatusParameter);
+        }
+    
+        public virtual int InsertT_OrderDetailInfo(string orderid, string productid, Nullable<System.DateTime> importdate, Nullable<int> quantity, Nullable<double> sellingprice, Nullable<double> total, Nullable<int> status)
+        {
+            var orderidParameter = orderid != null ?
+                new ObjectParameter("orderid", orderid) :
+                new ObjectParameter("orderid", typeof(string));
+    
+            var productidParameter = productid != null ?
+                new ObjectParameter("productid", productid) :
+                new ObjectParameter("productid", typeof(string));
+    
+            var importdateParameter = importdate.HasValue ?
+                new ObjectParameter("importdate", importdate) :
+                new ObjectParameter("importdate", typeof(System.DateTime));
+    
+            var quantityParameter = quantity.HasValue ?
+                new ObjectParameter("quantity", quantity) :
+                new ObjectParameter("quantity", typeof(int));
+    
+            var sellingpriceParameter = sellingprice.HasValue ?
+                new ObjectParameter("sellingprice", sellingprice) :
+                new ObjectParameter("sellingprice", typeof(double));
+    
+            var totalParameter = total.HasValue ?
+                new ObjectParameter("total", total) :
+                new ObjectParameter("total", typeof(double));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertT_OrderDetailInfo", orderidParameter, productidParameter, importdateParameter, quantityParameter, sellingpriceParameter, totalParameter, statusParameter);
         }
     }
 }

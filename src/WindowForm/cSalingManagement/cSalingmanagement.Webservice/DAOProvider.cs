@@ -154,6 +154,21 @@ namespace cSalingmanagement.Webservice
             });
         }
 
+        async public void InsertT_OrderInfo(List<object> lstOrderInfo)
+        {
+            string url = ConfigurationManager.AppSettings["WSURL"];
+            await Task.Run(() =>
+            {
+                WebClient wc = new WebClient();
+                string json = JsonConvert.SerializeObject(lstOrderInfo);
+                wc.Headers[HttpRequestHeader.ContentType] = "application/json";
+                wc.Headers.Add(SalingManagement_WebServiceTag.SERVICE_TAG, SalingManagement_WebServiceTag.TAG_INSERT_T_ORDERINFO);
+                wc.Encoding = Encoding.UTF8;
+                wc.UploadStringCompleted += wc_UploadStringCompleted;
+                wc.UploadStringAsync(new Uri(url + "Order/Insert_T_OrderInfo"), json);
+            });
+        }
+
         async public void UpdateM_ProductInfo(M_ProductInfo m_productinfo)
         {
             string url = ConfigurationManager.AppSettings["WSURL"];
@@ -335,6 +350,20 @@ namespace cSalingmanagement.Webservice
             var status = ob["Status"];
             var data = ob["Data"];
 
+
+            var statusCode = status["StatusCode"];
+
+            if (statusCode == null)
+                return;
+            if (statusCode.ToString().Equals(((int)StatusCodes.BAD_REQUEST).ToString())
+                || statusCode.ToString().Equals(((int)StatusCodes.FILE_FORMAT_ERROR).ToString())
+                || statusCode.ToString().Equals(((int)StatusCodes.NO_DATA).ToString())
+                || statusCode.ToString().Equals(((int)StatusCodes.UNKNOW_ERROR).ToString()))
+            {
+                this.CallBackFail(tag, status["StatusMsg"].ToString());
+                return;
+            }
+
            
             switch (tag)
             {
@@ -357,6 +386,9 @@ namespace cSalingmanagement.Webservice
                     this.CallBackComplete(tag, data);
                     break;
                 case SalingManagement_WebServiceTag.TAG_INSERT_M_CUSTOMERINFO:
+                    this.CallBackComplete(tag, data);
+                    break;
+                case SalingManagement_WebServiceTag.TAG_INSERT_T_ORDERINFO:
                     this.CallBackComplete(tag, data);
                     break;
                 default:
@@ -382,6 +414,18 @@ namespace cSalingmanagement.Webservice
             var status = ob["Status"];
             var data = ob["Data"];
 
+            var statusCode = status["StatusCode"];
+
+            if (statusCode == null)
+                return;
+            if(statusCode.ToString().Equals(StatusCodes.BAD_REQUEST)
+                ||statusCode.ToString().Equals(StatusCodes.FILE_FORMAT_ERROR)
+                ||statusCode.ToString().Equals(StatusCodes.NO_DATA)
+                ||statusCode.ToString().Equals(StatusCodes.UNKNOW_ERROR))
+            {
+                this.CallBackFail(tag, status["StatusMsg"].ToString());
+                return;
+            }
             
             switch (tag)
             {

@@ -89,6 +89,8 @@
     <Compile Include="Model\M_Customer.cs" />
     <Compile Include="Model\M_CustomerTypeInfo.cs" />
     <Compile Include="Model\M_Supplier.cs" />
+    <Compile Include="Model\T_Order.cs" />
+    <Compile Include="Model\T_OrderDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

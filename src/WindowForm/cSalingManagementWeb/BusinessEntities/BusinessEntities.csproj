@@ -53,6 +53,7 @@
     <Compile Include="ADO\M_CustomerInfoADO.cs" />
     <Compile Include="ADO\M_ProductInfoADO.cs" />
     <Compile Include="ADO\M_SupplierADO.cs" />
+    <Compile Include="ADO\T_OrderADO.cs" />
     <Compile Include="cSalingManagementADO.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,6 +114,12 @@
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
     <Compile Include="T_Import.cs">
+      <DependentUpon>cSalingManagementADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Order.cs">
+      <DependentUpon>cSalingManagementADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_OrderDetail.cs">
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
   </ItemGroup>

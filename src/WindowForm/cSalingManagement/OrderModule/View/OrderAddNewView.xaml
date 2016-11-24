@@ -19,29 +19,36 @@
 
         <xctk:BusyIndicator.Content>
             <Grid Background="{StaticResource MainColor}" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="5*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="20*"/>
-        </Grid.RowDefinitions>
-        <DockPanel HorizontalAlignment="Right" Grid.Column="0" Grid.ColumnSpan="2">
-            <Button Content="Thêm mới" Style="{StaticResource btn-success}" Height="30" Width="80" Padding="0,0,0,0" Margin="0,0,5,0"/>
-            <Button Content="Cập nhật" Style="{StaticResource btn-primary}" Height="30" Width="80" Padding="0,0,0,0" Margin="0,0,5,0"/>
-            <Button Content="Xóa" Style="{StaticResource btn-danger}" Height="30" Width="80" Padding="0,0,0,0" Margin="0,0,5,0"/>
-        </DockPanel>
-        <DockPanel HorizontalAlignment="Stretch" Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="1" Background="{StaticResource MainDarkColor}">
-            <TextBlock Text="Thông tin khách hàng" Style="{StaticResource H4}" Margin="10"/>
-        </DockPanel>
-        
-        <DockPanel HorizontalAlignment="Stretch" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Background="{StaticResource MainDarkColor}">
-            <TextBlock Text="Danh sách đặt hàng" Style="{StaticResource H4}" Margin="10"/>
-        </DockPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <DockPanel HorizontalAlignment="Right" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Button Content="Xác nhận đặt hàng" Style="{StaticResource btn-success}"
+                            Height="40"  Padding="2" Margin="0,0,5,0"
+                            Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.FinishOrderCommand}"/>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Stretch" Grid.Column="0" Grid.ColumnSpan="2" LastChildFill="True" Grid.Row="1" Background="{StaticResource MainDarkColor}">
+                    <Button Content="Chọn khách hàng" DockPanel.Dock="Right" Style="{StaticResource btn-warning}"
+                            Height="30"  Padding="5" Margin="0,0,5,0"
+                            Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.GoToCustomerListCommand}"/>
+                    <TextBlock Text="Thông tin khách hàng" Style="{StaticResource H4}" Margin="10"/>
+                </DockPanel>
+
+
+                <DockPanel HorizontalAlignment="Stretch" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Background="{StaticResource MainDarkColor}">
+                    <Button Content="Chọn sản phẩm" DockPanel.Dock="Right" Style="{StaticResource btn-warning}" 
+                            Height="30"  Padding="5" Margin="0,0,5,0"
+                            Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.GoToProductListCommand}"/>
+                    <TextBlock Text="Danh sách đặt hàng" Style="{StaticResource H4}" Margin="10"/>
+                </DockPanel>
                 <Grid Grid.Column="0" Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
@@ -144,12 +151,16 @@
 
 
                     <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="305*"/>
+                            <ColumnDefinition Width="99*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="20"/>
                             <RowDefinition Height="10*"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="Ghi chú" Grid.Column="0" Style="{StaticResource styleTextBlockTitle}"/>
-                        <TextBox Style="{StaticResource styleTextAreaDefault}" IsEnabled="{Binding IsEditing}" Text="{Binding CustomerInfo.Customer_Description,Mode=TwoWay}"  Grid.Row="1" Margin="5" ></TextBox>
+                        <TextBlock Text="Ghi chú" Grid.Column="0" Style="{StaticResource styleTextBlockTitle}" Grid.ColumnSpan="2" Margin="0,2,0,1"/>
+                        <TextBox Style="{StaticResource styleTextAreaDefault}" Text="{Binding Memo,Mode=TwoWay}"  Grid.Row="1" Margin="5" Grid.ColumnSpan="2" ></TextBox>
                     </Grid>
 
 
@@ -160,11 +171,13 @@
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <DatePicker Style="{StaticResource styleDatePickerDefault}" Grid.Column="0" Margin="0" ></DatePicker>
-                        <TextBox Grid.Column="1" Style="{StaticResource styleTextBoxDefault}"></TextBox>
-                        <TextBox Grid.Column="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>
+                        <xctk:DateTimePicker Grid.Column="0" FontSize="16" FontWeight="Bold" Format="Custom" TextAlignment="Center" 
+                                             FormatString="dd/MM/yyyy HH:mm" Margin="3"  Grid.ColumnSpan="2"
+                                             Value="{Binding ShipTime, Mode=TwoWay}"></xctk:DateTimePicker>
+                        <!--<TextBox Grid.Column="1" Style="{StaticResource styleTextBoxDefault}"></TextBox>
+                        <TextBox Grid.Column="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>-->
                     </Grid>
-                    
+
 
                 </Grid>
                 <DataGrid Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"  HeadersVisibility="Column"
@@ -173,51 +186,44 @@
                               ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderSmall}" GridLinesVisibility="Horizontal"
                               ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.LstOrder}">
                     <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Tên Sản Phẩm"  MinWidth="150" IsReadOnly="True" Width="6*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ProductName}" FontSize="14"  Margin="10,5,0,0"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Số lượng tồn"  MinWidth="150" IsReadOnly="True" Width="6*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
+                        <DataGridTemplateColumn Header="Tên Sản Phẩm"  MinWidth="150" IsReadOnly="True" Width="6*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ProductName}" FontSize="14"  Margin="10,5,0,0"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Số lượng tồn"  MinWidth="150" IsReadOnly="True" Width="6*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
                                     <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Import_InStock}" FontSize="14"  Margin="10,5,0,0"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Số lượng mua" MinWidth="100" IsReadOnly="True"  Width="2*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBox Style="{StaticResource styleTextBoxDefault}" Text="{Binding Pro_Price}" FontSize="14"  TextAlignment="Center"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Giá" MinWidth="100" IsReadOnly="True"  Width="6*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Số lượng mua" MinWidth="100" IsReadOnly="True"  Width="2*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Style="{StaticResource styleTextBoxDefault}" Text="{Binding QuantityAddedCard}" FontSize="14"  TextAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Đơn Giá" MinWidth="100" IsReadOnly="True"  Width="6*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
                                     <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Pro_Price}" FontSize="14"  TextAlignment="Center"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Thời gian giao" MinWidth="100" IsReadOnly="True"  Width="6*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding SellingPrice}" FontSize="14"  TextAlignment="Center"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header=""  MinWidth="100" IsReadOnly="True"  Width="1*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Xóa" Style="{StaticResource btn-danger}" Height="30" Width="80" Padding="2,2,2,2" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header=""  MinWidth="100" IsReadOnly="True"  Width="1*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Xóa" Style="{StaticResource btn-danger}" Height="30" Width="80" Padding="2,2,2,2" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
         </xctk:BusyIndicator.Content>
 
     </xctk:BusyIndicator>

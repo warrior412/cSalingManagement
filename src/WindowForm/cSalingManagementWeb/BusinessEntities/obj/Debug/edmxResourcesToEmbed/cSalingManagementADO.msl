@@ -271,5 +271,33 @@
     <FunctionImportMapping FunctionImportName="InsertM_CustomerInfo" FunctionName="cSalingManagementModel.Store.InsertM_CustomerInfo" />
     <FunctionImportMapping FunctionImportName="SelectAll_M_CustomerInfo" FunctionName="cSalingManagementModel.Store.SelectAll_M_CustomerInfo" />
     <FunctionImportMapping FunctionImportName="Select_M_CustomerInfo_ByCustomerID" FunctionName="cSalingManagementModel.Store.Select_M_CustomerInfo_ByCustomerID" />
+    <EntitySetMapping Name="T_Order">
+      <EntityTypeMapping TypeName="cSalingManagementModel.T_Order">
+        <MappingFragment StoreEntitySet="T_Order">
+          <ScalarProperty Name="Order_Status" ColumnName="Order_Status" />
+          <ScalarProperty Name="Order_ShipTime" ColumnName="Order_ShipTime" />
+          <ScalarProperty Name="Order_Memo" ColumnName="Order_Memo" />
+          <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Order_CustomerID" ColumnName="Order_CustomerID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OrderDetail">
+      <EntityTypeMapping TypeName="cSalingManagementModel.T_OrderDetail">
+        <MappingFragment StoreEntitySet="T_OrderDetail">
+          <ScalarProperty Name="OD_Status" ColumnName="OD_Status" />
+          <ScalarProperty Name="OD_TotalAmount" ColumnName="OD_TotalAmount" />
+          <ScalarProperty Name="OD_SellingPrice" ColumnName="OD_SellingPrice" />
+          <ScalarProperty Name="OD_Quantity" ColumnName="OD_Quantity" />
+          <ScalarProperty Name="OD_ImportDate" ColumnName="OD_ImportDate" />
+          <ScalarProperty Name="OD_ProductID" ColumnName="OD_ProductID" />
+          <ScalarProperty Name="OD_OrderID" ColumnName="OD_OrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="InsertT_OrderInfo" FunctionName="cSalingManagementModel.Store.InsertT_OrderInfo" />
+    <FunctionImportMapping FunctionImportName="InsertT_OrderDetailInfo" FunctionName="cSalingManagementModel.Store.InsertT_OrderDetailInfo" />
   </EntityContainerMapping>
 </Mapping>

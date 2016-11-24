@@ -155,6 +155,25 @@
     <FunctionImport Name="Select_M_CustomerInfo_ByCustomerID" EntitySet="M_Customer" ReturnType="Collection(cSalingManagementModel.M_Customer)">
       <Parameter Name="customerid" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="T_Order" EntityType="cSalingManagementModel.T_Order" />
+    <EntitySet Name="T_OrderDetail" EntityType="cSalingManagementModel.T_OrderDetail" />
+    <FunctionImport Name="InsertT_OrderInfo" ReturnType="Collection(String)">
+      <Parameter Name="customerid" Mode="In" Type="String" />
+      <Parameter Name="createdate" Mode="In" Type="DateTime" />
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="memo" Mode="In" Type="String" />
+      <Parameter Name="shiptime" Mode="In" Type="DateTime" />
+      <Parameter Name="orderstatus" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InsertT_OrderDetailInfo">
+      <Parameter Name="orderid" Mode="In" Type="String" />
+      <Parameter Name="productid" Mode="In" Type="String" />
+      <Parameter Name="importdate" Mode="In" Type="DateTime" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+      <Parameter Name="sellingprice" Mode="In" Type="Double" />
+      <Parameter Name="total" Mode="In" Type="Double" />
+      <Parameter Name="status" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
     <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
@@ -278,5 +297,31 @@
     <Property Name="Customer_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Customer_Point" Type="Int32" />
     <Property Name="Customer_Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="T_Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Order_CustomerID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedUser" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Order_Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Order_ShipTime" Type="DateTime" Precision="3" />
+    <Property Name="Order_Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="T_OrderDetail">
+    <Key>
+      <PropertyRef Name="OD_OrderID" />
+      <PropertyRef Name="OD_ProductID" />
+      <PropertyRef Name="OD_ImportDate" />
+    </Key>
+    <Property Name="OD_OrderID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OD_ProductID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OD_ImportDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OD_Quantity" Type="Int32" />
+    <Property Name="OD_SellingPrice" Type="Double" />
+    <Property Name="OD_TotalAmount" Type="Double" />
+    <Property Name="OD_Status" Type="Int32" />
   </EntityType>
 </Schema>

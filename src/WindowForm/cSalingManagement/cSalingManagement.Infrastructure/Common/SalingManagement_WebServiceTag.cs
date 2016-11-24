@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace cSalingManagement.Infrastructure.Common
 {
+    public enum StatusCodes : int
+    {
+        BAD_REQUEST = -1,//URL webservice not found
+        NO_DATA = 0,
+        OK = 1, //Select
+        CREATED = 2, // Inserted
+        UPDATED = 3, // Updated
+        DELETED = 4, //Deleted
+        FILE_FORMAT_ERROR = -2,
+        UNKNOW_ERROR = -999
+    }
     public  static class SalingManagement_WebServiceTag
     {
+
         public static string SERVICE_TAG = "SERVICE_TAG";
 
         public const string TAG_UPLOAD_IMAGES = "0";
@@ -17,7 +29,8 @@ namespace cSalingManagement.Infrastructure.Common
         public  const string TAG_INSERT_M_ACCOUNTINFO = "2";
         public  const string TAG_INSERT_M_CATEGORYINFO = "3";
         public const string TAG_INSERT_T_IMPORTPRODUCTINFO = "4";
-        public const string TAG_INSERT_M_CUSTOMERINFO = "5"; 
+        public const string TAG_INSERT_M_CUSTOMERINFO = "5";
+        public const string TAG_INSERT_T_ORDERINFO = "6"; 
         #endregion
 
         

@@ -22,11 +22,18 @@
 
             <Grid Background="{StaticResource MainColor}" Margin="0,0,0,-36" >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20" />
+                    <RowDefinition Height="40" />
                     <RowDefinition Height="50*" />
                     <RowDefinition Height="40*"/>
 
                 </Grid.RowDefinitions>
+                <DockPanel Grid.Row="0" HorizontalAlignment="Stretch" LastChildFill="True">
+                    <Button  DockPanel.Dock="Right" Content="Danh sách khách hàng" Style="{StaticResource btn-warning}" 
+                                 Height="30" Width="{Binding IsEditing,Converter={StaticResource ProductModule_IsEditingToWidthConverter},ConverterParameter=Finish}"
+                                 Padding="0,0,0,0" Margin="0,0,5,0"
+                                 Command="{Binding FinishCommand}"/>
+                    <TextBlock Text="" Style="{StaticResource H4}" Margin="10"/>
+                </DockPanel>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40" />

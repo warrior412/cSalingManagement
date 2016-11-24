@@ -163,6 +163,32 @@
           <Property Name="Import_Vote" Type="int" />
           <Property Name="Import_Status" Type="int" />
         </EntityType>
+        <EntityType Name="T_Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Order_CustomerID" Type="varchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="CreatedUser" Type="varchar" MaxLength="10" />
+          <Property Name="Order_Memo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Order_ShipTime" Type="datetime" />
+          <Property Name="Order_Status" Type="int" />
+        </EntityType>
+        <EntityType Name="T_OrderDetail">
+          <Key>
+            <PropertyRef Name="OD_OrderID" />
+            <PropertyRef Name="OD_ProductID" />
+            <PropertyRef Name="OD_ImportDate" />
+          </Key>
+          <Property Name="OD_OrderID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="OD_ProductID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="OD_ImportDate" Type="datetime" Nullable="false" />
+          <Property Name="OD_Quantity" Type="int" />
+          <Property Name="OD_SellingPrice" Type="float" />
+          <Property Name="OD_TotalAmount" Type="float" />
+          <Property Name="OD_Status" Type="int" />
+        </EntityType>
         <Function Name="InsertM_CategoryInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="cate_name" Type="varchar" Mode="In" />
           <Parameter Name="description" Type="varchar" Mode="In" />
@@ -210,6 +236,23 @@
           <Parameter Name="supplier" Type="varchar" Mode="In" />
           <Parameter Name="quantity" Type="int" Mode="In" />
           <Parameter Name="user" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertT_OrderDetailInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="orderid" Type="varchar" Mode="In" />
+          <Parameter Name="productid" Type="varchar" Mode="In" />
+          <Parameter Name="importdate" Type="datetime" Mode="In" />
+          <Parameter Name="quantity" Type="int" Mode="In" />
+          <Parameter Name="sellingprice" Type="float" Mode="In" />
+          <Parameter Name="total" Type="float" Mode="In" />
+          <Parameter Name="status" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertT_OrderInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="customerid" Type="varchar" Mode="In" />
+          <Parameter Name="createdate" Type="date" Mode="In" />
+          <Parameter Name="user" Type="varchar" Mode="In" />
+          <Parameter Name="memo" Type="nvarchar" Mode="In" />
+          <Parameter Name="shiptime" Type="datetime" Mode="In" />
+          <Parameter Name="orderstatus" Type="int" Mode="In" />
         </Function>
         <Function Name="Select_M_CustomerInfo_ByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="customerid" Type="varchar" Mode="In" />
@@ -269,6 +312,8 @@
           <EntitySet Name="M_Ward" EntityType="Self.M_Ward" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Import" EntityType="Self.T_Import" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Order" EntityType="Self.T_Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_OrderDetail" EntityType="Self.T_OrderDetail" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -427,7 +472,26 @@
           </FunctionImport>
           <FunctionImport Name="SelectAll_M_CustomerInfo" EntitySet="M_Customer" ReturnType="Collection(cSalingManagementModel.M_Customer)" />
           <FunctionImport Name="Select_M_CustomerInfo_ByCustomerID" EntitySet="M_Customer" ReturnType="Collection(cSalingManagementModel.M_Customer)">
+          <Parameter Name="customerid" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="T_Order" EntityType="cSalingManagementModel.T_Order" />
+          <EntitySet Name="T_OrderDetail" EntityType="cSalingManagementModel.T_OrderDetail" />
+          <FunctionImport Name="InsertT_OrderInfo" ReturnType="Collection(String)">
             <Parameter Name="customerid" Mode="In" Type="String" />
+            <Parameter Name="createdate" Mode="In" Type="DateTime" />
+            <Parameter Name="user" Mode="In" Type="String" />
+            <Parameter Name="memo" Mode="In" Type="String" />
+            <Parameter Name="shiptime" Mode="In" Type="DateTime" />
+            <Parameter Name="orderstatus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertT_OrderDetailInfo">
+            <Parameter Name="orderid" Mode="In" Type="String" />
+            <Parameter Name="productid" Mode="In" Type="String" />
+            <Parameter Name="importdate" Mode="In" Type="DateTime" />
+            <Parameter Name="quantity" Mode="In" Type="Int32" />
+            <Parameter Name="sellingprice" Mode="In" Type="Double" />
+            <Parameter Name="total" Mode="In" Type="Double" />
+            <Parameter Name="status" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
@@ -552,6 +616,32 @@
           <Property Name="Customer_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Customer_Point" Type="Int32" />
           <Property Name="Customer_Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="T_Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Order_CustomerID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedUser" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Order_Memo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Order_ShipTime" Type="DateTime" Precision="3" />
+          <Property Name="Order_Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="T_OrderDetail">
+          <Key>
+            <PropertyRef Name="OD_OrderID" />
+            <PropertyRef Name="OD_ProductID" />
+            <PropertyRef Name="OD_ImportDate" />
+          </Key>
+          <Property Name="OD_OrderID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OD_ProductID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OD_ImportDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OD_Quantity" Type="Int32" />
+          <Property Name="OD_SellingPrice" Type="Double" />
+          <Property Name="OD_TotalAmount" Type="Double" />
+          <Property Name="OD_Status" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -829,6 +919,34 @@
           <FunctionImportMapping FunctionImportName="InsertM_CustomerInfo" FunctionName="cSalingManagementModel.Store.InsertM_CustomerInfo" />
           <FunctionImportMapping FunctionImportName="SelectAll_M_CustomerInfo" FunctionName="cSalingManagementModel.Store.SelectAll_M_CustomerInfo" />
           <FunctionImportMapping FunctionImportName="Select_M_CustomerInfo_ByCustomerID" FunctionName="cSalingManagementModel.Store.Select_M_CustomerInfo_ByCustomerID" />
+          <EntitySetMapping Name="T_Order">
+            <EntityTypeMapping TypeName="cSalingManagementModel.T_Order">
+              <MappingFragment StoreEntitySet="T_Order">
+                <ScalarProperty Name="Order_Status" ColumnName="Order_Status" />
+                <ScalarProperty Name="Order_ShipTime" ColumnName="Order_ShipTime" />
+                <ScalarProperty Name="Order_Memo" ColumnName="Order_Memo" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Order_CustomerID" ColumnName="Order_CustomerID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_OrderDetail">
+            <EntityTypeMapping TypeName="cSalingManagementModel.T_OrderDetail">
+              <MappingFragment StoreEntitySet="T_OrderDetail">
+                <ScalarProperty Name="OD_Status" ColumnName="OD_Status" />
+                <ScalarProperty Name="OD_TotalAmount" ColumnName="OD_TotalAmount" />
+                <ScalarProperty Name="OD_SellingPrice" ColumnName="OD_SellingPrice" />
+                <ScalarProperty Name="OD_Quantity" ColumnName="OD_Quantity" />
+                <ScalarProperty Name="OD_ImportDate" ColumnName="OD_ImportDate" />
+                <ScalarProperty Name="OD_ProductID" ColumnName="OD_ProductID" />
+                <ScalarProperty Name="OD_OrderID" ColumnName="OD_OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertT_OrderInfo" FunctionName="cSalingManagementModel.Store.InsertT_OrderInfo" />
+          <FunctionImportMapping FunctionImportName="InsertT_OrderDetailInfo" FunctionName="cSalingManagementModel.Store.InsertT_OrderDetailInfo" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

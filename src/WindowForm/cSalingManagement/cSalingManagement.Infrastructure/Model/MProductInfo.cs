@@ -50,6 +50,8 @@ namespace cSalingManagement.Infrastructure.Model
     {
         public bool IsAddedToCard
         { get; set; }
+        public int QuantityAddedCard
+        { get; set; }
     }
 
     public partial class NewRequestView_ImportList_Row:M_ProductInfoWithImportInfo

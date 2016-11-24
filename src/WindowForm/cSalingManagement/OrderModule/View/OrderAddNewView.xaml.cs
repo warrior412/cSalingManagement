@@ -39,6 +39,14 @@ namespace OrderModule.View
         {
             NavigationParameters param = navigationContext.Parameters;
 
+            if(param["IsInit"]!=null && bool.Parse(param["IsInit"].ToString()))
+            {
+                Vm.IsEditing = true;
+                Vm.LstOrder = null;
+                Vm.CustomerInfo = null;
+                return;
+            }
+
             if(param["ListOrder"]!=null)
             {
                 Vm.LstOrder = param["ListOrder"] as ObservableCollection<M_ProductInfoWithImportInfo_Row>;
@@ -49,9 +57,12 @@ namespace OrderModule.View
                 Vm.GetCustomerInfoByID(customerID);
                 Vm.IsEditing = false;
             }
-            else
+            else //Không có customer id
             {
-                Vm.IsEditing = true;
+                if (Vm.CustomerInfo != null && Vm.CustomerInfo.Customer_ID!=null)
+                    Vm.IsEditing = false;
+                else
+                    Vm.IsEditing = true;
             }
             
         }
