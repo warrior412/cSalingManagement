@@ -1,0 +1,7 @@
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Release\BusinessEntities.dll.config
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Release\BusinessEntities.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Release\BusinessEntities.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Release\EntityFramework.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\bin\Release\EntityFramework.xml
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\obj\Release\BusinessEntities.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\obj\Release\BusinessEntities.pdb

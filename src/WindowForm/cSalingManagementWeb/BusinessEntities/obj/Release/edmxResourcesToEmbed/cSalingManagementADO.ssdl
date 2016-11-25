@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="cSalingManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="M_Account">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="char" MaxLength="128" />
+    <Property Name="EmployeeID" Type="varchar" MaxLength="10" />
+    <Property Name="RoleID" Type="varchar" MaxLength="10" />
+    <Property Name="AccountStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="M_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cate_Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Cate_Image" Type="varchar" MaxLength="50" />
+    <Property Name="Cate_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="M_City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="City_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="City_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="M_Customer">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Customer_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer_BirthDay" Type="date" />
+    <Property Name="Customer_Phone" Type="varchar" MaxLength="10" />
+    <Property Name="Customer_Mobile" Type="varchar" MaxLength="10" />
+    <Property Name="Customer_Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer_Ward" Type="varchar" MaxLength="10" />
+    <Property Name="Customer_District" Type="varchar" MaxLength="10" />
+    <Property Name="Customer_City" Type="varchar" MaxLength="10" />
+    <Property Name="Customer_Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Customer_Type" Type="varchar" MaxLength="10" />
+    <Property Name="Customer_Point" Type="int" />
+    <Property Name="Customer_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="M_CustomerType">
+    <Key>
+      <PropertyRef Name="CustomerTypeID" />
+    </Key>
+    <Property Name="CustomerTypeID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CustomerType_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerType_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="M_Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="M_District">
+    <Key>
+      <PropertyRef Name="DistrictID" />
+    </Key>
+    <Property Name="DistrictID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="District_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="10" />
+    <Property Name="District_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="M_Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DepartmentID" Type="varchar" MaxLength="10" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+    <Property Name="Employee_IDCard" Type="varchar" MaxLength="20" />
+    <Property Name="Emp_Address" Type="varchar" MaxLength="100" />
+    <Property Name="Emp_DateOfBirth" Type="date" />
+    <Property Name="Emp_Phone" Type="varchar" MaxLength="15" />
+    <Property Name="Emp_SubPhone" Type="varchar" MaxLength="15" />
+    <Property Name="Salary" Type="float" />
+    <Property Name="Employee_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="M_ProductInfo">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="10" />
+    <Property Name="Pro_InStock" Type="int" />
+    <Property Name="Pro_Image" Type="varchar" MaxLength="200" />
+    <Property Name="Pro_Price" Type="float" />
+    <Property Name="Pro_Desciptions" Type="nvarchar" MaxLength="500" />
+    <Property Name="Pro_Preservation" Type="nvarchar" MaxLength="200" />
+    <Property Name="Pro_HowToUse" Type="nvarchar" MaxLength="200" />
+    <Property Name="Pro_Origin" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pro_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="M_Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="M_Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supp_Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Supp_Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Supp_Sub_Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Supp_Email" Type="varchar" MaxLength="20" />
+    <Property Name="Supp_Website" Type="varchar" MaxLength="50" />
+    <Property Name="Supp_Image" Type="varchar" MaxLength="50" />
+    <Property Name="Supplier_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="M_Ward">
+    <Key>
+      <PropertyRef Name="WardID" />
+    </Key>
+    <Property Name="WardID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Ward_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="District" Type="varchar" MaxLength="10" />
+    <Property Name="Ward_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="T_Import">
+    <Key>
+      <PropertyRef Name="fk_ProductID" />
+      <PropertyRef Name="ImportDate" />
+    </Key>
+    <Property Name="fk_ProductID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ImportDate" Type="datetime" Nullable="false" />
+    <Property Name="Supplier" Type="varchar" MaxLength="10" />
+    <Property Name="Import_Quantity" Type="int" />
+    <Property Name="Import_InStock" Type="int" />
+    <Property Name="Import_OnOrder" Type="int" />
+    <Property Name="UnitPrice" Type="float" />
+    <Property Name="ExpirionDate" Type="date" />
+    <Property Name="Import_User" Type="varchar" MaxLength="10" />
+    <Property Name="Import_Vote" Type="int" />
+    <Property Name="Import_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="T_Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Order_CustomerID" Type="varchar" MaxLength="10" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="CreatedUser" Type="varchar" MaxLength="10" />
+    <Property Name="Order_Memo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Order_ShipTime" Type="datetime" />
+    <Property Name="Order_Status" Type="int" />
+  </EntityType>
+  <EntityType Name="T_OrderDetail">
+    <Key>
+      <PropertyRef Name="OD_OrderID" />
+      <PropertyRef Name="OD_ProductID" />
+      <PropertyRef Name="OD_ImportDate" />
+    </Key>
+    <Property Name="OD_OrderID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="OD_ProductID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="OD_ImportDate" Type="datetime" Nullable="false" />
+    <Property Name="OD_Quantity" Type="int" />
+    <Property Name="OD_SellingPrice" Type="float" />
+    <Property Name="OD_TotalAmount" Type="float" />
+    <Property Name="OD_Status" Type="int" />
+  </EntityType>
+  <Function Name="InsertM_CategoryInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cate_name" Type="varchar" Mode="In" />
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="image" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertM_CustomerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="birthday" Type="date" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="mobile" Type="varchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="ward" Type="varchar" Mode="In" />
+    <Parameter Name="district" Type="varchar" Mode="In" />
+    <Parameter Name="city" Type="varchar" Mode="In" />
+    <Parameter Name="descript" Type="nvarchar" Mode="In" />
+    <Parameter Name="customer_type" Type="varchar" Mode="In" />
+    <Parameter Name="customer_status" Type="int" Mode="In" />
+    <Parameter Name="customer_point" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertM_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="product_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="instock" Type="int" Mode="In" />
+    <Parameter Name="image" Type="varchar" Mode="In" />
+    <Parameter Name="price" Type="float" Mode="In" />
+    <Parameter Name="description" Type="nvarchar" Mode="In" />
+    <Parameter Name="preservation" Type="nvarchar" Mode="In" />
+    <Parameter Name="howtouse" Type="nvarchar" Mode="In" />
+    <Parameter Name="origin" Type="nvarchar" Mode="In" />
+    <Parameter Name="status" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertM_SupplierInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="sub_phone" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="website" Type="varchar" Mode="In" />
+    <Parameter Name="image" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertT_Import" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="productID" Type="varchar" Mode="In" />
+    <Parameter Name="supplier" Type="varchar" Mode="In" />
+    <Parameter Name="quantity" Type="int" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertT_OrderDetailInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="orderid" Type="varchar" Mode="In" />
+    <Parameter Name="productid" Type="varchar" Mode="In" />
+    <Parameter Name="importdate" Type="datetime" Mode="In" />
+    <Parameter Name="quantity" Type="int" Mode="In" />
+    <Parameter Name="sellingprice" Type="float" Mode="In" />
+    <Parameter Name="total" Type="float" Mode="In" />
+    <Parameter Name="status" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertT_OrderInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="customerid" Type="varchar" Mode="In" />
+    <Parameter Name="createdate" Type="date" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+    <Parameter Name="memo" Type="nvarchar" Mode="In" />
+    <Parameter Name="shiptime" Type="datetime" Mode="In" />
+    <Parameter Name="orderstatus" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Select_M_CustomerInfo_ByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="customerid" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SelectAll_M_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_City" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_CustomerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_CustomerType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_District" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_ProductInfoWithImportInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_ProductInfoWithImportInfo_ByProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SelectAll_M_ProductInfoWithImportInfo_OnWaiting" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_Supplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SelectAll_M_Ward" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Update_T_ImportProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="productid" Type="varchar" Mode="In" />
+    <Parameter Name="importdate" Type="datetime" Mode="In" />
+    <Parameter Name="supplier" Type="varchar" Mode="In" />
+    <Parameter Name="quantity" Type="int" Mode="In" />
+    <Parameter Name="instock" Type="int" Mode="In" />
+    <Parameter Name="onorder" Type="int" Mode="In" />
+    <Parameter Name="price" Type="float" Mode="In" />
+    <Parameter Name="expiriondate" Type="date" Mode="In" />
+    <Parameter Name="user" Type="varchar" Mode="In" />
+    <Parameter Name="vote" Type="int" Mode="In" />
+    <Parameter Name="status" Type="int" Mode="In" />
+    <Parameter Name="newimportdate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="UpdateM_ProductInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="product_id" Type="varchar" Mode="In" />
+    <Parameter Name="product_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="instock" Type="int" Mode="In" />
+    <Parameter Name="image" Type="varchar" Mode="In" />
+    <Parameter Name="price" Type="float" Mode="In" />
+    <Parameter Name="description" Type="nvarchar" Mode="In" />
+    <Parameter Name="preservation" Type="nvarchar" Mode="In" />
+    <Parameter Name="howtouse" Type="nvarchar" Mode="In" />
+    <Parameter Name="origin" Type="nvarchar" Mode="In" />
+    <Parameter Name="status" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="cSalingManagementModelStoreContainer">
+    <EntitySet Name="M_Account" EntityType="Self.M_Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Category" EntityType="Self.M_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_City" EntityType="Self.M_City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Customer" EntityType="Self.M_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_CustomerType" EntityType="Self.M_CustomerType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Department" EntityType="Self.M_Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_District" EntityType="Self.M_District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Employee" EntityType="Self.M_Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_ProductInfo" EntityType="Self.M_ProductInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Role" EntityType="Self.M_Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Supplier" EntityType="Self.M_Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_Ward" EntityType="Self.M_Ward" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Import" EntityType="Self.T_Import" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Order" EntityType="Self.T_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_OrderDetail" EntityType="Self.T_OrderDetail" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

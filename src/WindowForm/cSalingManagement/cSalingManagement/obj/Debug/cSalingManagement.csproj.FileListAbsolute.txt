@@ -226,3 +226,7 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManag
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingmanagement.Webservice.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.exe
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.pdb
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingManagement.exe.manifest
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingManagement.application
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.exe.manifest
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.application
