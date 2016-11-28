@@ -37,5 +37,53 @@ namespace cSalingManagementWeb.Controllers
             JsonSerializerSettings st = new JsonSerializerSettings();
             return JsonConvert.SerializeObject(returnData, Formatting.None, st);
         }
+
+        // GET api/Order/SelectAll_T_OrderInfo
+        [HttpGet]
+        public string SelectAll_T_OrderInfo()
+        {
+            JsonObjectData returnData = new JsonObjectData();
+            Status status = new Status();
+            List<SelectAll_T_OrderInfo_Result> resultReturn = null;
+            status.StatusCode = StatusCodes.NO_DATA;
+            try
+            {
+                resultReturn = new T_OrderADO().SelectAll_T_OrderInfo().ToList();
+                status.StatusCode = StatusCodes.OK;
+            }
+            catch (Exception ex)
+            {
+                status.StatusMsg = ex.Message;
+                status.StatusCode = StatusCodes.UNKNOW_ERROR;
+            }
+            returnData.Status = status;
+            returnData.Data = resultReturn;
+            JsonSerializerSettings st = new JsonSerializerSettings();
+            return JsonConvert.SerializeObject(returnData, Formatting.None, st);
+        }
+
+        // GET api/Order/SelectAll_T_OrderInfo_OnWaiting
+        [HttpGet]
+        public string SelectAll_T_OrderInfo_OnWaiting()
+        {
+            JsonObjectData returnData = new JsonObjectData();
+            Status status = new Status();
+            List<SelectAll_T_OrderInfo_Result> resultReturn = null;
+            status.StatusCode = StatusCodes.NO_DATA;
+            try
+            {
+                resultReturn = new T_OrderADO().SelectAll_T_OrderInfo_OnWaiting().ToList();
+                status.StatusCode = StatusCodes.OK;
+            }
+            catch (Exception ex)
+            {
+                status.StatusMsg = ex.Message;
+                status.StatusCode = StatusCodes.UNKNOW_ERROR;
+            }
+            returnData.Status = status;
+            returnData.Data = resultReturn;
+            JsonSerializerSettings st = new JsonSerializerSettings();
+            return JsonConvert.SerializeObject(returnData, Formatting.None, st);
+        }
     }
 }

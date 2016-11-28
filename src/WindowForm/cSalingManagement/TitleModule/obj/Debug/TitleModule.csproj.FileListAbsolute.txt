@@ -77,9 +77,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Microsoft.Practices.Unity.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Unity.Wpf.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Wpf.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\System.Windows.Interactivity.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Microsoft.Practices.ServiceLocation.xml
@@ -89,16 +86,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.xml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Unity.Wpf.xml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Wpf.xml
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\System.Windows.Interactivity.xml
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\de\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\en\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\es\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\it\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.csprojResolveAssemblyReference.cache
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\View\TitleView.baml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\View\TitleView.g.cs
@@ -142,3 +129,6 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Wpf.dll

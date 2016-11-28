@@ -128,9 +128,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\NewRequestModule.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\OrderModule.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.Unity.Wpf.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.Wpf.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\ProductModule.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\System.Windows.Interactivity.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\TitleModule.dll
@@ -150,16 +147,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.xml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.Unity.Wpf.xml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.Wpf.xml
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\System.Windows.Interactivity.xml
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\de\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\en\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\es\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\it\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.csprojResolveAssemblyReference.cache
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\View\LoginView.baml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\View\MainView.baml
@@ -230,3 +217,12 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManag
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingManagement.application
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.exe.manifest
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.application
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingManagement.exe.manifest
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\cSalingManagement.application
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\CustomerModule.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\Prism.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\bin\Debug\CustomerModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.exe.manifest
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\cSalingManagement\obj\Debug\cSalingManagement.application

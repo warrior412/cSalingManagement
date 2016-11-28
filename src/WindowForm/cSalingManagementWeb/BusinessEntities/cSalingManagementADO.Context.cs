@@ -465,5 +465,15 @@ namespace BusinessEntities
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertT_OrderDetailInfo", orderidParameter, productidParameter, importdateParameter, quantityParameter, sellingpriceParameter, totalParameter, statusParameter);
         }
+    
+        public virtual ObjectResult<SelectAll_T_OrderInfo_Result> SelectAll_T_OrderInfo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAll_T_OrderInfo_Result>("SelectAll_T_OrderInfo");
+        }
+    
+        public virtual ObjectResult<SelectAll_T_OrderInfo_Result> SelectAll_T_OrderInfo_OnWaiting()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAll_T_OrderInfo_Result>("SelectAll_T_OrderInfo_OnWaiting");
+        }
     }
 }

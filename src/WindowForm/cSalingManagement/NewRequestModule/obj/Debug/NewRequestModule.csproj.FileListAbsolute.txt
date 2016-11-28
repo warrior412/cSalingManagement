@@ -46,9 +46,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\D
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.Unity.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.Unity.Wpf.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.Wpf.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\System.Windows.Interactivity.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\cSalingManagement.Infrastructure.pdb
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
@@ -59,16 +56,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\D
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.xml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.Unity.Wpf.xml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.Wpf.xml
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\System.Windows.Interactivity.xml
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\de\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\en\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\es\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\it\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.csprojResolveAssemblyReference.cache
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\View\NewRequestView.baml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\View\NewRequestView.g.cs
@@ -130,3 +117,26 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\NewRequestMo
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\NewRequestModule\obj\Debug\NewRequestModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\cSalingManagement.Resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\cSalingmanagement.Webservice.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Xceed.Wpf.DataGrid.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\cSalingManagement.Resources.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\cSalingmanagement.Webservice.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\NewRequestModule\bin\Debug\Prism.Wpf.dll

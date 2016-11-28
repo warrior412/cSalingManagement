@@ -174,6 +174,8 @@
       <Parameter Name="total" Mode="In" Type="Double" />
       <Parameter Name="status" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="SelectAll_T_OrderInfo" ReturnType="Collection(cSalingManagementModel.SelectAll_T_OrderInfo_Result)" />
+    <FunctionImport Name="SelectAll_T_OrderInfo_OnWaiting" ReturnType="Collection(cSalingManagementModel.SelectAll_T_OrderInfo_Result)" />
   </EntityContainer>
   <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
     <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
@@ -324,4 +326,16 @@
     <Property Name="OD_TotalAmount" Type="Double" />
     <Property Name="OD_Status" Type="Int32" />
   </EntityType>
+  <ComplexType Name="SelectAll_T_OrderInfo_Result">
+    <Property Type="String" Name="OrderID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Order_Memo" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
+    <Property Type="DateTime" Name="Order_ShipTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Customer_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Customer_Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="District_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Ward_Name" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Order_Status" Nullable="true" />
+  </ComplexType>
 </Schema>

@@ -56,9 +56,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debu
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Microsoft.Practices.Unity.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Newtonsoft.Json.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Unity.Wpf.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Wpf.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\System.Windows.Interactivity.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Xceed.Wpf.AvalonDock.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
@@ -76,16 +73,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debu
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.xml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Unity.Wpf.xml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Wpf.xml
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\System.Windows.Interactivity.xml
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\de\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\en\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\es\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\it\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
@@ -156,3 +143,6 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModul
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Wpf.dll

@@ -73,3 +73,4 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClass
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.csprojResolveAssemblyReference.cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\LoggingClassLibrary\obj\Debug\LoggingClassLibrary.csprojResolveAssemblyReference.cache

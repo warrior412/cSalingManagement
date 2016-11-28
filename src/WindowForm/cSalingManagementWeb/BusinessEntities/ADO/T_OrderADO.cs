@@ -46,5 +46,33 @@ namespace BusinessEntities.ADO
             }
             return resultReturn;
         }
+
+        public ObjectResult<SelectAll_T_OrderInfo_Result> SelectAll_T_OrderInfo()
+        {
+            ObjectResult<SelectAll_T_OrderInfo_Result> resultReturn = null;
+            try
+            {
+                resultReturn = entities.SelectAll_T_OrderInfo();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return resultReturn;
+        }
+
+        public ObjectResult<SelectAll_T_OrderInfo_Result> SelectAll_T_OrderInfo_OnWaiting()
+        {
+            ObjectResult<SelectAll_T_OrderInfo_Result> resultReturn = null;
+            try
+            {
+                resultReturn = entities.SelectAll_T_OrderInfo_OnWaiting();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return resultReturn;
+        }
     }
 }

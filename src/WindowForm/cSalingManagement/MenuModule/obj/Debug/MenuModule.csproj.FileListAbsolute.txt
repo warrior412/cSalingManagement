@@ -90,9 +90,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\M
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\NewRequestModule.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\OrderModule.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Unity.Wpf.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Wpf.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\ProductModule.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\System.Windows.Interactivity.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Newtonsoft.Json.dll
@@ -108,16 +105,6 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\M
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.xml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Unity.Wpf.xml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Wpf.xml
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\System.Windows.Interactivity.xml
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\de\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\en\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\es\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\it\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.csprojResolveAssemblyReference.cache
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\View\MenuView.g.cs
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -176,3 +163,8 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\o
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\CustomerModule.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\CustomerModule.pdb

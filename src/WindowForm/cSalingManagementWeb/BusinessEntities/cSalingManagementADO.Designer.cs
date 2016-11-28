@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagementWeb\BusinessEntities\cSalingManagementADO.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\JunF's Drive\Projects\src\WindowForm\cSalingManagementWeb\BusinessEntities\cSalingManagementADO.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

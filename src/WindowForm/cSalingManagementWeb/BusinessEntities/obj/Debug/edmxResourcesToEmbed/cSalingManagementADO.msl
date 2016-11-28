@@ -299,5 +299,37 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="InsertT_OrderInfo" FunctionName="cSalingManagementModel.Store.InsertT_OrderInfo" />
     <FunctionImportMapping FunctionImportName="InsertT_OrderDetailInfo" FunctionName="cSalingManagementModel.Store.InsertT_OrderDetailInfo" />
+    <FunctionImportMapping FunctionImportName="SelectAll_T_OrderInfo" FunctionName="cSalingManagementModel.Store.SelectAll_T_OrderInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="cSalingManagementModel.SelectAll_T_OrderInfo_Result">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Order_Memo" ColumnName="Order_Memo" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Order_ShipTime" ColumnName="Order_ShipTime" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+          <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="Ward_Name" ColumnName="Ward_Name" />
+          <ScalarProperty Name="Order_Status" ColumnName="Order_Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAll_T_OrderInfo_OnWaiting" FunctionName="cSalingManagementModel.Store.SelectAll_T_OrderInfo_OnWating">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="cSalingManagementModel.SelectAll_T_OrderInfo_Result">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Order_Memo" ColumnName="Order_Memo" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Order_ShipTime" ColumnName="Order_ShipTime" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+          <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="Ward_Name" ColumnName="Ward_Name" />
+          <ScalarProperty Name="Order_Status" ColumnName="Order_Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

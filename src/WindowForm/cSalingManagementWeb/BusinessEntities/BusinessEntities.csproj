@@ -110,6 +110,9 @@
     <Compile Include="SelectAll_M_ProductInfoWithImportInfo_Result.cs">
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
+    <Compile Include="SelectAll_T_OrderInfo_Result.cs">
+      <DependentUpon>cSalingManagementADO.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>cSalingManagementADO.tt</DependentUpon>
     </Compile>
