@@ -119,11 +119,11 @@ namespace cSalingManagementWeb.Models
         {
             JsonObjectData returnData = new JsonObjectData();
             Status status = new Status();
-            SelectAll_M_ProductInfoWithImportInfo_Result resultReturn = null;
+            List<SelectAll_M_ProductInfoWithImportInfo_Result> resultReturn = null;
             status.StatusCode = StatusCodes.NO_DATA;
             try
             {
-                resultReturn = new M_ProductInfoADO().SelectAll_M_ProductInfoWithImportInfo_ByProductID(m_productinfo.ProductID);
+                resultReturn = new M_ProductInfoADO().SelectAll_M_ProductInfoWithImportInfo_ByProductID(m_productinfo.ProductID).ToList();
                 status.StatusCode = StatusCodes.OK;
             }
             catch (Exception ex)
@@ -144,7 +144,7 @@ namespace cSalingManagementWeb.Models
         {
             JsonObjectData returnData = new JsonObjectData();
             Status status = new Status();
-            List<SelectAll_M_ProductInfoWithImportInfo_Result> resultReturn = null;
+            List<M_ProductInfo> resultReturn = null;
             status.StatusCode = StatusCodes.NO_DATA;
             try
             {

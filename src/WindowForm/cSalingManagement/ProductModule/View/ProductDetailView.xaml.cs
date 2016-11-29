@@ -125,7 +125,8 @@ namespace ProductModule.View
                 if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID)
                 {
                     CallServiceCount--;
-                    Vm.ProductDetail = new M_ProductInfoWithImportInfo().JSonToProductInfoWithImportInfo(data.ToString());
+                    Vm.LstProductWithImport = new M_ProductInfoWithImportInfo().JSonToListProductInfoWithImportInfo(data.ToString());
+                    Vm.ProductDetail = Vm.LstProductWithImport.FirstOrDefault();
                     this.cbCategory.SelectedValue = Vm.ProductDetail.Category;
                     DataContext = null;
                     DataContext = Vm;

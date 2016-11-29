@@ -26,5 +26,14 @@ namespace TitleModule.View
             InitializeComponent();
             DataContext = vm;
         }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.ChangedButton== MouseButton.Left)
+            {
+                Window parentWindow = Application.Current.MainWindow;
+                parentWindow.DragMove();
+            }
+        }
     }
 }

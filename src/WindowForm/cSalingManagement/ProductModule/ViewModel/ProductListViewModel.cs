@@ -35,7 +35,7 @@ namespace ProductModule.ViewModel
             set { 
                 SetProperty(ref this.lstProductInfo, value);
                 this.collectionView = new ListCollectionView(this.LstProductInfo);
-                collectionView.GroupDescriptions.Add(new PropertyGroupDescription("ProductID"));
+                collectionView.GroupDescriptions.Add(new PropertyGroupDescription("Category"));
 
                 this.view.Dispatcher.Invoke(new Action(()=>{
                     view.gvCheckInfo.ItemsSource = this.collectionView;

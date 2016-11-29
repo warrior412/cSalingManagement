@@ -83,7 +83,7 @@ namespace ProductModule.View
                 dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
                 dao.CallBackFail = new DAOProvider.FinishFail(Failed);
                 CallServiceCount++;
-                dao.GetALL_M_ProductInfo();
+                dao.GetALL_M_ProductInfoWithImportData();
                 CallServiceCount++;
                 dao.GetALL_M_SupplierInfo();
             }
@@ -104,7 +104,7 @@ namespace ProductModule.View
             
             this.Dispatcher.Invoke((Action)(() =>
             {
-                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO)
+                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFOWITHIMPORTDATA)
                 {
                     _vm.LstProductInfo = JsonConvert.DeserializeObject<ObservableCollection<M_ProductInfo>>(data.ToString());
                     DataContext = null;

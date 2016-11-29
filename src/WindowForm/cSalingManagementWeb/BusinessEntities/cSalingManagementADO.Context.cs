@@ -76,11 +76,6 @@ namespace BusinessEntities
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_Category>("SelectAll_M_Category", mergeOption);
         }
     
-        public virtual ObjectResult<SelectAll_M_ProductInfoWithImportInfo_Result> SelectAll_M_ProductInfoWithImportInfo()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAll_M_ProductInfoWithImportInfo_Result>("SelectAll_M_ProductInfoWithImportInfo");
-        }
-    
         public virtual ObjectResult<SelectAll_M_ProductInfoWithImportInfo_Result> SelectAll_M_ProductInfoWithImportInfo_ByProductID(string productID)
         {
             var productIDParameter = productID != null ?
@@ -474,6 +469,16 @@ namespace BusinessEntities
         public virtual ObjectResult<SelectAll_T_OrderInfo_Result> SelectAll_T_OrderInfo_OnWaiting()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAll_T_OrderInfo_Result>("SelectAll_T_OrderInfo_OnWaiting");
+        }
+    
+        public virtual ObjectResult<M_ProductInfo> SelectAll_M_ProductInfoWithImportInfo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_ProductInfo>("SelectAll_M_ProductInfoWithImportInfo");
+        }
+    
+        public virtual ObjectResult<M_ProductInfo> SelectAll_M_ProductInfoWithImportInfo(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<M_ProductInfo>("SelectAll_M_ProductInfoWithImportInfo", mergeOption);
         }
     }
 }

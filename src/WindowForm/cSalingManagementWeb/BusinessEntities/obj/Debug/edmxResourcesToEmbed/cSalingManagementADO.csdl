@@ -73,7 +73,6 @@
       <Parameter Name="status" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="SelectAll_M_Category" EntitySet="M_Category" ReturnType="Collection(cSalingManagementModel.M_Category)" />
-    <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo" ReturnType="Collection(cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result)" />
     <EntitySet Name="M_ProductInfo" EntityType="cSalingManagementModel.M_ProductInfo" />
     <EntitySet Name="T_Import" EntityType="cSalingManagementModel.T_Import" />
     <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo_ByProductID" ReturnType="Collection(cSalingManagementModel.SelectAll_M_ProductInfoWithImportInfo_Result)">
@@ -176,6 +175,7 @@
     </FunctionImport>
     <FunctionImport Name="SelectAll_T_OrderInfo" ReturnType="Collection(cSalingManagementModel.SelectAll_T_OrderInfo_Result)" />
     <FunctionImport Name="SelectAll_T_OrderInfo_OnWaiting" ReturnType="Collection(cSalingManagementModel.SelectAll_T_OrderInfo_Result)" />
+    <FunctionImport Name="SelectAll_M_ProductInfoWithImportInfo" EntitySet="M_ProductInfo" ReturnType="Collection(cSalingManagementModel.M_ProductInfo)" />
   </EntityContainer>
   <ComplexType Name="SelectAll_M_ProductInfoWithImportInfo_Result">
     <Property Type="String" Name="ProductID" Nullable="false" MaxLength="10" />
@@ -328,6 +328,7 @@
   </EntityType>
   <ComplexType Name="SelectAll_T_OrderInfo_Result">
     <Property Type="String" Name="OrderID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Customer_ID" Nullable="false" MaxLength="10" />
     <Property Type="String" Name="Order_Memo" Nullable="true" MaxLength="500" />
     <Property Type="DateTime" Name="CreatedDate" Nullable="true" />
     <Property Type="DateTime" Name="Order_ShipTime" Nullable="true" Precision="23" />

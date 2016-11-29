@@ -73,7 +73,7 @@
                                     <DataGridTemplateColumn Header="Số lượng" MinWidth="80" IsReadOnly="True"  Width="2*">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
-                                                <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Quantity}" FontSize="14"  TextAlignment="Center"/>
+                                                <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Pro_InStock}" FontSize="14"  TextAlignment="Center"/>
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>

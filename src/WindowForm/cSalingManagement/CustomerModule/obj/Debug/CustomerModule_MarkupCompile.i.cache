@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\CustomerModule\obj\Debug\
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\CustomerModule\obj\Debug\
 CustomerModule
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 2-210533645
 
 10103504919
-30-811263239
+30773747432
 View\CustomerDetailView.xaml;View\CustomerListView.xaml;
 
 False

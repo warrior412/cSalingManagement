@@ -40,6 +40,14 @@ namespace ProductModule.ViewModel
             set { productDetail = value; }
         }
 
+        private ObservableCollection<M_ProductInfoWithImportInfo> lstProductWithImport = new ObservableCollection<M_ProductInfoWithImportInfo>();
+
+        public ObservableCollection<M_ProductInfoWithImportInfo> LstProductWithImport
+        {
+            get { return lstProductWithImport; }
+            set { lstProductWithImport = value; }
+        }
+
         private string newProductImage;
 
         public string NewProductImage

@@ -119,9 +119,9 @@ namespace BusinessEntities.ADO
             }
             return resultReturn;
         }
-        public ObjectResult<SelectAll_M_ProductInfoWithImportInfo_Result> SelectAll_M_ProductInfoWithImportInfo()
+        public ObjectResult<M_ProductInfo> SelectAll_M_ProductInfoWithImportInfo()
         {
-            ObjectResult<SelectAll_M_ProductInfoWithImportInfo_Result> resultReturn = null;
+            ObjectResult<M_ProductInfo> resultReturn = null;
             try
             {
                 resultReturn = entities.SelectAll_M_ProductInfoWithImportInfo();
@@ -158,12 +158,12 @@ namespace BusinessEntities.ADO
             }
             return resultReturn;
         }
-        public SelectAll_M_ProductInfoWithImportInfo_Result SelectAll_M_ProductInfoWithImportInfo_ByProductID(string productID)
+        public ObjectResult<SelectAll_M_ProductInfoWithImportInfo_Result> SelectAll_M_ProductInfoWithImportInfo_ByProductID(string productID)
         {
-            SelectAll_M_ProductInfoWithImportInfo_Result resultReturn = null;
+            ObjectResult<SelectAll_M_ProductInfoWithImportInfo_Result> resultReturn = null;
             try
             {
-                resultReturn = entities.SelectAll_M_ProductInfoWithImportInfo_ByProductID(productID).FirstOrDefault();
+                resultReturn = entities.SelectAll_M_ProductInfoWithImportInfo_ByProductID(productID);
             }
             catch (Exception ex)
             {
