@@ -51,7 +51,7 @@
                     <DataGrid HeadersVisibility="Column"     
                               AutoGenerateColumns="False" x:Name="gvCheckInfo" 
                               CanUserAddRows="False" RowHeight="40" VerticalScrollBarVisibility="Auto"
-                              ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderDefault}" GridLinesVisibility="Horizontal"
+                              ColumnHeaderStyle="{StaticResource styleDataGridColumnHeaderDefault}" 
                              >
                         <!--<DataGrid.Items>
                             <CollectionViewSource Source="{Binding LstProductInfo,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
@@ -106,7 +106,7 @@
                             </GroupStyle>
                         </DataGrid.GroupStyle>
                         <DataGrid.Columns>
-                            <DataGridTemplateColumn Header="Mã sản phẩm"  MinWidth="150" IsReadOnly="True" Width="6*">
+                            <DataGridTemplateColumn Header="Mã sản phẩm"  MinWidth="100" IsReadOnly="True" Width="2*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button Style="{StaticResource btn-info}" Content="{Binding ProductID}" Margin="5,0,10,0" Padding="10,2,10,2" Height="30" 
@@ -118,28 +118,28 @@
                             <DataGridTemplateColumn Header="Tên sản phẩm"  MinWidth="150" IsReadOnly="True" Width="6*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding ProductName}" FontSize="14"  Margin="10,5,0,0"/>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" FontWeight="Bold" Text="{Binding ProductName}" FontSize="15"  Margin="10,5,0,0"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Số lượng tồn"  MinWidth="150" IsReadOnly="True" Width="6*">
+                            <DataGridTemplateColumn Header="Số lượng tồn"  MinWidth="150" IsReadOnly="True" Width="2*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding Pro_InStock}" Grid.Row="1" Style="{StaticResource styleDataGridTextCenter}" FontWeight="Bold" FontSize="14"  Margin="10,5,0,0"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Giá bán" MinWidth="100" IsReadOnly="True"  Width="2*">
+                            <DataGridTemplateColumn Header="Đơn giá" MinWidth="100" IsReadOnly="True"  Width="2*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Pro_Price}" FontSize="14"  TextAlignment="Center"/>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Foreground="Blue" Text="{Binding Pro_Price}" FontSize="14"  TextAlignment="Center"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Giá" MinWidth="100" IsReadOnly="True"  Width="6*">
+                            <DataGridTemplateColumn Header="Số lượng đặt" MinWidth="100" IsReadOnly="True"  Width="2*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding UnitPrice}" FontSize="14"  TextAlignment="Center"/>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Import_OnOrder,Mode=TwoWay}" FontSize="16" FontWeight="Bold" Foreground="DarkGreen"  TextAlignment="Center"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>

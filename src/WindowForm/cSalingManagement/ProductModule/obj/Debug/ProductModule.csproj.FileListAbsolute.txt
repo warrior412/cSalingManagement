@@ -146,3 +146,5 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModul
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Unity.Wpf.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Wpf.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\InputDialogView.baml
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\InputDialogView.g.cs
