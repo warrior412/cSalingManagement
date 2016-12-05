@@ -24,12 +24,19 @@ namespace ProductModule.ViewModel
         #region Private Properties
         public ProductDetailView view = null;
         private int CallServiceCount = 0;
+        private M_CategoryInfo selectedCategoryInfo;
+
+        public M_CategoryInfo SelectedCategoryInfo
+        {
+            get { return selectedCategoryInfo; }
+            set { SetProperty(ref this.selectedCategoryInfo, value); }
+        }
         private ObservableCollection<M_CategoryInfo> lstCategoryInfo = new ObservableCollection<M_CategoryInfo>();
 
         public ObservableCollection<M_CategoryInfo> LstCategoryInfo
         {
             get { return lstCategoryInfo; }
-            set { lstCategoryInfo = value; }
+            set { SetProperty(ref this.lstCategoryInfo, value); }
         }
 
         private M_ProductInfoWithImportInfo productDetail = new M_ProductInfoWithImportInfo();
@@ -37,7 +44,7 @@ namespace ProductModule.ViewModel
         public M_ProductInfoWithImportInfo ProductDetail
         {
             get { return productDetail; }
-            set { productDetail = value; }
+            set { SetProperty(ref this.productDetail,value); }
         }
 
         private ObservableCollection<M_ProductInfoWithImportInfo> lstProductWithImport = new ObservableCollection<M_ProductInfoWithImportInfo>();
@@ -45,7 +52,7 @@ namespace ProductModule.ViewModel
         public ObservableCollection<M_ProductInfoWithImportInfo> LstProductWithImport
         {
             get { return lstProductWithImport; }
-            set { lstProductWithImport = value; }
+            set { SetProperty(ref this.lstProductWithImport, value); }
         }
 
         private string newProductImage;
@@ -175,7 +182,7 @@ namespace ProductModule.ViewModel
         } 
         #endregion
 
-        private void UploadImage()
+        public void UploadImage()
         {
             IsBusy = true;
             CallServiceCount++;
@@ -184,7 +191,7 @@ namespace ProductModule.ViewModel
             dao.CallBackFail = new DAOProvider.FinishFail(Failed);
             dao.PostImageToServer(this.NewProductImage);
         }
-        private void UpdateProductDetail()
+        public void UpdateProductDetail()
         {
             IsBusy = true;
             CallServiceCount++;
@@ -193,7 +200,7 @@ namespace ProductModule.ViewModel
             dao.CallBackFail = new DAOProvider.FinishFail(Failed);
             dao.UpdateM_ProductInfo(this.ProductDetail);
         }
-        private void InsertNewProduct()
+        public void InsertNewProduct()
         {
             IsBusy = true;
             CallServiceCount++;
@@ -201,6 +208,25 @@ namespace ProductModule.ViewModel
             dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
             dao.CallBackFail = new DAOProvider.FinishFail(Failed);
             dao.InsertM_ProductInfo(this.ProductDetail);
+        }
+        public void GetAllCategoryInfo()
+        {
+            IsBusy = true;
+            CallServiceCount++;
+            DAOProvider dao = DAOProvider.GetInstance();
+            dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
+            dao.CallBackFail = new DAOProvider.FinishFail(Failed);
+            dao.GetALL_M_CategoryInfo();
+        }
+
+        public void GetProductDetailByID(string productID)
+        {
+            IsBusy = true;
+            CallServiceCount++;
+            DAOProvider dao = DAOProvider.GetInstance();
+            dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
+            dao.CallBackFail = new DAOProvider.FinishFail(Failed);
+            dao.GetALL_M_ProductInfoWithImportData_ByProductID(productID);
         }
 
         #region Delegate CallBack Method
@@ -226,6 +252,26 @@ namespace ProductModule.ViewModel
                 CallServiceCount--;
                 this.IsEditing = false;
                 this.view.ShowMessage("Insert successfully");
+            }
+            if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_CATEGORYINFO)
+            {
+                CallServiceCount--;
+                LstCategoryInfo = new M_CategoryInfo().JSonToListCategory(data);
+                if (ProductDetail != null && ProductDetail.ProductID!=null)
+                {
+                    SelectedCategoryInfo = LstCategoryInfo.Where(x => x.CategoryID.Equals(ProductDetail.Category)).FirstOrDefault();
+                }
+
+            }
+            if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID)
+            {
+                CallServiceCount--;
+                LstProductWithImport = new M_ProductInfoWithImportInfo().JSonToListProductInfoWithImportInfo(data.ToString());
+                ProductDetail = LstProductWithImport.FirstOrDefault();
+                if(LstCategoryInfo!=null && LstCategoryInfo.Count>0)
+                {
+                    SelectedCategoryInfo = LstCategoryInfo.Where(x => x.CategoryID.Equals(ProductDetail.Category)).FirstOrDefault();
+                }
             }
             if (CallServiceCount <= 0)
                 IsBusy = false;

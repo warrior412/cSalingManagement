@@ -258,12 +258,32 @@ namespace OrderModule.ViewModel
             }
         }
 
+        public ICommand SaveRowCommand
+        {
+            get
+            {
+                return new DelegateCommand<object>(doConfirmOrder);
+            }
+        }
+
         public ICommand FinishOrderCommand
         {
             get
             {
                 return new DelegateCommand<object>(doFinishOrder);
             }
+        }
+
+        private void doConfirmOrder(object param)
+        {
+            //Hien thi lich su dat hang
+            //Chon so luong san pham tuong ung voi so luong khach da dat
+            ImportListByProductView inputView = new ImportListByProductView();
+            if(inputView.ShowDialog()==true)
+            {
+
+            }
+
         }
         private void goToCustomerList(object param)
         {

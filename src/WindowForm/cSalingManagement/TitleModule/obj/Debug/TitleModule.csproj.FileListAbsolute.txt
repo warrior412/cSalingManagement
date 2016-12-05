@@ -98,6 +98,9 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\cSalingManagement.Infrastructure.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Newtonsoft.Json.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\cSalingManagement.Infrastructure.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Wpf.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\TitleModule.dll.config
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\TitleModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\TitleModule.pdb
@@ -129,6 +132,3 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\TitleModule\obj\Debug\TitleModule.pdb
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Unity.Wpf.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\TitleModule\bin\Debug\Prism.Wpf.dll

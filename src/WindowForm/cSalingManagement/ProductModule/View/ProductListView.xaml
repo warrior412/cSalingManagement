@@ -12,6 +12,7 @@
         <converter:ProductModule_SupplierIDToSupplierNameConverter x:Key="ProductModule_SupplierIDToSupplierNameConverter"/>
         <converter:DateToDateFormatConverter x:Key="DateToDateFormatConverter"/>
         <converter:IsReadyToWidthConverter x:Key="IsReadyToWidthConverter"/>
+        <converter:MoneyFormaterConverter x:Key="MoneyFormaterConverter"/>
     </UserControl.Resources>
     <xctk:BusyIndicator Name="busyIndicator" IsBusy="{Binding IsLoading}">
         <xctk:BusyIndicator.BusyContent>
@@ -122,6 +123,13 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Đơn giá" MinWidth="100" IsReadOnly="True"  Width="2*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Foreground="Blue" Text="{Binding Pro_Price,Converter={StaticResource MoneyFormaterConverter}}" FontSize="14"  TextAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                             <DataGridTemplateColumn Header="Số lượng tồn"  MinWidth="150" IsReadOnly="True" Width="2*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -129,17 +137,11 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Đơn giá" MinWidth="100" IsReadOnly="True"  Width="2*">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Foreground="Blue" Text="{Binding Pro_Price}" FontSize="14"  TextAlignment="Center"/>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
+                            
                             <DataGridTemplateColumn Header="Số lượng đặt" MinWidth="100" IsReadOnly="True"  Width="2*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Import_OnOrder,Mode=TwoWay}" FontSize="16" FontWeight="Bold" Foreground="DarkGreen"  TextAlignment="Center"/>
+                                        <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding QuantityAddedCard,Mode=TwoWay}" FontSize="16" FontWeight="Bold" Foreground="DarkGreen"  TextAlignment="Center"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>

@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" MinWidth="600" MinHeight="406"
-             xmlns:converter="clr-namespace:cSalingManagement.Infrastructure.Converter;assembly=cSalingManagement.Infrastructure">
+             xmlns:converter="clr-namespace:cSalingManagement.Infrastructure.Converter;assembly=cSalingManagement.Infrastructure"
+             >
     <UserControl.Resources>
         <converter:ChooseURLToDisplayConverter x:Key="ChooseURLToDisplayConverter"/>
         <converter:ProductModule_IsEditingToWidthConverter x:Key="ProductModule_IsEditingToWidthConverter"/>
@@ -21,14 +22,14 @@
         <xctk:BusyIndicator.Content>
 
 
-            <Grid Background="{StaticResource MainColor}" >
+            <Grid Background="{StaticResource MainColor}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20" />
                     <RowDefinition Height="50*" />
                     <RowDefinition Height="30*"/>
 
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40" />
                         <RowDefinition Height="10*"/>
@@ -50,7 +51,7 @@
                                  Padding="0,0,0,0" Margin="0,0,5,0"/>
                         <TextBlock Text="Thông tin sản phẩm" Style="{StaticResource H4}" Margin="10"/>
                     </DockPanel>
-                    <Grid Grid.Row="1">
+                    <Grid Grid.Row="1" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="6*"/>
@@ -93,7 +94,7 @@
                                 <TextBox Style="{StaticResource styleTextAreaDefault}" IsEnabled="{Binding IsEditing}" Text="{Binding ProductDetail.Pro_Desciptions }"  Grid.Row="1" Margin="5" ></TextBox>
                             </Grid>
                         </Grid>
-                        <Grid Grid.Column="1">
+                        <Grid Grid.Column="1" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="3*"/>
                                 <ColumnDefinition Width="7*"/>
@@ -116,17 +117,22 @@
 
                             <TextBlock Text="{Binding ProductDetail.ProductID }" Grid.Column="1" Grid.Row="0" Style="{StaticResource styleTextBlockTitle}" />
                             <TextBox  Text="{Binding ProductDetail.ProductName, Mode=TwoWay}" IsEnabled="{Binding IsEditing}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource styleTextBoxDefault}"></TextBox>
-                            <ComboBox x:Name="cbCategory" IsEnabled="{Binding IsEditing}" Style="{StaticResource styleComboBoxDefault}" SelectionChanged="cbCategory_SelectionChanged" Grid.Column="1" Grid.Row="2"></ComboBox>
+                            <ComboBox x:Name="cbCategory"  Grid.Column="1" Grid.Row="2" IsEnabled="{Binding IsEditing}" 
+                                      Style="{StaticResource styleComboBoxDefault}"
+                                      ItemsSource="{Binding Path=LstCategoryInfo,Mode=TwoWay}"
+                                      DisplayMemberPath="CategoryName"
+                                      SelectedValue="{Binding SelectedCategoryInfo, Mode=TwoWay}"
+                                     />
                             <TextBox Style="{StaticResource styleTextBoxDefault}" Text="{Binding ProductDetail.Pro_Origin }" IsEnabled="{Binding IsEditing}" Grid.Column="1" Grid.Row="3"></TextBox>
                             <TextBox Style="{StaticResource styleTextAreaDefault}" Text="{Binding ProductDetail.Pro_HowToUse }" IsEnabled="{Binding IsEditing}"  Grid.Column="1" Grid.Row="4" ></TextBox>
                             <TextBox Style="{StaticResource styleTextAreaDefault}" Text="{Binding ProductDetail.Pro_Preservation }" IsEnabled="{Binding IsEditing}"  Grid.Column="1" Grid.Row="5" ></TextBox>
                         </Grid>
                     </Grid>
                 </Grid>
-                
-            
-                
-                <Grid Grid.Row="2">
+
+
+
+                <Grid Grid.Row="2" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30" />
                         <RowDefinition Height="*" />

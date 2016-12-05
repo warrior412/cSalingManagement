@@ -123,6 +123,6 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManag
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\bin\Debug\ko\System.Windows.Interactivity.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\obj\Debug\cSalingManagement.Infrastructure.csprojResolveAssemblyReference.cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\obj\Debug\cSalingManagement.Infrastructure.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\obj\Debug\cSalingManagement.Infrastructure.pdb
-D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\cSalingManagement.Infrastructure\obj\Debug\cSalingManagement.Infrastructure.csprojResolveAssemblyReference.cache

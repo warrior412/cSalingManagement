@@ -34,13 +34,16 @@ namespace ProductModule.ViewModel
             get { return lstProductInfo; }
             set { 
                 SetProperty(ref this.lstProductInfo, value);
-                this.collectionView = new ListCollectionView(this.LstProductInfo);
-                collectionView.GroupDescriptions.Add(new PropertyGroupDescription("Category"));
+                if(this.lstProductInfo!=null)
+                {
+                    this.collectionView = new ListCollectionView(this.LstProductInfo);
+                    collectionView.GroupDescriptions.Add(new PropertyGroupDescription("Category"));
 
-                this.view.Dispatcher.Invoke(new Action(()=>{
-                    view.gvCheckInfo.ItemsSource = this.collectionView;
-                }));
-
+                    this.view.Dispatcher.Invoke(new Action(() =>
+                    {
+                        view.gvCheckInfo.ItemsSource = this.collectionView;
+                    }));
+                }
             }
         }
 
@@ -158,7 +161,7 @@ namespace ProductModule.ViewModel
                 DataGrid dgv = param as DataGrid;
                 M_ProductInfoWithImportInfo_Row selectedRow = dgv.SelectedItem as M_ProductInfoWithImportInfo_Row;
                 this.LstProductInfo[this.LstProductInfo.IndexOf(selectedRow)].IsAddedToCard = true;
-                this.LstProductInfo[this.LstProductInfo.IndexOf(selectedRow)].Import_OnOrder = int.Parse(dialog.result);
+                this.LstProductInfo[this.LstProductInfo.IndexOf(selectedRow)].QuantityAddedCard = int.Parse(dialog.result);
                 this.LstProductInfo = this.LstProductInfo;
                 this.LstCart.Add(selectedRow);
             }

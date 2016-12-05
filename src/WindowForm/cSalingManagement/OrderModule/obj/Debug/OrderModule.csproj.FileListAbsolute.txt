@@ -67,10 +67,39 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.csproj.GenerateResource.Cache
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingManagement.Infrastructure.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingManagement.Resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingmanagement.Webservice.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Newtonsoft.Json.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.DataGrid.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingManagement.Infrastructure.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingManagement.Resources.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingmanagement.Webservice.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.csprojResolveAssemblyReference.cache
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.Wpf.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.csprojResolveAssemblyReference.cache
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\ImportListByProductView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderAddNewView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderDetailView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderListView.baml
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\ImportListByProductView.g.cs
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderAddNewView.g.cs
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderDetailView.g.cs
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\View\OrderListView.g.cs
@@ -122,30 +151,3 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.pdb
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingManagement.Infrastructure.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingManagement.Resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingmanagement.Webservice.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Newtonsoft.Json.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.AvalonDock.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.DataGrid.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Xceed.Wpf.Toolkit.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingManagement.Infrastructure.pdb
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingManagement.Resources.pdb
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\cSalingmanagement.Webservice.pdb
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\obj\Debug\OrderModule.csprojResolveAssemblyReference.cache
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.Unity.Wpf.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\OrderModule\bin\Debug\Prism.Wpf.dll

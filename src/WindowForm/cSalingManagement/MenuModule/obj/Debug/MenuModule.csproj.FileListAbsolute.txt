@@ -119,6 +119,11 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\M
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Xceed.Wpf.Toolkit.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingmanagement.Webservice.dll
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\cSalingmanagement.Webservice.pdb
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\CustomerModule.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\CustomerModule.pdb
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.csprojResolveAssemblyReference.cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\View\MenuView.g.cs
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -163,8 +168,3 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\o
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\MenuModule\obj\Debug\MenuModule.pdb
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\CustomerModule.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Unity.Wpf.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\Prism.Wpf.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\MenuModule\bin\Debug\CustomerModule.pdb

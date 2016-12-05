@@ -112,6 +112,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ViewModel\OrderAddNewViewModel.cs" />
+    <Compile Include="View\ImportListByProductView.xaml.cs">
+      <DependentUpon>ImportListByProductView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OrderAddNewView.xaml.cs">
       <DependentUpon>OrderAddNewView.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\ImportListByProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\OrderAddNewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

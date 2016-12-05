@@ -27,8 +27,6 @@ namespace ProductModule.View
     /// </summary>
     public partial class ProductDetailView : UserControl, INavigationAware
     {
-        private int CallServiceCount = 0;
-
         #region Navigation Region
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
@@ -52,7 +50,7 @@ namespace ProductModule.View
             }
             string productID = param["ProductID"].ToString();
             Vm.IsEditing = false;
-            GetProductDetailByID(productID);
+            Vm.GetProductDetailByID(productID);
         }
         #endregion
 
@@ -73,82 +71,20 @@ namespace ProductModule.View
             InitializeComponent();
             _vm = vm;
             _vm.view = this;
+            DataContext = Vm;
             GetInitData();
         } 
         #endregion
         private void GetInitData()
         {
-            GetAllCategoryInfo();
+            Vm.GetAllCategoryInfo();
         }
 
         public void ShowMessage(string message)
         {
             MessageBox.Show(message);
         }
-        private void GetAllCategoryInfo()
-        {
-            Vm.IsBusy = true;
-            CallServiceCount++;
-            DAOProvider dao = DAOProvider.GetInstance();
-            dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
-            dao.CallBackFail = new DAOProvider.FinishFail(Failed);
-            dao.GetALL_M_CategoryInfo();
-        }
-
-        private void GetProductDetailByID(string productID)
-        {
-            Vm.IsBusy = true;
-            CallServiceCount++;
-            DAOProvider dao = DAOProvider.GetInstance();
-            dao.CallBackComplete = new DAOProvider.FinishCompleted(Completed);
-            dao.CallBackFail = new DAOProvider.FinishFail(Failed);
-            dao.GetALL_M_ProductInfoWithImportData_ByProductID(productID);
-        }
-
-        #region Delegate CallBack Method
-        void Completed(string tag, object data)
-        {
-
-            this.Dispatcher.Invoke((Action)(() =>
-            {
-                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_CATEGORYINFO)
-                {
-                    CallServiceCount--;
-                    Vm.LstCategoryInfo = new M_CategoryInfo().JSonToListCategory(data);
-                    DataContext = null;
-                    DataContext = Vm;
-                    this.cbCategory.ItemsSource = Vm.LstCategoryInfo;
-                    this.cbCategory.DisplayMemberPath = "CategoryName";
-                    this.cbCategory.SelectedValuePath = "CategoryID";
-                    this.UpdateLayout();
-                }
-                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID)
-                {
-                    CallServiceCount--;
-                    Vm.LstProductWithImport = new M_ProductInfoWithImportInfo().JSonToListProductInfoWithImportInfo(data.ToString());
-                    Vm.ProductDetail = Vm.LstProductWithImport.FirstOrDefault();
-                    this.cbCategory.SelectedValue = Vm.ProductDetail.Category;
-                    DataContext = null;
-                    DataContext = Vm;
-                    this.UpdateLayout();
-                }
-                if (CallServiceCount <= 0)
-                    Vm.IsBusy = false;
-            }));
-        }
-
-        void Failed(string tag, string data)
-        {
-            this.Dispatcher.Invoke((Action)(() =>
-            {
-                MessageBox.Show(data);
-                Vm.IsBusy = false;
-                if (tag == SalingManagement_WebServiceTag.TAG_GETALL_M_PRODUCTINFO_BYID)
-                {
-                }
-            }));
-        } 
-        #endregion
+        
 
         private void cbCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

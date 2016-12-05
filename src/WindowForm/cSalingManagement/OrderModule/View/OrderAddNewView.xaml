@@ -9,6 +9,7 @@
     <UserControl.Resources>
         <converter:ChooseURLToDisplayConverter x:Key="ChooseURLToDisplayConverter"/>
         <converter:ProductModule_IsEditingToWidthConverter x:Key="ProductModule_IsEditingToWidthConverter"/>
+        <converter:IsReadyToWidthConverter x:Key="IsReadyToWidthConverter"/>
     </UserControl.Resources>
     <xctk:BusyIndicator Name="busyIndicator" IsBusy="{Binding IsBusy}">
         <xctk:BusyIndicator.BusyContent>
@@ -196,7 +197,7 @@
                         <DataGridTemplateColumn Header="Số lượng tồn"  MinWidth="150" IsReadOnly="True" Width="6*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Import_InStock}" FontSize="14"  Margin="10,5,0,0"/>
+                                    <TextBlock Style="{StaticResource styleDataGridTextCenter}" Text="{Binding Pro_InStock}" FontSize="14"  Margin="10,5,0,0"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -217,7 +218,22 @@
                         <DataGridTemplateColumn Header=""  MinWidth="100" IsReadOnly="True"  Width="1*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Xóa" Style="{StaticResource btn-danger}" Height="30" Width="80" Padding="2,2,2,2" />
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="{Binding IsReady,Converter={StaticResource IsReadyToWidthConverter},ConverterParameter=ButtonEdit}"/>
+                                            <ColumnDefinition Width="{Binding IsReady,Converter={StaticResource IsReadyToWidthConverter},ConverterParameter=ButtonEdit}"/>
+                                            <ColumnDefinition Width="{Binding IsReady,Converter={StaticResource IsReadyToWidthConverter},ConverterParameter=ButtonSaved}"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Content="💾" Grid.Column="0" Style="{StaticResource btn-default}" Height="25" Width="25" Padding="2,2,2,2" 
+                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.SaveRowCommand}"
+                                                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}"/>
+                                        <Button Content="✗" Grid.Column="1" Style="{StaticResource btn-danger}" Height="25" Width="25" Padding="2,2,2,2"
+                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.DeleteRowCommand}"
+                                                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}"/>
+                                        <Button Content="✓" Grid.Column="2" Style="{StaticResource btn-success}" Height="25" Width="25" Padding="2,2,2,2"
+                                                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.CheckRowCommand}"
+                                                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}"/>
+                                    </Grid>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

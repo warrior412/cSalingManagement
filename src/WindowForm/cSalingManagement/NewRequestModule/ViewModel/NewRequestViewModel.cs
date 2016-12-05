@@ -31,9 +31,12 @@ namespace NewRequestModule.ViewModel
             set
             {
                 SetProperty(ref this.lstProductInfo, value);
-                ListCollectionView cv = new ListCollectionView(this.lstProductInfo);
-                cv.GroupDescriptions.Add(new PropertyGroupDescription("Supplier"));
-                this.LstCollectionView = cv;
+                if(this.LstProductInfo!=null)
+                {
+                    ListCollectionView cv = new ListCollectionView(this.lstProductInfo);
+                    cv.GroupDescriptions.Add(new PropertyGroupDescription("Supplier"));
+                    this.LstCollectionView = cv;
+                }
             }
         }
 

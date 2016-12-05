@@ -33,6 +33,11 @@ namespace ProductModule.View
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if(this.txtInput.Text.Length<=0)
+            {
+                this.DialogResult = false;
+                return;
+            }
             result = this.txtInput.Text;
             this.DialogResult = true;
         }
