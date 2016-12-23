@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OrderModule.ViewModel;
+using Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +19,34 @@ namespace OrderModule.View
     /// <summary>
     /// Interaction logic for ImportListByProductView.xaml
     /// </summary>
-    public partial class ImportListByProductView : Window
+    public partial class ImportListByProductView : Window, INavigationAware
     {
+        #region Navigation Region
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            Console.WriteLine("ProductDetailView :IsNavigationTarget");
+            return false;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            Console.WriteLine("ProductDetailView :IsNavigationTarget");
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            Console.WriteLine("ProductDetailView :IsNavigationTarget");
+        }
+        #endregion
+
+        #region Getter-Setter
+        private ImportListByProductViewModel _vm = null;
+
+        public ImportListByProductViewModel Vm
+        {
+            get { return _vm; }
+            set { _vm = value; }
+        }
         private string productID;
 
         public string ProductID
@@ -26,9 +54,29 @@ namespace OrderModule.View
             get { return productID; }
             set { productID = value; }
         }
-        public ImportListByProductView()
+
+        private int orderedQuantity;
+
+        public int OrderedQuantity
+        {
+            get { return orderedQuantity; }
+            set { orderedQuantity = value; }
+        }
+        #endregion
+        public ImportListByProductView(string productID)
         {
             InitializeComponent();
+            ProductID = productID;
+            _vm = new ImportListByProductViewModel();
+            _vm.view = this;
+            DataContext = Vm;
+            GetInitData();
+        }
+
+
+        private void GetInitData()
+        {
+            Vm.GetProductDetailByID(ProductID);
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

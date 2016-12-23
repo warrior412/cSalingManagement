@@ -15,6 +15,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace OrderModule.ViewModel
@@ -278,12 +279,14 @@ namespace OrderModule.ViewModel
         {
             //Hien thi lich su dat hang
             //Chon so luong san pham tuong ung voi so luong khach da dat
-            ImportListByProductView inputView = new ImportListByProductView();
+
+            DataGrid grid = param as DataGrid;
+            M_ProductInfoWithImportInfo_Row selectedRow = grid.SelectedItem as M_ProductInfoWithImportInfo_Row;
+            ImportListByProductView inputView = new ImportListByProductView(selectedRow.ProductID);
             if(inputView.ShowDialog()==true)
             {
 
             }
-
         }
         private void goToCustomerList(object param)
         {

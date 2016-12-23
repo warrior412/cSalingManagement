@@ -57,14 +57,14 @@
     </Style>
     <!--=====================Basic Control================-->
     <Style TargetType="TextBlock" x:Key="H1">
-        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontFamily" Value="Helvetica Neue,Helvetica,Arial,sans-serif"/>
         <Setter Property="FontSize" Value="24"/>
         <Setter Property="Foreground" Value="WhiteSmoke"/>
         <Setter Property="FontWeight" Value="ExtraBold"/>
         <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="H3">
-        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontFamily" Value="Helvetica Neue,Helvetica,Arial,sans-serif"/>
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontWeight" Value="ExtraBold"/>
@@ -72,7 +72,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="H4">
-        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontFamily" Value="Helvetica Neue,Helvetica,Arial,sans-serif"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Foreground" Value="WhiteSmoke"/>
         <Setter Property="FontWeight" Value="Bold"/>
@@ -82,7 +82,7 @@
    <!-- -====================Text Block================-->
     <Style TargetType="TextBlock" x:Key="styleTextBlockDefault">
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontFamily" Value="Helvetica Neue,Helvetica,Arial,sans-serif"/>
         <Setter Property="Foreground" Value="#333333"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="styleTextBlockRightAlignment" BasedOn="{StaticResource styleTextBlockDefault}">
@@ -108,7 +108,7 @@
     <Style TargetType="DataGridColumnHeader" x:Key="styleDataGridColumnHeaderDefault">
         <Setter Property="Background" Value="{StaticResource MainLightColor}"/>
         <Setter Property="FontSize" Value="12"/>
-        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontFamily" Value="Helvetica Neue,Helvetica,Arial,sans-serif"/>
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -134,7 +134,7 @@
     <!--==================DatePicker=======================-->
     <Style TargetType="DatePicker" x:Key="styleDatePickerDefault">
         <Setter Property="FontSize" Value="16"/>
-        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontFamily" Value="Helvetica Neue,Helvetica,Arial,sans-serif"/>
         <Setter Property="Foreground" Value="#333333"/>
         <Setter Property="Height" Value="30"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -145,7 +145,7 @@
     <!--==================TextBox=======================-->
     <Style TargetType="TextBox" x:Key="styleTextBoxDefault">
         <Setter Property="FontSize" Value="16"/>
-        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontFamily" Value="Helvetica Neue,Helvetica,Arial,sans-serif"/>
         <Setter Property="Foreground" Value="#333333"/>
         <Setter Property="Height" Value="30"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -156,7 +156,7 @@
     <!--==================Button=======================-->
     <Style TargetType="Button" x:Key="styleButtonDefault">
         <Setter Property="FontSize" Value="16"/>
-        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontFamily" Value="Helvetica Neue,Helvetica,Arial,sans-serif"/>
         <Setter Property="Foreground" Value="#333333"/>
         <Setter Property="Background" Value="White"/>
     </Style>
@@ -169,7 +169,7 @@
     <!--==================ComboBox=======================-->
     <Style TargetType="ComboBox" x:Key="styleComboBoxDefault">
         <Setter Property="FontSize" Value="16"/>
-        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontFamily" Value="Helvetica Neue,Helvetica,Arial,sans-serif"/>
         <Setter Property="Foreground" Value="#333333"/>
         <Setter Property="Height" Value="30"/>
         <Setter Property="Padding" Value="5,0,5,0"/>
@@ -179,7 +179,7 @@
     <!--==================TextArea=======================-->
     <Style TargetType="TextBox" x:Key="styleTextAreaDefault">
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontFamily" Value="Helvetica Neue,Helvetica,Arial,sans-serif"/>
         <Setter Property="Foreground" Value="#333333"/>
         <Setter Property="Padding" Value="5,0,5,0"/>
         <Setter Property="Margin" Value="5,10,5,10"/>
