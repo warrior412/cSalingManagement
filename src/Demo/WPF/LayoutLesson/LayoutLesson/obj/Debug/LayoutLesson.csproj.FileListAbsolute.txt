@@ -48,3 +48,28 @@ D:\JunF\Projects\cSalingManagement\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\De
 D:\JunF\Projects\cSalingManagement\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson.exe
 D:\JunF\Projects\cSalingManagement\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson.pdb
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\bin\Debug\LayoutLesson.exe.config
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\bin\Debug\LayoutLesson.exe
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\bin\Debug\LayoutLesson.pdb
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson.csprojResolveAssemblyReference.cache
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\AutoResizeTextFiled.baml
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\CommandDemo.baml
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\frmInputValue.baml
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\MainWindow.baml
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\DataGridView.baml
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\AutoResizeTextFiled.g.cs
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\CommandDemo.g.cs
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\frmInputValue.g.cs
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\MainWindow.g.cs
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\DataGridView.g.cs
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\TbaleList.g.cs
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\App.g.cs
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson_MarkupCompile.cache
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson_MarkupCompile.lref
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\TbaleList.baml
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson.g.resources
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson.Properties.Resources.resources
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson.csproj.GenerateResource.Cache
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson.exe
+C:\JunF's Drive\Projects\src\Demo\WPF\LayoutLesson\LayoutLesson\obj\Debug\LayoutLesson.pdb

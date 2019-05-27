@@ -63,6 +63,13 @@ namespace MenuModule.ViewModel
                 return new DelegateCommand(openNewRequestModule);
             }
         }
+        public ICommand HideCommand
+        {
+            get
+            {
+                return new DelegateCommand(hideContent);
+            }
+        }
         #endregion
 
 
@@ -93,6 +100,11 @@ namespace MenuModule.ViewModel
         private void openNewRequestModule()
         {
             this.RegionManager.Regions[SalingManagementConstant.STRING_REGION_CONTENT].RequestNavigate(SalingManagementConstant.STRING_VIEW_NEW_REQUEST);
+        }
+
+        private void hideContent()
+        {
+
         }
         #endregion
     }

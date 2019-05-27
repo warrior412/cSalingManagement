@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,26 @@ namespace cSalingManagement.Infrastructure.Converter
             {
                 DateTime convertValue = DateTime.Parse(value.ToString());
                 string rs = convertValue.Day + "-" + convertValue.Month + "-" + convertValue.Year;
+                return rs;
+            }
+            return null;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class MoneyFormaterConverter : IValueConverter
+    {
+
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (value != null)
+            {
+                float money = float.Parse(value.ToString());
+                string rs= money.ToString("C", CultureInfo.CreateSpecificCulture("vi-VN"));
                 return rs;
             }
             return null;

@@ -90,6 +90,9 @@ C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debu
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csproj.GenerateResource.Cache
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductImportRequestView.baml
 C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductImportRequestView.g.cs
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Unity.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Wpf.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ProductModule.dll.config
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ProductModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\ProductModule.pdb
@@ -131,9 +134,11 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModul
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csprojResolveAssemblyReference.cache
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\InputDialogView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductDetailView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductImportRequestView.baml
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductListView.baml
+D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\InputDialogView.g.cs
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductDetailView.g.cs
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductImportRequestView.g.cs
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\ProductListView.g.cs
@@ -143,6 +148,5 @@ D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModul
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.csproj.GenerateResource.Cache
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.dll
 D:\JunF\Projects\cSalingManagement\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\ProductModule.pdb
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Unity.Wpf.dll
-C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\bin\Debug\Prism.Wpf.dll
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\InputDialogView.baml
+C:\JunF's Drive\Projects\src\WindowForm\cSalingManagement\ProductModule\obj\Debug\View\InputDialogView.g.cs

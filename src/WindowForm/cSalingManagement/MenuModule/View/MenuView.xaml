@@ -28,7 +28,7 @@
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40*" />
-                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="40*"/>
             </Grid.ColumnDefinitions>
             <Image Source="{StaticResource User_Ico}" Width="60" Grid.Column="0" RenderOptions.BitmapScalingMode="HighQuality"/>
             <TextBlock Text="Admin" Grid.Column="1" Style="{StaticResource H4}"/>

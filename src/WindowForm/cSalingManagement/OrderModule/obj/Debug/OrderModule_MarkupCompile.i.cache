@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-3-2062868437
+4507008390
 
-12-407264852
+141224858083
 30-811263239
-View\OrderAddNewView.xaml;View\OrderDetailView.xaml;View\OrderListView.xaml;
+View\ImportListByProductView.xaml;View\OrderAddNewView.xaml;View\OrderDetailView.xaml;View\OrderListView.xaml;
 
 False
 

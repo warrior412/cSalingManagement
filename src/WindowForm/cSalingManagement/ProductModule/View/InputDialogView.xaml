@@ -1,0 +1,32 @@
+﻿<Window x:Class="ProductModule.View.InputDialogView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="" WindowState="Maximized" ResizeMode="NoResize" ShowInTaskbar="False" WindowStyle="None"  AllowsTransparency="True" Background="Transparent">
+    <Grid Background="{StaticResource MainColor}" Height="159.926" Width="337.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <DockPanel LastChildFill="True" Grid.Row="0" Background="{StaticResource MainDarkColor}">
+            <Button Style="{StaticResource btn-danger}" Content="X" Margin="5" Width="25" Height="25" Padding="0" DockPanel.Dock="Right" Click="Button_Click"/>
+            <TextBlock Text="" DockPanel.Dock="Left" />
+        </DockPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Nhập số lượng món cần đặt" Style="{StaticResource H4}" FontSize="18" Foreground="Black" TextAlignment="Center" Grid.Row="0"/>
+            <TextBox Grid.Row="1" Margin="10,5,10,5" FontSize="20" TextAlignment="Center" FontWeight="Bold" x:Name="txtInput" TextChanged="txtInput_TextChanged" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Content="Đồng ý" Grid.Column="1" Style="{StaticResource btn-success}" Click="Button_Click_1" Width="150" Height="40"/>
+            <Button Content="Hủy" Style="{StaticResource btn-danger}" Width="150" Height="40" Click="Button_Click_2" />
+        </Grid>
+    </Grid>
+</Window>
